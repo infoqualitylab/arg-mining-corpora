@@ -1,0 +1,12 @@
+{
+  "corpora": [
+    {
+      "corpora_id": 1,
+      "corpora_name": "lots of texts",
+      "genre": "legal",
+      "language": "English (en)",
+      "document_types": "supreme court briefs",
+      "document_count": 100
+    }
+  ]
+}

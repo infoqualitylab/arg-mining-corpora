@@ -1,0 +1,23 @@
+{
+  "papers": [
+    {
+      "paper_id": 1,
+      "paper_name": "argpaper1",
+      "paper_link": "dummy link",
+      "authors": "tom, dick, harry",
+      "date": "11/12/1999",
+      "annotations": [
+        {
+          "corpora_id": 1,
+          "annotation_description": "toulmin",
+          "annotator_count": 3,
+          "annotator_type": "expert",
+          "agreement": 0.5,
+          "agreement_interpretation": "moderate",
+          "accessibility": "free",
+          "corpora_link": "dummy link"
+        }
+      ]
+    }
+  ]
+}
