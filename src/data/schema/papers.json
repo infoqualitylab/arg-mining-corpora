@@ -1,0 +1,19 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "paper_id": { "type": "string", "format": "uuid" },
+      "title": { "type": "string" },
+      "authors": {
+        "type": "array",
+        "items": { "type": "string" },
+        "minItems": 1
+      },
+      "year": { "type": "integer" },
+      "doi": { "type": "string", "format": "uri" },
+      "url": { "type": "string", "format": "uri" }
+    },
+    "required": ["title", "authors", "year", "abstract", "doi", "url"]
+  }
+}
