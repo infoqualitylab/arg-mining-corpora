@@ -1,19 +1,65 @@
 {
+  "$comment": "Schema for a list of argument mining papers, unique by paper_id and doi",
+  "$id": "https://argmining.com/schemas/papers.json",
   "type": "array",
+  "uniqueItems": true,
+  "uniqueItemProperties": [
+    "paper_id",
+    "doi"
+  ],
   "items": {
     "type": "object",
     "properties": {
-      "paper_id": { "type": "string", "format": "uuid" },
-      "title": { "type": "string" },
+      "paper_id": {
+        "$comment": "Unique id, should be human readable",
+        "type": "string"
+      },
+      "title": {
+        "$comment": "Title of paper",
+        "type": "string"
+      },
       "authors": {
+        "$comment": "List of authors in order",
         "type": "array",
-        "items": { "type": "string" },
+        "items": {
+          "$comment": "Full name of author",
+          "type": "string"
+        },
         "minItems": 1
       },
-      "year": { "type": "integer" },
-      "doi": { "type": "string", "format": "uri" },
-      "url": { "type": "string", "format": "uri" }
+      "description": {
+        "$comment": "Short description of paper",
+        "type": "string",
+        "maxLength": 650
+      },
+      "year": {
+        "$comment": "Year of publication",
+        "type": "integer"
+      },
+      "doi": {
+        "$comment": "DOI of paper",
+        "type": "string",
+        "format": "uri"
+      },
+      "url": {
+        "$comment": "URL where paper can be accessed",
+        "type": "string",
+        "format": "uri"
+      },
+      "annotations": {
+        "$ref": "https://argmining.com/schemas/annotations.json#"
+      }
     },
-    "required": ["title", "authors", "year", "abstract", "doi", "url"]
+    "required": [
+      "paper_id",
+      "title",
+      "authors",
+      "description",
+      "year",
+      "doi",
+      "url",
+      "annotations"
+    ],
+    "additionalProperties": false
   }
 }
