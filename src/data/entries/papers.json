@@ -1,23 +1,26 @@
 {
   "papers": [
-    {
-      "paper_id": 1,
-      "paper_name": "argpaper1",
-      "paper_link": "dummy link",
-      "authors": "tom, dick, harry",
-      "date": "11/12/1999",
-      "annotations": [
-        {
-          "corpora_id": 1,
-          "annotation_description": "toulmin",
-          "annotator_count": 3,
-          "annotator_type": "expert",
-          "agreement": 0.5,
-          "agreement_interpretation": "moderate",
-          "accessibility": "free",
-          "corpora_link": "dummy link"
-        }
-      ]
-    }
+    {"paper_id": "an_annotated_corpus_of_argumentative_microtexts",
+      "title": "An Annotated Corpus of Argumentative Microtexts",
+      "authors": [
+        "Andreas Peldzus",
+        "Manfred Stede"
+      ],
+      "description": "TODO",
+      "year": 2016,
+      "doi": "Missing DOI",
+      "url": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
+      "annotations": {
+        "corpus_id": "microtexts_v1",
+        "annotation_task": ["ACS", "ACTC", "ARI", "ARTC"],
+        "description": "TODO",
+        "annotator_count": 3,
+        "annotator_type": ["Expert", "Other"],
+        "agreement_type" : ["Fleiss' Kappa"],
+        "agreement_score": 0.83,
+        "accessibility": "Free",
+        "perspectivist": true,
+        "link": "https://github.com/peldszus/arg-microtexts"
+      }
   ]
 }

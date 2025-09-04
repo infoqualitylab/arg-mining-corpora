@@ -1,64 +1,77 @@
 {
-  "$comment": "Schema for a list of argument mining corpora, unique by corpus_id and name",
-  "type": "array",
-  "uniqueItems": true,
-  "uniqueItemProperties": [
-    "corpus_id",
-    "name"
-  ],
-  "items": {
-    "type": "object",
-    "properties": {
-      "corpus_id": {
-        "$comment": "Unique id, should be human readable",
-        "type": "string"
-      },
-      "name": {
-        "$comment": "Name of corpus",
-        "type": "string"
-      },
-      "domain": {
-        "$comment": "Domain of corpus, e.g., 'legal', 'social media', 'scientific', 'general'",
-        "type": "string"
-      },
-      "description": {
-        "$comment": "Short description of corpus",
-        "type": "string",
-        "maxLength": 650
-      },
-      "language": {
-        "$comment": "Language of corpus, e.g., 'English', 'Chinese'",
-        "type": "string"
-      },
-      "document_type": {
-        "$comment": "Type of documents in corpus, e.g., 'essays', 'tweets', 'legal cases'",
-        "type": "string"
-      },
-      "size": {
-        "$comment": "Size of corpus in number of documents",
-        "type": "integer"
-      },
-      "parent_corpora_id": {
-        "$comment": "List of parent corpora ids if this corpus is derived from other corpora",
-        "type": "array",
-        "items": {
-          "$comment": "Unique id of parent corpus",
+"$comment": "Schema for a list of argument mining corpora, unique by corpus_id and name",
+"type": "object",
+"properties": {
+  "corpora": {
+    "$comment": "List of corpora",
+    "type": "array",
+    "uniqueItems": true,
+    "uniqueItemProperties": [
+      "corpus_id",
+      "name"
+    ],
+    "items": {
+      "type": "object",
+      "properties": {
+        "corpus_id": {
+          "$comment": "Unique id, should be human readable",
           "type": "string"
         },
-        "minItems": 0,
-        "uniqueItems": true
-      }
-    },
-    "required": [
-      "corpus_id",
-      "name",
-      "domain",
-      "description",
-      "language",
-      "document_type",
-      "size",
-      "parent_corpora_id"
-    ],
-    "additionalProperties": false
-  }
+        "name": {
+          "$comment": "Name of corpus",
+          "type": "string"
+        },
+        "domain": {
+          "$comment": "Domain of corpus, e.g., 'legal', 'social media', 'scientific', 'general'",
+          "type": "string"
+        },
+        "description": {
+          "$comment": "Short description of corpus",
+          "type": "string",
+          "maxLength": 650
+        },
+        "language": {
+          "$comment": "Language(s) of corpus, e.g., 'English', 'Chinese'",
+          "type": "array",
+          "items": {
+            "$comment": "Language of corpus",
+            "type": "string"
+          }
+        },
+        "document_type": {
+          "$comment": "Type of documents in corpus, e.g., 'essays', 'tweets', 'legal cases'",
+          "type": "string"
+        },
+        "size": {
+          "$comment": "Size of corpus in number of documents",
+          "type": "integer"
+        },
+        "parent_corpora_id": {
+          "$comment": "List of parent corpora ids if this corpus is derived from other corpora",
+          "type": "array",
+          "items": {
+            "$comment": "Unique id of parent corpus",
+            "type": "string"
+          },
+          "minItems": 0,
+          "uniqueItems": true
+        }
+      }},
+      "required": [
+        "corpus_id",
+        "name",
+        "domain",
+        "description",
+        "language",
+        "document_type",
+        "size",
+        "parent_corpora_id"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "corpora"
+  ],
+  "additionalProperties": false
 }

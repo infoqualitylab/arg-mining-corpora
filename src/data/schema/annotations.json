@@ -55,18 +55,14 @@
       },
       "agreement_type": {
         "$comment": "Type of inter-annotator agreement measure used, Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha, Percent Agreement, Other (anything else)",
-        "type": "array",
-        "items": {
-          "enum": [
-            "Cohen's Kappa",
-            "Fleiss' Kappa",
-            "Krippendorff's Alpha",
-            "Percent Agreement",
-            "Other"
-          ]
-        },
-        "minItems": 1,
-        "uniqueItems": true
+        "type": "string",
+        "enum": [
+          "Cohen's Kappa",
+          "Fleiss' Kappa",
+          "Krippendorff's Alpha",
+          "Percent Agreement",
+          "Other"
+        ]
       },
       "agreement_score": {
         "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal",
