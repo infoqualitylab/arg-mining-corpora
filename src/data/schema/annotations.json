@@ -1,0 +1,109 @@
+{
+  "$comment": "Schema for a list of annotation tasks carried out on an argument mining corpora, unique",
+  "$id": "https://argmining.com/schemas/annotations.json",
+  "type": "array",
+  "uniqueItems": true,
+  "items": {
+    "type": "object",
+    "properties": {
+      "corpus_id": {
+        "$comment": "Unique id for the corpus being annotated, should be human readable",
+        "type": "string"
+      },
+      "annotation_task": {
+        "$comment": "Array of annotation tasks performed on the corpora",
+        "type": "array",
+        "items": {
+          "$comment": "Type of annotation task performed, Argument Component Segmentation (ACS), Argument Component Type Classification (ACTC), Claim Evidence Extraction (CE), Claim Evidence Pair Extraction (CEPE), Aspect-Based Argument Mining (ABAM), Context-Dependent Claim Detection (CDCD), Context-Dependent Evidence Detection (CDED), Claim Extraction with Stance Classification (CESC), Argumentative Relation Identification (ARI), Argumentative Relation Type Classification (ARTC), ? (ACRE), and Other for anything else",
+          "type": "string",
+          "enum": [
+            "ACS",
+            "ACTC",
+            "CE",
+            "CEPE",
+            "ABAM",
+            "CDCD",
+            "CDED",
+            "CESC",
+            "ARI",
+            "ARTC",
+            "ACRE",
+            "Other"
+          ]
+        }
+      },
+      "description": {
+        "$comment": "Short description of the annotation task",
+        "type": "string",
+        "maxLength": 650
+      },
+      "annotator_count": {
+        "$comment": "Number of annotators involved in the annotation task",
+        "type": "integer",
+        "minimum": 1
+      },
+      "annotator_type": {
+        "$comment": "Type of annotators involved in the annotation task, Author (the authors of the paper), Expert (domain experts), Student (students, e.g. undergraduates), Crowd (crowdsourced workers, e.g. from MTurk or Prolific), Other (anything else)",
+        "type": "array",
+        "items": {
+          "enum": [
+            "Author",
+            "Expert",
+            "Student",
+            "Crowd",
+            "Other"
+          ]
+        },
+        "minItems": 1,
+        "uniqueItems": true
+      },
+      "agreement_type": {
+        "$comment": "Type of inter-annotator agreement measure used, Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha, Percent Agreement, Other (anything else)",
+        "type": "string",
+        "enum": [
+          "Cohen's Kappa",
+          "Fleiss' Kappa",
+          "Krippendorff's Alpha",
+          "Percent Agreement",
+          "Other"
+        ]
+      },
+      "agreement_score": {
+        "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal",
+        "type": "number",
+        "minimum": -1,
+        "maximum": 1
+      },
+      "accessibility": {
+        "$comment": "Accessibility of the annotated data, Free (freely available online), Upon Request (available from authors upon request), Paid (available for a fee), Unavailable (not available)",
+        "type": "string",
+        "enum": [
+          "Free",
+          "Upon Request",
+          "Paid",
+          "Unavailable"
+        ]
+      },
+      "perspectivist": {
+        "$comment": "Whether the annotation is amenable to perspectivist approaches, such as each individual annotator's annotations being recorded instead of just an aggregated gold standard",
+        "type": "boolean"
+      },
+      "link": {
+        "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "required": [
+      "corpus_id",
+      "annotation_task",
+      "description",
+      "annotator_count",
+      "annotator_type",
+      "agreement_type",
+      "accessibility",
+      "perspectivist"
+    ],
+    "additionalProperties": false
+  }
+}
