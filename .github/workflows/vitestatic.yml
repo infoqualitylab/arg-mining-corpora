@@ -38,7 +38,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
       - name: Validate JSON
-        run: npm validate
+        run: npm run validate
       - name: Build
         run: npm run build
       - name: Setup Pages
