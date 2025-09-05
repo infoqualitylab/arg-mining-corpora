@@ -6,27 +6,31 @@
   "items": {
     "type": "object",
     "properties": {
-      "corpora_id": {
-        "$comment": "Unique id for the corpora being annotated, should be human readable",
+      "corpus_id": {
+        "$comment": "Unique id for the corpus being annotated, should be human readable",
         "type": "string"
       },
       "annotation_task": {
-        "$comment": "Type of annotation task performed, Argument Component Segmentation (ACS), Argument Component Type Classification (ACTC), Claim Evidence Extraction (CE), Claim Evidence Pair Extraction (CEPE), Aspect-Based Argument Mining (ABAM), Context-Dependent Claim Detection (CDCD), Context-Dependent Evidence Detection (CDED), Claim Extraction with Stance Classification (CESC), Argumentative Relation Identification (ARI), Argumentative Relation Type Classification (ARTC), ? (ACRE), and Other for anything else",
-        "type": "string",
-        "enum": [
-          "ACS",
-          "ACTC",
-          "CE",
-          "CEPE",
-          "ABAM",
-          "CDCD",
-          "CDED",
-          "CESC",
-          "ARI",
-          "ARTC",
-          "ACRE",
-          "Other"
-        ]
+        "$comment": "Array of annotation tasks performed on the corpora",
+        "type": "array",
+        "items": {
+          "$comment": "Type of annotation task performed, Argument Component Segmentation (ACS), Argument Component Type Classification (ACTC), Claim Evidence Extraction (CE), Claim Evidence Pair Extraction (CEPE), Aspect-Based Argument Mining (ABAM), Context-Dependent Claim Detection (CDCD), Context-Dependent Evidence Detection (CDED), Claim Extraction with Stance Classification (CESC), Argumentative Relation Identification (ARI), Argumentative Relation Type Classification (ARTC), ? (ACRE), and Other for anything else",
+          "type": "string",
+          "enum": [
+            "ACS",
+            "ACTC",
+            "CE",
+            "CEPE",
+            "ABAM",
+            "CDCD",
+            "CDED",
+            "CESC",
+            "ARI",
+            "ARTC",
+            "ACRE",
+            "Other"
+          ]
+        }
       },
       "description": {
         "$comment": "Short description of the annotation task",
@@ -91,7 +95,7 @@
       }
     },
     "required": [
-      "corpora_id",
+      "corpus_id",
       "annotation_task",
       "description",
       "annotator_count",
