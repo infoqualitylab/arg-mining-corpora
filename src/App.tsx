@@ -6,28 +6,16 @@ import CardContent from "@mui/material/CardContent";
 import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 
-import corp from "./data/corpora.json";
-import pap from "./data/papers.json";
+import type { Papers } from "./data/interfaces/papers";
+import corp from "./data/entries/corpora.json";
+import type { Corpora } from "./data/interfaces/corpora";
+import pap from "./data/entries/papers.json";
 
-interface Row {
-  id: number;
-  corpora_name: string;
-  paper_name: string;
-  authors: string;
-  date: string;
-  genre: string;
-  language: string;
-  document_types: string;
-  document_count: number;
-  annotation_description: string;
-  annotator_count: number;
-  annotator_type: string;
-  agreement: number;
-  agreement_interpretation: string;
-  accessibility: string;
-  corpora_link: string;
-  paper_link: string;
-}
+const corpora: Corpora = corp
+const papers: Papers = pap
+
+type CorpusType = Corpora["corpora"][number];
+
 
 const columns = [
   { field: "corpora_name", headerName: "Corpora Name", width: 200 },

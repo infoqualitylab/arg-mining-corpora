@@ -2,15 +2,13 @@ import Ajv from "ajv";
 import addFormats from "ajv-formats"
 import corpora_schema from "./data/schema/corpora.json";
 import papers_schema from "./data/schema/papers.json";
-import annotations_schema from "./data/schema/annotations.json";
 import corpora_data from "./data/entries/corpora.json";
 import papers_data from "./data/entries/papers.json";
 
 const ajv = new Ajv({ allErrors: true, strict: false });
 addFormats(ajv);
-ajv.addSchema(corpora_schema, "corpora_schema");
-ajv.addSchema(papers_schema, "papers_schema");
-ajv.addSchema(annotations_schema, "annotations_schema");
+ajv.addSchema(corpora_schema, "corpora.json");
+ajv.addSchema(papers_schema, "papers.json");
 const validate_corpora = ajv.compile(corpora_schema);
 const validate_papers = ajv.compile(papers_schema);
 
