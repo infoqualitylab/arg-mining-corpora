@@ -2,15 +2,15 @@
   "corpora": [
     {
       "corpus_id": "microtexts_v1",
-      "name": "Microtexts V1",
-      "domain": "General",
+      "corpus_name": "Microtexts V1",
+      "genre": "General",
       "description": "First version of the microtexts corpus. A corpus of 112 argumentative texts, each around 80 words long, annotated with argumentation structures including components and relations.",
       "language": [
         "German",
         "English (Translation)"
       ],
       "document_type": "Short essays",
-      "size": 112,
+      "document_count": 112,
       "parent_corpora_id": []
     }
   ]

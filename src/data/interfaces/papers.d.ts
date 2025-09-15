@@ -8,7 +8,7 @@
 export interface Papers {
   papers: {
     paper_id: string;
-    title: string;
+    paper_title: string;
     /**
      * @minItems 1
      */
@@ -16,7 +16,7 @@ export interface Papers {
     description: string;
     year: number;
     doi?: string;
-    url: string;
+    paper_link?: string;
     annotations: {
       corpus_id: string;
       annotation_task: (
@@ -46,7 +46,7 @@ export interface Papers {
       agreement_score?: number;
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       perspectivist: boolean;
-      link?: string;
+      corpus_link?: string;
     }[];
   }[];
 }

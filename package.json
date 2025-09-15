@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "validate": "npx tsx src/schema_validation.ts && cd src && npx tsx src/interface_generation.ts && cd -"
+    "validate": "npx tsx src/schema_validation.ts"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",

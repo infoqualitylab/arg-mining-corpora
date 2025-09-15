@@ -2,14 +2,14 @@
   "papers": [
     {
       "paper_id": "an_annotated_corpus_of_argumentative_microtexts",
-      "title": "An Annotated Corpus of Argumentative Microtexts",
+      "paper_title": "An Annotated Corpus of Argumentative Microtexts",
       "authors": [
         "Andreas Peldzus",
         "Manfred Stede"
       ],
       "description": "TODO",
       "year": 2016,
-      "url": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
+      "paper_link": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
       "annotations": [
         {
           "corpus_id": "microtexts_v1",
@@ -29,7 +29,7 @@
           "agreement_score": 0.83,
           "accessibility": "Free",
           "perspectivist": true,
-          "link": "https://github.com/peldszus/arg-microtexts"
+          "corpus_link": "https://github.com/peldszus/arg-microtexts"
         }
       ]
     }

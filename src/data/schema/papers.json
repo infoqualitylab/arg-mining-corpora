@@ -17,7 +17,7 @@
             "$comment": "Unique id, should be human readable",
             "type": "string"
           },
-          "title": {
+          "paper_title": {
             "$comment": "Title of paper",
             "type": "string"
           },
@@ -44,7 +44,7 @@
             "type": "string",
             "format": "uri"
           },
-          "url": {
+          "paper_link": {
             "$comment": "URL where paper can be accessed",
             "type": "string",
             "format": "uri"
@@ -138,7 +138,7 @@
                   "$comment": "Whether the annotation is amenable to perspectivist approaches, such as each individual annotator's annotations being recorded instead of just an aggregated gold standard",
                   "type": "boolean"
                 },
-                "link": {
+                "corpus_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
                   "type": "string",
                   "format": "uri"
@@ -160,7 +160,7 @@
         },
         "required": [
           "paper_id",
-          "title",
+          "paper_title",
           "authors",
           "description",
           "year",

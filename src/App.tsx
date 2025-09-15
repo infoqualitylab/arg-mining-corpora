@@ -7,14 +7,32 @@ import Skeleton from "@mui/material/Skeleton";
 import Typography from "@mui/material/Typography";
 
 import type { Papers } from "./data/interfaces/papers";
-import corp from "./data/entries/corpora.json";
+import corps from "./data/entries/corpora.json";
 import type { Corpora } from "./data/interfaces/corpora";
-import pap from "./data/entries/papers.json";
+import paps from "./data/entries/papers.json";
 
-const corpora: Corpora = corp
-const papers: Papers = pap
+const corp: Corpora = corps
+const pap: Papers = paps
 
-type CorpusType = Corpora["corpora"][number];
+// Full list based on papers
+interface FullRow {
+  id: string;
+  corpus_name: string;
+  paper_name: string;
+  authors: string;
+  year: number;
+  genre: string;
+  language: string;
+  document_types: string;
+  document_count: number;
+  annotation_description: string;
+  annotator_count: number;
+  annotator_type: string;
+  agreement: number;
+  accessibility: string;
+  corpora_link: string;
+  paper_link: string;
+}
 
 
 const columns = [
@@ -34,11 +52,6 @@ const columns = [
   { field: "annotator_count", headerName: "Annotator Count", width: 200 },
   { field: "annotator_type", headerName: "Annotator Type", width: 200 },
   { field: "agreement", headerName: "Agreement", width: 200 },
-  {
-    field: "agreement_interpretation",
-    headerName: "Interpretation",
-    width: 200,
-  },
   { field: "accessibility", headerName: "Accessibility", width: 200 },
   { field: "corpora_link", headerName: "Corpora Link", width: 200 },
   { field: "paper_link", headerName: "Paper Link", width: 200 },
@@ -46,35 +59,34 @@ const columns = [
 
 function App() {
   const [loading] = useState(false);
-  const [rows, setRows] = useState<Row[]>([]);
+  const [rows, setRows] = useState<FullRow[]>([]);
 
   useEffect(() => {
     for (const paper of pap.papers) {
       console.log(paper);
       for (const annotation of paper.annotations) {
-        const corpora = corp.corpora.find(
-          (i) => i.corpora_id === annotation.corpora_id,
+        const corpus = corp.corpora.find(
+          (i) => i.corpus_id === annotation.corpus_id,
         );
-        if (corpora) {
+        if (corpus) {
           setRows([
             ...rows,
             {
               id: paper.paper_id,
-              corpora_name: corpora.corpora_name,
-              paper_name: paper.paper_name,
+              corpus_name: corpus.corpus_name,
+              paper_name: paper.paper_title,
               authors: paper.authors,
-              date: paper.date,
-              genre: corpora.genre,
-              language: corpora.language,
-              document_types: corpora.document_types,
-              document_count: corpora.document_count,
-              annotation_description: annotation.annotation_description,
+              date: paper.year,
+              genre: corpus.genre,
+              language: corpus.language,
+              document_types: corpus.document_type,
+              document_count: corpus.document_count,
+              annotation_description: annotation.description,
               annotator_count: annotation.annotator_count,
               annotator_type: annotation.annotator_type,
-              agreement: annotation.agreement,
-              agreement_interpretation: annotation.agreement_interpretation,
+              agreement: annotation.agreement_score,
               accessibility: annotation.accessibility,
-              corpora_link: annotation.corpora_link,
+              corpora_link: annotation.corpus_link,
               paper_link: paper.paper_link,
             },
           ]);
@@ -94,7 +106,7 @@ function App() {
               gutterBottom
               sx={{ color: "text.secondary", fontSize: 14 }}
             >
-              Grouped by Corpora
+              Grouped by Paper
             </Typography>
             <DataGrid rows={rows} columns={columns} />
           </CardContent>

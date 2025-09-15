@@ -1,4 +1,4 @@
-import { compile, compileFromFile } from 'json-schema-to-typescript';
+import { compileFromFile } from 'json-schema-to-typescript';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -17,7 +17,7 @@ fs.readdir(inputDir, (err, files) => {
       const schemaPath = path.join(inputDir, file);
       const interfaceName = path.basename(file, '.json') + '.d.ts';
       const outputPath = path.join(outputDir, interfaceName);
-
+      // TODO this declares every field as optional
       compileFromFile(schemaPath)
         .then(ts => fs.writeFileSync(outputPath, ts))
         .then(() => console.log(`Generated ${outputPath}`))

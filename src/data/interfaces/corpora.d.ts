@@ -8,12 +8,12 @@
 export interface Corpora {
   corpora: {
     corpus_id?: string;
-    name?: string;
-    domain?: string;
+    corpus_name?: string;
+    genre?: string;
     description?: string;
     language?: string[];
     document_type?: string;
-    size?: number;
+    document_count?: number;
     /**
      * @minItems 0
      */
