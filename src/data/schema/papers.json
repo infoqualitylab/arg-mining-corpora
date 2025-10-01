@@ -151,8 +151,10 @@
                 "annotator_count",
                 "annotator_type",
                 "agreement_type",
+                "agreement_score",
                 "accessibility",
-                "perspectivist"
+                "perspectivist",
+                "corpus_link"
               ],
               "additionalProperties": false
             }
@@ -164,6 +166,8 @@
           "authors",
           "description",
           "year",
+          "doi",
+          "paper_link",
           "url",
           "annotations"
         ],

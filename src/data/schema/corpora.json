@@ -56,19 +56,19 @@
             "minItems": 0,
             "uniqueItems": true
           }
-        }
-      },
-      "required": [
-        "corpus_id",
-        "corpus_name",
-        "genre",
-        "description",
-        "language",
-        "document_type",
-        "document_count",
-        "parent_corpora_id"
-      ],
-      "additionalProperties": false
+        },
+        "required": [
+          "corpus_id",
+          "corpus_name",
+          "genre",
+          "description",
+          "language",
+          "document_type",
+          "document_count",
+          "parent_corpora_id"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [

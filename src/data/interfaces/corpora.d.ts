@@ -7,17 +7,16 @@
 
 export interface Corpora {
   corpora: {
-    corpus_id?: string;
-    corpus_name?: string;
-    genre?: string;
-    description?: string;
-    language?: string[];
-    document_type?: string;
-    document_count?: number;
+    corpus_id: string;
+    corpus_name: string;
+    genre: string;
+    description: string;
+    language: string[];
+    document_type: string;
+    document_count: number;
     /**
      * @minItems 0
      */
-    parent_corpora_id?: string[];
-    [k: string]: unknown;
+    parent_corpora_id: string[];
   }[];
 }

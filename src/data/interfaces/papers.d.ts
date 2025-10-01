@@ -15,8 +15,8 @@ export interface Papers {
     authors: [string, ...string[]];
     description: string;
     year: number;
-    doi?: string;
-    paper_link?: string;
+    doi: string;
+    paper_link: string;
     annotations: {
       corpus_id: string;
       annotation_task: (
@@ -43,10 +43,10 @@ export interface Papers {
         ...("Author" | "Expert" | "Student" | "Crowd" | "Other")[]
       ];
       agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
-      agreement_score?: number;
+      agreement_score: number;
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       perspectivist: boolean;
-      corpus_link?: string;
+      corpus_link: string;
     }[];
   }[];
 }
