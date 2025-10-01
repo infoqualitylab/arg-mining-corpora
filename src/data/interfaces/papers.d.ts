@@ -8,6 +8,7 @@
 export interface Papers {
   papers: {
     paper_id: string;
+    open_alex_id?: string;
     paper_title: string;
     /**
      * @minItems 1
@@ -15,7 +16,7 @@ export interface Papers {
     authors: [string, ...string[]];
     description: string;
     year: number;
-    doi: string;
+    doi?: string;
     paper_link: string;
     annotations: {
       corpus_id: string;

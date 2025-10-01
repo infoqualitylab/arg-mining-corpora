@@ -17,6 +17,10 @@
             "$comment": "Unique id, should be human readable",
             "type": "string"
           },
+          "open_alex_id": {
+            "$comment": "Unique open alex id if available",
+            "type": "string"
+          },
           "paper_title": {
             "$comment": "Title of paper",
             "type": "string"
@@ -67,17 +71,17 @@
                     "$comment": "Type of annotation task performed, Argument Component Segmentation (ACS), Argument Component Type Classification (ACTC), Claim Evidence Extraction (CE), Claim Evidence Pair Extraction (CEPE), Aspect-Based Argument Mining (ABAM), Context-Dependent Claim Detection (CDCD), Context-Dependent Evidence Detection (CDED), Claim Extraction with Stance Classification (CESC), Argumentative Relation Identification (ARI), Argumentative Relation Type Classification (ARTC), ? (ACRE), and Other for anything else",
                     "type": "string",
                     "enum": [
-                      "ACS",
-                      "ACTC",
-                      "CE",
-                      "CEPE",
-                      "ABAM",
-                      "CDCD",
-                      "CDED",
-                      "CESC",
-                      "ARI",
-                      "ARTC",
-                      "ACRE",
+                      "Argument Component Segmentation",
+                      "Argument Component Type Classification",
+                      "Claim Evidence Extraction",
+                      "Claim Evidence Pair Extraction",
+                      "Aspect-Based Argument Mining",
+                      "Context-Dependent Claim Detection",
+                      "Context-Dependent Evidence Detection",
+                      "Claim Extraction with Stance Classification",
+                      "Argumentative Relation Identification",
+                      "Argumentative Relation Type Classification",
+                      "ACRE (?)",
                       "Other"
                     ]
                   }
@@ -148,8 +152,8 @@
                 "corpus_id",
                 "annotation_task",
                 "description",
-                "annotator_count",
                 "annotator_type",
+                "annotator_count",
                 "agreement_type",
                 "agreement_score",
                 "accessibility",
@@ -166,9 +170,7 @@
           "authors",
           "description",
           "year",
-          "doi",
           "paper_link",
-          "url",
           "annotations"
         ],
         "additionalProperties": false

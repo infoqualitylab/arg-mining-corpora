@@ -9,8 +9,44 @@
         "German",
         "English (Translation)"
       ],
-      "document_type": "Short essays",
+      "document_type": "Essays",
       "document_count": 112,
+      "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "webis_editorials_16",
+      "corpus_name": "Webis-Editorials-16",
+      "genre": "News",
+      "description": "The News Editorials Corpus, also known as Webis-Editorials-16, is a collection designed to help researchers understand how arguments are structured in news editorials. It includes 300 English news editorials from three major news outlets: Al Jazeera, Fox News, and The Guardian. Each broken down into ADUs, further labelled into different types such as opinions, stories, or statistics",
+      "language": [
+        "English"
+      ],
+      "document_type": "News editorials",
+      "document_count": 300,
+      "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "agreement_in_wikipedia_talk_pages",
+      "corpus_name": "Agreement in Wikipedia Talk Pages",
+      "genre": "Online discussions",
+      "description": "Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational.",
+      "language": [
+        "English"
+      ],
+      "document_type": "Discussion threads",
+      "document_count": 118,
+      "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "comarg",
+      "corpus_name": "ComArg",
+      "genre": "Online discussions",
+      "description": "The corpus focuses on online user comments from debate platforms, specifically targeting discussions on controversial social and political issues. Specifically two discussions, one on 'Gay Marriage', and one on 'Under God in pledge'.",
+      "language": [
+        "English"
+      ],
+      "document_type": "Comment-argument pairs",
+      "document_count": 2249,
       "parent_corpora_id": []
     }
   ]
