@@ -2,24 +2,24 @@
   "papers": [
     {
       "paper_id": "an_annotated_corpus_of_argumentative_microtexts",
-      "title": "An Annotated Corpus of Argumentative Microtexts",
+      "paper_title": "An Annotated Corpus of Argumentative Microtexts",
       "authors": [
         "Andreas Peldzus",
         "Manfred Stede"
       ],
-      "description": "TODO",
+      "description": "Introduce a corpus for exploring text-level argumentation structure in German and professionally translated English.",
       "year": 2016,
-      "url": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
+      "paper_link": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
       "annotations": [
         {
           "corpus_id": "microtexts_v1",
           "annotation_task": [
-            "ACS",
-            "ACTC",
-            "ARI",
-            "ARTC"
+            "Argument Component Segmentation",
+            "Argument Component Type Classification",
+            "Argumentative Relation Identification",
+            "Argumentative Relation Type Classification"
           ],
-          "description": "TODO",
+          "description": "Texts are segmented into Argumentative Discourse Units (ADUs) with support and attack links.",
           "annotator_count": 3,
           "annotator_type": [
             "Expert",
@@ -29,7 +29,120 @@
           "agreement_score": 0.83,
           "accessibility": "Free",
           "perspectivist": true,
-          "link": "https://github.com/peldszus/arg-microtexts"
+          "corpus_link": "https://github.com/peldszus/arg-microtexts"
+        }
+      ]
+    },
+    {
+      "paper_id": "a_news_editorial_corpus_for_argumentation_mining_strategies",
+      "paper_title": "A News Editorial Corpus for Argumentation Mining Strategies",
+      "authors": [
+        "Khalid Al-Khatib",
+        "Henning Wachsmuth",
+        "Johannes Kiesel",
+        "Matthias Hagen",
+        "Benno Stein"
+      ],
+      "description": "Exploring how argument is structured in a number of news editorials.",
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/C16-1324/",
+      "open_alex_id": "https://openalex.org/W2579772177",
+      "annotations": [
+        {
+          "corpus_id": "webis_editorials_16",
+          "annotation_task" : [
+            "Argument Component Segmentation",
+            "Argument Component Type Classification"
+          ],
+          "description": "Each ADU is labeled as one of six types: Assumption (general opinions), Anecdote (stories or examples), Testimony (expert or personal statements), Statistics (numerical data), Common Ground (shared beliefs), or Other (miscellaneous).",
+          "annotator_count": 4,
+          "annotator_type": [
+            "Expert"
+          ],
+          "agreement_type": "Fleiss' Kappa",
+          "agreement_score": 0.56,
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://webis.de/data/webis-editorials-16.html"
+        }
+      ]
+    },
+    {
+      "paper_id": "annotating_agreement_and_disagreement_in_threaded_discussion",
+      "paper_title": "Annotating Agreement and Disagreement in Threaded Discussion",
+      "authors": [
+        "Jacob Andreas",
+        "Sara Rosenthal",
+        "Kathy McKeown"
+      ],
+      "description": "Identifying agreement and disagreement in Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational.",
+      "year": 2012,
+      "paper_link": "https://aclanthology.org/L12-1650/",
+      "open_alex_id": "https://openalex.org/W2251588411",
+      "annotations": [
+        {
+          "corpus_id": "agreement_in_wikipedia_talk_pages",
+          "annotation_task": [
+            "Argumentative Relation Type Classification",
+            "Other"
+          ],
+          "description": "Annotating question-response pairs in threads with one of 5 modes: agreement-response, agreement-paraphrase, disagreement-response and disagreement-paraphrase.",
+          "annotator_count": 2,
+          "annotator_type": [
+            "Student"
+          ],
+          "agreement_type": "Cohen's Kappa",
+          "agreement_score": 0.66,
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://www.cs.columbia.edu/~sara/data.php"
+        },
+        {
+          "corpus_id": "agreement_in_wikipedia_talk_pages",
+          "annotation_task": [
+            "Argumentative Relation Type Classification"
+          ],
+          "description": "Annotating question-response pairs in threads with one of three relation types: agreement, disagreement, or none.",
+          "annotator_count": 2,
+          "annotator_type": [
+            "Student"
+          ],
+          "agreement_type": "Cohen's Kappa",
+          "agreement_score": 0.73,
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://www.cs.columbia.edu/~sara/data.php"
+        }
+      ]
+    },
+    {
+      "paper_id": "backup_your_stance",
+      "paper_title": "Back up your Stance: Recognizing Arguments in Online Discussions",
+      "authors": [
+        "Filip Boltužić",
+        "Jan Šnajder"
+      ],
+      "description": "Exploring the task of argument recognition in online discussions, trying to identify what arguments from a predefined set have been used in a user's comments and how.",
+      "year": 2014,
+      "paper_link": "https://aclanthology.org/W14-2107/",
+      "open_alex_id": "https://openalex.org/W2250397934",
+      "doi": "https://doi.org/10.3115/v1/w14-2107",
+      "annotations": [
+        {
+          "corpus_id": "comarg",
+          "annotation_task": [
+            "Argumentative Relation Type Classification"
+          ],
+          "description": "Annotating the support or attack relationships between user comments and arguments given for a topic",
+          "annotator_count": 3,
+          "annotator_type": [
+            "Expert"
+          ],
+          "agreement_type": "Fleiss' Kappa",
+          "agreement_score": 0.49,
+          "accessibility": "Free",
+          "perspectivist": true,
+          "corpus_link": "https://takelab.fer.hr/data/comarg/"
         }
       ]
     }

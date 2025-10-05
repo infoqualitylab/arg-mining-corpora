@@ -8,7 +8,7 @@
       "uniqueItems": true,
       "uniqueItemProperties": [
         "corpus_id",
-        "name"
+        "corpus_name"
       ],
       "items": {
         "type": "object",
@@ -17,12 +17,12 @@
             "$comment": "Unique id, should be human readable",
             "type": "string"
           },
-          "name": {
+          "corpus_name": {
             "$comment": "Name of corpus",
             "type": "string"
           },
-          "domain": {
-            "$comment": "Domain of corpus, e.g., 'legal', 'social media', 'scientific', 'general'",
+          "genre": {
+            "$comment": "genre of corpus, e.g., 'legal', 'social media', 'scientific', 'general'",
             "type": "string"
           },
           "description": {
@@ -42,7 +42,7 @@
             "$comment": "Type of documents in corpus, e.g., 'essays', 'tweets', 'legal cases'",
             "type": "string"
           },
-          "size": {
+          "document_count": {
             "$comment": "Size of corpus in number of documents",
             "type": "integer"
           },
@@ -56,19 +56,19 @@
             "minItems": 0,
             "uniqueItems": true
           }
-        }
-      },
-      "required": [
-        "corpus_id",
-        "name",
-        "domain",
-        "description",
-        "language",
-        "document_type",
-        "size",
-        "parent_corpora_id"
-      ],
-      "additionalProperties": false
+        },
+        "required": [
+          "corpus_id",
+          "corpus_name",
+          "genre",
+          "description",
+          "language",
+          "document_type",
+          "document_count",
+          "parent_corpora_id"
+        ],
+        "additionalProperties": false
+      }
     }
   },
   "required": [
