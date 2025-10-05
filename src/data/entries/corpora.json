@@ -48,6 +48,18 @@
       "document_type": "Comment-argument pairs",
       "document_count": 2249,
       "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "technical_blogs",
+      "corpus_name": "Technical Blogs",
+      "genre": "Online discussions",
+      "description": "A corpus of blog posts and comments from technical blogs. Four posts are included on four different topics (Android, iPad, Layoffs, Twitter), and the top 100 comments for each post are included.",
+      "language": [
+        "English"
+      ],
+      "document_type": "Blog posts/comments",
+      "document_count": 404,
+      "parent_corpora_id": []
     }
   ]
 }

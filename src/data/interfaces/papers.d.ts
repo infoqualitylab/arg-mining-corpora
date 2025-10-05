@@ -21,17 +21,17 @@ export interface Papers {
     annotations: {
       corpus_id: string;
       annotation_task: (
-        | "ACS"
-        | "ACTC"
-        | "CE"
-        | "CEPE"
-        | "ABAM"
-        | "CDCD"
-        | "CDED"
-        | "CESC"
-        | "ARI"
-        | "ARTC"
-        | "ACRE"
+        | "Argument Component Segmentation"
+        | "Argument Component Type Classification"
+        | "Claim Evidence Extraction"
+        | "Claim Evidence Pair Extraction"
+        | "Aspect-Based Argument Mining"
+        | "Context-Dependent Claim Detection"
+        | "Context-Dependent Evidence Detection"
+        | "Claim Extraction with Stance Classification"
+        | "Argumentative Relation Identification"
+        | "Argumentative Relation Type Classification"
+        | "ACRE (?)"
         | "Other"
       )[];
       description: string;
@@ -44,7 +44,8 @@ export interface Papers {
         ...("Author" | "Expert" | "Student" | "Crowd" | "Other")[]
       ];
       agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
-      agreement_score: number;
+      agreement_score: number | [number, number] | "?";
+      deviant_agreement_type?: "range" | "average" | "missing";
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       perspectivist: boolean;
       corpus_link: string;

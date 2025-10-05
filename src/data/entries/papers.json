@@ -2,7 +2,7 @@
   "papers": [
     {
       "paper_id": "an_annotated_corpus_of_argumentative_microtexts",
-      "paper_title": "An Annotated Corpus of Argumentative Microtexts",
+      "paper_title": "An annotated corpus of argumentative microtexts",
       "authors": [
         "Andreas Peldzus",
         "Manfred Stede"
@@ -35,7 +35,7 @@
     },
     {
       "paper_id": "a_news_editorial_corpus_for_argumentation_mining_strategies",
-      "paper_title": "A News Editorial Corpus for Argumentation Mining Strategies",
+      "paper_title": "A news editorial corpus for argumentation mining strategies",
       "authors": [
         "Khalid Al-Khatib",
         "Henning Wachsmuth",
@@ -69,7 +69,7 @@
     },
     {
       "paper_id": "annotating_agreement_and_disagreement_in_threaded_discussion",
-      "paper_title": "Annotating Agreement and Disagreement in Threaded Discussion",
+      "paper_title": "Annotating agreement and disagreement in threaded discussion",
       "authors": [
         "Jacob Andreas",
         "Sara Rosenthal",
@@ -117,7 +117,7 @@
     },
     {
       "paper_id": "backup_your_stance",
-      "paper_title": "Back up your Stance: Recognizing Arguments in Online Discussions",
+      "paper_title": "Back up your stance: Recognizing arguments in online discussions",
       "authors": [
         "Filip Boltužić",
         "Jan Šnajder"
@@ -133,7 +133,7 @@
           "annotation_task": [
             "Argumentative Relation Type Classification"
           ],
-          "description": "Annotating the support or attack relationships between user comments and arguments given for a topic",
+          "description": "Annotating the support or attack relationships between user comments and arguments given for a topic. NOTE: paper reports multiple types of agreement, we only note Fleiss' Kappa here.",
           "annotator_count": 3,
           "annotator_type": [
             "Expert"
@@ -143,6 +143,77 @@
           "accessibility": "Free",
           "perspectivist": true,
           "corpus_link": "https://takelab.fer.hr/data/comarg/"
+        }
+      ]
+    },
+    {
+      "paper_id": "analyzing_argumentative_discourse_units_in_online_interactions",
+      "paper_title": "Analyzing argumentative discourse units in online interactions",
+      "authors": [
+        "Debanjan Ghosh",
+        "Smaranda Muresan",
+        "Nina Wacholder",
+        "Mark Aakhus",
+        "Matthew Mitsui"
+      ],
+      "description": "Propose a multi-step coding approach to annotate ADUs in online interactions, specifically in technical blogs.",
+      "year": 2014,
+      "paper_link": "https://aclanthology.org/W14-2106/",
+      "open_alex_id": "https://openalex.org/W2251521080",
+      "annotations": [
+        {
+          "corpus_id": "technical_blogs",
+          "annotation_task": [
+            "Argument Component Segmentation",
+            "Argument Component Type Classification",
+            "Argumentative Relation Identification"
+          ],
+          "description": "Segmenting text into ADUs and labelling them as either a callout or a target, and further linking callouts to their most recent targets. NOTE: multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values.",
+          "annotator_count": 5,
+          "annotator_type": [
+            "Expert",
+            "Student"
+          ],
+          "agreement_type": "Krippendorff's Alpha",
+          "agreement_score": [0.64, 0.87],
+          "deviant_agreement_type": "range",
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
+        },
+        {
+          "corpus_id": "technical_blogs",
+          "annotation_task": [
+            "Argumentative Relation Type Classification"
+          ],
+          "description": "Fine-grained classification of relations between callouts and targets, as either agree, disagree, or other. NOTE: only a range of Fleiss' Kappa values was reports in the paper.",
+          "annotator_count": 5,
+          "annotator_type": [
+            "Crowd"
+          ],
+          "agreement_type": "Fleiss' Kappa",
+          "agreement_score": [0.45, 0.55],
+          "deviant_agreement_type": "range",
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
+        },
+        {
+          "corpus_id": "technical_blogs",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification"
+          ],
+          "description": "Identifying the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments. NOTE: no agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators.",
+          "annotator_count": 5,
+          "annotator_type": [
+            "Crowd"
+          ],
+          "agreement_type": "Other",
+          "agreement_score": "?",
+          "deviant_agreement_type": "missing",
+          "accessibility": "Free",
+          "perspectivist": false,
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         }
       ]
     }

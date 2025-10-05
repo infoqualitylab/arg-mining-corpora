@@ -123,10 +123,39 @@
                   ]
                 },
                 "agreement_score": {
-                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal",
-                  "type": "number",
-                  "minimum": -1,
-                  "maximum": 1
+                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal. If a non-exact value is reported, specify in the deviant_agreement_type field how to interpret this value, you can then either report a range, or a ? for missing values, or a single value for averages.",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "minimum": -1,
+                        "maximum": 1
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    {
+                      "type": "string",
+                      "enum": [
+                        "?"
+                      ]
+                    }
+                  ]
+                },
+                "deviant_agreement_type": {
+                  "$comment": "If the agreement score is not a single precise value, indicate if it is a range (list with min and max values), average (single value which is mean of multiple scores, or missing (no agreement score reported)",
+                  "type": "string",
+                  "enum": [
+                    "range",
+                    "average",
+                    "missing"
+                  ]
                 },
                 "accessibility": {
                   "$comment": "Accessibility of the annotated data, Free (freely available online), Upon Request (available from authors upon request), Paid (available for a fee), Unavailable (not available)",
