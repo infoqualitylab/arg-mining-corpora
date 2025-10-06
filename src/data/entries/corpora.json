@@ -60,6 +60,32 @@
       "document_type": "Blog posts/comments",
       "document_count": 404,
       "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "amugwd_unfiltered",
+      "corpus_name": "Argument Annotated User-Generated Web Discourse (unfiltered)",
+      "genre": "Online discussions",
+      "description": "A large corpus of user-generated web discourse on controversial issues. Includes 990 comments/posts from various sources. In Habernal & Gurevych (2017), this corpus was annotated to produce a filtered version focussing on persuasive documents, therefore we include this as a seperate corpus.",
+      "language": [
+        "English"
+      ],
+      "document_type": "Online discussions",
+      "document_count": 990,
+      "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "amugwd_filtered",
+      "corpus_name": "Argument Annotated User-Generated Web Discourse (filtered)",
+      "genre": "Online discussions",
+      "description": "A filtered version of the Argument Annotated User-Generated Web Discourse corpus, also extended to include documents from other sources, including blogs and newspaper articles.",
+      "language": [
+        "English"
+      ],
+      "document_type": "Online discussions",
+      "document_count": 340,
+      "parent_corpora_id": [
+        "amugwd_unfiltered"
+      ]
     }
   ]
 }

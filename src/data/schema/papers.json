@@ -167,10 +167,6 @@
                     "Unavailable"
                   ]
                 },
-                "perspectivist": {
-                  "$comment": "Whether the annotation is amenable to perspectivist approaches, such as each individual annotator's annotations being recorded instead of just an aggregated gold standard",
-                  "type": "boolean"
-                },
                 "corpus_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
                   "type": "string",
@@ -186,7 +182,6 @@
                 "agreement_type",
                 "agreement_score",
                 "accessibility",
-                "perspectivist",
                 "corpus_link"
               ],
               "additionalProperties": false

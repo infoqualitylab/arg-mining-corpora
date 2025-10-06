@@ -47,7 +47,6 @@ export interface Papers {
       agreement_score: number | [number, number] | "?";
       deviant_agreement_type?: "range" | "average" | "missing";
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
-      perspectivist: boolean;
       corpus_link: string;
     }[];
   }[];
