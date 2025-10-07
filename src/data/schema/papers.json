@@ -92,9 +92,19 @@
                   "maxLength": 650
                 },
                 "annotator_count": {
-                  "$comment": "Number of annotators involved in the annotation task",
-                  "type": "integer",
-                  "minimum": 1
+                  "$comment": "Number of annotators involved in the annotation task. If number of annotators was not specified, still fill in this field with a ?.",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "enum": [
+                        "?"
+                      ]
+                    }
+                  ]
                 },
                 "annotator_type": {
                   "$comment": "Type of annotators involved in the annotation task, Author (the authors of the paper), Expert (domain experts), Student (students, e.g. undergraduates), Crowd (crowdsourced workers, e.g. from MTurk or Prolific), Other (anything else)",
@@ -146,15 +156,6 @@
                         "?"
                       ]
                     }
-                  ]
-                },
-                "deviant_agreement_type": {
-                  "$comment": "If the agreement score is not a single precise value, indicate if it is a range (list with min and max values), average (single value which is mean of multiple scores, or missing (no agreement score reported)",
-                  "type": "string",
-                  "enum": [
-                    "range",
-                    "average",
-                    "missing"
                   ]
                 },
                 "accessibility": {

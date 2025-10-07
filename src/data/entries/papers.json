@@ -171,7 +171,6 @@
           ],
           "agreement_type": "Krippendorff's Alpha",
           "agreement_score": [0.64, 0.87],
-          "deviant_agreement_type": "range",
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
@@ -187,7 +186,6 @@
           ],
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": [0.45, 0.55],
-          "deviant_agreement_type": "range",
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
@@ -203,7 +201,6 @@
           ],
           "agreement_type": "Other",
           "agreement_score": "?",
-          "deviant_agreement_type": "missing",
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         }
@@ -218,7 +215,8 @@
       ],
       "description": "Exploring various challenges in argumentation mining, in particular by dealing with Web discourse which is notoriously noisy. They introduce a new argumentation model as well as a new corpus annotated according to this model. They further present machine learning approaches to identify argument components.",
       "year": 2017,
-      "paper_link": "https://aclanthology.org/J17-1014/",
+      "paper_link": "https://direct.mit.edu/coli/article/43/1/125/1561/Argumentation-Mining-in-User-Generated-Web",
+      "doi": "https://doi.org/10.1162/coli_a_00276",
       "open_alex_id": "https://openalex.org/W3105663928",
       "annotations": [
         {
@@ -251,6 +249,70 @@
           "agreement_score": 0.48,
           "accessibility": "Free",
           "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342"
+        }
+      ]
+    },
+    {
+      "paper_id": "internet_argument_corpus2",
+      "paper_title": "The Internet Argument Corpus 2.0: An SQL schema for dialogic social media and the corpora to go with it",
+      "authors": [
+        "Rob Abbott",
+        "Brian Ecker",
+        "Pranav Anand",
+        "Marilyn A. Walker"
+      ],
+      "description": "",
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/L16-1704/",
+      "open_alex_id": "https://openalex.org/W2577656483",
+      "annotations": [
+        {
+          "corpus_id": "internet_argument_corpus_v2_4forums",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification",
+            "Other"
+          ],
+          "description": "Annotating posts from 4forums.com with topic, author stance, agreement, sarcasm, and hostility. No agreement reported.",
+          "annotator_count": "?",
+          "annotator_type": [
+            "Crowd"
+          ],
+          "agreement_type": "Other",
+          "agreement_score": "?",
+          "accessibility": "Free",
+          "corpus_link": "https://nlds.soe.ucsc.edu/software"
+        },
+        {
+          "corpus_id": "internet_argument_corpus_v2_convinceme",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification",
+            "Other"
+          ],
+          "description": "Annotating dialogues from ConvinceMe.net (a structured debate website) with topic, discussion stance, and broader topic stance. No agreement reported.",
+          "annotator_count": "?",
+          "annotator_type": [
+            "Crowd"
+          ],
+          "agreement_type": "Other",
+          "agreement_score": "?",
+          "accessibility": "Free",
+          "corpus_link": "https://nlds.soe.ucsc.edu/software"
+        },
+        {
+          "corpus_id": "internet_argument_corpus_v2_createdebate",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification",
+            "Other"
+          ],
+          "description": "Gun control debates from CreateDebate.com, the site forces users to specify their stance, and a label (support, clarify, dispute). It also allows users to vote on posts, which can be used to examine argument effectiveness. No annotation reported, as the annotations are natural.",
+          "annotator_count": 0,
+          "annotator_type": [
+            "Other"
+          ],
+          "agreement_type": "Other",
+          "agreement_score": "?",
+          "accessibility": "Free",
+          "corpus_link": "https://nlds.soe.ucsc.edu/software"
         }
       ]
     }

@@ -35,7 +35,7 @@ export interface Papers {
         | "Other"
       )[];
       description: string;
-      annotator_count: number;
+      annotator_count: number | "?";
       /**
        * @minItems 1
        */
@@ -45,7 +45,6 @@ export interface Papers {
       ];
       agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
       agreement_score: number | [number, number] | "?";
-      deviant_agreement_type?: "range" | "average" | "missing";
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       corpus_link: string;
     }[];

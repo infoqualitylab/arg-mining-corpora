@@ -30,7 +30,7 @@ interface FullRow {
   document_type: string;
   document_count: number;
   annotation_description: string;
-  annotator_count: number;
+  annotator_count: number | string;
   annotation_tasks: string[];
   annotator_type: string;
   agreement: number;
@@ -119,9 +119,7 @@ function App() {
               document_type: corpus.document_type,
               document_count: corpus.document_count,
               annotation_tasks: annotation.annotation_task,
-              annotator_count: annotation.annotator_count
-                ? annotation.annotator_count
-                : "MISSING",
+              annotator_count: annotation.annotator_count,
               annotator_type: annotation.annotator_type.join(", "),
               agreement: annotation.agreement_score,
               accessibility: annotation.accessibility,

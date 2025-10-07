@@ -57,7 +57,7 @@
       "language": [
         "English"
       ],
-      "document_type": "Blog posts/comments",
+      "document_type": "Posts/comments",
       "document_count": 404,
       "parent_corpora_id": []
     },
@@ -69,7 +69,7 @@
       "language": [
         "English"
       ],
-      "document_type": "Online discussions",
+      "document_type": "Discussion threads",
       "document_count": 990,
       "parent_corpora_id": []
     },
@@ -81,11 +81,47 @@
       "language": [
         "English"
       ],
-      "document_type": "Online discussions",
+      "document_type": "Discussion threads",
       "document_count": 340,
       "parent_corpora_id": [
         "amugwd_unfiltered"
       ]
+    },
+    {
+      "corpus_id": "internet_argument_corpus_v2_4forums",
+      "corpus_name": "Internet Argument Corpus v2 (4Forums)",
+      "genre": "Online discussions",
+      "description" : "A large corpus of online discussions from 4forums. This corpus is an extended and refined version of the original Internet Argument Corpus (rescraping and then excluding discussions with only one author). Stored according to an SQL schema",
+      "language": [
+        "English"
+      ],
+      "document_type": "Posts/comments",
+      "document_count": 414453,
+      "parent_corpora_id": ["internet_argument_corpus_v1"]
+    },
+    {
+      "corpus_id": "internet_argument_corpus_v2_convinceme",
+      "corpus_name": "Internet Argument Corpus v2 (ConvinceMe)",
+      "genre": "Online discussions",
+      "description" : "A large corpus of online discussions from ConvinceMe. Stored according to an SQL schema",
+      "language": [
+        "English"
+      ],
+      "document_type": "Posts/comments",
+      "document_count": 65368,
+      "parent_corpora_id": []
+    },
+    {
+      "corpus_id": "internet_argument_corpus_v2_createdebate",
+      "corpus_name": "Internet Argument Corpus v2 (CreateDebate)",
+      "genre": "Online discussions",
+      "description" : "A large corpus of online discussions from CreateDebate about gun control. Stored according to an SQL schema",
+      "language": [
+        "English"
+      ],
+      "document_type": "Posts/comments",
+      "document_count": 2958,
+      "parent_corpora_id": []
     }
   ]
 }
