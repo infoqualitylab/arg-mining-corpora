@@ -36,8 +36,11 @@
           },
           "description": {
             "$comment": "Short description of paper",
-            "type": "string",
-            "maxLength": 650
+            "type": "array",
+            "items": {
+              "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
+              "type": "string"
+            }
           },
           "year": {
             "$comment": "Year of publication",
@@ -87,9 +90,12 @@
                   }
                 },
                 "description": {
-                  "$comment": "Short description of the annotation task",
-                  "type": "string",
-                  "maxLength": 650
+                  "$comment": "Short description of annotation task",
+                  "type": "array",
+                  "items": {
+                    "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
+                    "type": "string"
+                  }
                 },
                 "annotator_count": {
                   "$comment": "Number of annotators involved in the annotation task. If number of annotators was not specified, still fill in this field with a ?.",

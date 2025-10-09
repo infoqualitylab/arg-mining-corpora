@@ -14,7 +14,7 @@ export interface Papers {
      * @minItems 1
      */
     authors: [string, ...string[]];
-    description: string;
+    description: string[];
     year: number;
     doi?: string;
     paper_link: string;
@@ -34,7 +34,7 @@ export interface Papers {
         | "ACRE (?)"
         | "Other"
       )[];
-      description: string;
+      description: string[];
       annotator_count: number | "?";
       /**
        * @minItems 1

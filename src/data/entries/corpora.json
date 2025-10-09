@@ -4,7 +4,11 @@
       "corpus_id": "microtexts_v1",
       "corpus_name": "Microtexts V1",
       "genre": "General",
-      "description": "First version of the microtexts corpus. A corpus of 112 argumentative texts, each around 80 words long, annotated with argumentation structures including components and relations.",
+      "description": [
+        "The Argumentative Microtext Corpus is a collection of short argumentative texts specifically designed for research in argumentation mining. It comprises 112 texts originally in German, professionally translated into English.",
+        "This corpus is primarily used in computational argumentation, focusing on analyzing argumentative structures in short texts, which is suitable for understanding how arguments are formed and connected.",
+        "The texts address various topics, such as whether health insurance should cover alternative treatments, public broadcasting fees, and the introduction of capital punishment."
+      ],
       "language": [
         "German",
         "English (Translation)"
@@ -17,7 +21,11 @@
       "corpus_id": "webis_editorials_16",
       "corpus_name": "Webis-Editorials-16",
       "genre": "News",
-      "description": "The News Editorials Corpus, also known as Webis-Editorials-16, is a collection designed to help researchers understand how arguments are structured in news editorials. It includes 300 English news editorials from three major news outlets: Al Jazeera, Fox News, and The Guardian. Each broken down into ADUs, further labelled into different types such as opinions, stories, or statistics",
+      "description": [
+        "The News Editorials Corpus, also known as Webis-Editorials-16, is a collection designed to help researchers understand how arguments are structured in news editorials. It includes 300 English news editorials from three major news outlets: Al Jazeera, Fox News, and The Guardian.",
+        "The corpus has 300 editorials, with 100 from each news source.",
+        "The editorials discuss a wide range of topics common in news media, such as politics, social issues, and current events."
+      ],
       "language": [
         "English"
       ],
@@ -29,7 +37,10 @@
       "corpus_id": "agreement_in_wikipedia_talk_pages",
       "corpus_name": "Agreement in Wikipedia Talk Pages",
       "genre": "Online discussions",
-      "description": "Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational.",
+      "description": [
+        "The Agreement in Wikipedia Talk Pages (AWTP) corpus is designed to analyze agreement and disagreement in discussions on Wikipedia Talk pages, where editors collaborate on content edits",
+        "Wikipedia Talk  pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational. The dataset also includes some LiveJournal discussion threads as well"
+      ],
       "language": [
         "English"
       ],
@@ -41,7 +52,11 @@
       "corpus_id": "comarg",
       "corpus_name": "ComArg",
       "genre": "Online discussions",
-      "description": "The corpus focuses on online user comments from debate platforms, specifically targeting discussions on controversial social and political issues. Specifically two discussions, one on 'Gay Marriage', and one on 'Under God in pledge'.",
+      "description": [
+        "The ComArg corpus is a manually annotated dataset designed to support argument recognition in online discussions. It comprises user comments on two controversial topics: “Under God in Pledge” (UGIP) and “Gay Marriage” (GM), sourced from ProCon.org and Idebate.org.",
+        "The corpus focuses on online user comments from debate platforms, specifically targeting discussions on controversial social and political issues. The informal nature of these comments provides a realistic context for analyzing argumentative structures in user-generated content.",
+        "The corpus includes 373 comments (175 UGIP, 198 GM), paired with 13 arguments (6 UGIP, 7 GM), resulting in 2,436 initial comment-argument pairs. After adjudication, 2,249 pairs form the gold standard."
+      ],
       "language": [
         "English"
       ],
@@ -53,7 +68,11 @@
       "corpus_id": "technical_blogs",
       "corpus_name": "Technical Blogs",
       "genre": "Online discussions",
-      "description": "A corpus of blog posts and comments from technical blogs. Four posts are included on four different topics (Android, iPad, Layoffs, Twitter), and the top 100 comments for each post are included.",
+      "description": [
+        "The Technical Blogs Corpus is designed to facilitate argumentation mining by capturing argumentative exchanges in online technical discussions. Collected from the Technorati platform between 2008 and 2010, it comprises four discussion threads, each consisting of one original blog post and its first 100 user comments . These threads reflect argumentative interactions within a tech-savvy community, making it a suitable resource for studying online discourse dynamics.",
+        "The corpus targets technical blog discussions hosted on Technorati, a platform aggregating blog content. The discussions are informal yet informed, reflecting the perspectives of a technology-focused community engaging in debates about tech trends and corporate employment practices.",
+        "Topics: 1) Android vs. iPhone: Debates comparing the two smartphone platforms; 2) iPad Usefulness: Discussions on the practical value of the iPad; 3) Twitter as a Microblogging Platform: Arguments about Twitter’s role and impact; 4) Corporate Layoffs/Outsourcing: Opinions on corporate employment practices."
+      ],
       "language": [
         "English"
       ],
@@ -65,7 +84,12 @@
       "corpus_id": "amugwd_unfiltered",
       "corpus_name": "Argument Annotated User-Generated Web Discourse (unfiltered)",
       "genre": "Online discussions",
-      "description": "A large corpus of user-generated web discourse on controversial issues. Includes 990 comments/posts from various sources. In Habernal & Gurevych (2017), this corpus was annotated to produce a filtered version focussing on persuasive documents, therefore we include this as a seperate corpus.",
+      "description": [
+        "The Argument Annotated User-Generated Web Discourse (AMUGWD) corpus captures real-world argumentative exchanges in online discussions. It focuses on six education-related controversies: homeschooling, public versus private schools, redshirting, mainstreaming, prayer in schools, and single-sex education. Spanning four registers: user comments on newswire articles or blogs, discussion forum posts, blog posts, and newswire articles.",
+        "The AMUGWD corpus targets user-generated web discourse, encompassing informal and noisy online texts across multiple platforms. The focus on education-related controversies provides a specific yet diverse context for analyzing argumentative structures in public discussions.",
+        "The annotated corpus includes 340 documents with approximately 90,000 tokens, derived from a raw corpus of 5,444 documents with 694,110 tokens.",
+        "The corpus covers six education-related controversies. They are 1) Homeschooling: Debates on home-based education versus traditional schooling; 2) Public vs. Private Schools: Comparisons of public and private education systems; 3) Redshirting: Discussions on delaying school entry for developmental advantages; 4) Mainstreaming: Arguments about integrating special-needs students into regular classrooms; 5) Prayer in Schools: Controversies over religious practices in public education; 6) Single-Sex Education: Debates on gender-separated schooling."
+      ],
       "language": [
         "English"
       ],
@@ -77,7 +101,9 @@
       "corpus_id": "amugwd_filtered",
       "corpus_name": "Argument Annotated User-Generated Web Discourse (filtered)",
       "genre": "Online discussions",
-      "description": "A filtered version of the Argument Annotated User-Generated Web Discourse corpus, also extended to include documents from other sources, including blogs and newspaper articles.",
+      "description": [
+        "A filtered version of the Argument Annotated User-Generated Web Discourse corpus, also extended to include documents from other sources, including blogs and newspaper articles."
+      ],
       "language": [
         "English"
       ],
@@ -91,19 +117,25 @@
       "corpus_id": "internet_argument_corpus_v2_4forums",
       "corpus_name": "Internet Argument Corpus v2 (4Forums)",
       "genre": "Online discussions",
-      "description" : "A large corpus of online discussions from 4forums. This corpus is an extended and refined version of the original Internet Argument Corpus (rescraping and then excluding discussions with only one author). Stored according to an SQL schema",
+      "description": [
+        "A large corpus of online discussions from 4forums. This corpus is an extended and refined version of the original Internet Argument Corpus (rescraping and then excluding discussions with only one author). Stored according to an SQL schema"
+      ],
       "language": [
         "English"
       ],
       "document_type": "Posts/comments",
       "document_count": 414453,
-      "parent_corpora_id": ["internet_argument_corpus_v1"]
+      "parent_corpora_id": [
+        "internet_argument_corpus_v1"
+      ]
     },
     {
       "corpus_id": "internet_argument_corpus_v2_convinceme",
       "corpus_name": "Internet Argument Corpus v2 (ConvinceMe)",
       "genre": "Online discussions",
-      "description" : "A large corpus of online discussions from ConvinceMe. Stored according to an SQL schema",
+      "description": [
+        "A large corpus of online discussions from ConvinceMe. Stored according to an SQL schema"
+      ],
       "language": [
         "English"
       ],
@@ -115,7 +147,9 @@
       "corpus_id": "internet_argument_corpus_v2_createdebate",
       "corpus_name": "Internet Argument Corpus v2 (CreateDebate)",
       "genre": "Online discussions",
-      "description" : "A large corpus of online discussions from CreateDebate about gun control. Stored according to an SQL schema",
+      "description": [
+        "A large corpus of online discussions from CreateDebate about gun control. Stored according to an SQL schema"
+      ],
       "language": [
         "English"
       ],

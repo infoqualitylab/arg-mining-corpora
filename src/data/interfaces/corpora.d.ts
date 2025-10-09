@@ -10,7 +10,7 @@ export interface Corpora {
     corpus_id: string;
     corpus_name: string;
     genre: string;
-    description: string;
+    description: string[];
     language: string[];
     document_type: string;
     document_count: number;

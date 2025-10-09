@@ -7,7 +7,9 @@
         "Andreas Peldzus",
         "Manfred Stede"
       ],
-      "description": "Introduce a corpus for exploring text-level argumentation structure in German and professionally translated English.",
+      "description": [
+        "Introduce a corpus for exploring text-level argumentation structure in German and professionally translated English."
+      ],
       "year": 2016,
       "paper_link": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
       "annotations": [
@@ -19,7 +21,9 @@
             "Argumentative Relation Identification",
             "Argumentative Relation Type Classification"
           ],
-          "description": "Texts are segmented into Argumentative Discourse Units (ADUs) with support and attack links.",
+          "description": [
+            "Texts are segmented into Argumentative Discourse Units (ADUs) with support and attack links."
+          ],
           "annotator_count": 3,
           "annotator_type": [
             "Expert",
@@ -42,18 +46,23 @@
         "Matthias Hagen",
         "Benno Stein"
       ],
-      "description": "Exploring how argument is structured in a number of news editorials.",
+      "description": [
+        "Exploring how argument is structured in a number of news editorials."
+      ],
       "year": 2016,
       "paper_link": "https://aclanthology.org/C16-1324/",
       "open_alex_id": "https://openalex.org/W2579772177",
       "annotations": [
         {
           "corpus_id": "webis_editorials_16",
-          "annotation_task" : [
+          "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
-          "description": "Each ADU is labeled as one of six types: Assumption (general opinions), Anecdote (stories or examples), Testimony (expert or personal statements), Statistics (numerical data), Common Ground (shared beliefs), or Other (miscellaneous).",
+          "description": [
+            "Each ADU is labeled as one of six types: Assumption (general opinions), Anecdote (stories or examples), Testimony (expert or personal statements), Statistics (numerical data), Common Ground (shared beliefs), or Other (miscellaneous).",
+            "Three professional annotators from upwork.com, trained for the task, labeled these units"
+          ],
           "annotator_count": 4,
           "annotator_type": [
             "Expert"
@@ -73,7 +82,9 @@
         "Sara Rosenthal",
         "Kathy McKeown"
       ],
-      "description": "Identifying agreement and disagreement in Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational.",
+      "description": [
+        "Identifying agreement and disagreement in Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational."
+      ],
       "year": 2012,
       "paper_link": "https://aclanthology.org/L12-1650/",
       "open_alex_id": "https://openalex.org/W2251588411",
@@ -84,7 +95,10 @@
             "Argumentative Relation Type Classification",
             "Other"
           ],
-          "description": "Annotating question-response pairs in threads with one of 5 modes: agreement-response, agreement-paraphrase, disagreement-response and disagreement-paraphrase.",
+          "description": [
+            "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none) and Mode (direct response, direct paraphrase, indirect response, indirect paraphrase).",
+            "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
+          ],
           "annotator_count": 2,
           "annotator_type": [
             "Student"
@@ -99,7 +113,10 @@
           "annotation_task": [
             "Argumentative Relation Type Classification"
           ],
-          "description": "Annotating question-response pairs in threads with one of three relation types: agreement, disagreement, or none.",
+          "description": [
+            "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none).",
+            "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
+          ],
           "annotator_count": 2,
           "annotator_type": [
             "Student"
@@ -118,7 +135,9 @@
         "Filip Boltužić",
         "Jan Šnajder"
       ],
-      "description": "Exploring the task of argument recognition in online discussions, trying to identify what arguments from a predefined set have been used in a user's comments and how.",
+      "description": [
+        "Exploring the task of argument recognition in online discussions, trying to identify what arguments from a predefined set have been used in a user's comments and how."
+      ],
       "year": 2014,
       "paper_link": "https://aclanthology.org/W14-2107/",
       "open_alex_id": "https://openalex.org/W2250397934",
@@ -129,7 +148,10 @@
           "annotation_task": [
             "Argumentative Relation Type Classification"
           ],
-          "description": "Annotating the support or attack relationships between user comments and arguments given for a topic. NOTE: paper reports multiple types of agreement, we only note Fleiss' Kappa here.",
+          "description": [
+            "Each comment-argument pair is labeled on a five-point ordinal scale to indicate the comment’s stance toward the argument: A: Explicit Attack (clearly opposes the argument). a: Implicit/Vague Attack (subtly opposes the argument). N: No Use (does not reference the argument). s: Implicit/Vague Support (subtly supports the argument). S: Explicit Support (clearly supports the argument.",
+            "NOTE: paper reports multiple types of agreement, we only note Fleiss' Kappa here."
+          ],
           "annotator_count": 3,
           "annotator_type": [
             "Expert"
@@ -151,7 +173,9 @@
         "Mark Aakhus",
         "Matthew Mitsui"
       ],
-      "description": "Propose a multi-step coding approach to annotate ADUs in online interactions, specifically in technical blogs.",
+      "description": [
+        "Propose a multi-step coding approach to annotate ADUs in online interactions, specifically in technical blogs."
+      ],
       "year": 2014,
       "paper_link": "https://aclanthology.org/W14-2106/",
       "open_alex_id": "https://openalex.org/W2251521080",
@@ -163,14 +187,20 @@
             "Argument Component Type Classification",
             "Argumentative Relation Identification"
           ],
-          "description": "Segmenting text into ADUs and labelling them as either a callout or a target, and further linking callouts to their most recent targets. NOTE: multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values.",
+          "description": [
+            "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation that is followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. This coarse-grained approach captures the structure of argumentative interactions in online discussions.",
+            "NOTE: multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values."
+          ],
           "annotator_count": 5,
           "annotator_type": [
             "Expert",
             "Student"
           ],
           "agreement_type": "Krippendorff's Alpha",
-          "agreement_score": [0.64, 0.87],
+          "agreement_score": [
+            0.64,
+            0.87
+          ],
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
@@ -179,13 +209,20 @@
           "annotation_task": [
             "Argumentative Relation Type Classification"
           ],
-          "description": "Fine-grained classification of relations between callouts and targets, as either agree, disagree, or other. NOTE: only a range of Fleiss' Kappa values was reports in the paper.",
+          "description": [
+            "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.",
+            "In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other.",
+            "NOTE: only a range of Fleiss' Kappa values was reports in the paper."
+          ],
           "annotator_count": 5,
           "annotator_type": [
             "Crowd"
           ],
           "agreement_type": "Fleiss' Kappa",
-          "agreement_score": [0.45, 0.55],
+          "agreement_score": [
+            0.45,
+            0.55
+          ],
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
@@ -194,7 +231,11 @@
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
-          "description": "Identifying the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments. NOTE: no agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators.",
+          "description": [
+            "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.",
+            "In this task, annotators had to identify the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments.",
+            "NOTE: no agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
+          ],
           "annotator_count": 5,
           "annotator_type": [
             "Crowd"
@@ -213,7 +254,9 @@
         "Ivan Habernal",
         "Iryna Gurevych"
       ],
-      "description": "Exploring various challenges in argumentation mining, in particular by dealing with Web discourse which is notoriously noisy. They introduce a new argumentation model as well as a new corpus annotated according to this model. They further present machine learning approaches to identify argument components.",
+      "description": [
+        "Exploring various challenges in argumentation mining, in particular by dealing with Web discourse which is notoriously noisy. They introduce a new argumentation model as well as a new corpus annotated according to this model. They further present machine learning approaches to identify argument components."
+      ],
       "year": 2017,
       "paper_link": "https://direct.mit.edu/coli/article/43/1/125/1561/Argumentation-Mining-in-User-Generated-Web",
       "doi": "https://doi.org/10.1162/coli_a_00276",
@@ -224,7 +267,9 @@
           "annotation_task": [
             "Other"
           ],
-          "description": "Filtering of 990 comments/posts as on-topic persuasive or non-persuasive, yielding a set of 524 persuasive documents.",
+          "description": [
+            "Three near-native annotators labeled 990 comments and forum posts as persuasive or non-persuasive over 15 hours each, identifying 524 persuasive documents for further analysis."
+          ],
           "annotator_count": 3,
           "annotator_type": [
             "Other"
@@ -240,7 +285,10 @@
             "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
-          "description": "Persuasive documents are segmented into argument components and then labelled according to components from an adapted Toulmin model: claim, premise, backing, rebuttal, and refutation. This task includes identifying the exact boundaries/spans of the components, which are assumed to not overlap. Text outside of spans is considered non-argumentative. Individual IAA is reported for each component, here we report the overall Krippendorff's Alpha reported in the paper.",
+          "description": [
+            "340 persuasive documents were annotated using a modified Toulmin model, focusing on the logos dimension (claims, premises, backing, rebuttal, refutation). Sequence labeling with BIO encoding (11 classes, e.g., Claim-B, Premise-I) was applied at the token level, defaulting to sentence-level units unless finer granularity was needed.",
+            "NOTE: Individual IAA is reported for each component, here we report the overall Krippendorff's Alpha reported in the paper."
+          ],
           "annotator_count": 3,
           "annotator_type": [
             "Other"
@@ -261,7 +309,7 @@
         "Pranav Anand",
         "Marilyn A. Walker"
       ],
-      "description": "",
+      "description": ["Introduce the second version of the Internet Argument Corpus (IAC), now drawing from several online debate forums, not just 4forums.com."],
       "year": 2016,
       "paper_link": "https://aclanthology.org/L16-1704/",
       "open_alex_id": "https://openalex.org/W2577656483",
@@ -272,7 +320,10 @@
             "Claim Extraction with Stance Classification",
             "Other"
           ],
-          "description": "Annotating posts from 4forums.com with topic, author stance, agreement, sarcasm, and hostility. No agreement reported.",
+          "description": [
+            "Annotating posts from 4forums.com with topic, author stance, agreement, sarcasm, and hostility.",
+            "NOTE: No agreement reported."
+          ],
           "annotator_count": "?",
           "annotator_type": [
             "Crowd"
@@ -288,7 +339,10 @@
             "Claim Extraction with Stance Classification",
             "Other"
           ],
-          "description": "Annotating dialogues from ConvinceMe.net (a structured debate website) with topic, discussion stance, and broader topic stance. No agreement reported.",
+          "description": [
+            "Annotating dialogues from ConvinceMe.net (a structured debate website) with topic, discussion stance, and broader topic stance.",
+            "NOTE: No agreement reported."
+          ],
           "annotator_count": "?",
           "annotator_type": [
             "Crowd"
@@ -304,7 +358,10 @@
             "Claim Extraction with Stance Classification",
             "Other"
           ],
-          "description": "Gun control debates from CreateDebate.com, the site forces users to specify their stance, and a label (support, clarify, dispute). It also allows users to vote on posts, which can be used to examine argument effectiveness. No annotation reported, as the annotations are natural.",
+          "description": [
+            "Gun control debates from CreateDebate.com, the site forces users to specify their stance, and a label (support, clarify, dispute). It also allows users to vote on posts, which can be used to examine argument effectiveness.",
+            "NOTE: No annotation reported, as the annotations are natural."
+          ],
           "annotator_count": 0,
           "annotator_type": [
             "Other"

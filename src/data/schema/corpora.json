@@ -27,8 +27,11 @@
           },
           "description": {
             "$comment": "Short description of corpus",
-            "type": "string",
-            "maxLength": 650
+            "type": "array",
+            "items": {
+              "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
+              "type": "string"
+            }
           },
           "language": {
             "$comment": "Language(s) of corpus, e.g., 'English', 'Chinese'",
