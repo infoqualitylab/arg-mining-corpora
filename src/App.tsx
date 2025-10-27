@@ -1,11 +1,14 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import Chip from '@mui/material/Chip';
-import Skeleton from "@mui/material/Skeleton";
-import Stack from '@mui/material/Stack';
+import Chip from "@mui/material/Chip";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import FormGroup from "@mui/material/FormGroup";
+import Stack from "@mui/material/Stack";
+import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
 
 import type { GridColDef } from "@mui/x-data-grid";
@@ -22,18 +25,20 @@ const pap: Papers = paps;
 interface FullRow {
   id: string;
   corpus_name: string;
+  corpus_description: string[];
   paper_name: string;
+  paper_description: string[];
   authors: string;
   year: number;
   genre: string;
   language: string;
   document_type: string;
   document_count: number;
-  annotation_description: string;
-  annotator_count: number;
+  annotation_description: string[];
+  annotator_count: number | string;
   annotation_tasks: string[];
   annotator_type: string;
-  agreement: number;
+  agreement: number | string | [number, number];
   accessibility: string;
   corpora_link: string;
   paper_link: string;
@@ -41,39 +46,6 @@ interface FullRow {
 
 const columns: GridColDef[] = [
   { field: "corpus_name", headerName: "Corpus Name", width: 200 },
-  { field: "paper_name", headerName: "Paper Name", width: 200 },
-  { field: "authors", headerName: "Authors", width: 200 },
-  { field: "year", headerName: "Year", width: 200 },
-  { field: "genre", headerName: "Genre", width: 200 },
-  { field: "language", headerName: "Language", width: 200 },
-  { field: "document_type", headerName: "Document Type", width: 200 },
-  { field: "document_count", headerName: "Document Count", width: 200 },
-  {
-    field: "annotation_tasks",
-    headerName: "Annotation Task(s)",
-    width: 200,
-    renderCell: (params) => (
-      <Box sx={{ marginTop: 1, marginBottom: 1 }}>
-        <Stack spacing={1}>
-          {params.value.map((label: string) => (
-            <Chip label={label}
-              sx={{
-                height: 'auto',
-                '& .MuiChip-label': {
-                  display: 'block',
-                  whiteSpace: 'normal',
-                },
-              }}
-            />
-          ))}
-        </Stack>
-      </Box>
-    ),
-  },
-  { field: "annotator_count", headerName: "Annotator Count", width: 200 },
-  { field: "annotator_type", headerName: "Annotator Type", width: 200 },
-  { field: "agreement", headerName: "Agreement", width: 200 },
-  { field: "accessibility", headerName: "Accessibility", width: 200 },
   {
     field: "corpora_link",
     headerName: "Corpora Link",
@@ -85,6 +57,46 @@ const columns: GridColDef[] = [
     ),
   },
   {
+    field: "document_type",
+    headerName: "Document Type",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpus_name}-${row.document_type}` : value;
+    },
+  },
+  {
+    field: "document_count",
+    headerName: "Document Count",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpus_name}-${row.document_count}` : value;
+    },
+  },
+  {
+    field: "genre",
+    headerName: "Genre",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpus_name}-${row.genre}` : value;
+    },
+  },
+  {
+    field: "language",
+    headerName: "Language",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpus_name}-${row.language}` : value;
+    },
+  },
+  {
+    field: "paper_name",
+    headerName: "Paper Name",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpus_name}-${row.paper_name}` : value;
+    },
+  },
+  {
     field: "paper_link",
     headerName: "Paper Link",
     width: 200,
@@ -94,11 +106,61 @@ const columns: GridColDef[] = [
       </a>
     ),
   },
+  {
+    field: "authors",
+    headerName: "Authors",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.paper_name}-${row.authors}` : value;
+    },
+  },
+  {
+    field: "year",
+    headerName: "Year",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.paper_name}-${row.year}` : value;
+    },
+  },
+  {
+    field: "annotation_tasks",
+    headerName: "Annotation Task(s)",
+    width: 200,
+    renderCell: (params) => (
+      <Box sx={{ marginTop: 1, marginBottom: 1 }}>
+        <Stack spacing={1}>
+          {params.value.map((label: string) => (
+            <Chip
+              label={label}
+              sx={{
+                height: "auto",
+                "& .MuiChip-label": {
+                  display: "block",
+                  whiteSpace: "normal",
+                },
+              }}
+            />
+          ))}
+        </Stack>
+      </Box>
+    ),
+  },
+  { field: "annotator_count", headerName: "Annotator Count", width: 200 },
+  { field: "annotator_type", headerName: "Annotator Type", width: 200 },
+  { field: "agreement", headerName: "Agreement", width: 200 },
+  {
+    field: "accessibility",
+    headerName: "Accessibility",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.corpoa_link}-${row.accessibility}` : value;
+    },
+  },
 ];
 
 function App() {
-  const [loading] = useState(false);
-  const [rows, setRows] = useState<FullRow[]>(() => {
+  const [spanning, setSpanning] = useState(true);
+  const [rows] = useState<FullRow[]>(() => {
     let rs: FullRow[] = [];
     for (const paper of pap.papers) {
       for (const [index, annotation] of paper.annotations.entries()) {
@@ -111,17 +173,18 @@ function App() {
             {
               id: paper.paper_id + "-" + index,
               corpus_name: corpus.corpus_name,
+              corpus_description: corpus.description,
               paper_name: paper.paper_title,
+              paper_description: paper.description,
               authors: paper.authors.join(", "),
               year: paper.year,
               genre: corpus.genre,
               language: corpus.language.join(", "),
               document_type: corpus.document_type,
               document_count: corpus.document_count,
+              annotation_description: annotation.description,
+              annotator_count: annotation.annotator_count,
               annotation_tasks: annotation.annotation_task,
-              annotator_count: annotation.annotator_count
-                ? annotation.annotator_count
-                : "MISSING",
               annotator_type: annotation.annotator_type.join(", "),
               agreement: annotation.agreement_score,
               accessibility: annotation.accessibility,
@@ -137,21 +200,34 @@ function App() {
 
   return (
     <Box style={{ height: 300, width: "100%" }}>
-      {loading ? (
-        <Skeleton />
-      ) : (
-        <Card variant="outlined">
-          <CardContent>
-            <Typography
-              gutterBottom
-              sx={{ color: "text.secondary", fontSize: 14 }}
-            >
-              Full list of corpora for argument mining
-            </Typography>
-            <DataGrid rows={rows} columns={columns} showToolbar getRowHeight={() => 'auto'}/>
-          </CardContent>
-        </Card>
-      )}
+      <Card variant="outlined">
+        <CardContent>
+          <Typography
+            gutterBottom
+            sx={{ color: "text.secondary", fontSize: 14 }}
+          >
+            Full list of corpora for argument mining
+          </Typography>
+          <FormGroup>
+            <FormControlLabel
+              control={
+                <Switch
+                  checked={spanning}
+                  onChange={() => setSpanning(!spanning)}
+                />
+              }
+              label="Row Spanning"
+            />
+          </FormGroup>
+          <DataGrid
+            rows={rows}
+            columns={columns}
+            showToolbar
+            getRowHeight={() => "auto"}
+            rowSpanning={spanning}
+          />
+        </CardContent>
+      </Card>
     </Box>
   );
 }

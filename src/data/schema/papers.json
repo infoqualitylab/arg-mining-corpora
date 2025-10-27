@@ -36,8 +36,11 @@
           },
           "description": {
             "$comment": "Short description of paper",
-            "type": "string",
-            "maxLength": 650
+            "type": "array",
+            "items": {
+              "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
+              "type": "string"
+            }
           },
           "year": {
             "$comment": "Year of publication",
@@ -87,14 +90,27 @@
                   }
                 },
                 "description": {
-                  "$comment": "Short description of the annotation task",
-                  "type": "string",
-                  "maxLength": 650
+                  "$comment": "Short description of annotation task",
+                  "type": "array",
+                  "items": {
+                    "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
+                    "type": "string"
+                  }
                 },
                 "annotator_count": {
-                  "$comment": "Number of annotators involved in the annotation task",
-                  "type": "integer",
-                  "minimum": 1
+                  "$comment": "Number of annotators involved in the annotation task. If number of annotators was not specified, still fill in this field with a ?.",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": 0
+                    },
+                    {
+                      "type": "string",
+                      "enum": [
+                        "?"
+                      ]
+                    }
+                  ]
                 },
                 "annotator_type": {
                   "$comment": "Type of annotators involved in the annotation task, Author (the authors of the paper), Expert (domain experts), Student (students, e.g. undergraduates), Crowd (crowdsourced workers, e.g. from MTurk or Prolific), Other (anything else)",
@@ -123,10 +139,30 @@
                   ]
                 },
                 "agreement_score": {
-                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal",
-                  "type": "number",
-                  "minimum": -1,
-                  "maximum": 1
+                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal. If a non-exact value is reported, specify in the deviant_agreement_type field how to interpret this value, you can then either report a range, or a ? for missing values, or a single value for averages.",
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -1,
+                      "maximum": 1
+                    },
+                    {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "minimum": -1,
+                        "maximum": 1
+                      },
+                      "minItems": 2,
+                      "maxItems": 2
+                    },
+                    {
+                      "type": "string",
+                      "enum": [
+                        "?"
+                      ]
+                    }
+                  ]
                 },
                 "accessibility": {
                   "$comment": "Accessibility of the annotated data, Free (freely available online), Upon Request (available from authors upon request), Paid (available for a fee), Unavailable (not available)",
@@ -137,10 +173,6 @@
                     "Paid",
                     "Unavailable"
                   ]
-                },
-                "perspectivist": {
-                  "$comment": "Whether the annotation is amenable to perspectivist approaches, such as each individual annotator's annotations being recorded instead of just an aggregated gold standard",
-                  "type": "boolean"
                 },
                 "corpus_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
@@ -157,7 +189,6 @@
                 "agreement_type",
                 "agreement_score",
                 "accessibility",
-                "perspectivist",
                 "corpus_link"
               ],
               "additionalProperties": false
