@@ -1,4 +1,4 @@
-import { forwardRef, useState } from "react";
+import { forwardRef } from "react";
 import type { ReactElement, Ref, SyntheticEvent } from "react";
 import AppBar from "@mui/material/AppBar";
 import Alert from "@mui/material/Alert";
@@ -11,6 +11,7 @@ import Typography from "@mui/material/Typography";
 import Slide from "@mui/material/Slide";
 import Stack from "@mui/material/Stack";
 import type { TransitionProps } from "@mui/material/transitions";
+import type { FullRow } from "./App";
 
 const Transition = forwardRef(function Transition(
   props: TransitionProps & {
@@ -21,7 +22,15 @@ const Transition = forwardRef(function Transition(
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-function DescriptionDialog({ open, handleClose, selectedRow }) {
+function DescriptionDialog({
+  open,
+  handleClose,
+  selectedRow,
+}: {
+  open: boolean;
+  handleClose: (event: SyntheticEvent<Element, Event>) => void;
+  selectedRow: FullRow | null;
+}) {
   return (
     <Dialog
       fullScreen
@@ -50,7 +59,7 @@ function DescriptionDialog({ open, handleClose, selectedRow }) {
         <Typography variant="h6">Corpus Description</Typography>
         {selectedRow?.corpus_description.map((text: string) =>
           !text.startsWith("NOTE: ") ? (
-            <Typography variant="body6" paragraph>
+            <Typography variant="body1" paragraph>
               {text}
             </Typography>
           ) : (
@@ -59,12 +68,12 @@ function DescriptionDialog({ open, handleClose, selectedRow }) {
         )}
         <Divider />
         <Typography variant="h6">Paper Description</Typography>
-        <Typography variant="h7" paragraph>
+        <Typography variant="h6" paragraph>
           <i>"{selectedRow?.paper_name}"</i>
         </Typography>
         {selectedRow?.paper_description.map((text: string) =>
           !text.startsWith("NOTE: ") ? (
-            <Typography variant="body6" paragraph>
+            <Typography variant="body1" paragraph>
               {text}
             </Typography>
           ) : (
@@ -75,7 +84,7 @@ function DescriptionDialog({ open, handleClose, selectedRow }) {
         <Typography variant="h6">Annotation Description</Typography>
         {selectedRow?.annotation_description.map((text: string) =>
           !text.startsWith("NOTE: ") ? (
-            <Typography variant="body6" paragraph>
+            <Typography variant="body1" paragraph>
               {text}
             </Typography>
           ) : (

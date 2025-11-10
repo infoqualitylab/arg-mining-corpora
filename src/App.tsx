@@ -22,10 +22,12 @@ import corps from "./data/entries/corpora.json";
 import paps from "./data/entries/papers.json";
 
 const corp: Corpora = corps;
+// TODO find a better way to handle ts-ignore
+// @ts-expect-error
 const pap: Papers = paps;
 
 // Full list based on papers
-interface FullRow {
+export interface FullRow {
   id: string;
   corpus_name: string;
   corpus_description: string[];
@@ -167,7 +169,7 @@ function App() {
   const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
   //TODO might need more than a row in future
-  const handleClickOpen = (row) => {
+  const handleClickOpen = (row: FullRow) => {
     setSelectedRow(row);
     setOpen(true);
   };
