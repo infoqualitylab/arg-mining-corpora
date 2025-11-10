@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Chip from "@mui/material/Chip";
+import DescriptionDialog from "./DescriptionDialog";
+import Divider from "@mui/material/Divider";
+import IconButton from "@mui/material/IconButton";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Stack from "@mui/material/Stack";
 import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
@@ -160,6 +163,18 @@ const columns: GridColDef[] = [
 
 function App() {
   const [spanning, setSpanning] = useState(true);
+
+  const [open, setOpen] = useState(false);
+  const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
+  //TODO might need more than a row in future
+  const handleClickOpen = (row) => {
+    setSelectedRow(row);
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   const [rows] = useState<FullRow[]>(() => {
     let rs: FullRow[] = [];
     for (const paper of pap.papers) {
@@ -202,12 +217,26 @@ function App() {
     <Box style={{ height: 300, width: "100%" }}>
       <Card variant="outlined">
         <CardContent>
-          <Typography
-            gutterBottom
-            sx={{ color: "text.secondary", fontSize: 14 }}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
           >
-            Full list of corpora for argument mining
-          </Typography>
+            <Typography gutterBottom variant="h3">
+              Argumentation Mining Corpora
+            </Typography>
+            <IconButton
+              color="primary"
+              aria-label="GitHub Repository"
+              href="https://github.com/infoqualitylab/arg-mining-corpora"
+              target="_blank"
+            >
+              <GitHubIcon />
+            </IconButton>
+          </Box>
+          <Divider />
           <FormGroup>
             <FormControlLabel
               control={
@@ -225,9 +254,16 @@ function App() {
             showToolbar
             getRowHeight={() => "auto"}
             rowSpanning={spanning}
+            disableRowSelectionOnClick
+            onRowClick={(params) => handleClickOpen(params.row)}
           />
         </CardContent>
       </Card>
+      <DescriptionDialog
+        open={open}
+        handleClose={handleClose}
+        selectedRow={selectedRow}
+      />
     </Box>
   );
 }

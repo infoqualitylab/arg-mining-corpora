@@ -41,9 +41,14 @@ export interface Papers {
        */
       annotator_type: [
         "Author" | "Expert" | "Student" | "Crowd" | "Other",
-        ...("Author" | "Expert" | "Student" | "Crowd" | "Other")[]
+        ...("Author" | "Expert" | "Student" | "Crowd" | "Other")[],
       ];
-      agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
+      agreement_type:
+        | "Cohen's Kappa"
+        | "Fleiss' Kappa"
+        | "Krippendorff's Alpha"
+        | "Percent Agreement"
+        | "Other";
       agreement_score: number | [number, number] | "?";
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       corpus_link: string;

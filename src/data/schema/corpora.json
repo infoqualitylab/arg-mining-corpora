@@ -6,10 +6,7 @@
       "$comment": "List of corpora",
       "type": "array",
       "uniqueItems": true,
-      "uniqueItemProperties": [
-        "corpus_id",
-        "corpus_name"
-      ],
+      "uniqueItemProperties": ["corpus_id", "corpus_name"],
       "items": {
         "type": "object",
         "properties": {
@@ -74,8 +71,6 @@
       }
     }
   },
-  "required": [
-    "corpora"
-  ],
+  "required": ["corpora"],
   "additionalProperties": false
 }

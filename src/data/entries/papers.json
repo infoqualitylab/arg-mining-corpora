@@ -3,10 +3,7 @@
     {
       "paper_id": "an_annotated_corpus_of_argumentative_microtexts",
       "paper_title": "An annotated corpus of argumentative microtexts",
-      "authors": [
-        "Andreas Peldzus",
-        "Manfred Stede"
-      ],
+      "authors": ["Andreas Peldzus", "Manfred Stede"],
       "description": [
         "Introduce a corpus for exploring text-level argumentation structure in German and professionally translated English."
       ],
@@ -25,10 +22,7 @@
             "Texts are segmented into Argumentative Discourse Units (ADUs) with support and attack links."
           ],
           "annotator_count": 3,
-          "annotator_type": [
-            "Expert",
-            "Other"
-          ],
+          "annotator_type": ["Expert", "Other"],
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.83,
           "accessibility": "Free",
@@ -64,9 +58,7 @@
             "Three professional annotators from upwork.com, trained for the task, labeled these units"
           ],
           "annotator_count": 4,
-          "annotator_type": [
-            "Expert"
-          ],
+          "annotator_type": ["Expert"],
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.56,
           "accessibility": "Free",
@@ -77,11 +69,7 @@
     {
       "paper_id": "annotating_agreement_and_disagreement_in_threaded_discussion",
       "paper_title": "Annotating agreement and disagreement in threaded discussion",
-      "authors": [
-        "Jacob Andreas",
-        "Sara Rosenthal",
-        "Kathy McKeown"
-      ],
+      "authors": ["Jacob Andreas", "Sara Rosenthal", "Kathy McKeown"],
       "description": [
         "Identifying agreement and disagreement in Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational."
       ],
@@ -100,9 +88,7 @@
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
           "annotator_count": 2,
-          "annotator_type": [
-            "Student"
-          ],
+          "annotator_type": ["Student"],
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.66,
           "accessibility": "Free",
@@ -110,17 +96,13 @@
         },
         {
           "corpus_id": "agreement_in_wikipedia_talk_pages",
-          "annotation_task": [
-            "Argumentative Relation Type Classification"
-          ],
+          "annotation_task": ["Argumentative Relation Type Classification"],
           "description": [
             "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none).",
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
           "annotator_count": 2,
-          "annotator_type": [
-            "Student"
-          ],
+          "annotator_type": ["Student"],
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.73,
           "accessibility": "Free",
@@ -131,10 +113,7 @@
     {
       "paper_id": "backup_your_stance",
       "paper_title": "Back up your stance: Recognizing arguments in online discussions",
-      "authors": [
-        "Filip Boltužić",
-        "Jan Šnajder"
-      ],
+      "authors": ["Filip Boltužić", "Jan Šnajder"],
       "description": [
         "Exploring the task of argument recognition in online discussions, trying to identify what arguments from a predefined set have been used in a user's comments and how."
       ],
@@ -145,17 +124,13 @@
       "annotations": [
         {
           "corpus_id": "comarg",
-          "annotation_task": [
-            "Argumentative Relation Type Classification"
-          ],
+          "annotation_task": ["Argumentative Relation Type Classification"],
           "description": [
             "Each comment-argument pair is labeled on a five-point ordinal scale to indicate the comment’s stance toward the argument: A: Explicit Attack (clearly opposes the argument). a: Implicit/Vague Attack (subtly opposes the argument). N: No Use (does not reference the argument). s: Implicit/Vague Support (subtly supports the argument). S: Explicit Support (clearly supports the argument.",
-            "NOTE: paper reports multiple types of agreement, we only note Fleiss' Kappa here."
+            "NOTE: Paper reports multiple types of agreement, we only note Fleiss' Kappa here."
           ],
           "annotator_count": 3,
-          "annotator_type": [
-            "Expert"
-          ],
+          "annotator_type": ["Expert"],
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.49,
           "accessibility": "Free",
@@ -189,57 +164,40 @@
           ],
           "description": [
             "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation that is followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. This coarse-grained approach captures the structure of argumentative interactions in online discussions.",
-            "NOTE: multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values."
+            "NOTE: Multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values."
           ],
           "annotator_count": 5,
-          "annotator_type": [
-            "Expert",
-            "Student"
-          ],
+          "annotator_type": ["Expert", "Student"],
           "agreement_type": "Krippendorff's Alpha",
-          "agreement_score": [
-            0.64,
-            0.87
-          ],
+          "agreement_score": [0.64, 0.87],
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
         {
           "corpus_id": "technical_blogs",
-          "annotation_task": [
-            "Argumentative Relation Type Classification"
-          ],
+          "annotation_task": ["Argumentative Relation Type Classification"],
           "description": [
             "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.",
             "In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other.",
-            "NOTE: only a range of Fleiss' Kappa values was reports in the paper."
+            "NOTE: Only a range of Fleiss' Kappa values was reports in the paper."
           ],
           "annotator_count": 5,
-          "annotator_type": [
-            "Crowd"
-          ],
+          "annotator_type": ["Crowd"],
           "agreement_type": "Fleiss' Kappa",
-          "agreement_score": [
-            0.45,
-            0.55
-          ],
+          "agreement_score": [0.45, 0.55],
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
         {
           "corpus_id": "technical_blogs",
-          "annotation_task": [
-            "Claim Extraction with Stance Classification"
-          ],
+          "annotation_task": ["Claim Extraction with Stance Classification"],
           "description": [
             "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.",
             "In this task, annotators had to identify the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments.",
-            "NOTE: no agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
+            "NOTE: No agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
           ],
           "annotator_count": 5,
-          "annotator_type": [
-            "Crowd"
-          ],
+          "annotator_type": ["Crowd"],
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -250,10 +208,7 @@
     {
       "paper_id": "argumentation_mining_in_usergenerated_webdiscourse",
       "paper_title": "Argumentation mining in user-generated web discourse",
-      "authors": [
-        "Ivan Habernal",
-        "Iryna Gurevych"
-      ],
+      "authors": ["Ivan Habernal", "Iryna Gurevych"],
       "description": [
         "Exploring various challenges in argumentation mining, in particular by dealing with Web discourse which is notoriously noisy. They introduce a new argumentation model as well as a new corpus annotated according to this model. They further present machine learning approaches to identify argument components."
       ],
@@ -264,16 +219,12 @@
       "annotations": [
         {
           "corpus_id": "amugwd_unfiltered",
-          "annotation_task": [
-            "Other"
-          ],
+          "annotation_task": ["Other"],
           "description": [
             "Three near-native annotators labeled 990 comments and forum posts as persuasive or non-persuasive over 15 hours each, identifying 524 persuasive documents for further analysis."
           ],
           "annotator_count": 3,
-          "annotator_type": [
-            "Other"
-          ],
+          "annotator_type": ["Other"],
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.59,
           "accessibility": "Free",
@@ -290,9 +241,7 @@
             "NOTE: Individual IAA is reported for each component, here we report the overall Krippendorff's Alpha reported in the paper."
           ],
           "annotator_count": 3,
-          "annotator_type": [
-            "Other"
-          ],
+          "annotator_type": ["Other"],
           "agreement_type": "Krippendorff's Alpha",
           "agreement_score": 0.48,
           "accessibility": "Free",
@@ -309,7 +258,9 @@
         "Pranav Anand",
         "Marilyn A. Walker"
       ],
-      "description": ["Introduce the second version of the Internet Argument Corpus (IAC), now drawing from several online debate forums, not just 4forums.com."],
+      "description": [
+        "Introduce the second version of the Internet Argument Corpus (IAC), now drawing from several online debate forums, not just 4forums.com."
+      ],
       "year": 2016,
       "paper_link": "https://aclanthology.org/L16-1704/",
       "open_alex_id": "https://openalex.org/W2577656483",
@@ -325,9 +276,7 @@
             "NOTE: No agreement reported."
           ],
           "annotator_count": "?",
-          "annotator_type": [
-            "Crowd"
-          ],
+          "annotator_type": ["Crowd"],
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -344,9 +293,7 @@
             "NOTE: No agreement reported."
           ],
           "annotator_count": "?",
-          "annotator_type": [
-            "Crowd"
-          ],
+          "annotator_type": ["Crowd"],
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -363,9 +310,7 @@
             "NOTE: No annotation reported, as the annotations are natural."
           ],
           "annotator_count": 0,
-          "annotator_type": [
-            "Other"
-          ],
+          "annotator_type": ["Other"],
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",

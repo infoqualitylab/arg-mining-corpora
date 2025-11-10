@@ -9,10 +9,7 @@
         "This corpus is primarily used in computational argumentation, focusing on analyzing argumentative structures in short texts, which is suitable for understanding how arguments are formed and connected.",
         "The texts address various topics, such as whether health insurance should cover alternative treatments, public broadcasting fees, and the introduction of capital punishment."
       ],
-      "language": [
-        "German",
-        "English (Translation)"
-      ],
+      "language": ["German", "English (Translation)"],
       "document_type": "Essays",
       "document_count": 112,
       "parent_corpora_id": []
@@ -26,9 +23,7 @@
         "The corpus has 300 editorials, with 100 from each news source.",
         "The editorials discuss a wide range of topics common in news media, such as politics, social issues, and current events."
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "News editorials",
       "document_count": 300,
       "parent_corpora_id": []
@@ -41,9 +36,7 @@
         "The Agreement in Wikipedia Talk Pages (AWTP) corpus is designed to analyze agreement and disagreement in discussions on Wikipedia Talk pages, where editors collaborate on content edits",
         "Wikipedia Talk  pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational. The dataset also includes some LiveJournal discussion threads as well"
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Discussion threads",
       "document_count": 118,
       "parent_corpora_id": []
@@ -57,9 +50,7 @@
         "The corpus focuses on online user comments from debate platforms, specifically targeting discussions on controversial social and political issues. The informal nature of these comments provides a realistic context for analyzing argumentative structures in user-generated content.",
         "The corpus includes 373 comments (175 UGIP, 198 GM), paired with 13 arguments (6 UGIP, 7 GM), resulting in 2,436 initial comment-argument pairs. After adjudication, 2,249 pairs form the gold standard."
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Comment-argument pairs",
       "document_count": 2249,
       "parent_corpora_id": []
@@ -73,9 +64,7 @@
         "The corpus targets technical blog discussions hosted on Technorati, a platform aggregating blog content. The discussions are informal yet informed, reflecting the perspectives of a technology-focused community engaging in debates about tech trends and corporate employment practices.",
         "Topics: 1) Android vs. iPhone: Debates comparing the two smartphone platforms; 2) iPad Usefulness: Discussions on the practical value of the iPad; 3) Twitter as a Microblogging Platform: Arguments about Twitter’s role and impact; 4) Corporate Layoffs/Outsourcing: Opinions on corporate employment practices."
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Posts/comments",
       "document_count": 404,
       "parent_corpora_id": []
@@ -90,9 +79,7 @@
         "The annotated corpus includes 340 documents with approximately 90,000 tokens, derived from a raw corpus of 5,444 documents with 694,110 tokens.",
         "The corpus covers six education-related controversies. They are 1) Homeschooling: Debates on home-based education versus traditional schooling; 2) Public vs. Private Schools: Comparisons of public and private education systems; 3) Redshirting: Discussions on delaying school entry for developmental advantages; 4) Mainstreaming: Arguments about integrating special-needs students into regular classrooms; 5) Prayer in Schools: Controversies over religious practices in public education; 6) Single-Sex Education: Debates on gender-separated schooling."
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Discussion threads",
       "document_count": 990,
       "parent_corpora_id": []
@@ -104,14 +91,10 @@
       "description": [
         "A filtered version of the Argument Annotated User-Generated Web Discourse corpus, also extended to include documents from other sources, including blogs and newspaper articles."
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Discussion threads",
       "document_count": 340,
-      "parent_corpora_id": [
-        "amugwd_unfiltered"
-      ]
+      "parent_corpora_id": ["amugwd_unfiltered"]
     },
     {
       "corpus_id": "internet_argument_corpus_v2_4forums",
@@ -120,14 +103,10 @@
       "description": [
         "A large corpus of online discussions from 4forums. This corpus is an extended and refined version of the original Internet Argument Corpus (rescraping and then excluding discussions with only one author). Stored according to an SQL schema"
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Posts/comments",
       "document_count": 414453,
-      "parent_corpora_id": [
-        "internet_argument_corpus_v1"
-      ]
+      "parent_corpora_id": ["internet_argument_corpus_v1"]
     },
     {
       "corpus_id": "internet_argument_corpus_v2_convinceme",
@@ -136,9 +115,7 @@
       "description": [
         "A large corpus of online discussions from ConvinceMe. Stored according to an SQL schema"
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Posts/comments",
       "document_count": 65368,
       "parent_corpora_id": []
@@ -150,9 +127,7 @@
       "description": [
         "A large corpus of online discussions from CreateDebate about gun control. Stored according to an SQL schema"
       ],
-      "language": [
-        "English"
-      ],
+      "language": ["English"],
       "document_type": "Posts/comments",
       "document_count": 2958,
       "parent_corpora_id": []
