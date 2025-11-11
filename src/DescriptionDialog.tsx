@@ -46,7 +46,7 @@ function DescriptionDialog({
             edge="start"
             color="inherit"
             onClick={handleClose}
-            aria-label="close"
+            aria-label="Close"
           >
             <CloseIcon />
           </IconButton>

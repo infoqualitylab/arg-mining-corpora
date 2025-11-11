@@ -245,6 +245,7 @@ function App() {
                 <Switch
                   checked={spanning}
                   onChange={() => setSpanning(!spanning)}
+                  aria-label="Row Spanning Toggle"
                 />
               }
               label="Row Spanning"
@@ -258,6 +259,7 @@ function App() {
             rowSpanning={spanning}
             disableRowSelectionOnClick
             onRowClick={(params) => handleClickOpen(params.row)}
+            aria-label="Argumentation Mining Corpora Data Grid"
           />
         </CardContent>
       </Card>
