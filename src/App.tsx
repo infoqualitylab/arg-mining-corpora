@@ -168,7 +168,6 @@ function App() {
 
   const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
-  //TODO might need more than a row in future
   const handleClickOpen = (row: FullRow) => {
     setSelectedRow(row);
     setOpen(true);

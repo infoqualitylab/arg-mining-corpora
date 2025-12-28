@@ -67,22 +67,32 @@ function DescriptionDialog({
           ),
         )}
         <Divider />
+        <Stack spacing={1}>
+          <Typography variant="h6">Annotation Description</Typography>
+          {selectedRow?.annotation_description.map((text: string) =>
+            !text.startsWith("NOTE: ") ? (
+              <Typography variant="body1" paragraph>
+                {text}
+              </Typography>
+            ) : (
+              <Alert severity="info">{text.slice(6)}</Alert>
+            ),
+          )}
+          <Stack  spacing={1} direction="row">
+            <Typography variant="subtitle1" fontWeight="bold">
+              Annotator count: {selectedRow?.annotator_count}
+            </Typography>
+            <Typography variant="subtitle1" fontWeight="bold">
+              Annotator type: {selectedRow?.annotator_type}
+            </Typography>
+          </Stack>
+        </Stack>
+        <Divider />
         <Typography variant="h6">Paper Description</Typography>
         <Typography variant="h6" paragraph>
           <i>"{selectedRow?.paper_name}"</i>
         </Typography>
         {selectedRow?.paper_description.map((text: string) =>
-          !text.startsWith("NOTE: ") ? (
-            <Typography variant="body1" paragraph>
-              {text}
-            </Typography>
-          ) : (
-            <Alert severity="info">{text.slice(6)}</Alert>
-          ),
-        )}
-        <Divider />
-        <Typography variant="h6">Annotation Description</Typography>
-        {selectedRow?.annotation_description.map((text: string) =>
           !text.startsWith("NOTE: ") ? (
             <Typography variant="body1" paragraph>
               {text}

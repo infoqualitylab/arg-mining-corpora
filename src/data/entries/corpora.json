@@ -131,6 +131,18 @@
       "document_type": "Posts/comments",
       "document_count": 2958,
       "parent_corpora_id": []
+    },
+	{
+      "corpus_id": "ethix",
+      "corpus_name": "EthiX",
+      "genre": "Online discussions",
+      "description": [
+        "The EthiX Dataset is a curated collection of 686 arguments from ethical debates on the Kialo platform."
+      ],
+      "language": ["English"],
+      "document_type": "Posts/comments",
+      "document_count": 686,
+      "parent_corpora_id": []
     }
   ]
 }
