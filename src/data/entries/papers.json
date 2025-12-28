@@ -317,6 +317,39 @@
           "corpus_link": "https://nlds.soe.ucsc.edu/software"
         }
       ]
+    },
+    {
+      "paper_id": "ethix_a_dataset_for_argument_scheme_classification",
+      "paper_title": "EthiX: A Dataset for Argument Scheme Classification in Ethical Debates",
+      "authors": [
+        "Elfia Bezou-Vrakatseli",
+        "Oana Cocarascu",
+        "Sanjay Modgil"
+      ],
+      "description": [
+        "Introduce the EthiX dataset, a curated collection of arguments on ethical debates from the Kialo platform. The arguments were then manually annotated with their argument scheme following Walton's taxonomy."
+      ],
+      "year": 2025,
+      "paper_link": "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/287312702/ECAI_2024_1_.pdf",
+	  "open_alex_id": "https://openalex.org/W4403487202",
+	  "doi": "https://doi.org/10.3233/faia240919",
+      "annotations": [
+        {
+          "corpus_id": "ethix",
+          "annotation_task": [
+            "Other"
+          ],
+          "description": [
+            "Annotating arguments by their argument scheme according to Walton's taxonomy."
+          ],
+          "annotator_count": 2,
+          "annotator_type": ["Expert"],
+          "agreement_type": "Cohen's Kappa",
+          "agreement_score": 0.523,
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/ElfiaBv/EthiX"
+        }
+      ]
     }
   ]
 }
