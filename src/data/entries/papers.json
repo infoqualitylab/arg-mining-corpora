@@ -340,10 +340,11 @@
             "Other"
           ],
           "description": [
-            "Annotating arguments by their argument scheme according to Walton's taxonomy."
+            "Annotating arguments by their argument scheme according to Walton's taxonomy.",
+			"Annotated by authors, agreement measured with another PhD student who was not an expert in argumentation."
           ],
-          "annotator_count": 2,
-          "annotator_type": ["Expert"],
+          "annotator_count": 4,
+          "annotator_type": ["Expert", "Student"],
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.523,
           "accessibility": "Free",
