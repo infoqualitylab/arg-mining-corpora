@@ -14,7 +14,6 @@ export interface Papers {
      * @minItems 1
      */
     authors: [string, ...string[]];
-    description: string[];
     year: number;
     doi?: string;
     paper_link: string;

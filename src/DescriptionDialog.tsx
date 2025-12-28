@@ -87,20 +87,6 @@ function DescriptionDialog({
             </Typography>
           </Stack>
         </Stack>
-        <Divider />
-        <Typography variant="h6">Paper Description</Typography>
-        <Typography variant="h6" paragraph>
-          <i>"{selectedRow?.paper_name}"</i>
-        </Typography>
-        {selectedRow?.paper_description.map((text: string) =>
-          !text.startsWith("NOTE: ") ? (
-            <Typography variant="body1" paragraph>
-              {text}
-            </Typography>
-          ) : (
-            <Alert severity="info">{text.slice(6)}</Alert>
-          ),
-        )}
       </Stack>
     </Dialog>
   );

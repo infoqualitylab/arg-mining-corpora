@@ -31,14 +31,6 @@
             },
             "minItems": 1
           },
-          "description": {
-            "$comment": "Short description of paper",
-            "type": "array",
-            "items": {
-              "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
-              "type": "string"
-            }
-          },
           "year": {
             "$comment": "Year of publication",
             "type": "integer"
@@ -181,7 +173,6 @@
           "paper_id",
           "paper_title",
           "authors",
-          "description",
           "year",
           "paper_link",
           "annotations"

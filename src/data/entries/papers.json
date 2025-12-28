@@ -4,9 +4,6 @@
       "paper_id": "an_annotated_corpus_of_argumentative_microtexts",
       "paper_title": "An annotated corpus of argumentative microtexts",
       "authors": ["Andreas Peldzus", "Manfred Stede"],
-      "description": [
-        "Introduce a corpus for exploring text-level argumentation structure in German and professionally translated English."
-      ],
       "year": 2016,
       "paper_link": "https://www.ling.uni-potsdam.de/~peldszus/eca2015-preprint.pdf",
       "annotations": [
@@ -40,9 +37,6 @@
         "Matthias Hagen",
         "Benno Stein"
       ],
-      "description": [
-        "Exploring how argument is structured in a number of news editorials."
-      ],
       "year": 2016,
       "paper_link": "https://aclanthology.org/C16-1324/",
       "open_alex_id": "https://openalex.org/W2579772177",
@@ -70,9 +64,6 @@
       "paper_id": "annotating_agreement_and_disagreement_in_threaded_discussion",
       "paper_title": "Annotating agreement and disagreement in threaded discussion",
       "authors": ["Jacob Andreas", "Sara Rosenthal", "Kathy McKeown"],
-      "description": [
-        "Identifying agreement and disagreement in Wikipedia Talk pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational."
-      ],
       "year": 2012,
       "paper_link": "https://aclanthology.org/L12-1650/",
       "open_alex_id": "https://openalex.org/W2251588411",
@@ -114,9 +105,6 @@
       "paper_id": "backup_your_stance",
       "paper_title": "Back up your stance: Recognizing arguments in online discussions",
       "authors": ["Filip Boltužić", "Jan Šnajder"],
-      "description": [
-        "Exploring the task of argument recognition in online discussions, trying to identify what arguments from a predefined set have been used in a user's comments and how."
-      ],
       "year": 2014,
       "paper_link": "https://aclanthology.org/W14-2107/",
       "open_alex_id": "https://openalex.org/W2250397934",
@@ -147,9 +135,6 @@
         "Nina Wacholder",
         "Mark Aakhus",
         "Matthew Mitsui"
-      ],
-      "description": [
-        "Propose a multi-step coding approach to annotate ADUs in online interactions, specifically in technical blogs."
       ],
       "year": 2014,
       "paper_link": "https://aclanthology.org/W14-2106/",
@@ -209,9 +194,6 @@
       "paper_id": "argumentation_mining_in_usergenerated_webdiscourse",
       "paper_title": "Argumentation mining in user-generated web discourse",
       "authors": ["Ivan Habernal", "Iryna Gurevych"],
-      "description": [
-        "Exploring various challenges in argumentation mining, in particular by dealing with Web discourse which is notoriously noisy. They introduce a new argumentation model as well as a new corpus annotated according to this model. They further present machine learning approaches to identify argument components."
-      ],
       "year": 2017,
       "paper_link": "https://direct.mit.edu/coli/article/43/1/125/1561/Argumentation-Mining-in-User-Generated-Web",
       "doi": "https://doi.org/10.1162/coli_a_00276",
@@ -257,9 +239,6 @@
         "Brian Ecker",
         "Pranav Anand",
         "Marilyn A. Walker"
-      ],
-      "description": [
-        "Introduce the second version of the Internet Argument Corpus (IAC), now drawing from several online debate forums, not just 4forums.com."
       ],
       "year": 2016,
       "paper_link": "https://aclanthology.org/L16-1704/",
@@ -326,13 +305,10 @@
         "Oana Cocarascu",
         "Sanjay Modgil"
       ],
-      "description": [
-        "Introduce the EthiX dataset, a curated collection of arguments on ethical debates from the Kialo platform. The arguments were then manually annotated with their argument scheme following Walton's taxonomy."
-      ],
       "year": 2025,
       "paper_link": "https://ebooks.iospress.nl/DOI/10.3233/FAIA240919",
-	  "open_alex_id": "https://openalex.org/W4403487202",
-	  "doi": "https://doi.org/10.3233/faia240919",
+      "open_alex_id": "https://openalex.org/W4403487202",
+      "doi": "https://doi.org/10.3233/faia240919",
       "annotations": [
         {
           "corpus_id": "ethix",
@@ -341,7 +317,7 @@
           ],
           "description": [
             "Annotating arguments by their argument scheme according to Walton's taxonomy.",
-			"Annotated by authors, agreement measured with another PhD student who was not an expert in argumentation."
+            "Annotated by authors, agreement measured with another PhD student who was not an expert in argumentation."
           ],
           "annotator_count": 4,
           "annotator_type": ["Expert", "Student"],

@@ -32,7 +32,6 @@ export interface FullRow {
   corpus_name: string;
   corpus_description: string[];
   paper_name: string;
-  paper_description: string[];
   authors: string;
   year: number;
   genre: string;
@@ -191,7 +190,6 @@ function App() {
               corpus_name: corpus.corpus_name,
               corpus_description: corpus.description,
               paper_name: paper.paper_title,
-              paper_description: paper.description,
               authors: paper.authors.join(", "),
               year: paper.year,
               genre: corpus.genre,
