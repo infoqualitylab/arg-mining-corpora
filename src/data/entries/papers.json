@@ -330,7 +330,7 @@
         "Introduce the EthiX dataset, a curated collection of arguments on ethical debates from the Kialo platform. The arguments were then manually annotated with their argument scheme following Walton's taxonomy."
       ],
       "year": 2025,
-      "paper_link": "https://kclpure.kcl.ac.uk/ws/portalfiles/portal/287312702/ECAI_2024_1_.pdf",
+      "paper_link": "https://ebooks.iospress.nl/DOI/10.3233/FAIA240919",
 	  "open_alex_id": "https://openalex.org/W4403487202",
 	  "doi": "https://doi.org/10.3233/faia240919",
       "annotations": [
