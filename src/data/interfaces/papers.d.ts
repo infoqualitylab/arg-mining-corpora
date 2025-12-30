@@ -22,15 +22,12 @@ export interface Papers {
       annotation_task: (
         | "Argument Component Segmentation"
         | "Argument Component Type Classification"
-        | "Claim Evidence Extraction"
-        | "Claim Evidence Pair Extraction"
-        | "Aspect-Based Argument Mining"
-        | "Context-Dependent Claim Detection"
-        | "Context-Dependent Evidence Detection"
-        | "Claim Extraction with Stance Classification"
         | "Argumentative Relation Identification"
         | "Argumentative Relation Type Classification"
-        | "ACRE (?)"
+        | "Claim Extraction with Stance Classification"
+        | "Maximal Argument Quality Assessment"
+        | "Minimal Argument Quality Assessment"
+        | "Argument Type Identification"
         | "Other"
       )[];
       description: string[];
