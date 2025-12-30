@@ -313,7 +313,7 @@
         {
           "corpus_id": "ethix",
           "annotation_task": [
-            "Other"
+            "Argument Type Identification"
           ],
           "description": [
             "Annotating arguments by their argument scheme according to Walton's taxonomy.",
