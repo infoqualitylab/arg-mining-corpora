@@ -131,6 +131,18 @@
       "document_type": "Posts/comments",
       "document_count": 2958,
       "parent_corpora_id": []
-    }
+    },
+	{
+		"corpus_id": "ethix",
+		"corpus_name": "EthiX",
+		"genre": "Online discussions",
+		"description": [
+		  "Arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
+		],
+		"language": ["English"],
+		"document_type": "Posts/comments",
+		"document_count": 686,
+		"parent_corpora_id": []
+	}
   ]
 }
