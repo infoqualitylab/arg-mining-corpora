@@ -5,8 +5,7 @@
       "corpus_name": "Microtexts V1",
       "genre": "General",
       "description": [
-        "The Argumentative Microtext Corpus is a collection of short argumentative texts specifically designed for research in argumentation mining. It comprises 112 texts originally in German, professionally translated into English.",
-        "This corpus is primarily used in computational argumentation, focusing on analyzing argumentative structures in short texts, which is suitable for understanding how arguments are formed and connected.",
+        "The Argumentative Microtext Corpus is a collection of short argumentative texts. It comprises 112 texts originally in German, professionally translated into English.",
         "The texts address various topics, such as whether health insurance should cover alternative treatments, public broadcasting fees, and the introduction of capital punishment."
       ],
       "language": ["German", "English (Translation)"],
@@ -19,7 +18,7 @@
       "corpus_name": "Webis-Editorials-16",
       "genre": "News",
       "description": [
-        "The News Editorials Corpus, also known as Webis-Editorials-16, is a collection designed to help researchers understand how arguments are structured in news editorials. It includes 300 English news editorials from three major news outlets: Al Jazeera, Fox News, and The Guardian.",
+        "The News Editorials Corpus, also known as Webis-Editorials-16, includes 300 English news editorials from three major news outlets: Al Jazeera, Fox News, and The Guardian.",
         "The corpus has 300 editorials, with 100 from each news source.",
         "The editorials discuss a wide range of topics common in news media, such as politics, social issues, and current events."
       ],
@@ -33,8 +32,7 @@
       "corpus_name": "Agreement in Wikipedia Talk Pages",
       "genre": "Online discussions",
       "description": [
-        "The Agreement in Wikipedia Talk Pages (AWTP) corpus is designed to analyze agreement and disagreement in discussions on Wikipedia Talk pages, where editors collaborate on content edits",
-        "Wikipedia Talk  pages discussing content edits where editors discuss article revisions, propose changes, and resolve disputes. These discussions are typically formal yet conversational. The dataset also includes some LiveJournal discussion threads as well"
+        "The Agreement in Wikipedia Talk Pages (AWTP) corpus includes discussions on Wikipedia Talk pages, where editors collaborate on content edits. The dataset also includes some LiveJournal discussion threads as well"
       ],
       "language": ["English"],
       "document_type": "Discussion threads",
@@ -46,8 +44,7 @@
       "corpus_name": "ComArg",
       "genre": "Online discussions",
       "description": [
-        "The ComArg corpus is a manually annotated dataset designed to support argument recognition in online discussions. It comprises user comments on two controversial topics: “Under God in Pledge” (UGIP) and “Gay Marriage” (GM), sourced from ProCon.org and Idebate.org.",
-        "The corpus focuses on online user comments from debate platforms, specifically targeting discussions on controversial social and political issues. The informal nature of these comments provides a realistic context for analyzing argumentative structures in user-generated content.",
+        "The ComArg corpus is a dataset designed to support argument recognition in online discussions. It comprises user comments on two controversial topics: “Under God in Pledge” (UGIP) and “Gay Marriage” (GM), sourced from ProCon.org and Idebate.org.",
         "The corpus includes 373 comments (175 UGIP, 198 GM), paired with 13 arguments (6 UGIP, 7 GM), resulting in 2,436 initial comment-argument pairs. After adjudication, 2,249 pairs form the gold standard."
       ],
       "language": ["English"],
@@ -60,8 +57,7 @@
       "corpus_name": "Technical Blogs",
       "genre": "Online discussions",
       "description": [
-        "The Technical Blogs Corpus is designed to facilitate argumentation mining by capturing argumentative exchanges in online technical discussions. Collected from the Technorati platform between 2008 and 2010, it comprises four discussion threads, each consisting of one original blog post and its first 100 user comments . These threads reflect argumentative interactions within a tech-savvy community, making it a suitable resource for studying online discourse dynamics.",
-        "The corpus targets technical blog discussions hosted on Technorati, a platform aggregating blog content. The discussions are informal yet informed, reflecting the perspectives of a technology-focused community engaging in debates about tech trends and corporate employment practices.",
+        "The Technical Blogs Corpus captures argumentative exchanges in online technical discussions. Collected from the Technorati platform between 2008 and 2010, it comprises four discussion threads, each consisting of one original blog post and its first 100 user comments.",
         "Topics: 1) Android vs. iPhone: Debates comparing the two smartphone platforms; 2) iPad Usefulness: Discussions on the practical value of the iPad; 3) Twitter as a Microblogging Platform: Arguments about Twitter’s role and impact; 4) Corporate Layoffs/Outsourcing: Opinions on corporate employment practices."
       ],
       "language": ["English"],
@@ -75,9 +71,7 @@
       "genre": "Online discussions",
       "description": [
         "The Argument Annotated User-Generated Web Discourse (AMUGWD) corpus captures real-world argumentative exchanges in online discussions. It focuses on six education-related controversies: homeschooling, public versus private schools, redshirting, mainstreaming, prayer in schools, and single-sex education. Spanning four registers: user comments on newswire articles or blogs, discussion forum posts, blog posts, and newswire articles.",
-        "The AMUGWD corpus targets user-generated web discourse, encompassing informal and noisy online texts across multiple platforms. The focus on education-related controversies provides a specific yet diverse context for analyzing argumentative structures in public discussions.",
-        "The annotated corpus includes 340 documents with approximately 90,000 tokens, derived from a raw corpus of 5,444 documents with 694,110 tokens.",
-        "The corpus covers six education-related controversies. They are 1) Homeschooling: Debates on home-based education versus traditional schooling; 2) Public vs. Private Schools: Comparisons of public and private education systems; 3) Redshirting: Discussions on delaying school entry for developmental advantages; 4) Mainstreaming: Arguments about integrating special-needs students into regular classrooms; 5) Prayer in Schools: Controversies over religious practices in public education; 6) Single-Sex Education: Debates on gender-separated schooling."
+        "The corpus includes 340 documents with approximately 90,000 tokens, derived from a raw corpus of 5,444 documents with 694,110 tokens."
       ],
       "language": ["English"],
       "document_type": "Discussion threads",

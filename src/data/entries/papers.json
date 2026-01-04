@@ -78,7 +78,7 @@
             "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none) and Mode (direct response, direct paraphrase, indirect response, indirect paraphrase).",
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
-          "annotator_count": 2,
+          "annotator_count": 3,
           "annotator_type": ["Student"],
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.66,
@@ -92,7 +92,7 @@
             "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none).",
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
-          "annotator_count": 2,
+          "annotator_count": 3,
           "annotator_type": ["Student"],
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.73,
@@ -114,7 +114,7 @@
           "corpus_id": "comarg",
           "annotation_task": ["Argumentative Relation Type Classification"],
           "description": [
-            "Each comment-argument pair is labeled on a five-point ordinal scale to indicate the comment’s stance toward the argument: A: Explicit Attack (clearly opposes the argument). a: Implicit/Vague Attack (subtly opposes the argument). N: No Use (does not reference the argument). s: Implicit/Vague Support (subtly supports the argument). S: Explicit Support (clearly supports the argument.",
+            "Each comment-argument pair is labeled on a five-point ordinal scale to indicate the comment’s stance toward the argument: A: Explicit Attack (clearly opposes the argument). a: Implicit/Vague Attack (subtly opposes the argument). N: No Use (does not reference the argument). s: Implicit/Vague Support (subtly supports the argument). S: Explicit Support (clearly supports the argument).",
             "NOTE: Paper reports multiple types of agreement, we only note Fleiss' Kappa here."
           ],
           "annotator_count": 3,
@@ -148,13 +148,18 @@
             "Argumentative Relation Identification"
           ],
           "description": [
-            "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation that is followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. This coarse-grained approach captures the structure of argumentative interactions in online discussions.",
-            "NOTE: Multiple agreement types reported, we only note Krippendorff's Alpha here. IAA was reported seperately for each topic (0.64, 0.73, 0.87, 0.82), below we report a range for these values."
+            "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform an annotation study that followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. This coarse-grained approach captures the structure of argumentative interactions in online discussions.",
+            "NOTE: Agreement is reported seperately for each topic in the corpus. The agreement reported below is agreement across the whole annotation task (segementation and type classification). See the paper for more precise details on IAA."
           ],
           "annotator_count": 5,
           "annotator_type": ["Expert", "Student"],
           "agreement_type": "Krippendorff's Alpha",
-          "agreement_score": [0.64, 0.87],
+          "agreement_score": {
+            "Android": 0.64,
+            "iPad": 0.73,
+            "Layoffs": 0.87,
+            "Twitter": 0.82
+          },
           "accessibility": "Free",
           "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
         },
@@ -164,7 +169,7 @@
           "description": [
             "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.",
             "In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other.",
-            "NOTE: Only a range of Fleiss' Kappa values was reports in the paper."
+            "NOTE: Only a range of Fleiss' Kappa values was reports in the paper for this task."
           ],
           "annotator_count": 5,
           "annotator_type": ["Crowd"],

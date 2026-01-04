@@ -22,8 +22,7 @@ import corps from "./data/entries/corpora.json";
 import paps from "./data/entries/papers.json";
 
 const corp: Corpora = corps;
-// TODO find a better way to handle ts-ignore
-// @ts-expect-error
+// @ts-expect-error TODO find a better way to handle ts-ignore
 const pap: Papers = paps;
 
 // Full list based on papers
@@ -42,7 +41,7 @@ export interface FullRow {
   annotator_count: number | string;
   annotation_tasks: string[];
   annotator_type: string;
-  agreement: number | string | [number, number];
+  agreement: number | string | [number, number] | { [key: string]: number };
   accessibility: string;
   corpora_link: string;
   paper_link: string;
@@ -151,6 +150,7 @@ const columns: GridColDef[] = [
   },
   { field: "annotator_count", headerName: "Annotator Count", width: 200 },
   { field: "annotator_type", headerName: "Annotator Type", width: 200 },
+  //TODO fix agreement when multiple values/unknown/object!
   { field: "agreement", headerName: "Agreement", width: 200 },
   {
     field: "accessibility",
@@ -251,6 +251,14 @@ function App() {
           <DataGrid
             rows={rows}
             columns={columns}
+            columnVisibilityModel={{
+              paper_name: false,
+              authors: false,
+              year: false,
+              paper_link: false,
+              annotator_type: false,
+              accessibility: false,
+            }}
             showToolbar
             getRowHeight={() => "auto"}
             rowSpanning={spanning}

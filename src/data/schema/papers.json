@@ -117,7 +117,7 @@
                   ]
                 },
                 "agreement_score": {
-                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal. If a non-exact value is reported, specify in the deviant_agreement_type field how to interpret this value, you can then either report a range, or a ? for missing values, or a single value for averages.",
+                  "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal. If a non-exact value is reported, specify in the deviant_agreement_type field how to interpret this value, you can then either report a range, or a ? for missing values, or a single value for averages. Optionally, if multiple scores are reported for different labels you can report them as an object, with the label names as keys and the scores as values.",
                   "oneOf": [
                     {
                       "type": "number",
@@ -137,6 +137,15 @@
                     {
                       "type": "string",
                       "enum": ["?"]
+                    },
+                    {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "number",
+                        "minimum": -1,
+                        "maximum": 1
+                      },
+                      "minProperties": 1
                     }
                   ]
                 },
