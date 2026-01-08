@@ -1,8 +1,12 @@
 # Website for Argumentation Mining Corpora
-This repository contains the source code and data for a static website containing a detailed list of corpora for argumentation mining and their associated papers. If you wish to view the website click [here](TODOlinktopageshost). This site serves as an accompaniment to the 2nd edition of [Argumentation Mining](TODOlinktobook). If you wish to cite this site or it's content please cite the book:
-```
-@book{argumentationMining2ndEd,
-  TODO
+This repository contains the source code and data for a static website containing a detailed list of corpora for argumentation mining and their associated papers. If you wish to view the website click [here](https://infoqualitylab.github.io/arg-mining-corpora/). This site serves as an accompaniment to "Argument Mining, 2nd Edition". If you wish to cite this site or it's content please cite the book:
+```bibtex
+@book{argumentMining2ndEd,
+      title =     "Argument Mining",
+      author =    "Stede, Manfred and Schneider, Jodi and Wachsmuth, Henning",
+      publisher = "SpringerNature",
+      edition =   "Second",
+      year =      2026
 }
 
 ```
