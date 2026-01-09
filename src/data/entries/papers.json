@@ -321,8 +321,8 @@
             "Argument Type Identification"
           ],
           "description": [
-            "Annotating arguments by their argument scheme according to Walton's taxonomy.",
-            "Annotated by authors, agreement measured with another PhD student who was not an expert in argumentation."
+            "Argument scheme identification",
+            "Arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
           ],
           "annotator_count": 4,
           "annotator_type": ["Expert", "Student"],
