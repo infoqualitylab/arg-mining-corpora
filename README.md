@@ -1,8 +1,12 @@
 # Website for Argumentation Mining Corpora
-This repository contains the source code and data for a static website containing a detailed list of corpora for argumentation mining and their associated papers. If you wish to view the website click [here](TODOlinktopageshost). This site serves as an accompaniment to the 2nd edition of [Argumentation Mining](TODOlinktobook). If you wish to cite this site or it's content please cite the book:
-```
-@book{argumentationMining2ndEd,
-  TODO
+This repository contains the source code and data for a static website containing a detailed list of corpora for argumentation mining and their associated papers. If you wish to view the website click [here](https://infoqualitylab.github.io/arg-mining-corpora/). This site serves as an accompaniment to "Argument Mining, 2nd Edition". If you wish to cite this site or it's content please cite the book:
+```bibtex
+@book{argumentMining2ndEd,
+      title =     "Argument Mining",
+      author =    "Stede, Manfred and Schneider, Jodi and Wachsmuth, Henning",
+      publisher = "SpringerNature",
+      edition =   "Second",
+      year =      2026
 }
 
 ```
@@ -16,4 +20,4 @@ You can request a new paper/corpora be added to the site by raising an issue. Pl
 Alternatively, you can manually add the data to the JSON yourself. You will need to add the relevant data to both [src/data/entries/papers.json](src/data/entries/papers.json) and [src/data/entries/corpora.json](src/data/entries/corpora.json), while following the schema descriptions in [src/data/schema/papers.json](src/data/entries/papers.json) and [src/data/schema/corpora.json](src/data/entries/corpora.json). To test if everything is functioning correctly, get the requirements using `npm install`, then navigate to source and run `npx tsx schema_validation.ts`. If you encounter no issues then run `npm run dev` to view the site and see if the data is correctly presented. We will reject any new corpoa pull requests that either fail schema validation or try to modify the schemas (see below).
 
 ## Submitting Other Issues/Pull Requests
-We are open to the raising of other issues and pull requests that address fixes and suggestions (such as updates to schemas). However please keep these requests separate from requests that intrpduce missing corpora/papers. Note, that if you modify a schema you will need to re-reun `npx tsx interface_generation.ts` to ensure new type definitions are generated.
+We are open to the raising of other issues and pull requests that address fixes and suggestions (such as updates to schemas). However please keep these requests separate from requests that introduce missing corpora/papers. Note, that if you modify a schema you will need to re-reun `npx tsx interface_generation.ts` to ensure new type definitions are generated.
