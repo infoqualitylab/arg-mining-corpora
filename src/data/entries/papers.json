@@ -321,8 +321,8 @@
             "Argument Type Identification"
           ],
           "description": [
-            "Argument scheme identification",
-            "Arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
+            "Argument scheme identification:",
+            "arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
           ],
           "annotator_count": 4,
           "annotator_type": ["Expert", "Student"],
@@ -331,7 +331,6 @@
           "accessibility": "Free",
           "corpus_link": "https://github.com/ElfiaBv/EthiX"
 		}
-	    ]
 	},
 	{
 	  "paper_id": "annotating_argument_components_and_relations_in_persuasive_essays",
@@ -369,7 +368,8 @@
 		    "Argument Relation Type Identification"
 		  ],
 		  "description": [
-		    "Argument component relation annotation: essays are segmented into their argumentative components which are then classified. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph."
+		    "Argument component relation annotation:",
+			"essays are segmented into their argumentative components which are then classified. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph."
 		  ],
 		  "Annotator_count": 3,
 		  "annotator_type": ["Non-Expert"],
@@ -386,7 +386,8 @@
 		    "Argument Type Identification"
 		  ],
 		  "description": [
-		    "Argumentum Model of Topics: a subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify whichquestion most closely matches argumentative components linked by a support relation (annotators could select no argument)."
+		    "Argumentum Model of Topics:",
+			"a subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify whichquestion most closely matches argumentative components linked by a support relation (annotators could select no argument)."
 		  ],
 		  "annotator_count": 9,
 		  "annotator_type": ["Student"],
