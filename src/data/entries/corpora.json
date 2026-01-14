@@ -137,6 +137,18 @@
       "document_type": "Posts/comments",
       "document_count": 686,
       "parent_corpora_id": []
-    }
-  ]
+    },
+	{
+	  "corpus_id": "aae_v1",
+	  "corpus_name": "Argument-Annotated Essays (Version 1)",
+	  "genre": "Online discussions",
+	  "description": [
+	    "AAE version 1 (AAE2) consists of 90 essays taken from the essayforum website."
+	  ],
+	  "language": ["English"],
+	  "document_type": "Essays",
+	  "document_count": 90,
+	  "parent_corpora_id": []
+	}
+  	]
 }

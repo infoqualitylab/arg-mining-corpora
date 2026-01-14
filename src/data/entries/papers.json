@@ -300,10 +300,10 @@
           "accessibility": "Free",
           "corpus_link": "https://nlds.soe.ucsc.edu/software"
         }
-      ]
+		]
     },
-    {
-      "paper_id": "ethix_a_dataset_for_argument_scheme_classification",
+	{
+	  "paper_id": "ethix_a_dataset_for_argument_scheme_classification",
       "paper_title": "EthiX: A Dataset for Argument Scheme Classification in Ethical Debates",
       "authors": [
         "Elfia Bezou-Vrakatseli",
@@ -321,8 +321,8 @@
             "Argument Type Identification"
           ],
           "description": [
-            "Argument scheme identification",
-            "Arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
+            "Argument scheme identification:",
+            "arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
           ],
           "annotator_count": 4,
           "annotator_type": ["Expert", "Student"],
@@ -330,8 +330,73 @@
           "agreement_score": 0.523,
           "accessibility": "Free",
           "corpus_link": "https://github.com/ElfiaBv/EthiX"
-        }
-      ]
-    }
-  ]
+		}
+		]
+	},
+	{
+	  "paper_id": "annotating_argument_components_and_relations_in_persuasive_essays",
+      "paper_title": "Annotating Argument Components and Relations in Persuasive Essays",
+      "authors": [
+        "Christian Stab",
+        "Iryna Gurevych"
+      ],
+      "year": 2014,
+      "paper_link": "https://aclanthology.org/C14-1142/",
+      "open_alex_id": "https://openalex.org/W2251931307",
+      "annotations": [
+        {
+          "corpus_id": "aae_v1",
+          "annotation_task": [
+            "Argument Component Segmentation",
+			"Argument Component Type Classification"
+          ],
+          "description": [
+            "Argument component segmentation and classification: essays are segmented into their argumentative components. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph. Because there are no predefined markables in the data, annotators had to determine the boundaries of argument components themselves, performing a segmentation of the argumentative text. A modification of Krippendorf’s Alpha that allows for disagreement in span boundaries was used to capture annotation performance in both the segmentation of argumentative units and their classification."
+          ],
+          "annotator_count": 3,
+          "annotator_type": ["Other"],
+          "agreement_type": "Other",
+          "agreement_score": {
+			"Major Claim": 0.7726, "Claim": 0.6033, "Premise": 0.7594
+		  },
+          "accessibility": "Free",
+          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb"
+		},
+		{
+		  "corpus_id": "aae_v1",
+		  "annotation_task": [
+		    "Argumentative Relation Type Classification"
+		  ],
+		  "description": [
+		    "Argument component relation annotation:",
+			"essays are segmented into their argumentative components which are then classified. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph."
+		  ],
+		  "annotator_count": 3,
+		  "annotator_type": ["Other"],
+		  "agreement_type": "Krippendorff's Alpha",
+		  "agreement_score": {
+		    "Support": 0.8120, "Attack": 0.8066
+		  },
+		  "accessibility": "Free",
+		  "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb"
+		},
+		{
+		  "corpus_id": "aae_v1",
+		  "annotation_task": [
+		    "Argument Type Identification"
+		  ],
+		  "description": [
+		    "Argumentum Model of Topics:",
+			"a subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify whichquestion most closely matches argumentative components linked by a support relation (annotators could select no argument)."
+		  ],
+		  "annotator_count": 9,
+		  "annotator_type": ["Student"],
+		  "agreement_type": "Fleiss' Kappa",
+		  "agreement_score": 0.1,
+		  "accessibility": "Unavailable",
+		  "corpus_link": "https://aclanthology.org/W16-2810.pdf"
+		}
+		]
+	}
+	]
 }
