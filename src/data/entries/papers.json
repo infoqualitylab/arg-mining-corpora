@@ -387,12 +387,12 @@
 		  ],
 		  "description": [
 		    "Argumentum Model of Topics: a subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify whichquestion most closely matches argumentative components linked by a support relation (annotators could select no argument)."
-		],
-		"annotator_count": 9,
-		"annotator_type": ["Student"],
-		"Agreement_type": ["Fleiss Kappa"],
-		"Agreement_score": 0.1,
-		"Accessibility": "Unavailable",
-		"corpus_link": "https://aclanthology.org/W16-2810.pdf"
-		
+		  ],
+		  "annotator_count": 9,
+		  "annotator_type": ["Student"],
+		  "Agreement_type": ["Fleiss Kappa"],
+		  "Agreement_score": 0.1,
+		  "Accessibility": "Unavailable",
+		  "corpus_link": "https://aclanthology.org/W16-2810.pdf"
+		}
   ]
