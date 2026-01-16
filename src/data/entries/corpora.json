@@ -150,5 +150,39 @@
 	  "document_count": 90,
 	  "parent_corpora_id": []
 	}
-  	]
+	{
+	  "corpus_id": "swedish_news_editorials",
+	  "corpus_name": "Swedish News Editorials",
+	  "genre": "News",
+	  "description": [
+	    "Corpus of 30 Swedish newspaper editorials from 6 newspapers, published between May-September 1973."
+	  ],
+	  "language": ["English"],
+	  "document_type": "News Editorials",
+	  "document_count": 30,
+	  "parent_corpora_id": []
+	}
+	{
+	  "corpus_id": "UKPConvArg",
+	  "corpus_name": "UKPConvArg",
+	  "genre": "Debate",
+	  "description": [
+	    "A dataset of 16,081 argument pairs collected from 16 debates on 2 debate portals (createdebate.com and procon.org). A debate has a prompt, each prompt has two topics (one for each stance on the prompt) an argument is a single comment addressing the debate prompt, and an argument pair is an ordered set of two argument belonging to the same topic."
+  	  ],
+	  "language": ["English"],
+	  "document_type": "Argument pairs",
+	  "document_count": 16081,
+	  "parent_corpora_id": []
+	},
+	{
+	  "corpus_id": "the_web_discourse_corpus",
+	  "corpus_name": "The Web Discourse Corpus",
+	  "genre": "Online Discussions",
+	  "description": [
+	    "A dataset of 5444 documents containing web discourse on controversial topics. Documents covered 5 different topics and varied in type, including forum posts, comments, articles, and blog posts."
+	  ],
+	  "language": ["English"],
+	  "document_type": "Posts/comments",
+	  "parent_corpora_id": []
+	}
 }
