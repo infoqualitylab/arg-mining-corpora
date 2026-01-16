@@ -25,7 +25,7 @@
           "accessibility": "Free",
           "corpus_link": "https://github.com/peldszus/arg-microtexts"
         }
-      ]
+        ]
     },
     {
       "paper_id": "a_news_editorial_corpus_for_argumentation_mining_strategies",
@@ -407,6 +407,7 @@
 		"Jacobo Rouces Gonzalez"
       ],
       "year": 2019,
+	  "doi": "https://doi.org/10.18653/v1/w19-4520",
       "paper_link": "https://aclanthology.org/W19-4520/",
       "open_alex_id": "https://openalex.org/W2970024917",
       "annotations": [
@@ -415,7 +416,7 @@
           "annotation_task": [
             "Argument Component Segmentation",
 			"Argument Component Type Classification",
-			"Argument Relation Identification"
+			"Argumentative Relation Identification"
           ],
           "description": [
 		    "Component segmentation and identification:",
@@ -425,8 +426,9 @@
           "annotator_type": ["Student"],
           "agreement_type": "Other",
           "agreement_score": {
-			"Matching_conclusions": 0.34, "At_least_one_matching_premise": 0.12, "All premises match": 0.03,
+			"Matching_conclusions": 0.34, "At_least_one_matching_premise": 0.12, "All premises match": 0.03
 		  },
+		  "corpus_link": "https://aclanthology.org/W19-4520/",
           "accessibility": "Unavailable"
 		}
 	]
@@ -439,6 +441,7 @@
 		"Iryna Gurevych"
       ],
       "year": 2016,
+	  "doi": "https://doi.org/10.18653/v1/p16-1150",
       "paper_link": "https://aclanthology.org/P16-1150/",
       "open_alex_id": "https://openalex.org/W2518510348",
       "annotations": [
@@ -451,20 +454,16 @@
 		    "Pairwise quality assessment:",
             "argument pairs are annotated with a label indicating which argument was more convincing. For a given argument pair A1 and A2, workers could either label A1>A2, A2>A1 or A1=A2. Each annotator also had to provide a reason for their labelling. Agreement was not reported, but several quality control measures were used for the selection of annotators. The annotated dataset was released as UKPConvArg1."
           ],
-          "annotator_count": 5,
+		  "annotator_count": 5,
           "annotator_type": ["Crowd"],
-          "agreement_type": "other",
-          "agreement_score": {
-			"?"
-			},
+          "agreement_type": "Other",
+		  "agreement_score": "?",
           "accessibility": "Free",
 		  "corpus_link": "https://github.com/UKPLab/acl2016-convincing-arguments"
 		},
 		{
 		  "corpus_id": "UKPConvArg",
-		  "annotation_task": [
-		    "Other"
-		  ],
+		  "annotation_task": ["Other"],
 		  "description": [
 		    "Reason unit classification:",
 			"a bottom-up approach was used to annotate reasons given for why one argument in a pair of arguments was more convincing than another. Pairs of arguments and their reasons were obtained from a subset of 9,111 argument pairs from UKPConvArg1. From a pilot study, 19 distinct labels for reasons were obtained, for the final annotation study performed by crowd workers, these labels were decomposed into a hierarchy to be more suitable for non-experts. The annotated dataset was released as UKPConvArg2."
@@ -472,7 +471,7 @@
 		  "annotator_count": 5,
 		  "annotator_type": ["Crowd"],
 		  "agreement_type": "Other",
-		  "agreement_score": {"?"},
+		  "agreement_score": "?",
 		  "accessibility": "Free",
 		  "corpus_link": "https://github.com/UKPLab/emnlp2016-empirical-convincingness"
 		}
@@ -486,26 +485,28 @@
 		"Iryna Gurevych"
       ],
       "year": 2017,
-      "paper_link": ": https://aclanthology.org/J17-1004/",
+	  "doi": "https://doi.org/10.1162/coli_a_00276",
+      "paper_link": "https://aclanthology.org/J17-1004/",
       "open_alex_id": "https://openalex.org/W2236647290",
       "annotations": [
         {
           "corpus_id": "the_web_discourse_corpus",
           "annotation_task": [
-            "Argument Component Segmentation",
+            "Argument Component Segementation",
 			"Argument Component Type Classification"
           ],
           "description": [
 		    "Toulmin component classification:",
-			"5444 documents containing web-based discourse on controversial documents were annotated at the span level with their argumentative components. These argument components were derived from Toulmin’s model, and annotators could choose to label spans as either claim, premise, backing, rebuttal, and refutation. Annotation was performed in stages, with discussions around problematic cases occurring early leading to a refinement of annotation guidelines. Annotators determined spans themselves (argument segmentation) and the gold label was obtained by majority vote on overlapping spans, and problematic cases resolved through further discussion. Agreement was reported using Krippendorf’s Alpha. Agreement varied significantly on both the topic discussed in the document and the type of the document. A joint agreement across all types of documents, all topics, and all kinds of argumentative components was reported, which we list here.",
-            ],
-          "annotator_count": 3,
+            "5444 documents containing web-based discourse on controversial documents were annotated at the span level with their argumentative components. These argument components were derived from Toulmin’s model, and annotators could choose to label spans as either claim, premise, backing, rebuttal, and refutation. Annotation was performed in stages, with discussions around problematic cases occurring early leading to a refinement of annotation guidelines. Annotators determined spans themselves (argument segmentation) and the gold label was obtained by majority vote on overlapping spans, and problematic cases resolved through further discussion. Agreement was reported using Krippendorf’s Alpha. Agreement varied significantly on both the topic discussed in the document and the type of the document. A joint agreement across all types of documents, all topics, and all kinds of argumentative components was reported, which we list here."
+          ],
+		  "annotator_count": 3,
           "annotator_type": ["Other"],
-          "agreement_type": "Krippendorff's Alpha",
-          "agreement_score": 0.48,
-          "accessibility": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342"
+          "agreement_type": "Krippendorf’s Alpha",
+		  "agreement_score": "0.48",
+          "accessibility": "Free",
+		  "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342"
 		}
-	]
+		]
 	}
 ]
 }
