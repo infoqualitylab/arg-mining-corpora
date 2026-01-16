@@ -31,14 +31,7 @@ export interface Papers {
         | "Other"
       )[];
       description: string[];
-      annotator_count: number | "?";
-      /**
-       * @minItems 1
-       */
-      annotator_type: [
-        "Author" | "Expert" | "Student" | "Crowd" | "Other",
-        ...("Author" | "Expert" | "Student" | "Crowd" | "Other")[]
-      ];
+      annotator_type: string;
       agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
       agreement_score:
         | number

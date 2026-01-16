@@ -83,27 +83,9 @@
                     "type": "string"
                   }
                 },
-                "annotator_count": {
-                  "$comment": "Number of annotators involved in the annotation task. If number of annotators was not specified, still fill in this field with a ?.",
-                  "oneOf": [
-                    {
-                      "type": "number",
-                      "minimum": 0
-                    },
-                    {
-                      "type": "string",
-                      "enum": ["?"]
-                    }
-                  ]
-                },
                 "annotator_type": {
                   "$comment": "Type of annotators involved in the annotation task, Author (the authors of the paper), Expert (domain experts), Student (students, e.g. undergraduates), Crowd (crowdsourced workers, e.g. from MTurk or Prolific), Other (anything else)",
-                  "type": "array",
-                  "items": {
-                    "enum": ["Author", "Expert", "Student", "Crowd", "Other"]
-                  },
-                  "minItems": 1,
-                  "uniqueItems": true
+                  "type": "string"
                 },
                 "agreement_type": {
                   "$comment": "Type of inter-annotator agreement measure used, Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha, Percent Agreement, Other (anything else)",
@@ -165,7 +147,6 @@
                 "annotation_task",
                 "description",
                 "annotator_type",
-                "annotator_count",
                 "agreement_type",
                 "agreement_score",
                 "accessibility",
