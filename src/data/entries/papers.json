@@ -29,7 +29,7 @@
     },
     {
       "paper_id": "a_news_editorial_corpus_for_argumentation_mining_strategies",
-      "paper_title": "A news editorial corpus for argumentation mining strategies",
+      "paper_title": "A News Editorial Corpus for Argumentation Mining Strategies",
       "authors": [
         "Khalid Al-Khatib",
         "Henning Wachsmuth",
@@ -44,17 +44,18 @@
         {
           "corpus_id": "webis_editorials_16",
           "annotation_task": [
-            "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
           "description": [
-            "Each ADU is labeled as one of six types: Assumption (general opinions), Anecdote (stories or examples), Testimony (expert or personal statements), Statistics (numerical data), Common Ground (shared beliefs), or Other (miscellaneous).",
-            "Three professional annotators from upwork.com, trained for the task, labeled these units"
+            "Argumentative discourse unit classification:",
+			"300 news editorials are annotated at the span level with their argumentative discourse unit. Each editorial was annotated by 3 annotators (out of 4 total annotators), and text was pre-segmented into text spans (annotators did not determine spans themselves). Annotators could label spans as one of 6 possible argumentative discourse unit types (common ground, assumption, anecdote, testimony, statistics, or other), they could also label spans as having no type, or as a continuation of the previous span."
           ],
           "annotator_count": 4,
-          "annotator_type": ["Expert"],
+          "annotator_type": ["Crowd"],
           "agreement_type": "Fleiss' Kappa",
-          "agreement_score": 0.56,
+          "agreement_score": {
+			"Common ground": 0.114, "Assumption": 0.613, "Anecdote": 0.399, "Testimony": 0.591, "Statistics": 0.582, "Other": 0.152, "No unit": 0.365, "Continued": 0.684, "Overall": 0.560
+		  }
           "accessibility": "Free",
           "corpus_link": "https://webis.de/data/webis-editorials-16.html"
         }
@@ -379,7 +380,22 @@
 		  },
 		  "accessibility": "Free",
 		  "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb"
-		},
+		}
+		]
+	},
+	{
+	  "paper_id": "towards_feasible_guidelines_for_the_annotation_of_argument_schemes",
+      "paper_title": "Towards Feasible Guidelines for the Annotation of Argument Schemes",
+      "authors": [
+        "Elena Musi",
+        "Debanjan Ghosh",
+		"Smaranda Muresan"
+      ],
+      "year": 2014,
+	  "doi": "https://doi.org/10.18653/v1/w16-2810"
+      "paper_link": "https://aclanthology.org/W16-2810.pdf",
+      "open_alex_id": "https://openalex.org/W2508604498",
+      "annotations": [
 		{
 		  "corpus_id": "aae_v1",
 		  "annotation_task": [
@@ -431,7 +447,7 @@
 		  "corpus_link": "https://aclanthology.org/W19-4520/",
           "accessibility": "Unavailable"
 		}
-	]
+		]
 	},
 	{
 	  "paper_id": "which_argument_is_more_convincing?_analyzing_and_predicting_convincingness_of_web_arguments_using_bidirectional_lstm",
