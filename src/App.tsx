@@ -38,7 +38,6 @@ export interface FullRow {
   document_type: string;
   document_count: number;
   annotation_description: string[];
-  annotator_count: number | string;
   annotation_tasks: string[];
   annotator_type: string;
   agreement: number | string | [number, number] | { [key: string]: number };
@@ -148,7 +147,6 @@ const columns: GridColDef[] = [
       </Box>
     ),
   },
-  { field: "annotator_count", headerName: "Annotator Count", width: 200 },
   { field: "annotator_type", headerName: "Annotator Type", width: 200 },
   //TODO fix agreement when multiple values/unknown/object!
   { field: "agreement", headerName: "Agreement", width: 200 },
@@ -197,9 +195,8 @@ function App() {
               document_type: corpus.document_type,
               document_count: corpus.document_count,
               annotation_description: annotation.description,
-              annotator_count: annotation.annotator_count,
               annotation_tasks: annotation.annotation_task,
-              annotator_type: annotation.annotator_type.join(", "),
+              annotator_type: annotation.annotator_type,
               agreement: annotation.agreement_score,
               accessibility: annotation.accessibility,
               corpora_link: annotation.corpus_link,

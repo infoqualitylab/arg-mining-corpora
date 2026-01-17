@@ -18,8 +18,7 @@
           "description": [
             "Texts are segmented into Argumentative Discourse Units (ADUs) with support and attack links."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Expert", "Other"],
+          "annotator_type": "3 Expert, Other",
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.83,
           "accessibility": "Free",
@@ -50,8 +49,7 @@
             "Argumentative discourse unit classification:",
 			"300 news editorials are annotated at the span level with their argumentative discourse unit. Each editorial was annotated by 3 annotators (out of 4 total annotators), and text was pre-segmented into text spans (annotators did not determine spans themselves). Annotators could label spans as one of 6 possible argumentative discourse unit types (common ground, assumption, anecdote, testimony, statistics, or other), they could also label spans as having no type, or as a continuation of the previous span."
           ],
-          "annotator_count": 4,
-          "annotator_type": ["Crowd"],
+          "annotator_type": "4 crowd annotators from upwork.com",
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": {
 			"Common ground": 0.114, "Assumption": 0.613, "Anecdote": 0.399, "Testimony": 0.591, "Statistics": 0.582, "Other": 0.152, "No unit": 0.365, "Continued": 0.684, "Overall": 0.560
@@ -79,8 +77,7 @@
             "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none) and Mode (direct response, direct paraphrase, indirect response, indirect paraphrase).",
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Student"],
+          "annotator_type": "3 Student",
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.66,
           "accessibility": "Free",
@@ -93,8 +90,7 @@
             "Annotations target ordered sentence pairs, consisting of an antecedent (the quoted statement) and a reaction (the response), identified within explicit reply edges in the discussion thread. Each Q-R pair is labeled for Type (agreement, disagreement, or none).",
             "The corpus was annotated by three trained undergraduate students, ensuring consistency through structured training and the use of a contextual annotation tool."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Student"],
+          "annotator_type": "3 Student",
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.73,
           "accessibility": "Free",
@@ -118,8 +114,7 @@
             "Each comment-argument pair is labeled on a five-point ordinal scale to indicate the comment’s stance toward the argument: A: Explicit Attack (clearly opposes the argument). a: Implicit/Vague Attack (subtly opposes the argument). N: No Use (does not reference the argument). s: Implicit/Vague Support (subtly supports the argument). S: Explicit Support (clearly supports the argument).",
             "NOTE: Paper reports multiple types of agreement, we only note Fleiss' Kappa here."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Expert"],
+          "annotator_type": "3 Expert",
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.49,
           "accessibility": "Free",
@@ -152,8 +147,7 @@
             "The annotation scheme is based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform an annotation study that followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. This coarse-grained approach captures the structure of argumentative interactions in online discussions.",
             "NOTE: Agreement is reported seperately for each topic in the corpus. The agreement reported below is agreement across the whole annotation task (segementation and type classification). See the paper for more precise details on IAA."
           ],
-          "annotator_count": 5,
-          "annotator_type": ["Expert", "Student"],
+          "annotator_type": "5 Expert, Student",
           "agreement_type": "Krippendorff's Alpha",
           "agreement_score": {
             "Android": 0.64,
@@ -172,8 +166,7 @@
             "In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other.",
             "NOTE: Only a range of Fleiss' Kappa values was reports in the paper for this task."
           ],
-          "annotator_count": 5,
-          "annotator_type": ["Crowd"],
+          "annotator_type": "5 Crowd",
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": [0.45, 0.55],
           "accessibility": "Free",
@@ -187,8 +180,7 @@
             "In this task, annotators had to identify the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments.",
             "NOTE: No agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
           ],
-          "annotator_count": 5,
-          "annotator_type": ["Crowd"],
+          "annotator_type": "5 Crowd",
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -211,8 +203,7 @@
           "description": [
             "Three near-native annotators labeled 990 comments and forum posts as persuasive or non-persuasive over 15 hours each, identifying 524 persuasive documents for further analysis."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Other"],
+          "annotator_type": "3 Other",
           "agreement_type": "Fleiss' Kappa",
           "agreement_score": 0.59,
           "accessibility": "Free",
@@ -228,8 +219,7 @@
             "340 persuasive documents were annotated using a modified Toulmin model, focusing on the logos dimension (claims, premises, backing, rebuttal, refutation). Sequence labeling with BIO encoding (11 classes, e.g., Claim-B, Premise-I) was applied at the token level, defaulting to sentence-level units unless finer granularity was needed.",
             "NOTE: Individual IAA is reported for each component, here we report the overall Krippendorff's Alpha reported in the paper."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Other"],
+          "annotator_type": "3 Other",
           "agreement_type": "Krippendorff's Alpha",
           "agreement_score": 0.48,
           "accessibility": "Free",
@@ -260,8 +250,7 @@
             "Annotating posts from 4forums.com with topic, author stance, agreement, sarcasm, and hostility.",
             "NOTE: No agreement reported."
           ],
-          "annotator_count": "?",
-          "annotator_type": ["Crowd"],
+          "annotator_type": "Crowd",
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -277,8 +266,7 @@
             "Annotating dialogues from ConvinceMe.net (a structured debate website) with topic, discussion stance, and broader topic stance.",
             "NOTE: No agreement reported."
           ],
-          "annotator_count": "?",
-          "annotator_type": ["Crowd"],
+          "annotator_type": "Crowd",
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -294,8 +282,7 @@
             "Gun control debates from CreateDebate.com, the site forces users to specify their stance, and a label (support, clarify, dispute). It also allows users to vote on posts, which can be used to examine argument effectiveness.",
             "NOTE: No annotation reported, as the annotations are natural."
           ],
-          "annotator_count": 0,
-          "annotator_type": ["Other"],
+          "annotator_type": "Unannotated",
           "agreement_type": "Other",
           "agreement_score": "?",
           "accessibility": "Free",
@@ -325,8 +312,7 @@
             "Argument scheme identification:",
             "arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
           ],
-          "annotator_count": 4,
-          "annotator_type": ["Expert", "Student"],
+          "annotator_type": "4 Expert and Student",
           "agreement_type": "Cohen's Kappa",
           "agreement_score": 0.523,
           "accessibility": "Free",
@@ -354,8 +340,7 @@
           "description": [
             "Argument component segmentation and classification: essays are segmented into their argumentative components. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph. Because there are no predefined markables in the data, annotators had to determine the boundaries of argument components themselves, performing a segmentation of the argumentative text. A modification of Krippendorf’s Alpha that allows for disagreement in span boundaries was used to capture annotation performance in both the segmentation of argumentative units and their classification."
           ],
-          "annotator_count": 3,
-          "annotator_type": ["Other"],
+          "annotator_type": "3 Other",
           "agreement_type": "Other",
           "agreement_score": {
 			"Major Claim": 0.7726, "Claim": 0.6033, "Premise": 0.7594
@@ -372,8 +357,7 @@
 		    "Argument component relation annotation:",
 			"essays are segmented into their argumentative components which are then classified. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph."
 		  ],
-		  "annotator_count": 3,
-		  "annotator_type": ["Other"],
+		  "annotator_type": "3 Other",
 		  "agreement_type": "Krippendorff's Alpha",
 		  "agreement_score": {
 		    "Support": 0.8120, "Attack": 0.8066
@@ -405,8 +389,7 @@
 		    "Argumentum Model of Topics:",
 			"a subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify whichquestion most closely matches argumentative components linked by a support relation (annotators could select no argument)."
 		  ],
-		  "annotator_count": 9,
-		  "annotator_type": ["Student"],
+		  "annotator_type": "9 Student",
 		  "agreement_type": "Fleiss' Kappa",
 		  "agreement_score": 0.1,
 		  "accessibility": "Unavailable",
