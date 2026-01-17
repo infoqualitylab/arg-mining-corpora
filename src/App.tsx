@@ -40,7 +40,8 @@ export interface FullRow {
   annotation_description: string[];
   annotation_tasks: string[];
   annotator_type: string;
-  agreement: number | string | [number, number] | { [key: string]: number };
+  agreement: number | string | [number, number];
+  agreement_type: string;
   accessibility: string;
   corpora_link: string;
   paper_link: string;
@@ -197,7 +198,8 @@ function App() {
               annotation_description: annotation.description,
               annotation_tasks: annotation.annotation_task,
               annotator_type: annotation.annotator_type,
-              agreement: annotation.agreement_score,
+              agreement_type: annotation.agreement_type,
+              agreement: annotation.agreement_score instanceof Object ? JSON.stringify(annotation.agreement_score) : annotation.agreement_score,
               accessibility: annotation.accessibility,
               corpora_link: annotation.corpus_link,
               paper_link: paper.paper_link,

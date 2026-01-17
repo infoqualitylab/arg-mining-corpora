@@ -78,12 +78,15 @@ function DescriptionDialog({
               <Alert severity="info">{text.slice(6)}</Alert>
             ),
           )}
-          <Stack  spacing={1} direction="row">
-            <Typography variant="subtitle1" fontWeight="bold">
-              Annotator count: {selectedRow?.annotator_count}
-            </Typography>
+          <Stack  spacing={1}>
             <Typography variant="subtitle1" fontWeight="bold">
               Annotator type: {selectedRow?.annotator_type}
+            </Typography>
+            <Typography variant="subtitle1" fontWeight="bold">
+              Agreement type: {selectedRow?.agreement_type}
+            </Typography>
+            <Typography variant="subtitle1" fontWeight="bold">
+              Agreement: {selectedRow?.agreement}
             </Typography>
           </Stack>
         </Stack>
