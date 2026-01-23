@@ -22,26 +22,28 @@ export interface Papers {
       annotation_task: (
         | "Argument Component Segmentation"
         | "Argument Component Type Classification"
-        | "Argumentative Relation Identification"
-        | "Argumentative Relation Type Classification"
+        | "Argument Relation Identification"
+        | "Argument Relation Type Classification"
         | "Claim Extraction with Stance Classification"
         | "Maximal Argument Quality Assessment"
         | "Minimal Argument Quality Assessment"
         | "Argument Type Identification"
+        | "Argument Summarization"
         | "Other"
+        | "None"
       )[];
       description: string[];
       annotator_type: string;
-      agreement_type: "Cohen's Kappa" | "Fleiss' Kappa" | "Krippendorff's Alpha" | "Percent Agreement" | "Other";
+      agreement_type: string;
       agreement_score:
         | number
         | [number, number]
-        | "?"
+        | ("Not reported" | "None")
         | {
             [k: string]: number;
           };
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
-      corpus_link: string;
+      corpus_link?: string;
     }[];
   }[];
 }

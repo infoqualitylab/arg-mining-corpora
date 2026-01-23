@@ -65,13 +65,15 @@
                     "enum": [
                       "Argument Component Segmentation",
                       "Argument Component Type Classification",
-                      "Argumentative Relation Identification",
-                      "Argumentative Relation Type Classification",
+                      "Argument Relation Identification",
+                      "Argument Relation Type Classification",
                       "Claim Extraction with Stance Classification",
                       "Maximal Argument Quality Assessment",
                       "Minimal Argument Quality Assessment",
                       "Argument Type Identification",
-                      "Other"
+					  "Argument Summarization",
+                      "Other",
+					  "None"
                     ]
                   }
                 },
@@ -89,14 +91,7 @@
                 },
                 "agreement_type": {
                   "$comment": "Type of inter-annotator agreement measure used, Cohen's Kappa, Fleiss' Kappa, Krippendorff's Alpha, Percent Agreement, Other (anything else)",
-                  "type": "string",
-                  "enum": [
-                    "Cohen's Kappa",
-                    "Fleiss' Kappa",
-                    "Krippendorff's Alpha",
-                    "Percent Agreement",
-                    "Other"
-                  ]
+                  "type": "string"
                 },
                 "agreement_score": {
                   "$comment": "Inter-annotator agreement score, percentages should be represented as a decimal. If a non-exact value is reported, specify in the deviant_agreement_type field how to interpret this value, you can then either report a range, or a ? for missing values, or a single value for averages. Optionally, if multiple scores are reported for different labels you can report them as an object, with the label names as keys and the scores as values.",
@@ -118,7 +113,7 @@
                     },
                     {
                       "type": "string",
-                      "enum": ["?"]
+                      "enum": ["Not reported", "None"]
                     },
                     {
                       "type": "object",
@@ -139,7 +134,7 @@
                 "corpus_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
                   "type": "string",
-                  "format": "uri"
+				  "format": "uri"
                 }
               },
               "required": [
@@ -149,8 +144,7 @@
                 "annotator_type",
                 "agreement_type",
                 "agreement_score",
-                "accessibility",
-                "corpus_link"
+                "accessibility"
               ],
               "additionalProperties": false
             }
