@@ -54,9 +54,11 @@ const columns: GridColDef[] = [
     headerName: "Corpora Link",
     width: 200,
     renderCell: (params) => (
+      params.value === "Unavailable" ? (<span>{params.value}</span>) : (
       <a href={params.value} target="_blank" rel="noopener noreferrer">
         {params.value}
       </a>
+      )
     ),
   },
   {
@@ -201,7 +203,7 @@ function App() {
               agreement_type: annotation.agreement_type,
               agreement: annotation.agreement_score instanceof Object ? JSON.stringify(annotation.agreement_score) : annotation.agreement_score,
               accessibility: annotation.accessibility,
-              corpora_link: annotation.corpus_link,
+              corpora_link: annotation.corpus_link ? annotation.corpus_link : "Unavailable",
               paper_link: paper.paper_link,
             },
           ];
@@ -235,6 +237,13 @@ function App() {
             </IconButton>
           </Box>
           <Divider />
+          <Typography
+            variant="body1"
+            color="textSecondary"
+            sx={{ marginTop: 2, marginBottom: 2 }}
+          >
+            Click on a row to see more details about a corpus and how it was annotated.
+          </Typography>
           <FormGroup>
             <FormControlLabel
               control={

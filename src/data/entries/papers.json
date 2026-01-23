@@ -15,7 +15,7 @@
             "Maximal Argument Quality Assessment"
           ],
           "description": [
-			"Argument quality assessment:"
+			"Argument quality assessment:",
             "A dataset of prompt-essay pairs is used to evaluate the ability of several computational models in their performance of automatic essay generation. Part of the evaluation was performed human annotators, who gave scores from 1-5 (worst to best) for generated essays from 50 different prompts on quality dimensions of relevance, coherence, and content richness. No annotator agreement was reported, this human annotation is not publicly available, but the full ArgEssay dataset was made available."
           ],
           "annotator_type": "3 unspecified annotators",
@@ -72,7 +72,7 @@
       "authors": ["Elena Musi", "Debanjan Ghosh", "Smaranda Muresan"],
       "year": 2016,
       "paper_link": "https://aclanthology.org/W16-2810/",
-	  "https://doi.org/10.18653/v1/w16-2810",
+	  "doi": "https://doi.org/10.18653/v1/w16-2810",
 	  "open_alex_id": "https://openalex.org/W2508604498",
       "annotations": [
         {
@@ -87,8 +87,7 @@
           "annotator_type": "9 graduate students with no specific background in linguistics or argumentation",
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.1,
-          "accessibility": "Unavailable",
-          "corpus_link": "Unavailable"
+          "accessibility": "Unavailable"
         }
       ]
     },
@@ -104,7 +103,7 @@
         {
           "corpus_id": "aae_v2",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Type Identification"
+            "Argument Component Segmentation", "Argument Component Type Classification"
           ],
           "description": [
 		  "Coarse-grained argument component classification:",
@@ -155,7 +154,7 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.787,
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/ecb6f8cf-0bf3-4843-b299-8c1d9819cee9 "
+          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/ecb6f8cf-0bf3-4843-b299-8c1d9819cee9"
         }
       ]
     },
@@ -181,7 +180,7 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.7672,
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/5d6a075e-697d-4f82-977f-b2cb16aa8542 "
+          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/5d6a075e-697d-4f82-977f-b2cb16aa8542"
         }
       ]
     },
@@ -336,7 +335,7 @@
           ],
           "annotator_type": "6 annotators, including 4 students with a background in linguistics and argumentation, and 2 PhD students with a background in natural language processing",
           "agreement_type": "Fleiss' κ",
-          "agreement_score": 0.296
+          "agreement_score": 0.296,
           "accessibility": "Free",
           "corpus_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html"
         }
@@ -354,7 +353,7 @@
         {
           "corpus_id": "microtexts_p2",
           "annotation_task": [
-            "Argument Component Segmentation, Argument Component Type Classification", "Argument Relation Identification", "Argument Relation Type Classification"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Relation Identification", "Argument Relation Type Classification"
           ],
           "description": [
 		  "Argumentation structures:",
@@ -390,7 +389,7 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.75,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev "
+          "corpus_link": "https://github.com/GabriellaSky/claimrev"
         },
 		{
           "corpus_id": "claimrev_v1",
@@ -399,13 +398,13 @@
           ],
           "description": [
 		  "Revision label agreement:",
-		  "A random sampled set of 440 claim revision pairs were annotated by authors of the paper by their type (such as "Claim Clarification") to compare with original labels provided by kialo. Agreement was reported between the annotators, and between the annotators and the original labels."
+		  "A random sampled set of 440 claim revision pairs were annotated by authors of the paper by their type (such as \"Claim Clarification\") to compare with original labels provided by kialo. Agreement was reported between the annotators, and between the annotators and the original labels."
           ],
           "annotator_type": "2 authors of the paper (experts)",
           "agreement_type": "Cohen's κ",
           "agreement_score": {"Annotator agreement": 0.84, "Agreement with original labels": 0.82},
           "accessibility": "Free",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev "
+          "corpus_link": "https://github.com/GabriellaSky/claimrev"
         },
 		{
           "corpus_id": "claimrev_v1",
@@ -420,7 +419,7 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev "
+          "corpus_link": "https://github.com/GabriellaSky/claimrev"
         }
       ]
     },
@@ -455,7 +454,7 @@
       "authors": ["Joonsuk Park", "Claire Cardie"],
       "year": 2018,
       "paper_link": "https://aclanthology.org/L18-1257/",
-	  "open_alex_id": "https://openalex.org/W2807191971,
+	  "open_alex_id": "https://openalex.org/W2807191971",
       "annotations": [
         {
           "corpus_id": "cornell_erulemaking",
@@ -509,7 +508,7 @@
           ],
           "annotator_type": "1 expert and 3 non-expert annotators",
           "agreement_type": "F1",
-          "agreement_score": {"Approximate 5th iteration weak": 0.75 "Approximate 5th iteration strict": 0.6},
+          "agreement_score": {"Approximate 5th iteration weak": 0.75, "Approximate 5th iteration strict": 0.6},
           "accessibility": "Free",
           "corpus_link": "http://data.dws.informatik.uni-mannheim.de/sci-arg/compiled_corpus.zip"
         },
@@ -581,7 +580,7 @@
 				"Reviews Cogency": 0.32, "Reviews Effectiveness": 0.32, "Reviews Reasonableness": 0.31, "Reviews Overall": 0.33
 			},
           "accessibility": "Free",
-          "corpus_link": "https://github.com/grammarly/gaqcorpus "
+          "corpus_link": "https://github.com/grammarly/gaqcorpus"
         }
       ]
     },
@@ -607,7 +606,7 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://huggingface.co/datasets/ibm-research/argument_quality_ranking_30k "
+          "corpus_link": "https://huggingface.co/datasets/ibm-research/argument_quality_ranking_30k"
         }
       ]
     },
@@ -623,7 +622,7 @@
         {
           "corpus_id": "ibm_ce_v1",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Identification", "Argument Summarization"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Summarization"
           ],
           "description": [
 		  "Claim and evidence identification:",
@@ -649,7 +648,7 @@
         {
           "corpus_id": "ibm_ce_v2",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Identification", "Argument Summarization"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Summarization"
           ],
           "description": [
 		  "Evidence identification:",
@@ -685,7 +684,7 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml "
+          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml"
         }
       ]
     },
@@ -701,7 +700,7 @@
         {
           "corpus_id": "iam",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Identification", "Claim Extraction with Stance Classification", "Argument Relation Identification"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Claim Extraction with Stance Classification", "Argument Relation Identification"
           ],
           "description": [
 		  "Claim and evidence identification:",
@@ -753,7 +752,7 @@
         {
           "corpus_id": "language_of_opposition",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Type Classification", "Argumentative Relation Identification"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Relation Identification"
           ],
           "description": [
 		  "Callouts and Targets:",
@@ -768,7 +767,7 @@
 		{
           "corpus_id": "language_of_opposition",
           "annotation_task": [
-            "Argumentative Relation Type Classification", "Claim Extraction with Stance Classification"
+            "Argument Relation Type Classification", "Claim Extraction with Stance Classification"
           ],
           "description": [
 		  "Stance/Relation Classification:",
@@ -859,7 +858,7 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": {"English": 0.65, "Spanish": 0.22 },
           "accessibility": "Free",
-          "corpus_link": "https://zenodo.org/records/8364002 "
+          "corpus_link": "https://zenodo.org/records/8364002"
         }
       ]
     },
@@ -910,8 +909,7 @@
           "annotator_type": "2 master’s students with solid training in linguistic analysis",
           "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
           "agreement_score": {"Matching conclusions": 0.34, "At least one matching premise": 0.12, "All premises match": 0.03},
-          "accessibility": "Unavailable",
-          "corpus_link": "Unavailable"
+          "accessibility": "Unavailable"
         },
         {
           "corpus_id": "swedish_news",
@@ -922,11 +920,10 @@
 		  "Argument schemes:",
 		  "Arguments were identified and then classified according to one of the 30 most common Walton-style argument schemes. Annotation was performed using Araucaria. Agreement over scheme is reported for arguments which match in both conclusion and premises for a previous annotation task."
           ],
-          "annotator_type": "",
+          "annotator_type": "2 master’s students with solid training in linguistic analysis",
           "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
           "agreement_score": {"Within matching conclusion": 0.22, "Within all arguments": 0.02},
-          "accessibility": "Unavailable",
-          "corpus_link": "Unavailable"
+          "accessibility": "Unavailable"
         }		
       ]
     },
@@ -993,7 +990,7 @@
         {
           "corpus_id": "us2016",
           "annotation_task": [
-            "Argument Component Segmentation", "Argument Component Type Identification", "Argument Relation Identification", "Argument Relation Type Classification", "Argument Type Identification"
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Relation Identification", "Argument Relation Type Classification", "Argument Type Identification"
           ],
           "description": [
 		  "Inference anchoring theory:",
@@ -1011,7 +1008,7 @@
       "paper_id": "an_annotated_corpus_of_argument_schemes_in_us_election_debates",
       "paper_title": "An annotated corpus of argument schemes in US election debates",
       "authors": ["Jacky Visser", "John Lawrence", "Jean Wagemans", "Chris Reed"],
-      "year": ,
+      "year": 2019,
       "paper_link": "https://arg.tech/people/chris/publications/2018/issa2018.pdf",
 	  "open_alex_id": "https://openalex.org/W3095351355",
       "annotations": [
@@ -1063,7 +1060,7 @@
           ],
           "description": [
 		  "Argument component type classification:",
-		  "Argumentative and non-argumentative segments of text in 39 political debate transcripts are annotated by their type: either "claim" or "premise". Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
+		  "Argumentative and non-argumentative segments of text in 39 political debate transcripts are annotated by their type: either \"claim\" or \"premise\". Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
           ],
           "annotator_type": "3 annotators, 2 expert annotators were also used in a reconciliation phase",
           "agreement_type": "Fleiss' κ",
@@ -1154,7 +1151,7 @@
       "paper_id": "arguments_about_deletion_how_experience_improves_the_acceptability_of_arguments_in_ad_hoc_online_task_groups",
       "paper_title": "Arguments about deletion: how experience improves the acceptability of arguments in ad-hoc online task groups",
       "authors": ["Jodi Schneider", "Krystian Samp", "Alexandre Passant", "Stefan Decker"],
-      "year": ,
+      "year": 2013,
       "paper_link": "https://dl.acm.org/doi/10.1145/2441776.2441897",
 	  "doi": "https://doi.org/10.1145/2441776.2441897",
       "annotations": [
@@ -1170,8 +1167,7 @@
           "annotator_type": "2 student annotators (one graduate and one undergraduate)",
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.48,
-          "accessibility": "Unavailable",
-          "corpus_link": "Unavailable"
+          "accessibility": "Unavailable"
         }
       ]
     }
