@@ -85,7 +85,7 @@
 		  "A subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify which question most closely matches argumentative components linked by a support relation (annotators could select no argument)."
           ],
           "annotator_type": "9 graduate students with no specific background in linguistics or argumentation",
-          "agreement_type": "Fleiss’ κ",
+          "agreement_type": "Fleiss' κ",
           "agreement_score": 0.1,
           "accessibility": "Unavailable",
           "corpus_link": "Unavailable"
@@ -664,60 +664,516 @@
       ]
     },
 	{
-      "paper_id": "",
-      "paper_title": "",
-      "authors": [""],
-      "year": ,
-      "paper_link": "",
-	  "doi": "",
-	  "open_alex_id": "",
+      "paper_id": "stance_classification_of_context_dependent_claims",
+      "paper_title": "Stance Classification of Context-Dependent Claims",
+      "authors": ["Roy Bar-Haim", "Indrajit Bhattacharya", "Francesco Dinuzzo", "Amrita Saha", "Noam Slonim"],
+      "year": 2017,
+      "paper_link": "https://aclanthology.org/E17-1024/",
+	  "doi": "https://doi.org/10.18653/v1/e17-1024",
+	  "open_alex_id": "https://openalex.org/W2739836857",
       "annotations": [
         {
           "corpus_id": "ibm_cs",
           "annotation_task": [
-            ""
+            "Argument Component Segmentation", "Claim Extraction with Stance Classification"
           ],
           "description": [
-		  "",
-		  ""
+		  "Claim stance classification:",
+		  "First each of the 55 topics in the dataset were annotated by one of the authors for its target and sentiment. Then for the main annotation task, each claim was independently labelled with stance by 5 annotators who were provided with the target of the topic. Annotators first identified the target (positive/negative assertion) and sentiment of the claim, before determining if the claim target was the same or contrasted with the topic target. To obtain a final gold label, overlapping claim targets were clustered together, if no cluster contained the majority of the annotations then the claim was labelled as incompatible, if a majority was found then the minority annotations were discarded and the majority labels selected. No annotator agreement was reported, but the majority luster was found for 98.5% of annotated claims, and for 92.5% of the claims most of the annotators agreed on the exact boundaries of the target."
           ],
-          "annotator_type": "",
-          "agreement_type": "",
-          "agreement_score": ,
-          "accessibility": "",
-          "corpus_link": ""
+          "annotator_type": "At least 5 annotators labelled each claim",
+          "agreement_type": "Not reported",
+          "agreement_score": "Not reported",
+          "accessibility": "Free",
+          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml "
         }
       ]
     },
-	
-	
-	
-	
 	{
-      "paper_id": "",
-      "paper_title": "",
-      "authors": [""],
-      "year": ,
-      "paper_link": "",
-	  "doi": "",
-	  "open_alex_id": "",
+      "paper_id": "iam_a_comprehensive_and_large_scale_dataset_for_integrated_argument_mining_tasks",
+      "paper_title": "IAM: A Comprehensive and Large-Scale Dataset for Integrated Argument Mining Tasks",
+      "authors": ["Liying Cheng", "Lidong Bing", "Ruidan He", "Qian Yu", "Yan Zhang", "Luo Si"],
+      "year": 2022,
+      "paper_link": "https://aclanthology.org/2022.acl-long.162/",
+	  "doi": "https://doi.org/10.18653/v1/2022.acl-long.162",
+	  "open_alex_id": "https://openalex.org/W4221151164",
       "annotations": [
         {
-          "corpus_id": "",
+          "corpus_id": "iam",
           "annotation_task": [
-            ""
+            "Argument Component Segmentation", "Argument Component Identification", "Claim Extraction with Stance Classification", "Argument Relation Identification"
           ],
           "description": [
-		  "",
-		  ""
+		  "Claim and evidence identification:",
+		  "69,666 sentences from 1010 Wikipedia articles were annotated with a scheme to support a variety of argument mining tasks. The annotation process was two-staged: first, annotators identified claims and their stances (+1 for supporting, -1 for contesting the topic), and second, annotators linked claims to evidence through claim-evidence pairs (CEPs). Evidence was searched within 10 to 15 sentences preceding and after the claim."
           ],
-          "annotator_type": "",
-          "agreement_type": "",
-          "agreement_score": ,
-          "accessibility": "",
-          "corpus_link": ""
+          "annotator_type": "Each sentence was labelled by 2 paid professional data annotators. A third professional annotator was also used in a confirmation phase to resolve disagreement.",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": 0.44,
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/LiyingCheng95/IAM"
         }
       ]
     },
+	{
+      "paper_id": "from_arguments_to_key_points_towards_automatic_argument_summarization",
+      "paper_title": "From Arguments to Key Points: Towards Automatic Argument Summarization",
+      "authors": ["Roy Bar-Haim", "Lilach Eden", "Roni Friedman", "Yoav Kantor", "Dan Lahav", "Noam Slonim"],
+      "year": 2020,
+      "paper_link": "https://aclanthology.org/2020.acl-main.371/",
+	  "doi": "https://doi.org/10.18653/v1/2020.acl-main.371",
+	  "open_alex_id": "https://openalex.org/W3021632220",
+      "annotations": [
+        {
+          "corpus_id": "kpa",
+          "annotation_task": [
+            "Argument Summarization"
+          ],
+          "description": [
+		  "Key point assignment:",
+		  "A set of 7000 arguments was mapped to a set of 378 key points (curated by an expert on the 28 topics the arguments addressed). Each argument was labelled by 8 crowd annotators from Figure Eight, who were asked to check all relevant key points for the argument (or none). Various quality control measures were employed (such as test questions, and relying on annotators used in previous work). Inter-annotator agreement for the crowd annotators was reported, along with the agreement of 100 of the final key point labelings with an expert."
+          ],
+          "annotator_type": "8 crowd annotators per argument, 1 expert for final evaluation",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": {"Crowd": 0.5, "Expert": 0.82},
+          "accessibility": "Free",
+          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml"
+        }
+      ]
+    },
+	{
+      "paper_id": "analyzing_argumentative_discourse_units_in_online_interactions",
+      "paper_title": "Analyzing Argumentative Discourse Units in Online Interactions",
+      "authors": ["Debanjan Ghosh", "Smaranda Muresan", "Nina Wacholder", "Mark Aakhus", "Matthew Mitsui"],
+      "year": 2014,
+      "paper_link": "https://aclanthology.org/W14-2106/",
+	  "doi": "https://doi.org/10.3115/v1/w14-2106",
+	  "open_alex_id": "https://openalex.org/W2251521080",
+      "annotations": [
+        {
+          "corpus_id": "language_of_opposition",
+          "annotation_task": [
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argumentative Relation Identification"
+          ],
+          "description": [
+		  "Callouts and Targets:",
+		  "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform an annotation study that followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. Agreement is reported separately for each topic in the corpus. The agreement reported below is agreement across the whole annotation task (segmentation and type classification)."
+          ],
+          "annotator_type": "5 graduate students with strong humanities backgrounds",
+          "agreement_type": "Krippendorff's α",
+          "agreement_score": {"Android": 0.64, "iPad": 0.73, "Layoffs": 0.87, "Twitter": 0.82},
+          "accessibility": "Free",
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
+        },
+		{
+          "corpus_id": "language_of_opposition",
+          "annotation_task": [
+            "Argumentative Relation Type Classification", "Claim Extraction with Stance Classification"
+          ],
+          "description": [
+		  "Stance/Relation Classification:",
+		  "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation. In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other. A range of agreement values across threads was reported."
+          ],
+          "annotator_type": "5 graduate students with strong humanities backgrounds",
+          "agreement_type": "Fleiss' κ",
+          "agreement_score": [0.45,0.55],
+          "accessibility": "Free",
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
+        },
+		{
+          "corpus_id": "language_of_opposition",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification"
+          ],
+          "description": [
+		  "Rationale Identification:",
+		  "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.  In this task, annotators had to identify the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments. No agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
+          ],
+          "annotator_type": "5 graduate students with strong humanities background",
+          "agreement_type": "Not reported",
+          "agreement_score": "Not reported",
+          "accessibility": "Free",
+          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/"
+        }
+      ]
+    },
+	{
+      "paper_id": "logical_fallacy_detection",
+      "paper_title": "Logical Fallacy Detection",
+      "authors": ["Zhijing Jin", "Abhinav Lalwani", "Tejas Vaidhya", "Xiaoyu Shen", "Yiwen Ding", "Zhiheng Lyu", "Mrinmaya Sachan", "Rada Mihalcea", "Bernhard Schölkopf"],
+      "year": 2022,
+      "paper_link": "https://aclanthology.org/2022.findings-emnlp.532/",
+	  "doi": "https://doi.org/10.18653/v1/2022.findings-emnlp.532",
+	  "open_alex_id": "https://openalex.org/W4385567117",
+      "annotations": [
+        {
+          "corpus_id": "logic",
+          "annotation_task": [
+            "None"
+          ],
+          "description": [
+		  "Unannotated"
+          ],
+          "annotator_type": "Unannotated",
+          "agreement_type": "None",
+          "agreement_score": "None",
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/causalNLP/logical-fallacy"
+        },
+        {
+          "corpus_id": "logic_climate",
+          "annotation_task": [
+            "Argument Component Segmentation", "Minimal Argument Quality Assessment"
+          ],
+          "description": [
+		  "Fallacy detection:",
+		  "Climate change news articles are annotated with text spans that contain logical fallacies. Two annotators who were native English speakers, worked through every sentence in each article, and label all logical fallacies where applicable. When labelling a text span as a logical fallacy, annotators had to pick between 1 of 13 possible logical fallacies. For the final ground-truth label, annotations were merged (text-spans), and where there was a divergent opinion, annotators consulted expert reviews on the site. If disagreement continued annotators had a discussion to resolve the divergent label. Annotator agreement was not reported, but prior to the annotation task the annotators achieved an accuracy of 85% on a test set."
+          ],
+          "annotator_type": "2 expert trained annotators who are native English speakers",
+          "agreement_type": "Not reported",
+          "agreement_score": "Not reported",
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/causalNLP/logical-fallacy"
+        }
+      ]
+    },
+	{
+      "paper_id": "nlas_multi_a_multilingual_corpus_of_automatically_generated_natural_language_argumentation_schemes",
+      "paper_title": "NLAS-multi: A multilingual corpus of automatically generated Natural Language Argumentation Schemes",
+      "authors": ["Ramon Ruiz-Dolz", "Joaquin Taverner", "John Lawrence", "Chris Reed"],
+      "year": 2024,
+      "paper_link": "https://www.sciencedirect.com/science/article/pii/S2352340924010497",
+	  "doi": "https://doi.org/10.1016/j.dib.2024.111087",
+	  "open_alex_id": "https://openalex.org/W4403913558",
+      "annotations": [
+        {
+          "corpus_id": "nlas",
+          "annotation_task": [
+            "Argument Type Identification"
+          ],
+          "description": [
+		  "Argument scheme validation:",
+		  "5 annotators validated 3810 generated argument schemes against their reported type, topic, and stance. Validation proceeded in stages, at the final stage (based on feedback from previous stages) 1917/2000 arguments generated were valid. Annotator agreement was also computed for a 10% subset of the total number of samples for both the English and Spanish examples. 4 of the 5 annotators annotated the English generated samples, while 2 of the 5 annotators annotated Spanish generated samples."
+          ],
+          "annotator_type": "5 professional linguists trained in argumentation theory",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": {"English": 0.65, "Spanish": 0.22 },
+          "accessibility": "Free",
+          "corpus_link": "https://zenodo.org/records/8364002 "
+        }
+      ]
+    },
+	{
+      "paper_id": "semeval_2016_task_6_detecting_stance_in_tweets",
+      "paper_title": "SemEval-2016 Task 6: Detecting Stance in Tweets",
+      "authors": ["Saif Mohammad", "Svetlana Kiritchenko", "Parinaz Sobhani", "Xiaodan Zhu", "Colin Cherry"],
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/S16-1003/",
+	  "doi": "https://doi.org/10.18653/v1/s16-1003",
+	  "open_alex_id": "https://openalex.org/W2460159515",
+      "annotations": [
+        {
+          "corpus_id": "semeval_2016",
+          "annotation_task": [
+            "Claim Extraction with Stance Classification"
+          ],
+          "description": [
+		  "Stance detection:",
+		  "A dataset of 4870 English tweets is annotated with stance towards six commonly known targets in the United States (‘Atheism’, ‘Climate Change is a Real Concern’, ‘Feminist Movement’, ‘Hillary Clinton’, and ‘Legalization of Abortion’). Targets were compiled by the authors, who also compiled a list of hashtags used when tweeting about the chosen targets. These hashtags were further distinguished by whether they expressed a pro/con/ambiguous stance towards the target. The selected hashtags were used to compile a list of tweets; the hashtags were then removed as the dataset was distributed for the purposes of a shared task and classification would be simplified by their inclusion. Crowd workers from CrowdFlower were presented with tweet-target pairs and asked to label the tweets stance (with the hashtag removed), each tweet was annotated by at least 8 respondents.  For the final dataset, only instances with an agreement greater than or equal to 60% were kept. The number of tweets labelled with a neutral stance was less than 1%."
+          ],
+          "annotator_type": "8 crowd workers per tweet",
+          "agreement_type": "Overall agreement",
+          "agreement_score": 0.8185,
+          "accessibility": "Free",
+          "corpus_link": "https://www.saifmohammad.com/WebPages/StanceDataset.htm"
+        }
+      ]
+    },
+	{
+      "paper_id": "towards_assessing_argumentation_annotation_a_first_step",
+      "paper_title": "Towards Assessing Argumentation Annotation - A First Step",
+      "authors": ["Anna Lindahl", "Lars Borin", "Jacobo Rouces"],
+      "year": 2019,
+      "paper_link": "https://aclanthology.org/W19-4520/",
+	  "doi": "https://doi.org/10.18653/v1/w19-4520",
+	  "open_alex_id": "https://openalex.org/W2970024917",
+      "annotations": [
+        {
+          "corpus_id": "swedish_news",
+          "annotation_task": [
+            "Argument Component Segmentation", "Argument Component Type Classification", "Argument Relation Identification"
+          ],
+          "description": [
+		  "Component segmentation and identification:",
+		  "Arguments were segmented into argument components, and their types (premises/conclusion) identified. These argument components were linked into full structures, for a downstream argument scheme annotation task. Annotation was performed using Araucaria. No predefined markers were used in the dataset to distinguish arguments, so annotators determined the boundaries of arguments themselves, because of this fuzziness agreement is measured using an equation based on the Sørensen-Dice coefficient which accounts for overlap in argument segments. Various combinations of agreement are reported in the paper, here we report the overall agreement for conclusions, for arguments where at least one premise matched (regardless of conclusion), and arguments were all premises matched (regardless of conclusion)."
+          ],
+          "annotator_type": "2 master’s students with solid training in linguistic analysis",
+          "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
+          "agreement_score": {"Matching conclusions": 0.34, "At least one matching premise": 0.12, "All premises match": 0.03},
+          "accessibility": "Unavailable",
+          "corpus_link": "Unavailable"
+        },
+        {
+          "corpus_id": "swedish_news",
+          "annotation_task": [
+            "Argument Type Identification"
+          ],
+          "description": [
+		  "Argument schemes:",
+		  "Arguments were identified and then classified according to one of the 30 most common Walton-style argument schemes. Annotation was performed using Araucaria. Agreement over scheme is reported for arguments which match in both conclusion and premises for a previous annotation task."
+          ],
+          "annotator_type": "",
+          "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
+          "agreement_score": {"Within matching conclusion": 0.22, "Within all arguments": 0.02},
+          "accessibility": "Unavailable",
+          "corpus_link": "Unavailable"
+        }		
+      ]
+    },
+	{
+      "paper_id": "which_argument_is_more_convincing_analyzing_and_predicting_convincingness_of_web_arguments_using_bidirectional_lstm",
+      "paper_title": "Which argument is more convincing? Analyzing and predicting convincingness of Web arguments using bidirectional LSTM",
+      "authors": ["Ivan Habernal", "Iryna Gurevych"],
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/P16-1150/",
+	  "doi": "https://doi.org/10.18653/v1/p16-1150",
+	  "open_alex_id": "https://openalex.org/W2518510348",
+      "annotations": [
+        {
+          "corpus_id": "ukp_conv_arg",
+          "annotation_task": [
+            "Maximal Argument Quality Assessment"
+          ],
+          "description": [
+		  "Pairwise quality assessment:",
+		  "Argument pairs are annotated with a label indicating which argument was more convincing. For a given argument pair A1 and A2, workers could either label A1>A2, A2>A1 or A1=A2. Each annotator also had to provide a reason for their labelling. Agreement was not reported, but several quality control measures were used for the selection of annotators. The annotated dataset was released as UKPConvArg1."
+          ],
+          "annotator_type": "All pairs were annotated by 5 crowd workers, in total 3900 workers participated",
+          "agreement_type": "Not reported",
+          "agreement_score": "Not reported",
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/UKPLab/acl2016-convincing-arguments"
+        }
+      ]
+    },
+	{
+      "paper_id": "what_makes_a_convincing_argument_empirical_analysis_and detecting_attributes_of_convincingness_in_web_argumentation",
+      "paper_title": "What makes a convincing argument? Empirical analysis and detecting attributes of convincingness in Web argumentation",
+      "authors": ["Ivan Habernal", "Iryna Gurevych"],
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/D16-1129/",
+	  "doi": "https://doi.org/10.18653/v1/d16-1129",
+	  "open_alex_id": "https://openalex.org/W2562522356",
+      "annotations": [
+        {
+          "corpus_id": "ukp_conv_arg",
+          "annotation_task": [
+            "Other"
+          ],
+          "description": [
+		  "Reason unit classification:",
+		  "A bottom-up approach was used to annotate reasons given for why one argument in a pair of arguments was more convincing than another. Pairs of arguments and their reasons were obtained from a subset of 9,111 argument pairs from UKPConvArg1. From a pilot study, 19 distinct labels for reasons were obtained, for the final annotation study performed by crowd workers, these labels were decomposed into a hierarchy to be more suitable for non-experts. The annotated dataset was released as UKPConvArg2."
+          ],
+          "annotator_type": "All pairs were annotated by 5 crowd workers, in total 3900 workers participated",
+          "agreement_type": "Not reported",
+          "agreement_score": "Not reported",
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/UKPLab/emnlp2016-empirical-convincingness"
+        }
+      ]
+    },
+	{
+      "paper_id": "intertextual_correspondence_for_integrating_corpora",
+      "paper_title": "Intertextual Correspondence for Integrating Corpora",
+      "authors": ["Jacky Visser", "Rory Duthie", "John Lawrence", "Chris Reed"],
+      "year": 2018,
+      "paper_link": "https://aclanthology.org/L18-1554/",
+	  "open_alex_id": "https://openalex.org/W2807172548",
+      "annotations": [
+        {
+          "corpus_id": "us2016",
+          "annotation_task": [
+            "Argument Component Segmentation", "Argument Component Type Identification", "Argument Relation Identification", "Argument Relation Type Classification", "Argument Type Identification"
+          ],
+          "description": [
+		  "Inference anchoring theory:",
+		  "3 presidential debates and Reddit mega-threads that discussed them were annotated according to Inference Anchoring Theory (IAT) by 4 well-trained annotators. Annotation proceeded in stages, although sometimes later stages helped to inform a change in a previous stage, first annotators identified locutions segmenting the text into argumentative discourse units. Then annotators proceeded to identify functional transitions between locutions in the dialogue, as well as the illocutionary intention of locutions. Where relevant, annotators reconstructed the propositional content of a locution, as well as inferences between propositions. Propositions could also be related to each other by a conflict or rephrase relation. Agreement was calculated over a 10.5% subset of the debates sub-corpus annotated by 4 annotators, and a 12.6% subset of the Reddit sub-corpus was annotated by 2 annotators."
+          ],
+          "annotator_type": "4 unspecified annotators",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": 0.61,
+          "accessibility": "Free",
+          "corpus_link": "https://corpora.aifdb.org/US2016"
+        }
+      ]
+    },
+	{
+      "paper_id": "an_annotated_corpus_of_argument_schemes_in_us_election_debates",
+      "paper_title": "An annotated corpus of argument schemes in US election debates",
+      "authors": ["Jacky Visser", "John Lawrence", "Jean Wagemans", "Chris Reed"],
+      "year": ,
+      "paper_link": "https://arg.tech/people/chris/publications/2018/issa2018.pdf",
+	  "open_alex_id": "https://openalex.org/W3095351355",
+      "annotations": [
+        {
+          "corpus_id": "us2016",
+          "annotation_task": [
+		  "Argument Component Type Classification", "Argument Type Identification"
+          ],
+          "description": [
+		  "Argument schemes (periodic table of arguments):",
+          "3 debate transcripts (the debate sub-corpus of US2016) is annotated with a layer of argument schemes according to the Periodic Table of Arguments (PTA). Annotation according to the PTA involves 3 subtasks to identify 3 distinguishing characteristics of arguments, which re-use previous Inference Anchoring Theory annotations from the original US2016 corpus. The first annotation task involves distinguishing first-order and second-order arguments, which is a classification over the inference relation between two propositions. An inference relation is first-order if it connects two propositions which both contain a subject-predicate pair, otherwise the inference relation is second order if its premise is a locution. The second annotation task involves distinguishing predicate and subject arguments, where an inference relation is classified as a predicate argument if the propositions involved share the same subject term to which different predicates are applied and is a subject argument in the opposite case. Finally, propositions were also annotated as either fact, value or policy. Annotation was performed by 2 annotators, and agreement was calculated over a 10% sample of the corpus annotated by both annotators."
+          ],
+          "annotator_type": "2 unspecified annotators",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": {"First/second-order arguments": 0.658, "Predicate/subject arguments": 0.851, "Fact/value/policy": 0.778},
+          "accessibility": "Free",
+          "corpus_link": "https://corpora.aifdb.org/US2016G1tvWAGEMANS"
+        }
+      ]
+    },
+	{
+      "paper_id": "yes_we_can_mining_arguments_in_50_years_of_us_presidential_campaign_debates",
+      "paper_title": "Yes, we can! Mining Arguments in 50 Years of US Presidential Campaign Debates",
+      "authors": ["Shohreh Haddadan", "Elena Cabrio", "Serena Villata"],
+      "year": 2019,
+      "paper_link": "https://aclanthology.org/P19-1463/",
+	  "doi": "https://doi.org/10.18653/v1/p19-1463",
+	  "open_alex_id": "https://openalex.org/W2949928613",
+      "annotations": [
+        {
+          "corpus_id": "us_elec_deb_60_to_16",
+          "annotation_task": [
+            "Argument Component Segmentation"
+          ],
+          "description": [
+		  "Argument component segmentation:",
+		  "39 political debate transcripts are segmented in argumentative and non-argumentative text by 3 annotators. Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
+          ],
+          "annotator_type": "3 annotators, 2 expert annotators were also used in a reconciliation phase",
+          "agreement_type": "Fleiss' κ",
+          "agreement_score": 0.57,
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/ElecDeb60To16/Dataset"
+        },
+		{
+          "corpus_id": "us_elec_deb_60_to_16",
+          "annotation_task": [
+            "Argument Component Type Classification"
+          ],
+          "description": [
+		  "Argument component type classification:",
+		  "Argumentative and non-argumentative segments of text in 39 political debate transcripts are annotated by their type: either "claim" or "premise". Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
+          ],
+          "annotator_type": "3 annotators, 2 expert annotators were also used in a reconciliation phase",
+          "agreement_type": "Fleiss' κ",
+          "agreement_score": 0.4,
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/ElecDeb60To16/Dataset"
+        }
+      ]
+    },
+	{
+      "paper_id": "fallacious_argument_classification_in_political_debates",
+      "paper_title": "Fallacious Argument Classification in Political Debates",
+      "authors": ["Pierpaolo Goffredo", "Shohreh Haddadan", "Vorakit Vorakitphan", "Elena Cabrio", "Serena Villata"],
+      "year": 2022,
+      "paper_link": "https://www.ijcai.org/proceedings/2022/575",
+	  "doi": "https://doi.org/10.24963/ijcai.2022/575",
+	  "open_alex_id": "https://openalex.org/W4285602624",
+      "annotations": [
+        {
+          "corpus_id": "us_elec_deb_60_to_16",
+          "annotation_task": [
+            "Minimal Argument Quality Assessment"
+          ],
+          "description": [
+		  "Fallacy detection:",
+		  "31 political debates are annotated at the span level with 6 types of fallacies (ad hominem, appeal to emotion, appeal to authority, slippery slope, false cause, and slogan) which were selected based on an exploratory study on the dataset by an expert. Annotators selected spans which they determined contained a fallacy, of the 6 possible fallacies 4 were present in the final dataset which consisted of 1628 annotated fallacious arguments. Agreement was calculated based on the 3 annotators annotation of 9 sections from 5 debates."
+          ],
+          "annotator_type": "3 annotators with a background in computational linguistics",
+          "agreement_type": "Krippendorff's α",
+          "agreement_score": {"Ad Hominem": 0.5315, "Appeal to Authority": 0.5806, "Appeal to Emotion": 0.4604, "Slogans": 0.5995},
+          "accessibility": "Free",
+          "corpus_link": "https://github.com/pierpaologoffredo/IJCAI2022"
+        }
+      ]
+    },
+	{
+      "paper_id": "argumentation_mining_in_user_generated_web_discourse",
+      "paper_title": "Argumentation Mining in User-Generated Web Discourse",
+      "authors": ["Ivan Habernal", "Iryna Gurevych"],
+      "year": 2017,
+      "paper_link": "https://aclanthology.org/J17-1004/",
+	  "doi": "https://doi.org/10.1162/coli_a_00276",
+	  "open_alex_id": "https://openalex.org/W2236647290",
+      "annotations": [
+        {
+          "corpus_id": "web_discourse",
+          "annotation_task": [
+            "Argument Component Segmentation", "Argument Component Type Classification"
+          ],
+          "description": [
+		  "Toulmin component classification:",
+		  "5444 documents containing web-based discourse on controversial documents were annotated at the span level with their argumentative components. These argument components were derived from Toulmin’s model, and annotators could choose to label spans as either claim, premise, backing, rebuttal, and refutation. Annotation was performed in stages, with discussions around problematic cases occurring early leading to a refinement of annotation guidelines. Annotators determined spans themselves (argument segmentation) and the gold label was obtained by majority vote on overlapping spans, and problematic cases resolved through further discussion. Agreement was reported using Krippendorf’s α. Agreement varied significantly on both the topic discussed in the document and the type of the document. A joint agreement across all types of documents, all topics, and all kinds of argumentative components was reported, which we list here."
+          ],
+          "annotator_type": "All documents were annotated by 3 independent annotators who participated in two training sessions",
+          "agreement_type": "Krippendorff's α",
+          "agreement_score": 0.48,
+          "accessibility": "Free",
+          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342"
+        }
+      ]
+    },
+	{
+      "paper_id": "a_news_editorial_corpus_for_mining_argumentation_atrategies",
+      "paper_title": "A News Editorial Corpus for Mining Argumentation Strategies",
+      "authors": ["Khalid Al-Khatib", "Henning Wachsmuth", "Johannes Kiesel", "Matthias Hagen", "Benno Stein"],
+      "year": 2016,
+      "paper_link": "https://aclanthology.org/C16-1324/",
+	  "open_alex_id": "https://openalex.org/W2579772177",
+      "annotations": [
+        {
+          "corpus_id": "webis",
+          "annotation_task": [
+            "Argument Component Type Classification"
+          ],
+          "description": [
+		  "Argumentative discourse unit classification:",
+		  "300 news editorials are annotated at the span level with their argumentative discourse unit. Each editorial was annotated by 3 annotators (out of 4 total annotators), and text was pre-segmented into text spans (annotators did not determine spans themselves). Annotators could label spans as one of 6 possible argumentative discourse unit types (common ground, assumption, anecdote, testimony, statistics, or other), they could also label spans as having no type, or as a continuation of the previous span."
+          ],
+          "annotator_type": "4 crowd annotators from upwork.com",
+          "agreement_type": "Fleiss' κ",
+          "agreement_score": {"Common ground": 0.114, "Assumption": 0.613, "Anecdote": 0.399, "Testimony": 0.591, "Statistics": 0.582, "Other": 0.152, "No unit": 0.365, "Continued": 0.684, "Overall": 0.560},
+          "accessibility": "Free",
+          "corpus_link": "https://webis.de/data/webis-editorials-16.html"
+        }
+      ]
+    },
+	{
+      "paper_id": "arguments_about_deletion_how_experience_improves_the_acceptability_of_arguments_in_ad_hoc_online_task_groups",
+      "paper_title": "Arguments about deletion: how experience improves the acceptability of arguments in ad-hoc online task groups",
+      "authors": ["Jodi Schneider", "Krystian Samp", "Alexandre Passant", "Stefan Decker"],
+      "year": ,
+      "paper_link": "https://dl.acm.org/doi/10.1145/2441776.2441897",
+	  "doi": "https://doi.org/10.1145/2441776.2441897",
+      "annotations": [
+        {
+          "corpus_id": "wiki_deletion",
+          "annotation_task": [
+            "Argument Type Identification"
+          ],
+          "description": [
+		  "Argument scheme identification:",
+		  "741 comments on Wikipedia debate/discussion pages were annotated with their argument schemes (as well as labels no reason was given or no argument present). Annotation proceeded in several rounds, in the second round the overall prevalence of various argument schemes was determined, this was used to guide annotation in a third and fourth round. In the fourth and final round two annotators annotated the corpus, agreement was reported for this fourth and final round of annotation."
+          ],
+          "annotator_type": "2 student annotators (one graduate and one undergraduate)",
+          "agreement_type": "Cohen's κ",
+          "agreement_score": 0.48,
+          "accessibility": "Unavailable",
+          "corpus_link": "Unavailable"
+        }
+      ]
+    }
 ]
 }
