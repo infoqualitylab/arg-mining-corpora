@@ -6,7 +6,10 @@
       "$comment": "List of papers",
       "type": "array",
       "uniqueItems": true,
-      "uniqueItemProperties": ["paper_id", "doi"],
+      "uniqueItemProperties": [
+        "paper_id",
+        "doi"
+      ],
       "items": {
         "type": "object",
         "properties": {
@@ -52,7 +55,7 @@
             "items": {
               "type": "object",
               "properties": {
-                "corpus_id": {
+                "dataset_id": {
                   "$comment": "Unique id for the corpus being annotated, should be human readable",
                   "type": "string"
                 },
@@ -71,9 +74,9 @@
                       "Maximal Argument Quality Assessment",
                       "Minimal Argument Quality Assessment",
                       "Argument Type Identification",
-					  "Argument Summarization",
+                      "Argument Summarization",
                       "Other",
-					  "None"
+                      "None"
                     ]
                   }
                 },
@@ -113,7 +116,10 @@
                     },
                     {
                       "type": "string",
-                      "enum": ["Not reported", "None"]
+                      "enum": [
+                        "Not reported",
+                        "None"
+                      ]
                     },
                     {
                       "type": "object",
@@ -129,22 +135,44 @@
                 "accessibility": {
                   "$comment": "Accessibility of the annotated data, Free (freely available online), Upon Request (available from authors upon request), Paid (available for a fee), Unavailable (not available)",
                   "type": "string",
-                  "enum": ["Free", "Upon Request", "Paid", "Unavailable"]
+                  "enum": [
+                    "Free",
+                    "Upon Request",
+                    "Paid",
+                    "Unavailable"
+                  ]
                 },
-                "corpus_link": {
+                "release_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
                   "type": "string",
-				  "format": "uri"
+                  "format": "uri"
+                },
+                "release_name": {
+                  "$comment": "Name given to corpus by authors. If not specified then the corpus name will be inferred from dataset_id.",
+                  "type": "string"
+                },
+                "subset": {
+                  "$comment": "Subset of main corpus annotated in this task",
+                  "oneOf": [
+                    {
+                      "type": "number"
+                    },
+                    {
+                      "type": "string"
+                    }
+                  ]
                 }
               },
               "required": [
-                "corpus_id",
+                "dataset_id",
                 "annotation_task",
                 "description",
                 "annotator_type",
                 "agreement_type",
                 "agreement_score",
-                "accessibility"
+                "accessibility",
+                "release_name",
+                "subset"
               ],
               "additionalProperties": false
             }
@@ -162,6 +190,8 @@
       }
     }
   },
-  "required": ["papers"],
+  "required": [
+    "papers"
+  ],
   "additionalProperties": false
 }

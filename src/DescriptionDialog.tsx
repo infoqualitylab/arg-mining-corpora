@@ -51,13 +51,13 @@ function DescriptionDialog({
             <CloseIcon />
           </IconButton>
           <Typography sx={{ ml: 2, flex: 1 }} variant="h6" component="div">
-            {selectedRow?.corpus_name}
+            {selectedRow?.dataset_name}
           </Typography>
         </Toolbar>
       </AppBar>
       <Stack sx={{ p: 2 }} spacing={2}>
         <Typography variant="h6">Corpus Description</Typography>
-        {selectedRow?.corpus_description.map((text: string) =>
+        {selectedRow?.dataset_description.map((text: string) =>
           !text.startsWith("NOTE: ") ? (
             <Typography variant="body1" paragraph>
               {text}

@@ -5,10 +5,10 @@
  * and run json-schema-to-typescript to regenerate this file.
  */
 
-export interface Corpora {
-  corpora: {
-    corpus_id: string;
-    corpus_name: string;
+export interface Datasets {
+  datasets: {
+    dataset_id: string;
+    dataset_name: string;
     genre: string;
     description: string[];
     language: string[];
@@ -17,6 +17,6 @@ export interface Corpora {
     /**
      * @minItems 0
      */
-    parent_corpora_id: string[];
+    extends: string[];
   }[];
 }

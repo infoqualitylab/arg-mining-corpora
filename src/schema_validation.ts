@@ -1,25 +1,25 @@
 import Ajv from "ajv";
 import addFormats from "ajv-formats";
-import corpora_schema from "./data/schema/corpora.json";
+import datasets_schema from "./data/schema/datasets.json";
 import papers_schema from "./data/schema/papers.json";
-import corpora_data from "./data/entries/corpora.json";
+import datasets_data from "./data/entries/datasets.json";
 import papers_data from "./data/entries/papers.json";
 
 const ajv = new Ajv({ allErrors: true, strict: false });
 addFormats(ajv);
-ajv.addSchema(corpora_schema, "corpora.json");
+ajv.addSchema(datasets_schema, "datasets.json");
 ajv.addSchema(papers_schema, "papers.json");
-const validate_corpora = ajv.compile(corpora_schema);
+const validate_datasets = ajv.compile(datasets_schema);
 const validate_papers = ajv.compile(papers_schema);
 
 function validateData() {
   let success = 0;
-  const corpora_valid = validate_corpora(corpora_data);
-  if (!corpora_valid) {
+  const datasets_valid = validate_datasets(datasets_data);
+  if (!datasets_valid) {
     success = 1;
-    console.error("Corpora data validation errors:", validate_corpora.errors);
+    console.error("datasets data validation errors:", validate_datasets.errors);
   } else {
-    console.log("Corpora data is valid.");
+    console.log("datasets data is valid.");
   }
 
   const papers_valid = validate_papers(papers_data);

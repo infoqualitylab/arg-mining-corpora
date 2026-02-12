@@ -1,8 +1,8 @@
 {
-  "corpora": [
+  "datasets": [
     {
-      "corpus_id": "arg_essay",
-      "corpus_name": "ArgEssay",
+      "dataset_id": "arg_essay",
+      "dataset_name": "ArgEssay",
       "genre": "Essays",
       "description": [
         "A dataset of 11,282 prompt-essay pairs collected from Essay Forum. A prompt essay pair consists of an essay writing prompt along with an argumentative essay that attempts to answer or discuss the prompt. The dataset is intended to support argument generation tasks, particularly the generation of argumentative essays."
@@ -12,11 +12,11 @@
       ],
       "document_type": "Prompt-essay pairs",
       "document_count": 11282,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "aae_v1",
-      "corpus_name": "Argument-Annotated Essays (Version 1)",
+      "dataset_id": "aae_v1",
+      "dataset_name": "Argument-Annotated Essays (Version 1)",
       "genre": "Online discussions",
       "description": [
         "AAE version 1 (AAE1) consists of 90 essays taken from the essayforum website."
@@ -26,11 +26,11 @@
       ],
       "document_type": "Essays",
       "document_count": 90,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "aae_v2",
-      "corpus_name": "Argument-Annotated Essays (Version 2)",
+      "dataset_id": "aae_v2",
+      "dataset_name": "Argument-Annotated Essays (Version 2)",
       "genre": "Online discussions",
       "description": [
         "AAE version 2 (AAE2) consists of 402 essays taken from the essayforum website."
@@ -40,13 +40,13 @@
       ],
       "document_type": "Essays",
       "document_count": 402,
-      "parent_corpora_id": [
+      "extends": [
         "aae_v1"
       ]
     },
     {
-      "corpus_id": "arc",
-      "corpus_name": "Argument Reasoning Comprehension (ARC)",
+      "dataset_id": "arc",
+      "dataset_name": "Argument Reasoning Comprehension (ARC)",
       "genre": "Online discussions",
       "description": [
         "A collection of 5000 randomly sampled NYTimes Room for Debate comments."
@@ -56,11 +56,11 @@
       ],
       "document_type": "Posts/comments",
       "document_count": 5000,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "microtexts_p1",
-      "corpus_name": "Argumentative Microtexts (Part 1)",
+      "dataset_id": "microtexts_p1",
+      "dataset_name": "Argumentative Microtexts (Part 1)",
       "genre": "Debate",
       "description": [
         "A dataset of 112 short texts in German (with English translation), consisting of 23 texts written by the author as a proof of concept, and a further 90 texts created during a controlled text generation experiment."
@@ -71,11 +71,11 @@
       ],
       "document_type": "Microtexts",
       "document_count": 112,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "microtexts_p2",
-      "corpus_name": "Argumentative Microtexts (Part 2)",
+      "dataset_id": "microtexts_p2",
+      "dataset_name": "Argumentative Microtexts (Part 2)",
       "genre": "Debate",
       "description": [
         "Second part of the microtexts corpus, which contains additional arguments that were written by crowd-sourced workers, who had to produce a short text that argued for or against a general debate topic. Every worker was given one of 26 prompts and wrote no more than one text for the experiment. Low quality texts were filtered out, and grammatical errors and misspellings fixed."
@@ -86,25 +86,25 @@
       ],
       "document_type": "Microtexts",
       "document_count": 171,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "claimrev_v1",
-      "corpus_name": "ClaimRev (Version 1)",
+      "dataset_id": "claimrev_v1",
+      "dataset_name": "ClaimRev (Version 1)",
       "genre": "Revisions",
       "description": [
-        "A dataset of 124,312 claim revision chains sourced from the debate website kialo. On kialo users are allowed to revise their claims, and other users are able to suggest revisions to claims. ClaimRev of two corpora, a base corpus obtained by scraping all 1628 debates from Kialo until June 26th 2021 for revisions, and an extended corpus that contains non-consecutive version pairs. The extended version was obtained by taking original sets of revision pairs, such as [version1, version2] and [version2, version3], and adding all possible non-consecutive pairs ([version1, version3] in the previous example)."
+        "A dataset of 124,312 claim revision chains sourced from the debate website kialo. On kialo users are allowed to revise their claims, and other users are able to suggest revisions to claims. ClaimRev of two datasets, a base dataset obtained by scraping all 1628 debates from Kialo until June 26th 2021 for revisions, and an extended dataset that contains non-consecutive version pairs. The extended version was obtained by taking original sets of revision pairs, such as [version1, version2] and [version2, version3], and adding all possible non-consecutive pairs ([version1, version3] in the previous example)."
       ],
       "language": [
         "English"
       ],
       "document_type": "Claim revision chains",
       "document_count": 124312,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "claimrev_v2",
-      "corpus_name": "ClaimRev (Version 2)",
+      "dataset_id": "claimrev_v2",
+      "dataset_name": "ClaimRev (Version 2)",
       "genre": "Revisions",
       "description": [
         "A second version of ClaimRev was created by automatically deriving all possible claim optimization pairs from the original dataset of 124,312 claim revision chains, filtering out infrequent labels, and adding the debate topic and previous claim as context to each claim-revision pair."
@@ -114,13 +114,13 @@
       ],
       "document_type": "Claim optimization pairs",
       "document_count": 198089,
-      "parent_corpora_id": [
+      "extends": [
         "claimrev_v1"
       ]
     },
     {
-      "corpus_id": "cornell_erulemaking",
-      "corpus_name": "Cornell eRuleMaking",
+      "dataset_id": "cornell_erulemaking",
+      "dataset_name": "Cornell eRuleMaking",
       "genre": "Online Discussions",
       "description": [
         "A dataset of 731 comments on the Consumer Debt Collection Practices rule."
@@ -130,11 +130,11 @@
       ],
       "document_type": "Posts/comments",
       "document_count": 731,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "dr_inventor",
-      "corpus_name": "Dr. Inventor",
+      "dataset_id": "dr_inventor",
+      "dataset_name": "Dr. Inventor",
       "genre": "Scientific publications",
       "description": [
         "A dataset of 40 publications from computer graphics."
@@ -144,11 +144,11 @@
       ],
       "document_type": "Scientific publications",
       "document_count": 40,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "ethix",
-      "corpus_name": "EthiX",
+      "dataset_id": "ethix",
+      "dataset_name": "EthiX",
       "genre": "Online discussions",
       "description": [
         "The EthiX Dataset, is a curated collection of 686 arguments from ethical debates on the Kialo platform."
@@ -158,25 +158,25 @@
       ],
       "document_type": "Posts/comments",
       "document_count": 686,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "gaq",
-      "corpus_name": "GAQ Corpus",
+      "dataset_id": "gaq",
+      "dataset_name": "GAQ Corpus",
       "genre": "Online discussions",
       "description": [
-        "A corpus of arguments collected from three kinds of forums: debate forums, community questions and answers (CQA) forums, and review forums. 2100 arguments in the corpus are from debate forums (ConvinceMe and Change My View), 2085 arguments in the corpus are from CQA forums (Yahoo! Answers), and 1100 arguments in the corpus are from review forums (restaurant reviews from the Yelp-Challenge-Dataset). Curation was aided by experts."
+        "A dataset of arguments collected from three kinds of forums: debate forums, community questions and answers (CQA) forums, and review forums. 2100 arguments in the dataset are from debate forums (ConvinceMe and Change My View), 2085 arguments in the dataset are from CQA forums (Yahoo! Answers), and 1100 arguments in the dataset are from review forums (restaurant reviews from the Yelp-Challenge-Dataset). Curation was aided by experts."
       ],
       "language": [
         "English"
       ],
       "document_type": "Pro/con arguments",
       "document_count": 5285,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "ibm_rank_30k",
-      "corpus_name": "IBM-ArgQ-Rank-30kArgs",
+      "dataset_id": "ibm_rank_30k",
+      "dataset_name": "IBM-ArgQ-Rank-30kArgs",
       "genre": "Debate",
       "description": [
         "A crowd-curated dataset of 30,497 arguments. Arguments were collected using the Figure Eight platform. 71 common controversial topics were selected, and 280 contributors were presented with a topic and asked to create one pro/con argument for each topic. Length limits were placed during argument creation to limit the effect of length-bias on quality scoring, additionally annotators received extra payment for high-quality arguments. A small number of the arguments in the dataset were also collected/created by a set of experts."
@@ -186,11 +186,11 @@
       ],
       "document_type": "Pro/con arguments",
       "document_count": 30497,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "ibm_ce_v1",
-      "corpus_name": "IBM Debater - Claims and Evidence Dataset (Version 1)",
+      "dataset_id": "ibm_ce_v1",
+      "dataset_name": "IBM Debater - Claims and Evidence Dataset (Version 1)",
       "genre": "Debate",
       "description": [
         "A dataset of 586 Wikipedia articles on controversial topics."
@@ -200,11 +200,11 @@
       ],
       "document_type": "Wikipedia articles",
       "document_count": 586,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "ibm_ce_v2",
-      "corpus_name": "IBM Debater - Claims and Evidence Dataset (Version 2)",
+      "dataset_id": "ibm_ce_v2",
+      "dataset_name": "IBM Debater - Claims and Evidence Dataset (Version 2)",
       "genre": "Debate",
       "description": [
         "A dataset of 547 Wikipedia articles associated with 58 different topics."
@@ -214,13 +214,13 @@
       ],
       "document_type": "Wikipedia articles",
       "document_count": 547,
-      "parent_corpora_id": [
+      "extends": [
         "ibm_ce_v1"
       ]
     },
     {
-      "corpus_id": "ibm_cs",
-      "corpus_name": "IBM Debater - Claims and Stance Dataset",
+      "dataset_id": "ibm_cs",
+      "dataset_name": "IBM Debater - Claims and Stance Dataset",
       "genre": "Debate",
       "description": [
         "An updated version of the IBM Debater – Claims and Evidence dataset, which contains 2394 claims on 55 controversial topics."
@@ -230,13 +230,13 @@
       ],
       "document_type": "Claims",
       "document_count": 2394,
-      "parent_corpora_id": [
+      "extends": [
         "ibm_ce_v2"
       ]
     },
     {
-      "corpus_id": "iam",
-      "corpus_name": "Integrated Argument Mining (IAM) Corpus",
+      "dataset_id": "iam",
+      "dataset_name": "Integrated Argument Mining (IAM) Corpus",
       "genre": "Debate",
       "description": [
         "A dataset of 69,666 sentences from 1010 articles, primarily sourced from English Wikipedia, covering 123 topics."
@@ -246,41 +246,25 @@
       ],
       "document_type": "Wikipedia articles",
       "document_count": 1010,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "kpa",
-      "corpus_name": "KPA Shared Task Dataset",
-      "genre": "Debate",
-      "description": [
-        "A dataset of 24,093 argument and key point pairs. The arguments were curated by filtering low-quality arguments out of the IBM-ArgQ-Rank-30kArgs dataset to obtain a set of 7000 arguments on 28 topics. Then an annotation task was performed to map 378 expert written key points to each of the arguments. The final dataset contains 24,093 pairs, made up of 6,515 arguments and 243 key points."
-      ],
-      "language": [
-        "English"
-      ],
-      "document_type": "Pro/con arguments",
-      "document_count": 7000,
-      "parent_corpora_id": [
-        "ibm_rank_30k"
-      ]
-    },
-    {
-      "corpus_id": "language_of_opposition",
-      "corpus_name": "Language of Opposition Corpus",
+      "dataset_id": "language_of_opposition",
+      "dataset_name": "Language of Opposition Corpus",
       "genre": "Online discussions",
       "description": [
-        "A dataset argumentative exchanges in online technical discussions. Collected from the Technorati platform between 2008 and 2010, it comprises four discussion threads, each consisting of one original blog post and its first 100 user comments. The corpus targets technical blog discussions hosted on Technorati, a platform aggregating blog content. The four discussion threads address four topics: 1) Android vs. iPhone: Debates comparing the two smartphone platforms; 2) iPad Usefulness: Discussions on the practical value of the iPad; 3) Twitter as a Microblogging Platform: Arguments about Twitter’s role and impact; 4) Corporate Layoffs/Outsourcing: Opinions on corporate employment practices."
+        "A dataset argumentative exchanges in online technical discussions. Collected from the Technorati platform between 2008 and 2010, it comprises four discussion threads, each consisting of one original blog post and its first 100 user comments. The dataset targets technical blog discussions hosted on Technorati, a platform aggregating blog content. The four discussion threads address four topics: 1) Android vs. iPhone: Debates comparing the two smartphone platforms; 2) iPad Usefulness: Discussions on the practical value of the iPad; 3) Twitter as a Microblogging Platform: Arguments about Twitter’s role and impact; 4) Corporate Layoffs/Outsourcing: Opinions on datasetste employment practices."
       ],
       "language": [
         "English"
       ],
       "document_type": "Posts/comments",
       "document_count": 404,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "logic",
-      "corpus_name": "Logic",
+      "dataset_id": "logic",
+      "dataset_name": "Logic",
       "genre": "Fallacies",
       "description": [
         "A dataset of 2449 common fallacy examples sourced from various online educational materials. Some instances were collected manually (around 600), while others (around 1700) were obtained by automatically crawling three student quiz websites (Quizziz, study.com, and ProProfs)."
@@ -290,11 +274,11 @@
       ],
       "document_type": "Fallacies",
       "document_count": 2449,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "logic_climate",
-      "corpus_name": "LogicClimate",
+      "dataset_id": "logic_climate",
+      "dataset_name": "LogicClimate",
       "genre": "News",
       "description": [
         "A dataset of 1079 climate change news articles, consisting of all climate change news articles from the Climate Feedback website up until October 2021."
@@ -304,14 +288,14 @@
       ],
       "document_type": "News editorials",
       "document_count": 2079,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "nlas",
-      "corpus_name": "NLAS-Multi Corpus",
+      "dataset_id": "nlas",
+      "dataset_name": "NLAS-Multi Corpus",
       "genre": "Generated argumentation",
       "description": [
-        "A corpus of 3810 textbook-like natural arguments in English and Spanish. The arguments instantiate one of 20 different argumentation schemes, on 50 different topics, and can have a pro/con stance. Arguments were generated using a combination of GPT-3.5-turbo and GPT-4 applying prompting techniques."
+        "A dataset of 3810 textbook-like natural arguments in English and Spanish. The arguments instantiate one of 20 different argumentation schemes, on 50 different topics, and can have a pro/con stance. Arguments were generated using a combination of GPT-3.5-turbo and GPT-4 applying prompting techniques."
       ],
       "language": [
         "English",
@@ -319,11 +303,11 @@
       ],
       "document_type": "Argument schemes",
       "document_count": 3810,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "semeval_2016",
-      "corpus_name": "Semeval-2016 Task 6 Dataset",
+      "dataset_id": "semeval_2016",
+      "dataset_name": "Semeval-2016 Task 6 Dataset",
       "genre": "Online discussions",
       "description": [
         "A dataset of 4870 English tweets on a variety of controversial issues. Distributed for the purposes of a shared task on stance detection."
@@ -332,26 +316,26 @@
         "English"
       ],
       "document_type": "Posts/comments",
-      "document_count": 1870,
-      "parent_corpora_id": []
+      "document_count": 4870,
+      "extends": []
     },
     {
-      "corpus_id": "swedish_news",
-      "corpus_name": "Swedish News Editorials",
+      "dataset_id": "swedish_news",
+      "dataset_name": "Swedish News Editorials",
       "genre": "News",
       "description": [
-        "Corpus of 30 Swedish newspaper editorials from 6 newspapers, published between May-September 1973."
+        "A dataset of 30 Swedish newspaper editorials from 6 newspapers, published between May-September 1973."
       ],
       "language": [
         "Swedish"
       ],
       "document_type": "News editorials",
       "document_count": 30,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "ukp_conv_arg",
-      "corpus_name": "UKPConvArg",
+      "dataset_id": "ukp_conv_arg",
+      "dataset_name": "UKPConvArg",
       "genre": "Debate",
       "description": [
         "A dataset of 16,081 argument pairs collected from 16 debates on 2 debate portals (createdebate.com and procon.org). A debate has a prompt, each prompt has two topics (one for each stance on the prompt) an argument is a single comment addressing the debate prompt, and an argument pair is an ordered set of two argument belonging to the same topic."
@@ -361,25 +345,25 @@
       ],
       "document_type": "Argument pairs",
       "document_count": 16081,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "us2016",
-      "corpus_name": "US2016",
+      "dataset_id": "us2016",
+      "dataset_name": "US2016",
       "genre": "Political debate",
       "description": [
-        "A corpus of transcripts from television debates leading up to the 2016 presidential election and online reactions from the Reddit social media platform, the whole corpus consists of 97,999 words. Specifically, the corpus is composed of 2 sub-corpora, one sub-corpus contains transcripts of 3 debates (the first Republican primary debate, the first Democrat primary debate, and the first general election debate between Clinton and Trump), a second sub-corpus contains several Reddit mega-threads on the topics of the previous 3 debates."
+        "A dataset of transcripts from television debates leading up to the 2016 presidential election and online reactions from the Reddit social media platform, the whole dataset consists of 97,999 words. Specifically, the dataset is composed of 2 sub-datasets, one sub-dataset contains transcripts of 3 debates (the first Republican primary debate, the first Democrat primary debate, and the first general election debate between Clinton and Trump), a second sub-dataset contains several Reddit mega-threads on the topics of the previous 3 debates."
       ],
       "language": [
         "English"
       ],
       "document_type": "Tokens",
       "document_count": 97999,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "us_elec_deb_60_to_16",
-      "corpus_name": "USElecDeb60To16",
+      "dataset_id": "us_elec_deb_60_to_16",
+      "dataset_name": "USElecDeb60To16",
       "genre": "Political debate",
       "description": [
         "A dataset of 39 political debate transcripts from the last 50 years of US presidential campaigns. Debate transcripts were collected from the Commission on Presidential Debates, and include presidential debates from Kennedy vs Nixon in 1960 to Clinton vs Trump in 2016. The total number of speech turns in the dataset is 6601."
@@ -389,11 +373,11 @@
       ],
       "document_type": "Transcripts",
       "document_count": 39,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "web_discourse",
-      "corpus_name": "The Web Discourse Corpus",
+      "dataset_id": "web_discourse",
+      "dataset_name": "The Web Discourse Corpus",
       "genre": "Online Discussions",
       "description": [
         "A dataset of 5444 documents containing web discourse on controversial topics. Documents covered 5 different topics and varied in type, including forum posts, comments, articles, and blog posts."
@@ -403,11 +387,11 @@
       ],
       "document_type": "Posts/Comments",
       "document_count": 5444,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "webis",
-      "corpus_name": "Webis-Editorials",
+      "dataset_id": "webis",
+      "dataset_name": "Webis-Editorials",
       "genre": "News",
       "description": [
         "A dataset of 300 news editorials from Aljazeera.com, foxnews.com, and theguardian.com. News editorials were selected based on publication date (similar publication date), had more than 5 comments, and contained at least 250 words. 100 news editorials were taken from each of the chosen websites."
@@ -417,11 +401,11 @@
       ],
       "document_type": "News editorials",
       "document_count": 300,
-      "parent_corpora_id": []
+      "extends": []
     },
     {
-      "corpus_id": "wiki_deletion",
-      "corpus_name": "Wikipedia Deletion Discussion",
+      "dataset_id": "wiki_deletion",
+      "dataset_name": "Wikipedia Deletion Discussion",
       "genre": "Revisions",
       "description": [
         "A dataset of 72 debates about the deletion of Wikipedia articles, that began or were relisted on Janurary 29th, 2011. The 72 debates contain a total of 741 messages contributed by 244 users."
@@ -431,7 +415,7 @@
       ],
       "document_type": "Posts/comments",
       "document_count": 741,
-      "parent_corpora_id": []
+      "extends": []
     }
   ]
 }
