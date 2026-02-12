@@ -15,74 +15,48 @@ import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
 
 import type { GridColDef } from "@mui/x-data-grid";
-import type { Corpora } from "./data/interfaces/corpora";
+import type { Datasets } from "./data/interfaces/datasets";
 import type { Papers } from "./data/interfaces/papers";
 
-import corps from "./data/entries/corpora.json";
+import datas from "./data/entries/datasets.json";
 import paps from "./data/entries/papers.json";
 
-const corp: Corpora = corps;
+const dat: Datasets = datas;
 // @ts-expect-error TODO find a better way to handle ts-ignore
 const pap: Papers = paps;
 
 // Full list based on papers
 export interface FullRow {
   id: string;
-  corpus_name: string;
-  corpus_description: string[];
-  paper_name: string;
-  authors: string;
-  year: number;
+  dataset_name: string;
+  dataset_description: string[];
   genre: string;
   language: string;
   document_type: string;
   document_count: number;
-  annotation_description: string[];
-  annotation_tasks: string[];
-  annotator_type: string;
-  agreement: number | string | [number, number];
-  agreement_type: string;
+  release_name: string;
+  release_link: string;
   accessibility: string;
-  corpora_link: string;
+  annotation_tasks: string[];
+  annotation_description: string[];
+  subset: number | string;
+  agreement_type: string;
+  agreement: number | string | [number, number];
+  annotator_type: string;
+  paper_name: string;
+  authors: string;
+  year: number;
   paper_link: string;
 }
 
 const columns: GridColDef[] = [
-  { field: "corpus_name", headerName: "Corpus Name", width: 200 },
-  {
-    field: "corpora_link",
-    headerName: "Corpora Link",
-    width: 200,
-    renderCell: (params) => (
-      params.value === "Unavailable" ? (<span>{params.value}</span>) : (
-      <a href={params.value} target="_blank" rel="noopener noreferrer">
-        {params.value}
-      </a>
-      )
-    ),
-  },
-  {
-    field: "document_type",
-    headerName: "Document Type",
-    width: 200,
-    rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpus_name}-${row.document_type}` : value;
-    },
-  },
-  {
-    field: "document_count",
-    headerName: "Document Count",
-    width: 200,
-    rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpus_name}-${row.document_count}` : value;
-    },
-  },
+  { field: "dataset_name", headerName: "Dataset Name", width: 200 },
   {
     field: "genre",
     headerName: "Genre",
     width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpus_name}-${row.genre}` : value;
+      return row ? `${row.dataset_name}-${row.genre}` : value;
     },
   },
   {
@@ -90,41 +64,51 @@ const columns: GridColDef[] = [
     headerName: "Language",
     width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpus_name}-${row.language}` : value;
+      return row ? `${row.dataset_name}-${row.language}` : value;
     },
   },
   {
-    field: "paper_name",
-    headerName: "Paper Name",
+    field: "document_type",
+    headerName: "Document Type",
     width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpus_name}-${row.paper_name}` : value;
+      return row ? `${row.dataset_name}-${row.document_type}` : value;
     },
   },
   {
-    field: "paper_link",
-    headerName: "Paper Link",
+    field: "document_count",
+    headerName: "Document Count",
+    width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.dataset_name}-${row.document_count}` : value;
+    },
+  },
+  {
+    field: "release_name",
+    headerName: "Release Name",
+    width: 200,
+  },
+  {
+    field: "release_link",
+    headerName: "Release Link",
     width: 200,
     renderCell: (params) => (
+      params.value === "-" ? (<span>{params.value}</span>) : (
       <a href={params.value} target="_blank" rel="noopener noreferrer">
         {params.value}
       </a>
+      )
     ),
-  },
-  {
-    field: "authors",
-    headerName: "Authors",
-    width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.paper_name}-${row.authors}` : value;
+      return row ? `${row.release_name}-${row.release_link}` : value;
     },
   },
   {
-    field: "year",
-    headerName: "Year",
+    field: "accessibility",
+    headerName: "Accessibility",
     width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.paper_name}-${row.year}` : value;
+      return row ? `${row.release_name}-${row.accessibility}` : value;
     },
   },
   {
@@ -149,22 +133,62 @@ const columns: GridColDef[] = [
         </Stack>
       </Box>
     ),
-  },
-  { field: "annotator_type", headerName: "Annotator Type", width: 200 },
-  //TODO fix agreement when multiple values/unknown/object!
-  { field: "agreement", headerName: "Agreement", width: 200 },
-  {
-    field: "accessibility",
-    headerName: "Accessibility",
-    width: 200,
     rowSpanValueGetter: (value, row) => {
-      return row ? `${row.corpoa_link}-${row.accessibility}` : value;
+      return row ? `${row.annotation_tasks}` : value;
     },
   },
+  { field: "subset", headerName: "Subset", width: 200,
+    rowSpanValueGetter: (value, row) => {
+      return row ? `${row.annotation_tasks}-${row.subset}` : value;
+    },
+  },
+//  { field: "annotator_type", headerName: "Annotator Type", width: 200,
+//    rowSpanValueGetter: (value, row) => {
+//      return row ? `${row.annotation_tasks}-${row.annotator_type}` : value;
+//    }},
+//  { field: "agreement", headerName: "Agreement", width: 200,
+//    rowSpanValueGetter: (value, row) => {
+//      return row ? `${row.annotation_tasks}-${row.agreement}` : value;
+//    },
+//  },
+//  {
+//    field: "paper_name",
+//    headerName: "Paper Name",
+//    width: 200,
+//    rowSpanValueGetter: (value, row) => {
+//      return row ? `${row.release_name}-${row.paper_name}` : value;
+//    },
+//  },
+//  {
+//    field: "authors",
+//    headerName: "Authors",
+//    width: 200,
+//    rowSpanValueGetter: (value, row) => {
+//      return row ? `${row.paper_name}-${row.authors}` : value;
+//    },
+//  },
+//  {
+//    field: "year",
+//    headerName: "Year",
+//    width: 200,
+//    rowSpanValueGetter: (value, row) => {
+//      return row ? `${row.paper_name}-${row.year}` : value;
+//    },
+//  },
+//  {
+//    field: "paper_link",
+//    headerName: "Paper Link",
+//    width: 200,
+//    renderCell: (params) => (
+//      <a href={params.value} target="_blank" rel="noopener noreferrer">
+//        {params.value}
+//      </a>
+//    ),
+//  },
 ];
 
 function App() {
-  const [spanning, setSpanning] = useState(true);
+  const [spanning, setSpanning] = useState(false);
 
   const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
@@ -180,30 +204,32 @@ function App() {
     let rs: FullRow[] = [];
     for (const paper of pap.papers) {
       for (const [index, annotation] of paper.annotations.entries()) {
-        const corpus = corp.corpora.find(
-          (i) => i.corpus_id === annotation.corpus_id,
+        const dataset = dat.datasets.find(
+          (i) => i.dataset_id === annotation.dataset_id,
         );
-        if (corpus) {
+        if (dataset) {
           rs = [
             ...rs,
             {
               id: paper.paper_id + "-" + index,
-              corpus_name: corpus.corpus_name,
-              corpus_description: corpus.description,
+              dataset_name: dataset.dataset_name,
+              dataset_description: dataset.description,
+              genre: dataset.genre,
+              language: dataset.language.join(", "),
+              document_type: dataset.document_type,
+              document_count: dataset.document_count,
+              release_name: annotation.release_name === "PARENT" ? dataset.dataset_name : annotation.release_name,
+              release_link: annotation.release_link ? annotation.release_link : "-",
+              accessibility: annotation.accessibility,
+              annotation_tasks: annotation.annotation_task,
+              annotation_description: annotation.description,
+              subset: annotation.subset,
+              agreement_type: annotation.agreement_type,
+              agreement: annotation.agreement_score instanceof Object ? JSON.stringify(annotation.agreement_score) : annotation.agreement_score,
+              annotator_type: annotation.annotator_type,
               paper_name: paper.paper_title,
               authors: paper.authors.join(", "),
               year: paper.year,
-              genre: corpus.genre,
-              language: corpus.language.join(", "),
-              document_type: corpus.document_type,
-              document_count: corpus.document_count,
-              annotation_description: annotation.description,
-              annotation_tasks: annotation.annotation_task,
-              annotator_type: annotation.annotator_type,
-              agreement_type: annotation.agreement_type,
-              agreement: annotation.agreement_score instanceof Object ? JSON.stringify(annotation.agreement_score) : annotation.agreement_score,
-              accessibility: annotation.accessibility,
-              corpora_link: annotation.corpus_link ? annotation.corpus_link : "Unavailable",
               paper_link: paper.paper_link,
             },
           ];
@@ -225,12 +251,12 @@ function App() {
             }}
           >
             <Typography gutterBottom variant="h3">
-              Argumentation Mining Corpora
+              Argumentation Mining datasets
             </Typography>
             <IconButton
               color="primary"
               aria-label="GitHub Repository"
-              href="https://github.com/infoqualitylab/arg-mining-corpora"
+              href="https://github.com/infoqualitylab/arg-mining-datasets"
               target="_blank"
             >
               <GitHubIcon />
@@ -242,7 +268,7 @@ function App() {
             color="textSecondary"
             sx={{ marginTop: 2, marginBottom: 2 }}
           >
-            Click on a row to see more details about a corpus and how it was annotated.
+            Click on a row to see more details about a dataset and how it was annotated.
           </Typography>
           <FormGroup>
             <FormControlLabel
@@ -259,20 +285,20 @@ function App() {
           <DataGrid
             rows={rows}
             columns={columns}
-            columnVisibilityModel={{
+            /*columnVisibilityModel={{
               paper_name: false,
               authors: false,
               year: false,
               paper_link: false,
               annotator_type: false,
               accessibility: false,
-            }}
+              }}*/
             showToolbar
             getRowHeight={() => "auto"}
             rowSpanning={spanning}
             disableRowSelectionOnClick
             onRowClick={(params) => handleClickOpen(params.row)}
-            aria-label="Argumentation Mining Corpora Data Grid"
+            aria-label="Argumentation Mining datasets Data Grid"
           />
         </CardContent>
       </Card>

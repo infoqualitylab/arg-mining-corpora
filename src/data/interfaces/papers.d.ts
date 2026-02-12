@@ -18,7 +18,7 @@ export interface Papers {
     doi?: string;
     paper_link: string;
     annotations: {
-      corpus_id: string;
+      dataset_id: string;
       annotation_task: (
         | "Argument Component Segmentation"
         | "Argument Component Type Classification"
@@ -43,8 +43,8 @@ export interface Papers {
             [k: string]: number;
           };
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
-      corpus_link?: string;
-      corpus_name: string;
+      release_link?: string;
+      release_name: string;
       subset: number | string;
     }[];
   }[];

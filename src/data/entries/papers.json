@@ -16,7 +16,7 @@
       "open_alex_id": "https://openalex.org/W4385573259",
       "annotations": [
         {
-          "corpus_id": "arg_essay",
+          "dataset_id": "arg_essay",
           "annotation_task": [
             "None"
           ],
@@ -27,12 +27,12 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/HITSZ-HLT/AEG",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/HITSZ-HLT/AEG",
+          "release_name": "PARENT",
           "subset": 11282
         },
         {
-          "corpus_id": "arg_essay",
+          "dataset_id": "arg_essay",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -44,7 +44,7 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Unavailable",
-          "corpus_name": "PARENT",
+          "release_name": "PARENT",
           "subset": 50
         }
       ]
@@ -61,7 +61,7 @@
       "open_alex_id": "https://openalex.org/W2251931307",
       "annotations": [
         {
-          "corpus_id": "aae_v1",
+          "dataset_id": "aae_v1",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification"
@@ -78,12 +78,12 @@
             "Premise": 0.7594
           },
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb",
-          "corpus_name": "PARENT",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb",
+          "release_name": "PARENT",
           "subset": 90
         },
         {
-          "corpus_id": "aae_v1",
+          "dataset_id": "aae_v1",
           "annotation_task": [
             "Argument Relation Type Classification"
           ],
@@ -98,8 +98,8 @@
             "Attack": 0.8066
           },
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb",
-          "corpus_name": "PARENT",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/a52f7fef-4388-420c-91f0-ac03dac26bbb",
+          "release_name": "PARENT",
           "subset": 90
         }
       ]
@@ -118,7 +118,7 @@
       "open_alex_id": "https://openalex.org/W2508604498",
       "annotations": [
         {
-          "corpus_id": "aae_v1",
+          "dataset_id": "aae_v1",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -130,7 +130,7 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.1,
           "accessibility": "Unavailable",
-          "corpus_name": "AMT annotated essays",
+          "release_name": "AMT annotated essays",
           "subset": 30
         }
       ]
@@ -148,7 +148,7 @@
       "open_alex_id": "https://openalex.org/W2343649478",
       "annotations": [
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification"
@@ -165,12 +165,12 @@
             "Premise": 0.824
           },
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/9177c48c-8bd5-4881-9cb4-0632b5941464",
-          "corpus_name": "PARENT",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/9177c48c-8bd5-4881-9cb4-0632b5941464",
+          "release_name": "PARENT",
           "subset": 402
         },
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
@@ -186,8 +186,8 @@
             "Attack": 0.737
           },
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/9177c48c-8bd5-4881-9cb4-0632b5941464",
-          "corpus_name": "PARENT",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/9177c48c-8bd5-4881-9cb4-0632b5941464",
+          "release_name": "PARENT",
           "subset": 402
         }
       ]
@@ -205,7 +205,7 @@
       "open_alex_id": "https://openalex.org/W2516916351",
       "annotations": [
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Other"
           ],
@@ -217,8 +217,8 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.787,
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/ecb6f8cf-0bf3-4843-b299-8c1d9819cee9",
-          "corpus_name": "Opposing Arguments in Persuasive Essays",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/ecb6f8cf-0bf3-4843-b299-8c1d9819cee9",
+          "release_name": "Opposing Arguments in Persuasive Essays",
           "subset": 402
         }
       ]
@@ -236,7 +236,7 @@
       "open_alex_id": "https://openalex.org/W2740760908",
       "annotations": [
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Minimal Argument Quality Assessment"
           ],
@@ -248,8 +248,8 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.7672,
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/5d6a075e-697d-4f82-977f-b2cb16aa8542",
-          "corpus_name": "Insufficiently Supported Arguments in Argumentative Essays",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/5d6a075e-697d-4f82-977f-b2cb16aa8542",
+          "release_name": "Insufficiently Supported Arguments in Argumentative Essays",
           "subset": 402
         }
       ]
@@ -268,7 +268,7 @@
       "open_alex_id": "https://openalex.org/W4389518243",
       "annotations": [
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -285,12 +285,12 @@
             "Overall": 0.52
           },
           "accessibility": "Free",
-          "corpus_link": "https://github.com/discourse-lab/arg-essays-semantic-types",
-          "corpus_name": "Semantic Argument Types in Persuasive Essays",
+          "release_link": "https://github.com/discourse-lab/arg-essays-semantic-types",
+          "release_name": "Semantic Argument Types in Persuasive Essays",
           "subset": 402
         },
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -308,8 +308,8 @@
             "Overall": 0.53
           },
           "accessibility": "Free",
-          "corpus_link": "https://github.com/discourse-lab/arg-essays-semantic-types",
-          "corpus_name": "Semantic Argument Types in Persuasive Essayss",
+          "release_link": "https://github.com/discourse-lab/arg-essays-semantic-types",
+          "release_name": "Semantic Argument Types in Persuasive Essays",
           "subset": 402
         }
       ]
@@ -328,7 +328,7 @@
       "open_alex_id": "https://openalex.org/W4315703085",
       "annotations": [
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -344,12 +344,12 @@
             "Reasonableness Rebuttal": 0.84
           },
           "accessibility": "Free",
-          "corpus_link": "https://aclanthology.org/2022.findings-emnlp.306/",
-          "corpus_name": "Quality and strategy annotated essays",
+          "release_link": "https://aclanthology.org/2022.findings-emnlp.306/",
+          "release_name": "Quality and strategy annotated essays",
           "subset": 402
         },
         {
-          "corpus_id": "aae_v2",
+          "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -361,8 +361,8 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.85,
           "accessibility": "Free",
-          "corpus_link": "https://aclanthology.org/2022.findings-emnlp.306/",
-          "corpus_name": "Quality and strategy annotated essays",
+          "release_link": "https://aclanthology.org/2022.findings-emnlp.306/",
+          "release_name": "Quality and strategy annotated essays",
           "subset": 402
         }
       ]
@@ -380,7 +380,7 @@
       "open_alex_id": "https://openalex.org/W3091998006",
       "annotations": [
         {
-          "corpus_id": "arc",
+          "dataset_id": "arc",
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
@@ -392,8 +392,8 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.427,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/emilyallaway/zero-shot-stance",
-          "corpus_name": "VAST",
+          "release_link": "https://github.com/emilyallaway/zero-shot-stance",
+          "release_name": "VAST",
           "subset": 3365
         }
       ]
@@ -409,7 +409,7 @@
       "paper_link": "https://peldszus.github.io/files/eca2015-preprint.pdf",
       "annotations": [
         {
-          "corpus_id": "microtexts_p1",
+          "dataset_id": "microtexts_p1",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -424,8 +424,8 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.83,
           "accessibility": "Free",
-          "corpus_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
-          "corpus_name": "PARENT",
+          "release_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
+          "release_name": "PARENT",
           "subset": 112
         }
       ]
@@ -446,7 +446,7 @@
       "open_alex_id": "https://openalex.org/W2805780415",
       "annotations": [
         {
-          "corpus_id": "microtexts_p1",
+          "dataset_id": "microtexts_p1",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -458,8 +458,8 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.296,
           "accessibility": "Free",
-          "corpus_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
-          "corpus_name": "AMT annotated microtexts",
+          "release_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
+          "release_name": "AMT annotated microtexts",
           "subset": 112
         }
       ]
@@ -478,7 +478,7 @@
       "open_alex_id": "https://openalex.org/W2898653207",
       "annotations": [
         {
-          "corpus_id": "microtexts_p2",
+          "dataset_id": "microtexts_p2",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -493,8 +493,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
-          "corpus_name": "PARENT",
+          "release_link": "https://angcl.ling.uni-potsdam.de/resources/argmicro.html",
+          "release_name": "PARENT",
           "subset": 171
         }
       ]
@@ -513,7 +513,7 @@
       "open_alex_id": "https://openalex.org/W3122759107",
       "annotations": [
         {
-          "corpus_id": "claimrev_v1",
+          "dataset_id": "claimrev_v1",
           "annotation_task": [
             "None"
           ],
@@ -524,12 +524,12 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Upon Request",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/GabriellaSky/claimrev",
+          "release_name": "PARENT",
           "subset": 124312
         },
         {
-          "corpus_id": "claimrev_v1",
+          "dataset_id": "claimrev_v1",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -541,12 +541,12 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.75,
           "accessibility": "Upon Request",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/GabriellaSky/claimrev",
+          "release_name": "PARENT",
           "subset": 315
         },
         {
-          "corpus_id": "claimrev_v1",
+          "dataset_id": "claimrev_v1",
           "annotation_task": [
             "Other"
           ],
@@ -561,12 +561,12 @@
             "Agreement with original labels": 0.82
           },
           "accessibility": "Upon Request",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/GabriellaSky/claimrev",
+          "release_name": "PARENT",
           "subset": 440
         },
         {
-          "corpus_id": "claimrev_v1",
+          "dataset_id": "claimrev_v1",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -578,8 +578,8 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Upon Request",
-          "corpus_link": "https://github.com/GabriellaSky/claimrev",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/GabriellaSky/claimrev",
+          "release_name": "PARENT",
           "subset": 315
         }
       ]
@@ -598,7 +598,7 @@
       "open_alex_id": "https://openalex.org/W4389009581",
       "annotations": [
         {
-          "corpus_id": "claimrev_v2",
+          "dataset_id": "claimrev_v2",
           "annotation_task": [
             "None"
           ],
@@ -609,8 +609,8 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/GabriellaSky/claim_optimization",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/GabriellaSky/claim_optimization",
+          "release_name": "PARENT",
           "subset": 198089
         }
       ]
@@ -627,7 +627,7 @@
       "open_alex_id": "https://openalex.org/W2807191971",
       "annotations": [
         {
-          "corpus_id": "cornell_erulemaking",
+          "dataset_id": "cornell_erulemaking",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -639,12 +639,12 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.648,
           "accessibility": "Free",
-          "corpus_link": "https://huggingface.co/datasets/DFKI-SLT/cdcp",
-          "corpus_name": "PARENT",
+          "release_link": "https://huggingface.co/datasets/DFKI-SLT/cdcp",
+          "release_name": "PARENT",
           "subset": 731
         },
         {
-          "corpus_id": "cornell_erulemaking",
+          "dataset_id": "cornell_erulemaking",
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
@@ -657,8 +657,8 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.441,
           "accessibility": "Free",
-          "corpus_link": "https://huggingface.co/datasets/DFKI-SLT/cdcp",
-          "corpus_name": "PARENT",
+          "release_link": "https://huggingface.co/datasets/DFKI-SLT/cdcp",
+          "release_name": "PARENT",
           "subset": 731
         }
       ]
@@ -677,7 +677,7 @@
       "open_alex_id": "https://openalex.org/W2898734253",
       "annotations": [
         {
-          "corpus_id": "dr_inventor",
+          "dataset_id": "dr_inventor",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -692,12 +692,12 @@
             "Approximate 5th iteration strict": 0.6
           },
           "accessibility": "Free",
-          "corpus_link": "http://data.dws.informatik.uni-mannheim.de/sci-arg/compiled_corpus.zip",
-          "corpus_name": "SciArg",
+          "release_link": "http://data.dws.informatik.uni-mannheim.de/sci-arg/compiled_corpus.zip",
+          "release_name": "SciArg",
           "subset": 40
         },
         {
-          "corpus_id": "dr_inventor",
+          "dataset_id": "dr_inventor",
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
@@ -713,8 +713,8 @@
             "Approximate 5th iteration strict": 0.35
           },
           "accessibility": "Free",
-          "corpus_link": "http://data.dws.informatik.uni-mannheim.de/sci-arg/compiled_corpus.zip",
-          "corpus_name": "SciArg",
+          "release_link": "http://data.dws.informatik.uni-mannheim.de/sci-arg/compiled_corpus.zip",
+          "release_name": "SciArg",
           "subset": 40
         }
       ]
@@ -733,7 +733,7 @@
       "open_alex_id": "https://openalex.org/W4403487202",
       "annotations": [
         {
-          "corpus_id": "ethix",
+          "dataset_id": "ethix",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -745,8 +745,8 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.523,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/ElfiaBv/EthiX",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/ElfiaBv/EthiX",
+          "release_name": "PARENT",
           "subset": 686
         }
       ]
@@ -766,7 +766,7 @@
       "open_alex_id": "https://openalex.org/W4287608578",
       "annotations": [
         {
-          "corpus_id": "gaq",
+          "dataset_id": "gaq",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -791,8 +791,8 @@
             "Reviews Overall": 0.33
           },
           "accessibility": "Free",
-          "corpus_link": "https://github.com/grammarly/gaqcorpus",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/grammarly/gaqcorpus",
+          "release_name": "PARENT",
           "subset": 5285
         }
       ]
@@ -815,7 +815,7 @@
       "open_alex_id": "https://openalex.org/W2991389267",
       "annotations": [
         {
-          "corpus_id": "ibm_rank_30k",
+          "dataset_id": "ibm_rank_30k",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -827,8 +827,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://huggingface.co/datasets/ibm-research/argument_quality_ranking_30k",
-          "corpus_name": "PARENT",
+          "release_link": "https://huggingface.co/datasets/ibm-research/argument_quality_ranking_30k",
+          "release_name": "PARENT",
           "subset": 30497
         }
       ]
@@ -852,7 +852,7 @@
       "open_alex_id": "https://openalex.org/W2251448848",
       "annotations": [
         {
-          "corpus_id": "ibm_ce_v1",
+          "dataset_id": "ibm_ce_v1",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -869,8 +869,8 @@
             "Evidence confirmation": 0.4
           },
           "accessibility": "Free",
-          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
-          "corpus_name": "PARENT",
+          "release_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
+          "release_name": "PARENT",
           "subset": 586
         }
       ]
@@ -892,7 +892,7 @@
       "open_alex_id": "https://openalex.org/W2250762536",
       "annotations": [
         {
-          "corpus_id": "ibm_ce_v2",
+          "dataset_id": "ibm_ce_v2",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -906,8 +906,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
-          "corpus_name": "PARENT",
+          "release_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
+          "release_name": "PARENT",
           "subset": 547
         }
       ]
@@ -928,7 +928,7 @@
       "open_alex_id": "https://openalex.org/W2739836857",
       "annotations": [
         {
-          "corpus_id": "ibm_cs",
+          "dataset_id": "ibm_cs",
           "annotation_task": [
             "Argument Component Segmentation",
             "Claim Extraction with Stance Classification"
@@ -941,8 +941,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
-          "corpus_name": "PARENT",
+          "release_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
+          "release_name": "PARENT",
           "subset": 2394
         }
       ]
@@ -964,7 +964,7 @@
       "open_alex_id": "https://openalex.org/W4221151164",
       "annotations": [
         {
-          "corpus_id": "iam",
+          "dataset_id": "iam",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -979,8 +979,8 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.44,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/LiyingCheng95/IAM",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/LiyingCheng95/IAM",
+          "release_name": "PARENT",
           "subset": 1010
         }
       ]
@@ -1002,7 +1002,7 @@
       "open_alex_id": "https://openalex.org/W3021632220",
       "annotations": [
         {
-          "corpus_id": "ibm_rank_30k",
+          "dataset_id": "ibm_rank_30k",
           "annotation_task": [
             "Argument Summarization"
           ],
@@ -1017,8 +1017,8 @@
             "Expert": 0.82
           },
           "accessibility": "Free",
-          "corpus_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
-          "corpus_name": "KPA shared task dataset",
+          "release_link": "https://research.ibm.com/haifa/dept/vst/debating_data.shtml",
+          "release_name": "KPA shared task dataset",
           "subset": 7000
         }
       ]
@@ -1039,7 +1039,7 @@
       "open_alex_id": "https://openalex.org/W2251521080",
       "annotations": [
         {
-          "corpus_id": "language_of_opposition",
+          "dataset_id": "language_of_opposition",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -1058,12 +1058,12 @@
             "Twitter": 0.82
           },
           "accessibility": "Free",
-          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
-          "corpus_name": "PARENT",
+          "release_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
+          "release_name": "PARENT",
           "subset": 404
         },
         {
-          "corpus_id": "language_of_opposition",
+          "dataset_id": "language_of_opposition",
           "annotation_task": [
             "Argument Relation Type Classification",
             "Claim Extraction with Stance Classification"
@@ -1079,12 +1079,12 @@
             0.55
           ],
           "accessibility": "Free",
-          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
-          "corpus_name": "PARENT",
+          "release_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
+          "release_name": "PARENT",
           "subset": 404
         },
         {
-          "corpus_id": "language_of_opposition",
+          "dataset_id": "language_of_opposition",
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
@@ -1096,8 +1096,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
-          "corpus_name": "PARENT",
+          "release_link": "https://salts.rutgers.edu/identifying-the-language-of-opposition-in-online-interactions/",
+          "release_name": "PARENT",
           "subset": 404
         }
       ]
@@ -1122,7 +1122,7 @@
       "open_alex_id": "https://openalex.org/W4385567117",
       "annotations": [
         {
-          "corpus_id": "logic",
+          "dataset_id": "logic",
           "annotation_task": [
             "None"
           ],
@@ -1133,12 +1133,12 @@
           "agreement_type": "None",
           "agreement_score": "None",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/causalNLP/logical-fallacy",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/causalNLP/logical-fallacy",
+          "release_name": "PARENT",
           "subset": 2449
         },
         {
-          "corpus_id": "logic_climate",
+          "dataset_id": "logic_climate",
           "annotation_task": [
             "Argument Component Segmentation",
             "Minimal Argument Quality Assessment"
@@ -1151,8 +1151,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/causalNLP/logical-fallacy",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/causalNLP/logical-fallacy",
+          "release_name": "PARENT",
           "subset": 1079
         }
       ]
@@ -1172,7 +1172,7 @@
       "open_alex_id": "https://openalex.org/W4403913558",
       "annotations": [
         {
-          "corpus_id": "nlas",
+          "dataset_id": "nlas",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -1187,8 +1187,8 @@
             "Spanish": 0.22
           },
           "accessibility": "Free",
-          "corpus_link": "https://zenodo.org/records/8364002",
-          "corpus_name": "PARENT",
+          "release_link": "https://zenodo.org/records/8364002",
+          "release_name": "PARENT",
           "subset": 3810
         }
       ]
@@ -1209,7 +1209,7 @@
       "open_alex_id": "https://openalex.org/W2460159515",
       "annotations": [
         {
-          "corpus_id": "semeval_2016",
+          "dataset_id": "semeval_2016",
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
@@ -1221,8 +1221,8 @@
           "agreement_type": "Overall agreement",
           "agreement_score": 0.8185,
           "accessibility": "Free",
-          "corpus_link": "https://www.saifmohammad.com/WebPages/StanceDataset.htm",
-          "corpus_name": "PARENT",
+          "release_link": "https://www.saifmohammad.com/WebPages/StanceDataset.htm",
+          "release_name": "PARENT",
           "subset": 4870
         }
       ]
@@ -1241,7 +1241,7 @@
       "open_alex_id": "https://openalex.org/W2970024917",
       "annotations": [
         {
-          "corpus_id": "swedish_news",
+          "dataset_id": "swedish_news",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -1259,11 +1259,11 @@
             "All premises match": 0.03
           },
           "accessibility": "Unavailable",
-          "corpus_name": "PARENT",
+          "release_name": "PARENT",
           "subset": 30
         },
         {
-          "corpus_id": "swedish_news",
+          "dataset_id": "swedish_news",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -1278,7 +1278,7 @@
             "Within all arguments": 0.02
           },
           "accessibility": "Unavailable",
-          "corpus_name": "PARENT",
+          "release_name": "PARENT",
           "subset": 30
         }
       ]
@@ -1296,7 +1296,7 @@
       "open_alex_id": "https://openalex.org/W2518510348",
       "annotations": [
         {
-          "corpus_id": "ukp_conv_arg",
+          "dataset_id": "ukp_conv_arg",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
@@ -1308,8 +1308,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/UKPLab/acl2016-convincing-arguments",
-          "corpus_name": "UKPConvArg1",
+          "release_link": "https://github.com/UKPLab/acl2016-convincing-arguments",
+          "release_name": "UKPConvArg1",
           "subset": 16081
         }
       ]
@@ -1327,7 +1327,7 @@
       "open_alex_id": "https://openalex.org/W2562522356",
       "annotations": [
         {
-          "corpus_id": "ukp_conv_arg",
+          "dataset_id": "ukp_conv_arg",
           "annotation_task": [
             "Other"
           ],
@@ -1339,8 +1339,8 @@
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
           "accessibility": "Free",
-          "corpus_link": "https://github.com/UKPLab/emnlp2016-empirical-convincingness",
-          "corpus_name": "UKPConvArg2",
+          "release_link": "https://github.com/UKPLab/emnlp2016-empirical-convincingness",
+          "release_name": "UKPConvArg2",
           "subset": 16081
         }
       ]
@@ -1359,7 +1359,7 @@
       "open_alex_id": "https://openalex.org/W2807172548",
       "annotations": [
         {
-          "corpus_id": "us2016",
+          "dataset_id": "us2016",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification",
@@ -1375,8 +1375,8 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.61,
           "accessibility": "Free",
-          "corpus_link": "https://corpora.aifdb.org/US2016",
-          "corpus_name": "PARENT",
+          "release_link": "https://corpora.aifdb.org/US2016",
+          "release_name": "PARENT",
           "subset": 97999
         }
       ]
@@ -1395,7 +1395,7 @@
       "open_alex_id": "https://openalex.org/W3095351355",
       "annotations": [
         {
-          "corpus_id": "us2016",
+          "dataset_id": "us2016",
           "annotation_task": [
             "Argument Component Type Classification",
             "Argument Type Identification"
@@ -1412,8 +1412,8 @@
             "Fact/value/policy": 0.778
           },
           "accessibility": "Free",
-          "corpus_link": "https://corpora.aifdb.org/US2016G1tvWAGEMANS",
-          "corpus_name": "US2016G1tvWAGEMANS",
+          "release_link": "https://corpora.aifdb.org/US2016G1tvWAGEMANS",
+          "release_name": "US2016G1tvWAGEMANS",
           "subset": "See description"
         }
       ]
@@ -1432,7 +1432,7 @@
       "open_alex_id": "https://openalex.org/W2949928613",
       "annotations": [
         {
-          "corpus_id": "us_elec_deb_60_to_16",
+          "dataset_id": "us_elec_deb_60_to_16",
           "annotation_task": [
             "Argument Component Segmentation"
           ],
@@ -1444,12 +1444,12 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.57,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/ElecDeb60To16/Dataset",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/ElecDeb60To16/Dataset",
+          "release_name": "PARENT",
           "subset": 39
         },
         {
-          "corpus_id": "us_elec_deb_60_to_16",
+          "dataset_id": "us_elec_deb_60_to_16",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -1461,8 +1461,8 @@
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.4,
           "accessibility": "Free",
-          "corpus_link": "https://github.com/ElecDeb60To16/Dataset",
-          "corpus_name": "PARENT",
+          "release_link": "https://github.com/ElecDeb60To16/Dataset",
+          "release_name": "PARENT",
           "subset": 39
         }
       ]
@@ -1483,7 +1483,7 @@
       "open_alex_id": "https://openalex.org/W4285602624",
       "annotations": [
         {
-          "corpus_id": "us_elec_deb_60_to_16",
+          "dataset_id": "us_elec_deb_60_to_16",
           "annotation_task": [
             "Minimal Argument Quality Assessment"
           ],
@@ -1500,8 +1500,8 @@
             "Slogans": 0.5995
           },
           "accessibility": "Free",
-          "corpus_link": "https://github.com/pierpaologoffredo/IJCAI2022",
-          "corpus_name": "USElecDeb60To16-fallacy",
+          "release_link": "https://github.com/pierpaologoffredo/IJCAI2022",
+          "release_name": "USElecDeb60To16-fallacy",
           "subset": 31
         }
       ]
@@ -1519,7 +1519,7 @@
       "open_alex_id": "https://openalex.org/W2236647290",
       "annotations": [
         {
-          "corpus_id": "web_discourse",
+          "dataset_id": "web_discourse",
           "annotation_task": [
             "Argument Component Segmentation",
             "Argument Component Type Classification"
@@ -1532,8 +1532,8 @@
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.48,
           "accessibility": "Free",
-          "corpus_link": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342",
-          "corpus_name": "PARENT",
+          "release_link": "https://tudatalib.ulb.tu-darmstadt.de/items/d4a7ac0c-e7a8-466a-855a-917e42a24342",
+          "release_name": "PARENT",
           "subset": 5444
         }
       ]
@@ -1553,7 +1553,7 @@
       "open_alex_id": "https://openalex.org/W2579772177",
       "annotations": [
         {
-          "corpus_id": "webis",
+          "dataset_id": "webis",
           "annotation_task": [
             "Argument Component Type Classification"
           ],
@@ -1575,8 +1575,8 @@
             "Overall": 0.56
           },
           "accessibility": "Free",
-          "corpus_link": "https://webis.de/data/webis-editorials-16.html",
-          "corpus_name": "PARENT",
+          "release_link": "https://webis.de/data/webis-editorials-16.html",
+          "release_name": "PARENT",
           "subset": 300
         }
       ]
@@ -1595,7 +1595,7 @@
       "doi": "https://doi.org/10.1145/2441776.2441897",
       "annotations": [
         {
-          "corpus_id": "wiki_deletion",
+          "dataset_id": "wiki_deletion",
           "annotation_task": [
             "Argument Type Identification"
           ],
@@ -1607,7 +1607,7 @@
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.48,
           "accessibility": "Unavailable",
-          "corpus_name": "PARENT",
+          "release_name": "PARENT",
           "subset": 741
         }
       ]

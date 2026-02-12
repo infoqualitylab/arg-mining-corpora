@@ -1,32 +1,32 @@
 {
-  "$comment": "Schema for a list of argument mining corpora, unique by corpus_id and name",
+  "$comment": "Schema for a list of argument mining datasets, unique by dataset_id and name",
   "type": "object",
   "properties": {
-    "corpora": {
-      "$comment": "List of corpora",
+    "datasets": {
+      "$comment": "List of datasets",
       "type": "array",
       "uniqueItems": true,
       "uniqueItemProperties": [
-        "corpus_id",
-        "corpus_name"
+        "dataset_id",
+        "dataset_name"
       ],
       "items": {
         "type": "object",
         "properties": {
-          "corpus_id": {
+          "dataset_id": {
             "$comment": "Unique id, should be human readable",
             "type": "string"
           },
-          "corpus_name": {
-            "$comment": "Name of corpus",
+          "dataset_name": {
+            "$comment": "Name of dataset",
             "type": "string"
           },
           "genre": {
-            "$comment": "genre of corpus, e.g., 'legal', 'social media', 'scientific', 'general'",
+            "$comment": "genre of dataset, e.g., 'legal', 'social media', 'scientific', 'general'",
             "type": "string"
           },
           "description": {
-            "$comment": "Short description of corpus",
+            "$comment": "Short description of dataset",
             "type": "array",
             "items": {
               "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
@@ -34,26 +34,26 @@
             }
           },
           "language": {
-            "$comment": "Language(s) of corpus, e.g., 'English', 'Chinese'",
+            "$comment": "Language(s) of dataset, e.g., 'English', 'Chinese'",
             "type": "array",
             "items": {
-              "$comment": "Language of corpus",
+              "$comment": "Language of dataset",
               "type": "string"
             }
           },
           "document_type": {
-            "$comment": "Type of documents in corpus, e.g., 'essays', 'tweets', 'legal cases'",
+            "$comment": "Type of documents in dataset, e.g., 'essays', 'tweets', 'legal cases'",
             "type": "string"
           },
           "document_count": {
-            "$comment": "Size of corpus in number of documents",
+            "$comment": "Size of dataset in number of documents",
             "type": "integer"
           },
-          "parent_corpora_id": {
-            "$comment": "List of parent corpora ids if this corpus is derived from other corpora",
+          "extends": {
+            "$comment": "List of parent datasets ids if this dataset is derived from other datasets",
             "type": "array",
             "items": {
-              "$comment": "Unique id of parent corpus",
+              "$comment": "Unique id of parent dataset",
               "type": "string"
             },
             "minItems": 0,
@@ -61,21 +61,21 @@
           }
         },
         "required": [
-          "corpus_id",
-          "corpus_name",
+          "dataset_id",
+          "dataset_name",
           "genre",
           "description",
           "language",
           "document_type",
           "document_count",
-          "parent_corpora_id"
+          "extends"
         ],
         "additionalProperties": false
       }
     }
   },
   "required": [
-    "corpora"
+    "datasets"
   ],
   "additionalProperties": false
 }

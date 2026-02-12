@@ -55,7 +55,7 @@
             "items": {
               "type": "object",
               "properties": {
-                "corpus_id": {
+                "dataset_id": {
                   "$comment": "Unique id for the corpus being annotated, should be human readable",
                   "type": "string"
                 },
@@ -142,13 +142,13 @@
                     "Unavailable"
                   ]
                 },
-                "corpus_link": {
+                "release_link": {
                   "$comment": "URL where the annotated data can be accessed, if available. If not available, link to the paper describing the annotation task",
                   "type": "string",
                   "format": "uri"
                 },
-                "corpus_name": {
-                  "$comment": "Name given to corpus by authors. If not specified then the corpus name will be inferred from corpus_id.",
+                "release_name": {
+                  "$comment": "Name given to corpus by authors. If not specified then the corpus name will be inferred from dataset_id.",
                   "type": "string"
                 },
                 "subset": {
@@ -164,14 +164,14 @@
                 }
               },
               "required": [
-                "corpus_id",
+                "dataset_id",
                 "annotation_task",
                 "description",
                 "annotator_type",
                 "agreement_type",
                 "agreement_score",
                 "accessibility",
-                "corpus_name",
+                "release_name",
                 "subset"
               ],
               "additionalProperties": false
