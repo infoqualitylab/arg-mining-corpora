@@ -249,22 +249,6 @@
       "parent_corpora_id": []
     },
     {
-      "corpus_id": "kpa",
-      "corpus_name": "KPA Shared Task Dataset",
-      "genre": "Debate",
-      "description": [
-        "A dataset of 24,093 argument and key point pairs. The arguments were curated by filtering low-quality arguments out of the IBM-ArgQ-Rank-30kArgs dataset to obtain a set of 7000 arguments on 28 topics. Then an annotation task was performed to map 378 expert written key points to each of the arguments. The final dataset contains 24,093 pairs, made up of 6,515 arguments and 243 key points."
-      ],
-      "language": [
-        "English"
-      ],
-      "document_type": "Pro/con arguments",
-      "document_count": 7000,
-      "parent_corpora_id": [
-        "ibm_rank_30k"
-      ]
-    },
-    {
       "corpus_id": "language_of_opposition",
       "corpus_name": "Language of Opposition Corpus",
       "genre": "Online discussions",
@@ -332,7 +316,7 @@
         "English"
       ],
       "document_type": "Posts/comments",
-      "document_count": 1870,
+      "document_count": 4870,
       "parent_corpora_id": []
     },
     {

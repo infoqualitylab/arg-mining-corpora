@@ -44,6 +44,8 @@ export interface Papers {
           };
       accessibility: "Free" | "Upon Request" | "Paid" | "Unavailable";
       corpus_link?: string;
+      corpus_name: string;
+      subset: number | string;
     }[];
   }[];
 }
