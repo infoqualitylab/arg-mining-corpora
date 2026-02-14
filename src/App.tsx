@@ -178,7 +178,7 @@ function App() {
 
                 <IconButton
                   aria-label="GitHub Repository"
-                  href="https://github.com/infoqualitylab/arg-mining-datasets"
+                  href="https://github.com/infoqualitylab/arg-mining-corpora"
                   target="_blank"
                 >
                   <GitHubIcon />
