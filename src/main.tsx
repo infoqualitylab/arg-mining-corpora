@@ -8,15 +8,15 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import App from "./App.tsx";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
+const theme = createTheme({
+  colorSchemes: {
+    dark: true,
   },
 });
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme}>
       <CssBaseline />
       <App />
     </ThemeProvider>

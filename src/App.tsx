@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { DataGrid } from "@mui/x-data-grid";
+import { useTheme } from "@mui/material/styles";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,10 +10,10 @@ import Divider from "@mui/material/Divider";
 import IconButton from "@mui/material/IconButton";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormGroup from "@mui/material/FormGroup";
-import GitHubIcon from "@mui/icons-material/GitHub";
 import Stack from "@mui/material/Stack";
 import Switch from "@mui/material/Switch";
 import Typography from "@mui/material/Typography";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import type { GridColDef } from "@mui/x-data-grid";
 import type { Datasets } from "./data/interfaces/datasets";
@@ -84,6 +85,9 @@ const columns: GridColDef[] = [
 ];
 
 function App() {
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+
   const [spanning, setSpanning] = useState(false);
 
   const [open, setOpen] = useState(false);
@@ -137,7 +141,8 @@ function App() {
       sx={{
         minHeight: "100vh",
         width: "100%",
-        backgroundColor: "#020617",
+        bgcolor: "background.default",
+        color: "text.primary",
         px: { xs: 1, md: 2 },
         py: 2,
         fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
@@ -148,8 +153,8 @@ function App() {
           variant="outlined"
           sx={{
             borderRadius: 3,
-            backgroundColor: "#020617",
-            borderColor: "rgba(148,163,184,0.2)",
+            bgcolor: "background.paper",
+            borderColor: "divider",
           }}
         >
           <CardContent sx={{ p: { xs: 2, md: 3 } }}>
@@ -170,6 +175,7 @@ function App() {
               </Box>
 
               <Stack direction="row" spacing={2} alignItems="center">
+
                 <IconButton
                   aria-label="GitHub Repository"
                   href="https://github.com/infoqualitylab/arg-mining-corpora"
@@ -181,8 +187,7 @@ function App() {
             </Stack>
 
             <Divider sx={{ mb: 2 }} />
-
-            <Stack
+                        <Stack
               direction={{ xs: "column", md: "row" }}
               spacing={2}
               justifyContent="space-between"
@@ -212,7 +217,8 @@ function App() {
                 width: "100%",
                 borderRadius: 2,
                 overflow: "hidden",
-                border: "1px solid rgba(148,163,184,0.2)",
+                border: 1,
+                borderColor: "divider",
               }}
             >
               <DataGrid
@@ -226,22 +232,20 @@ function App() {
                 sx={{
                   border: 0,
 
-                  /* Sticky headers now work because grid scrolls */
                   "& .MuiDataGrid-columnHeaders": {
                     position: "sticky",
                     top: 0,
                     zIndex: 3,
-                    backgroundColor: "#020617",
-                    borderBottom: "1px solid rgba(148,163,184,0.25)",
+                    bgcolor: "background.paper",
+                    borderBottom: 1,
+                    borderColor: "divider",
                   },
 
-                  /* Click affordance */
                   "& .MuiDataGrid-row": {
                     cursor: "pointer",
                     position: "relative",
                   },
 
-                  /* Left accent */
                   "& .MuiDataGrid-row:hover::before": {
                     content: '""',
                     position: "absolute",
@@ -249,23 +253,23 @@ function App() {
                     top: 0,
                     bottom: 0,
                     width: "4px",
-                    background: "#6366f1",
+                    background: theme.palette.primary.main,
                   },
 
-                  /* Zebra */
                   "& .MuiDataGrid-row:nth-of-type(odd)": {
-                    backgroundColor: "rgba(15,23,42,0.25)",
+                    backgroundColor: isDark
+                      ? "rgba(255,255,255,0.02)"
+                      : "rgba(0,0,0,0.02)",
                   },
 
-                  /* Hover */
                   "& .MuiDataGrid-row:hover": {
-                    backgroundColor: "rgba(99,102,241,0.28)",
-                    boxShadow: "inset 0 0 0 1px rgba(99,102,241,0.6)",
+                    backgroundColor: isDark
+                      ? "rgba(255,255,255,0.06)"
+                      : "rgba(0,0,0,0.04)",
                   },
 
-                  /* Selected */
                   "& .Mui-selected": {
-                    backgroundColor: "rgba(99,102,241,0.35) !important",
+                    backgroundColor: `${theme.palette.primary.main}33 !important`,
                   },
                 }}
               />
