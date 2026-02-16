@@ -19,8 +19,12 @@ import { getTaskColor } from "./utils";
 import datas from "./data/entries/datasets.json";
 import paps from "./data/entries/papers.json";
 
-const dat = datas;
-const pap = paps;
+import type { Datasets } from "./data/interfaces/datasets";
+import type { Papers } from "./data/interfaces/papers";
+
+const dat: Datasets = datas;
+// @ts-expect-error TODO find a better way to handle ts-ignore
+const pap: Papers = paps;
 
 export interface AnnotationEntry {
   annotation_tasks: string[];
@@ -44,8 +48,9 @@ export interface ReleaseRow {
   dataset_description: string[];
   release_size: number;
   dataset_document_type: string;
+  dataset_document_count: number;
   dataset_language: string;
-  dataset_domain: string;
+  dataset_genre: string;
   release_name: string;
   release_link?: string;
   accessibility: string;
@@ -56,7 +61,7 @@ export interface ReleaseRow {
 const columns: GridColDef[] = [
   { field: "release_name", headerName: "Release", width: 220 },
   { field: "dataset_name", headerName: "Dataset", width: 220 },
-  { field: "dataset_domain", headerName: "Domain", width: 160 },
+  { field: "dataset_genre", headerName: "genre", width: 160 },
   { field: "dataset_language", headerName: "Language", width: 160 },
   { field: "dataset_document_type", headerName: "Doc Type", width: 180 },
   { field: "release_size", headerName: "Doc Count", width: 160 },
@@ -117,10 +122,10 @@ function App() {
                 dataset_document_count: dataset.document_count,
                 dataset_document_type: dataset.document_type,
                 dataset_language: dataset.language.join(", "),
-                dataset_domain: dataset.domain || "N/A",
-                release_size: annotation.subset || 0,
-                release_name: releaseName,
+                dataset_genre: dataset.genre,
                 release_link: annotation.release_link,
+                release_size: typeof annotation.subset === "number" ? annotation.subset : 0,
+                release_name: releaseName,
                 accessibility: annotation.accessibility,
                 annotation_entries: [],
                 all_tasks: [],
