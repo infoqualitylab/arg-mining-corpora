@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { PieChart, Pie, Cell, Tooltip, ResponsiveContainer } from "recharts";
 import ReleaseLineageGraph from "./ReleaseLineageGraph";
-import type { ReleaseRow } from "./App";
+import type { AnnotationEntry, ReleaseRow } from "./App";
 import { getTaskColor, formatAgreement } from "./utils";
 
 function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
