@@ -1,9 +1,5 @@
-// NOTE: This revision changes release aggregation model.
-// Each release row now contains an array of annotation entries (former rows),
-// and the drawer renders each annotation separately with its own coverage pie.
-
 import { useState, useMemo } from "react";
-import { DataGrid, GridToolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import type { GridColDef } from "@mui/x-data-grid";
 import { useTheme } from "@mui/material/styles";
 import {
@@ -31,8 +27,6 @@ import paps from "./data/entries/papers.json";
 const dat = datas;
 const pap = paps;
 
-/* ----------------------------- TYPES ----------------------------- */
-
 interface AnnotationEntry {
   annotation_tasks: string[];
   annotation_description: string[];
@@ -40,7 +34,6 @@ interface AnnotationEntry {
   agreement_type?: string;
   agreement?: any;
   annotator_type?: string;
-
   paper_name: string;
   authors: string;
   year: number;
@@ -51,25 +44,20 @@ interface AnnotationEntry {
 
 export interface ReleaseRow {
   id: string;
-
   dataset_id: string;
   dataset_name: string;
   dataset_description: string[];
-  dataset_document_count: number;
+  release_size: number;
   dataset_document_type: string;
   dataset_language: string;
   dataset_domain: string;
-
   release_name: string;
   release_link?: string;
   accessibility: string;
-
   annotation_entries: AnnotationEntry[];
-
-  all_tasks: string[]; // for datagrid summary
+  all_tasks: string[];
 }
 
-/* ----------------------- TASK COLOR SYSTEM ----------------------- */
 
 const TASK_COLOR_MAP: Record<string, string> = {
   stance: "#2563eb",
@@ -83,8 +71,6 @@ function getTaskColor(task: string) {
   return TASK_COLOR_MAP[task] || "#64748b";
 }
 
-/* -------------------------- AGREEMENT ---------------------------- */
-
 function formatAgreement(agreement: any) {
   if (!agreement) return "N/A";
   if (typeof agreement === "number") return agreement;
@@ -96,8 +82,6 @@ function formatAgreement(agreement: any) {
   }
   return agreement;
 }
-
-/* -------------------------- LINEAGE ------------------------------ */
 
 function ReleaseLineageGraph({ rows, datasetId, selectedRelease, onSelectRelease }: any) {
   const theme = useTheme();
@@ -150,8 +134,6 @@ function ReleaseLineageGraph({ rows, datasetId, selectedRelease, onSelectRelease
     </Stack>
   );
 }
-
-/* --------------------------- DRAWER ------------------------------ */
 
 function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
   const theme = useTheme();
@@ -294,21 +276,19 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
   );
 }
 
-/* --------------------------- COLUMNS ----------------------------- */
-
 const columns: GridColDef[] = [
-  { field: "dataset_name", headerName: "Dataset", width: 220 },
   { field: "release_name", headerName: "Release", width: 220 },
+  { field: "dataset_name", headerName: "Dataset", width: 220 },
   { field: "dataset_domain", headerName: "Domain", width: 160 },
   { field: "dataset_language", headerName: "Language", width: 160 },
   { field: "dataset_document_type", headerName: "Doc Type", width: 180 },
-  { field: "dataset_document_count", headerName: "Doc Count", width: 160 },
+  { field: "release_size", headerName: "Doc Count", width: 160 },
   {
     field: "all_tasks",
     headerName: "Annotation Tasks",
     width: 320,
     renderCell: (params) => (
-      <Stack direction="row" spacing={0.5} flexWrap="wrap">
+      <Stack spacing={0.5} sx={{ py: 0.5 }}>
         {params.value.map((label: string) => (
           <Chip
             key={label}
@@ -322,10 +302,10 @@ const columns: GridColDef[] = [
   },
 ];
 
-/* ----------------------------- APP ------------------------------- */
-
 function App() {
-  const [spanning, setSpanning] = useState(false);
+  const theme = useTheme();
+  const isDark = theme.palette.mode === "dark";
+  
   const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<ReleaseRow | null>(null);
 
@@ -361,6 +341,7 @@ function App() {
             dataset_document_type: dataset.document_type,
             dataset_language: dataset.language.join(", "),
             dataset_domain: dataset.domain || "N/A",
+            release_size: annotation.subset || 0,
             release_name: releaseName,
             release_link: annotation.release_link,
             accessibility: annotation.accessibility,
@@ -388,6 +369,7 @@ function App() {
 
         rel.annotation_entries.push(entry);
         rel.all_tasks.push(...annotation.annotation_task);
+        rel.release_size = Math.max(rel.release_size, entry.subset);
       }
     }
 
@@ -398,48 +380,133 @@ function App() {
   }, []);
 
   return (
-    <Box sx={{ height: 700, width: "100%" }}>
-      <Card variant="outlined">
-        <CardContent>
-          <Box sx={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <Typography gutterBottom variant="h3">
-              Argumentation Mining datasets
-            </Typography>
-
-            <IconButton
-              color="primary"
-              href="https://github.com/infoqualitylab/arg-mining-datasets"
-              target="_blank"
+    <Box
+      sx={{
+        minHeight: "100vh",
+        width: "100%",
+        bgcolor: "background.default",
+        color: "text.primary",
+        px: { xs: 1, md: 2 },
+        py: 2,
+        fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+      }}
+    >
+      <Box sx={{ width: "100%" }}>
+        <Card
+          variant="outlined"
+          sx={{
+            borderRadius: 3,
+            bgcolor: "background.paper",
+            borderColor: "divider",
+          }}
+        >
+          <CardContent sx={{ p: { xs: 2, md: 3 } }}>
+            <Stack
+              direction={{ xs: "column", sm: "row" }}
+              spacing={2}
+              justifyContent="space-between"
+              alignItems={{ xs: "flex-start", sm: "center" }}
+              sx={{ mb: 2 }}
             >
-              <GitHubIcon />
-            </IconButton>
-          </Box>
+              <Box>
+                <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: -0.2 }}>
+                  Argumentation Mining Datasets
+                </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  Explore datasets and annotation details.
+                </Typography>
+              </Box>
 
-          <Divider />
+              <Stack direction="row" spacing={2} alignItems="center">
 
-          <Typography sx={{ mt: 2, mb: 2 }}>
-            Each row is a release. Drawer shows each annotation entry separately.
-          </Typography>
+                <IconButton
+                  aria-label="GitHub Repository"
+                  href="https://github.com/infoqualitylab/arg-mining-corpora"
+                  target="_blank"
+                >
+                  <GitHubIcon />
+                </IconButton>
+              </Stack>
+            </Stack>
 
-          <FormGroup>
-            <FormControlLabel
-              control={<Switch checked={spanning} onChange={() => setSpanning(!spanning)} />}
-              label="Row Spanning"
-            />
-          </FormGroup>
+            <Divider sx={{ mb: 2 }} />
+                        <Stack
+              direction={{ xs: "column", md: "row" }}
+              spacing={2}
+              justifyContent="space-between"
+              alignItems={{ xs: "flex-start", md: "center" }}
+              sx={{ mb: 2 }}
+            >
+              <Typography variant="body2" color="text.secondary">
+                Click a row to view details.
+              </Typography>
 
-          <DataGrid
-            rows={rows}
-            columns={columns}
-            slots={{ toolbar: GridToolbar }}
-            getRowHeight={() => "auto"}
-            rowSpanning={spanning}
-            disableRowSelectionOnClick
-            onRowClick={(params) => handleClickOpen(params.row)}
-          />
-        </CardContent>
-      </Card>
+            </Stack>
 
+            <Box
+              sx={{
+                height: "73vh",
+                width: "100%",
+                borderRadius: 2,
+                overflow: "hidden",
+                border: 1,
+                borderColor: "divider",
+              }}
+            >
+              <DataGrid
+                rows={rows}
+                columns={columns}
+                showToolbar
+                getRowHeight={() => "auto"}
+                disableRowSelectionOnClick
+                onRowClick={(params) => handleClickOpen(params.row)}
+                sx={{
+                  border: 0,
+
+                  "& .MuiDataGrid-columnHeaders": {
+                    position: "sticky",
+                    top: 0,
+                    zIndex: 3,
+                    bgcolor: "background.paper",
+                    borderBottom: 1,
+                    borderColor: "divider",
+                  },
+
+                  "& .MuiDataGrid-row": {
+                    cursor: "pointer",
+                    position: "relative",
+                  },
+
+                  "& .MuiDataGrid-row:hover::before": {
+                    content: '""',
+                    position: "absolute",
+                    left: 0,
+                    top: 0,
+                    bottom: 0,
+                    width: "4px",
+                    background: theme.palette.primary.main,
+                  },
+
+                  "& .MuiDataGrid-row:nth-of-type(odd)": {
+                    backgroundColor: isDark
+                      ? "rgba(255,255,255,0.02)"
+                      : "rgba(0,0,0,0.02)",
+                  },
+
+                  "& .MuiDataGrid-row:hover": {
+                    backgroundColor: isDark
+                      ? "rgba(255,255,255,0.06)"
+                      : "rgba(0,0,0,0.04)",
+                  },
+
+                  "& .Mui-selected": {
+                    backgroundColor: `${theme.palette.primary.main}33 !important`,
+                  },
+                }}
+              />
+            </Box>
+          </CardContent>
+        </Card>
       <CombinedDrawer
         open={open}
         onClose={handleClose}
@@ -447,6 +514,7 @@ function App() {
         rows={rows}
         setRow={setSelectedRow}
       />
+      </Box>
     </Box>
   );
 }
