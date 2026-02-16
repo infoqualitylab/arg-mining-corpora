@@ -1,3 +1,7 @@
+// NOTE: This revision changes release aggregation model.
+// Each release row now contains an array of annotation entries (former rows),
+// and the drawer renders each annotation separately with its own coverage pie.
+
 import { useState, useMemo } from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import type { GridColDef } from "@mui/x-data-grid";
@@ -29,7 +33,23 @@ const pap = paps;
 
 /* ----------------------------- TYPES ----------------------------- */
 
-export interface FullRow {
+interface AnnotationEntry {
+  annotation_tasks: string[];
+  annotation_description: string[];
+  subset: number;
+  agreement_type?: string;
+  agreement?: any;
+  annotator_type?: string;
+
+  paper_name: string;
+  authors: string;
+  year: number;
+  paper_link?: string;
+  doi?: string;
+  open_alex_id?: string;
+}
+
+export interface ReleaseRow {
   id: string;
 
   dataset_id: string;
@@ -39,25 +59,14 @@ export interface FullRow {
   dataset_document_type: string;
   dataset_language: string;
   dataset_domain: string;
-  dataset_extends?: string[];
 
   release_name: string;
   release_link?: string;
   accessibility: string;
 
-  annotation_tasks: string[];
-  annotation_description: string[];
-  subset: number | string;
-  agreement_type: string;
-  agreement: any;
-  annotator_type: string;
+  annotation_entries: AnnotationEntry[];
 
-  paper_name: string;
-  authors: string;
-  year: number;
-  paper_link?: string;
-  doi?: string;
-  open_alex_id?: string;
+  all_tasks: string[]; // for datagrid summary
 }
 
 /* ----------------------- TASK COLOR SYSTEM ----------------------- */
@@ -77,47 +86,33 @@ function getTaskColor(task: string) {
 /* -------------------------- AGREEMENT ---------------------------- */
 
 function formatAgreement(agreement: any) {
-  if (agreement === null || agreement === undefined) return "N/A";
-
+  if (!agreement) return "N/A";
   if (typeof agreement === "number") return agreement;
-
-  if (Array.isArray(agreement)) {
-    return `${agreement[0]} - ${agreement[1]}`;
-  }
-
+  if (Array.isArray(agreement)) return `${agreement[0]} - ${agreement[1]}`;
   if (typeof agreement === "object") {
     return Object.entries(agreement)
       .map(([k, v]) => `${k}: ${v}`)
       .join(" | ");
   }
-
   return agreement;
 }
 
 /* -------------------------- LINEAGE ------------------------------ */
 
-function ReleaseLineageGraph({
-  rows,
-  datasetId,
-  selectedRelease,
-  onSelectRelease,
-}: {
-  rows: FullRow[];
-  datasetId: string;
-  selectedRelease: string;
-  onSelectRelease: (releaseName: string) => void;
-}) {
+function ReleaseLineageGraph({ rows, datasetId, selectedRelease, onSelectRelease }: any) {
   const theme = useTheme();
 
-  const lineageRows = rows.filter((r) => r.dataset_id === datasetId);
-
-  const uniqueReleases = Array.from(
-    new Map(lineageRows.map((r) => [r.release_name, r])).values()
-  ).sort((a, b) => a.year - b.year);
+  const lineageRows = rows
+    .filter((r: ReleaseRow) => r.dataset_id === datasetId)
+    .sort((a: ReleaseRow, b: ReleaseRow) => {
+      const ay = a.annotation_entries[0]?.year || 0;
+      const by = b.annotation_entries[0]?.year || 0;
+      return ay - by;
+    });
 
   return (
     <Stack spacing={2} alignItems="center">
-      {uniqueReleases.map((r, idx) => {
+      {lineageRows.map((r: ReleaseRow, idx: number) => {
         const selected = r.release_name === selectedRelease;
 
         return (
@@ -136,28 +131,18 @@ function ReleaseLineageGraph({
                 bgcolor: selected
                   ? theme.palette.primary.main + "22"
                   : theme.palette.background.paper,
-                transition: "all .2s",
-                "&:hover": {
-                  borderColor: theme.palette.primary.main,
-                },
               }}
             >
               <Typography fontSize={13} fontWeight={600} textAlign="center">
                 {r.release_name}
               </Typography>
               <Typography fontSize={11} color="text.secondary" textAlign="center">
-                {r.year}
+                {r.annotation_entries[0]?.year}
               </Typography>
             </Box>
 
-            {idx !== uniqueReleases.length - 1 && (
-              <Box
-                sx={{
-                  width: 2,
-                  height: 28,
-                  bgcolor: theme.palette.divider,
-                }}
-              />
+            {idx !== lineageRows.length - 1 && (
+              <Box sx={{ width: 2, height: 28, bgcolor: theme.palette.divider }} />
             )}
           </Stack>
         );
@@ -172,39 +157,23 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
   const theme = useTheme();
   if (!row) return null;
 
-  const subsetNumber = typeof row.subset === "number" ? row.subset : 0;
-  const totalDocs = row.dataset_document_count || 1;
-
-  const pieData = [
-    { name: "Annotated", value: subsetNumber },
-    { name: "Remaining", value: Math.max(totalDocs - subsetNumber, 0) },
-  ];
-
   return (
     <Drawer anchor="right" open={open} onClose={onClose}>
-      <Box sx={{ width: 1150, height: "100%", display: "flex" }}>
-        {/* DATASET SIDE */}
-        <Box sx={{ width: "45%", p: 3, borderRight: 1, borderColor: "divider", overflowY: "auto" }}>
-          <Typography variant="overline" color="text.secondary">
-            DATASET
-          </Typography>
+      <Box sx={{ width: 1200, height: "100%", display: "flex" }}>
+        {/* DATASET */}
+        <Box sx={{ width: "40%", p: 3, borderRight: 1, borderColor: "divider", overflowY: "auto" }}>
+          <Typography variant="overline">DATASET</Typography>
           <Typography variant="h5" fontWeight={700} mb={2}>
             {row.dataset_name}
           </Typography>
 
-          <Divider sx={{ mb: 2 }} />
-
-          {row.dataset_description?.map((d: string, i: number) => (
+          {row.dataset_description.map((d: string, i: number) => (
             <Typography key={i} variant="body2" paragraph>
               {d}
             </Typography>
           ))}
 
           <Divider sx={{ my: 2 }} />
-
-          <Typography variant="subtitle2" gutterBottom>
-            Dataset Details
-          </Typography>
 
           <Stack spacing={0.5}>
             <Typography variant="body2">Documents: {row.dataset_document_count}</Typography>
@@ -215,17 +184,15 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
 
           <Divider sx={{ my: 3 }} />
 
-          <Typography variant="subtitle2" gutterBottom>
-            Release Lineage
-          </Typography>
+          <Typography variant="subtitle2">Release Lineage</Typography>
 
           <ReleaseLineageGraph
             rows={rows}
             datasetId={row.dataset_id}
             selectedRelease={row.release_name}
-            onSelectRelease={(releaseName) => {
+            onSelectRelease={(releaseName: string) => {
               const newRow = rows.find(
-                (r: FullRow) =>
+                (r: ReleaseRow) =>
                   r.dataset_id === row.dataset_id && r.release_name === releaseName
               );
               if (newRow) setRow(newRow);
@@ -233,88 +200,94 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
           />
         </Box>
 
-        {/* RELEASE SIDE */}
-        <Box sx={{ width: "55%", p: 3, overflowY: "auto" }}>
-          <Typography variant="overline" color="text.secondary">
-            RELEASE
-          </Typography>
-
+        {/* RELEASE */}
+        <Box sx={{ width: "60%", p: 3, overflowY: "auto" }}>
+          <Typography variant="overline">RELEASE</Typography>
           <Typography variant="h5" fontWeight={700}>
             {row.release_name}
           </Typography>
 
-          <Typography variant="body2" color="text.secondary">
-            {row.paper_name} ({row.year})
-          </Typography>
-
-          <Typography variant="body2" color="text.secondary" mb={1}>
-            {row.authors}
-          </Typography>
-
-          <Stack direction="row" spacing={2} flexWrap="wrap" mb={2}>
-            {row.doi && <Link href={row.doi}>DOI</Link>}
-            {row.paper_link && <Link href={row.paper_link}>Paper</Link>}
-            {row.open_alex_id && <Link href={row.open_alex_id}>OpenAlex</Link>}
-            {row.release_link && <Link href={row.release_link}>Release</Link>}
-          </Stack>
+          {row.release_link && (
+            <Link href={row.release_link} sx={{ display: "block", mb: 2 }}>
+              Release Link
+            </Link>
+          )}
 
           <Divider sx={{ my: 2 }} />
 
-          <Typography variant="subtitle2" gutterBottom>
-            Annotation Tasks
+          <Typography variant="h6" gutterBottom>
+            Annotation Entries
           </Typography>
 
-          <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
-            {row.annotation_tasks.map((t: string) => (
-              <Chip
-                key={t}
-                label={t}
-                size="small"
-                sx={{
-                  bgcolor: getTaskColor(t),
-                  color: "white",
-                  fontWeight: 600,
-                }}
-              />
-            ))}
-          </Stack>
+          <Stack spacing={3}>
+            {row.annotation_entries.map((entry: AnnotationEntry, idx: number) => {
+              const pieData = [
+                { name: "Annotated", value: entry.subset },
+                {
+                  name: "Remaining",
+                  value: Math.max(row.dataset_document_count - entry.subset, 0),
+                },
+              ];
 
-          <Typography variant="subtitle2">Description</Typography>
-          {row.annotation_description?.map((d: string, i: number) => (
-            <Typography key={i} variant="body2" paragraph>
-              {d}
-            </Typography>
-          ))}
+              return (
+                <Card key={idx} variant="outlined" sx={{ p: 2 }}>
+                  <Typography fontWeight={700}>
+                    {entry.paper_name} ({entry.year})
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary">
+                    {entry.authors}
+                  </Typography>
 
-          <Divider sx={{ my: 2 }} />
+                  <Stack direction="row" spacing={2} flexWrap="wrap" mb={2}>
+                    {entry.doi && <Link href={entry.doi}>DOI</Link>}
+                    {entry.paper_link && <Link href={entry.paper_link}>Paper</Link>}
+                    {entry.open_alex_id && <Link href={entry.open_alex_id}>OpenAlex</Link>}
+                  </Stack>
 
-          <Stack spacing={0.5} mb={3}>
-            <Typography variant="body2">
-              Agreement ({row.agreement_type}): {formatAgreement(row.agreement)}
-            </Typography>
-            <Typography variant="body2">Annotators: {row.annotator_type}</Typography>
-            <Typography variant="body2">Accessibility: {row.accessibility}</Typography>
-          </Stack>
+                  <Stack direction="row" spacing={1} flexWrap="wrap" mb={2}>
+                    {entry.annotation_tasks.map((t) => (
+                      <Chip
+                        key={t}
+                        label={t}
+                        size="small"
+                        sx={{ bgcolor: getTaskColor(t), color: "white" }}
+                      />
+                    ))}
+                  </Stack>
 
-          <Typography variant="subtitle2" gutterBottom>
-            Coverage
-          </Typography>
-
-          <Box sx={{ width: "100%", height: 260 }}>
-            <ResponsiveContainer>
-              <PieChart>
-                <Pie data={pieData} dataKey="value" nameKey="name" outerRadius={90} label>
-                  {pieData.map((_, i) => (
-                    <Cell
-                      key={i}
-                      fill={i === 0 ? theme.palette.primary.main : theme.palette.grey[500]}
-                    />
+                  {entry.annotation_description.map((d, i) => (
+                    <Typography key={i} variant="body2" paragraph>
+                      {d}
+                    </Typography>
                   ))}
-                </Pie>
-                <Tooltip />
-              </PieChart>
-            </ResponsiveContainer>
-          </Box>
+
+                  <Typography variant="body2" mb={2}>
+                    Agreement ({entry.agreement_type}): {formatAgreement(entry.agreement)}
+                  </Typography>
+
+                  <Box sx={{ width: "100%", height: 200 }}>
+                    <ResponsiveContainer>
+                      <PieChart>
+                        <Pie data={pieData} dataKey="value" outerRadius={70}>
+                          {pieData.map((_, i) => (
+                            <Cell
+                              key={i}
+                              fill={
+                                i === 0
+                                  ? theme.palette.primary.main
+                                  : theme.palette.grey[500]
+                              }
+                            />
+                          ))}
+                        </Pie>
+                        <Tooltip />
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </Box>
+                </Card>
+              );
+            })}
+          </Stack>
         </Box>
       </Box>
     </Drawer>
@@ -331,7 +304,7 @@ const columns: GridColDef[] = [
   { field: "dataset_document_type", headerName: "Doc Type", width: 180 },
   { field: "dataset_document_count", headerName: "Doc Count", width: 160 },
   {
-    field: "annotation_tasks",
+    field: "all_tasks",
     headerName: "Annotation Tasks",
     width: 320,
     renderCell: (params) => (
@@ -341,11 +314,7 @@ const columns: GridColDef[] = [
             key={label}
             label={label}
             size="small"
-            sx={{
-              bgcolor: getTaskColor(label),
-              color: "white",
-              fontWeight: 600,
-            }}
+            sx={{ bgcolor: getTaskColor(label), color: "white" }}
           />
         ))}
       </Stack>
@@ -357,28 +326,34 @@ const columns: GridColDef[] = [
 
 function App() {
   const [spanning, setSpanning] = useState(false);
-
   const [open, setOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
+  const [selectedRow, setSelectedRow] = useState<ReleaseRow | null>(null);
 
-  const handleClickOpen = (row: FullRow) => {
+  const handleClickOpen = (row: ReleaseRow) => {
     setSelectedRow(row);
     setOpen(true);
   };
 
   const handleClose = () => setOpen(false);
 
-  const rows = useMemo<FullRow[]>(() => {
-    let rs: FullRow[] = [];
+  const rows = useMemo<ReleaseRow[]>(() => {
+    const releaseMap = new Map<string, ReleaseRow>();
 
     for (const paper of pap.papers) {
-      for (const [index, annotation] of paper.annotations.entries()) {
+      for (const annotation of paper.annotations) {
         const dataset = dat.datasets.find((i) => i.dataset_id === annotation.dataset_id);
+        if (!dataset) continue;
 
-        if (dataset) {
-          rs.push({
-            id: paper.paper_id + "-" + index,
+        const releaseName =
+          annotation.release_name === "PARENT"
+            ? dataset.dataset_name
+            : annotation.release_name;
 
+        const key = `${dataset.dataset_id}__${releaseName}`;
+
+        if (!releaseMap.has(key)) {
+          releaseMap.set(key, {
+            id: key,
             dataset_id: dataset.dataset_id,
             dataset_name: dataset.dataset_name,
             dataset_description: dataset.description,
@@ -386,34 +361,40 @@ function App() {
             dataset_document_type: dataset.document_type,
             dataset_language: dataset.language.join(", "),
             dataset_domain: dataset.domain || "N/A",
-            dataset_extends: dataset.extends,
-
-            release_name:
-              annotation.release_name === "PARENT"
-                ? dataset.dataset_name
-                : annotation.release_name,
+            release_name: releaseName,
             release_link: annotation.release_link,
             accessibility: annotation.accessibility,
-
-            annotation_tasks: annotation.annotation_task,
-            annotation_description: annotation.description,
-            subset: annotation.subset,
-            agreement_type: annotation.agreement_type,
-            agreement: annotation.agreement_score,
-            annotator_type: annotation.annotator_type,
-
-            paper_name: paper.paper_title,
-            authors: paper.authors.join(", "),
-            year: paper.year,
-            paper_link: paper.paper_link,
-            doi: paper.doi,
-            open_alex_id: paper.open_alex_id,
+            annotation_entries: [],
+            all_tasks: [],
           });
         }
+
+        const rel = releaseMap.get(key)!;
+
+        const entry: AnnotationEntry = {
+          annotation_tasks: annotation.annotation_task,
+          annotation_description: annotation.description,
+          subset: typeof annotation.subset === "number" ? annotation.subset : 0,
+          agreement_type: annotation.agreement_type,
+          agreement: annotation.agreement_score,
+          annotator_type: annotation.annotator_type,
+          paper_name: paper.paper_title,
+          authors: paper.authors.join(", "),
+          year: paper.year,
+          paper_link: paper.paper_link,
+          doi: paper.doi,
+          open_alex_id: paper.open_alex_id,
+        };
+
+        rel.annotation_entries.push(entry);
+        rel.all_tasks.push(...annotation.annotation_task);
       }
     }
 
-    return rs;
+    return Array.from(releaseMap.values()).map((r) => ({
+      ...r,
+      all_tasks: Array.from(new Set(r.all_tasks)),
+    }));
   }, []);
 
   return (
@@ -437,7 +418,7 @@ function App() {
           <Divider />
 
           <Typography sx={{ mt: 2, mb: 2 }}>
-            Click a row to view dataset + release details.
+            Each row is a release. Drawer shows each annotation entry separately.
           </Typography>
 
           <FormGroup>
