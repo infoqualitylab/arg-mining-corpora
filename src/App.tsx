@@ -1,139 +1,159 @@
 import { useState, useMemo } from "react";
 import { DataGrid } from "@mui/x-data-grid";
-import { useTheme } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Chip from "@mui/material/Chip";
-import DescriptionDialog from "./DescriptionDialog";
-import Divider from "@mui/material/Divider";
-import IconButton from "@mui/material/IconButton";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormGroup from "@mui/material/FormGroup";
-import Stack from "@mui/material/Stack";
-import Switch from "@mui/material/Switch";
-import Typography from "@mui/material/Typography";
-import GitHubIcon from "@mui/icons-material/GitHub";
-
 import type { GridColDef } from "@mui/x-data-grid";
-import type { Datasets } from "./data/interfaces/datasets";
-import type { Papers } from "./data/interfaces/papers";
+import { useTheme } from "@mui/material/styles";
+import {
+  Box,
+  Card,
+  CardContent,
+  Chip,
+  Divider,
+  IconButton,
+  Stack,
+  Typography,
+} from "@mui/material";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import CombinedDrawer from "./CombinedDrawer";
+import { getTaskColor } from "./utils";
 
 import datas from "./data/entries/datasets.json";
 import paps from "./data/entries/papers.json";
 
-const dat: Datasets = datas;
-// @ts-expect-error TODO find a better way to handle ts-ignore
-const pap: Papers = paps;
+const dat = datas;
+const pap = paps;
 
-export interface FullRow {
-  id: string;
-  dataset_name: string;
-  dataset_description: string[];
-  genre: string;
-  language: string;
-  document_type: string;
-  document_count: number;
-  release_name: string;
-  release_link: string;
-  accessibility: string;
+export interface AnnotationEntry {
   annotation_tasks: string[];
   annotation_description: string[];
-  subset: number | string;
-  agreement_type: string;
-  agreement: number | string | [number, number];
-  annotator_type: string;
+  subset: number;
+  agreement_type?: string;
+  agreement?: any;
+  annotator_type?: string;
   paper_name: string;
   authors: string;
   year: number;
-  paper_link: string;
+  paper_link?: string;
+  doi?: string;
+  open_alex_id?: string;
+}
+
+export interface ReleaseRow {
+  id: string;
+  dataset_id: string;
+  dataset_name: string;
+  dataset_description: string[];
+  release_size: number;
+  dataset_document_type: string;
+  dataset_language: string;
+  dataset_domain: string;
+  release_name: string;
+  release_link?: string;
+  accessibility: string;
+  annotation_entries: AnnotationEntry[];
+  all_tasks: string[];
 }
 
 const columns: GridColDef[] = [
-  { field: "dataset_name", headerName: "Dataset Name", width: 260 },
-  { field: "genre", headerName: "Genre", width: 180 },
-  { field: "language", headerName: "Language", width: 180 },
-  { field: "document_type", headerName: "Document Type", width: 200 },
-  { field: "document_count", headerName: "Document Count", width: 180 },
-  { field: "release_name", headerName: "Release Name", width: 240 },
+  { field: "release_name", headerName: "Release", width: 220 },
+  { field: "dataset_name", headerName: "Dataset", width: 220 },
+  { field: "dataset_domain", headerName: "Domain", width: 160 },
+  { field: "dataset_language", headerName: "Language", width: 160 },
+  { field: "dataset_document_type", headerName: "Doc Type", width: 180 },
+  { field: "release_size", headerName: "Doc Count", width: 160 },
   {
-    field: "release_link",
-    headerName: "Release Link",
-    width: 260,
-    renderCell: (params) => (
-      params.value === "-" ? (<span>{params.value}</span>) : (
-        <a href={params.value} target="_blank" rel="noopener noreferrer">
-          {params.value}
-        </a>
-      )
-    ),
-  },
-  { field: "accessibility", headerName: "Accessibility", width: 200 },
-  {
-    field: "annotation_tasks",
-    headerName: "Annotation Task(s)",
-    width: 280,
+    field: "all_tasks",
+    headerName: "Annotation Tasks",
+    width: 320,
     renderCell: (params) => (
       <Stack spacing={0.5} sx={{ py: 0.5 }}>
         {params.value.map((label: string) => (
-          <Chip key={label} label={label} size="small" variant="outlined" />
+          <Chip
+            key={label}
+            label={label}
+            size="small"
+            sx={{ bgcolor: getTaskColor(label), color: "white" }}
+          />
         ))}
       </Stack>
     ),
   },
-  { field: "subset", headerName: "Subset", width: 140 },
 ];
 
 function App() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
 
-  const [spanning, setSpanning] = useState(false);
-
   const [open, setOpen] = useState(false);
-  const [selectedRow, setSelectedRow] = useState<FullRow | null>(null);
+  const [selectedRow, setSelectedRow] = useState<ReleaseRow | null>(null);
 
-  const handleClickOpen = (row: FullRow) => {
+  const handleClickOpen = (row: ReleaseRow) => {
     setSelectedRow(row);
     setOpen(true);
   };
 
   const handleClose = () => setOpen(false);
 
-  const rows = useMemo<FullRow[]>(() => {
-    let rs: FullRow[] = [];
+  const rows = useMemo<ReleaseRow[]>(() => {
+    const releaseMap = new Map<string, ReleaseRow>();
+
     for (const paper of pap.papers) {
-      for (const [index, annotation] of paper.annotations.entries()) {
-        const dataset = dat.datasets.find(
-          (i) => i.dataset_id === annotation.dataset_id,
-        );
-        if (dataset) {
-          rs.push({
-            id: paper.paper_id + "-" + index,
-            dataset_name: dataset.dataset_name,
-            dataset_description: dataset.description,
-            genre: dataset.genre,
-            language: dataset.language.join(", "),
-            document_type: dataset.document_type,
-            document_count: dataset.document_count,
-            release_name: annotation.release_name === "PARENT" ? dataset.dataset_name : annotation.release_name,
-            release_link: annotation.release_link ? annotation.release_link : "-",
-            accessibility: annotation.accessibility,
-            annotation_tasks: annotation.annotation_task,
-            annotation_description: annotation.description,
-            subset: annotation.subset,
-            agreement_type: annotation.agreement_type,
-            agreement: annotation.agreement_score instanceof Object ? JSON.stringify(annotation.agreement_score) : annotation.agreement_score,
-            annotator_type: annotation.annotator_type,
-            paper_name: paper.paper_title,
-            authors: paper.authors.join(", "),
-            year: paper.year,
-            paper_link: paper.paper_link,
-          });
-        }
+      for (const annotation of paper.annotations) {
+        const dataset = dat.datasets.find((i) => i.dataset_id === annotation.dataset_id);
+        if (!dataset) continue;
+
+        const releaseName =
+          annotation.release_name === "PARENT"
+            ? dataset.dataset_name
+            : annotation.release_name;
+
+            const key = `${dataset.dataset_id}__${releaseName}`;
+
+            if (!releaseMap.has(key)) {
+              releaseMap.set(key, {
+                id: key,
+                dataset_id: dataset.dataset_id,
+                dataset_name: dataset.dataset_name,
+                dataset_description: dataset.description,
+                dataset_document_count: dataset.document_count,
+                dataset_document_type: dataset.document_type,
+                dataset_language: dataset.language.join(", "),
+                dataset_domain: dataset.domain || "N/A",
+                release_size: annotation.subset || 0,
+                release_name: releaseName,
+                release_link: annotation.release_link,
+                accessibility: annotation.accessibility,
+                annotation_entries: [],
+                all_tasks: [],
+              });
+            }
+
+            const rel = releaseMap.get(key)!;
+
+            const entry: AnnotationEntry = {
+              annotation_tasks: annotation.annotation_task,
+              annotation_description: annotation.description,
+              subset: typeof annotation.subset === "number" ? annotation.subset : 0,
+              agreement_type: annotation.agreement_type,
+              agreement: annotation.agreement_score,
+              annotator_type: annotation.annotator_type,
+              paper_name: paper.paper_title,
+              authors: paper.authors.join(", "),
+              year: paper.year,
+              paper_link: paper.paper_link,
+              doi: paper.doi,
+              open_alex_id: paper.open_alex_id,
+            };
+
+            rel.annotation_entries.push(entry);
+            rel.all_tasks.push(...annotation.annotation_task);
+            rel.release_size = Math.max(rel.release_size, entry.subset);
       }
     }
-    return rs;
+
+    return Array.from(releaseMap.values()).map((r) => ({
+      ...r,
+      all_tasks: Array.from(new Set(r.all_tasks)),
+    }));
   }, []);
 
   return (
@@ -144,8 +164,8 @@ function App() {
         bgcolor: "background.default",
         color: "text.primary",
         px: { xs: 1, md: 2 },
-        py: 2,
-        fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+      py: 2,
+      fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -187,7 +207,7 @@ function App() {
             </Stack>
 
             <Divider sx={{ mb: 2 }} />
-                        <Stack
+            <Stack
               direction={{ xs: "column", md: "row" }}
               spacing={2}
               justifyContent="space-between"
@@ -198,17 +218,6 @@ function App() {
                 Click a row to view details.
               </Typography>
 
-              <FormGroup>
-                <FormControlLabel
-                  control={
-                    <Switch
-                      checked={spanning}
-                      onChange={() => setSpanning(!spanning)}
-                    />
-                  }
-                  label="Row Spanning"
-                />
-              </FormGroup>
             </Stack>
 
             <Box
@@ -226,7 +235,6 @@ function App() {
                 columns={columns}
                 showToolbar
                 getRowHeight={() => "auto"}
-                rowSpanning={spanning}
                 disableRowSelectionOnClick
                 onRowClick={(params) => handleClickOpen(params.row)}
                 sx={{
@@ -239,48 +247,49 @@ function App() {
                     bgcolor: "background.paper",
                     borderBottom: 1,
                     borderColor: "divider",
-                  },
+                },
 
-                  "& .MuiDataGrid-row": {
-                    cursor: "pointer",
-                    position: "relative",
-                  },
+                "& .MuiDataGrid-row": {
+                  cursor: "pointer",
+                  position: "relative",
+                },
 
-                  "& .MuiDataGrid-row:hover::before": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                    width: "4px",
-                    background: theme.palette.primary.main,
-                  },
+                "& .MuiDataGrid-row:hover::before": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: "4px",
+                  background: theme.palette.primary.main,
+                },
 
-                  "& .MuiDataGrid-row:nth-of-type(odd)": {
-                    backgroundColor: isDark
-                      ? "rgba(255,255,255,0.02)"
-                      : "rgba(0,0,0,0.02)",
-                  },
+                "& .MuiDataGrid-row:nth-of-type(odd)": {
+                  backgroundColor: isDark
+                    ? "rgba(255,255,255,0.02)"
+                    : "rgba(0,0,0,0.02)",
+                },
 
-                  "& .MuiDataGrid-row:hover": {
-                    backgroundColor: isDark
-                      ? "rgba(255,255,255,0.06)"
-                      : "rgba(0,0,0,0.04)",
-                  },
+                "& .MuiDataGrid-row:hover": {
+                  backgroundColor: isDark
+                    ? "rgba(255,255,255,0.06)"
+                    : "rgba(0,0,0,0.04)",
+                },
 
-                  "& .Mui-selected": {
-                    backgroundColor: `${theme.palette.primary.main}33 !important`,
-                  },
+                "& .Mui-selected": {
+                  backgroundColor: `${theme.palette.primary.main}33 !important`,
+                },
                 }}
               />
             </Box>
           </CardContent>
         </Card>
-
-        <DescriptionDialog
+        <CombinedDrawer
           open={open}
-          handleClose={handleClose}
-          selectedRow={selectedRow}
+          onClose={handleClose}
+          row={selectedRow}
+          rows={rows}
+          setRow={setSelectedRow}
         />
       </Box>
     </Box>
@@ -288,4 +297,3 @@ function App() {
 }
 
 export default App;
-
