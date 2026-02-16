@@ -1,13 +1,11 @@
-import { useTheme } from "@mui/material/styles";
-
 function formatAgreement(agreement: any) {
   if (!agreement) return "N/A";
   if (typeof agreement === "number") return agreement;
   if (Array.isArray(agreement)) return `${agreement[0]} - ${agreement[1]}`;
   if (typeof agreement === "object") {
     return Object.entries(agreement)
-      .map(([k, v]) => `${k}: ${v}`)
-      .join(" | ");
+    .map(([k, v]) => `${k}: ${v}`)
+    .join(" | ");
   }
   return agreement;
 }

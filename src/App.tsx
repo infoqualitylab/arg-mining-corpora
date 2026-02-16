@@ -82,7 +82,7 @@ const columns: GridColDef[] = [
 function App() {
   const theme = useTheme();
   const isDark = theme.palette.mode === "dark";
-  
+
   const [open, setOpen] = useState(false);
   const [selectedRow, setSelectedRow] = useState<ReleaseRow | null>(null);
 
@@ -106,47 +106,47 @@ function App() {
             ? dataset.dataset_name
             : annotation.release_name;
 
-        const key = `${dataset.dataset_id}__${releaseName}`;
+            const key = `${dataset.dataset_id}__${releaseName}`;
 
-        if (!releaseMap.has(key)) {
-          releaseMap.set(key, {
-            id: key,
-            dataset_id: dataset.dataset_id,
-            dataset_name: dataset.dataset_name,
-            dataset_description: dataset.description,
-            dataset_document_count: dataset.document_count,
-            dataset_document_type: dataset.document_type,
-            dataset_language: dataset.language.join(", "),
-            dataset_domain: dataset.domain || "N/A",
-            release_size: annotation.subset || 0,
-            release_name: releaseName,
-            release_link: annotation.release_link,
-            accessibility: annotation.accessibility,
-            annotation_entries: [],
-            all_tasks: [],
-          });
-        }
+            if (!releaseMap.has(key)) {
+              releaseMap.set(key, {
+                id: key,
+                dataset_id: dataset.dataset_id,
+                dataset_name: dataset.dataset_name,
+                dataset_description: dataset.description,
+                dataset_document_count: dataset.document_count,
+                dataset_document_type: dataset.document_type,
+                dataset_language: dataset.language.join(", "),
+                dataset_domain: dataset.domain || "N/A",
+                release_size: annotation.subset || 0,
+                release_name: releaseName,
+                release_link: annotation.release_link,
+                accessibility: annotation.accessibility,
+                annotation_entries: [],
+                all_tasks: [],
+              });
+            }
 
-        const rel = releaseMap.get(key)!;
+            const rel = releaseMap.get(key)!;
 
-        const entry: AnnotationEntry = {
-          annotation_tasks: annotation.annotation_task,
-          annotation_description: annotation.description,
-          subset: typeof annotation.subset === "number" ? annotation.subset : 0,
-          agreement_type: annotation.agreement_type,
-          agreement: annotation.agreement_score,
-          annotator_type: annotation.annotator_type,
-          paper_name: paper.paper_title,
-          authors: paper.authors.join(", "),
-          year: paper.year,
-          paper_link: paper.paper_link,
-          doi: paper.doi,
-          open_alex_id: paper.open_alex_id,
-        };
+            const entry: AnnotationEntry = {
+              annotation_tasks: annotation.annotation_task,
+              annotation_description: annotation.description,
+              subset: typeof annotation.subset === "number" ? annotation.subset : 0,
+              agreement_type: annotation.agreement_type,
+              agreement: annotation.agreement_score,
+              annotator_type: annotation.annotator_type,
+              paper_name: paper.paper_title,
+              authors: paper.authors.join(", "),
+              year: paper.year,
+              paper_link: paper.paper_link,
+              doi: paper.doi,
+              open_alex_id: paper.open_alex_id,
+            };
 
-        rel.annotation_entries.push(entry);
-        rel.all_tasks.push(...annotation.annotation_task);
-        rel.release_size = Math.max(rel.release_size, entry.subset);
+            rel.annotation_entries.push(entry);
+            rel.all_tasks.push(...annotation.annotation_task);
+            rel.release_size = Math.max(rel.release_size, entry.subset);
       }
     }
 
@@ -164,8 +164,8 @@ function App() {
         bgcolor: "background.default",
         color: "text.primary",
         px: { xs: 1, md: 2 },
-        py: 2,
-        fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
+      py: 2,
+      fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
       }}
     >
       <Box sx={{ width: "100%" }}>
@@ -207,7 +207,7 @@ function App() {
             </Stack>
 
             <Divider sx={{ mb: 2 }} />
-                        <Stack
+            <Stack
               direction={{ xs: "column", md: "row" }}
               spacing={2}
               justifyContent="space-between"
@@ -247,50 +247,50 @@ function App() {
                     bgcolor: "background.paper",
                     borderBottom: 1,
                     borderColor: "divider",
-                  },
+                },
 
-                  "& .MuiDataGrid-row": {
-                    cursor: "pointer",
-                    position: "relative",
-                  },
+                "& .MuiDataGrid-row": {
+                  cursor: "pointer",
+                  position: "relative",
+                },
 
-                  "& .MuiDataGrid-row:hover::before": {
-                    content: '""',
-                    position: "absolute",
-                    left: 0,
-                    top: 0,
-                    bottom: 0,
-                    width: "4px",
-                    background: theme.palette.primary.main,
-                  },
+                "& .MuiDataGrid-row:hover::before": {
+                  content: '""',
+                  position: "absolute",
+                  left: 0,
+                  top: 0,
+                  bottom: 0,
+                  width: "4px",
+                  background: theme.palette.primary.main,
+                },
 
-                  "& .MuiDataGrid-row:nth-of-type(odd)": {
-                    backgroundColor: isDark
-                      ? "rgba(255,255,255,0.02)"
-                      : "rgba(0,0,0,0.02)",
-                  },
+                "& .MuiDataGrid-row:nth-of-type(odd)": {
+                  backgroundColor: isDark
+                    ? "rgba(255,255,255,0.02)"
+                    : "rgba(0,0,0,0.02)",
+                },
 
-                  "& .MuiDataGrid-row:hover": {
-                    backgroundColor: isDark
-                      ? "rgba(255,255,255,0.06)"
-                      : "rgba(0,0,0,0.04)",
-                  },
+                "& .MuiDataGrid-row:hover": {
+                  backgroundColor: isDark
+                    ? "rgba(255,255,255,0.06)"
+                    : "rgba(0,0,0,0.04)",
+                },
 
-                  "& .Mui-selected": {
-                    backgroundColor: `${theme.palette.primary.main}33 !important`,
-                  },
+                "& .Mui-selected": {
+                  backgroundColor: `${theme.palette.primary.main}33 !important`,
+                },
                 }}
               />
             </Box>
           </CardContent>
         </Card>
-      <CombinedDrawer
-        open={open}
-        onClose={handleClose}
-        row={selectedRow}
-        rows={rows}
-        setRow={setSelectedRow}
-      />
+        <CombinedDrawer
+          open={open}
+          onClose={handleClose}
+          row={selectedRow}
+          rows={rows}
+          setRow={setSelectedRow}
+        />
       </Box>
     </Box>
   );
