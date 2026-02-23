@@ -61,8 +61,8 @@ export interface ReleaseRow {
 const columns: GridColDef[] = [
   { field: "release_name", headerName: "Release", width: 220 },
   { field: "dataset_name", headerName: "Dataset", width: 220 },
-  { field: "dataset_genre", headerName: "genre", width: 160 },
   { field: "dataset_language", headerName: "Language", width: 160 },
+  { field: "dataset_genre", headerName: "Genre", width: 160 },
   { field: "dataset_document_type", headerName: "Units", width: 180 },
   { field: "release_size", headerName: "Size", width: 160 },
   {
