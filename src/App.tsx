@@ -174,15 +174,6 @@ function App() {
       }}
     >
       <Box sx={{ width: "100%" }}>
-        <Card
-          variant="outlined"
-          sx={{
-            borderRadius: 3,
-            bgcolor: "background.paper",
-            borderColor: "divider",
-          }}
-        >
-          <CardContent sx={{ p: { xs: 2, md: 3 } }}>
             <Stack
               direction={{ xs: "column", sm: "row" }}
               spacing={2}
@@ -225,17 +216,8 @@ function App() {
 
             </Stack>
 
-            <Box
-              sx={{
-                height: "73vh",
-                width: "100%",
-                borderRadius: 2,
-                overflow: "hidden",
-                border: 1,
-                borderColor: "divider",
-              }}
-            >
               <DataGrid
+                autoHeight
                 rows={rows}
                 columns={columns}
                 showToolbar
@@ -243,7 +225,7 @@ function App() {
                 disableRowSelectionOnClick
                 onRowClick={(params) => handleClickOpen(params.row)}
                 sx={{
-                  border: 0,
+                  border: 'none',
 
                   "& .MuiDataGrid-columnHeaders": {
                     position: "sticky",
@@ -286,9 +268,6 @@ function App() {
                 },
                 }}
               />
-            </Box>
-          </CardContent>
-        </Card>
         <CombinedDrawer
           open={open}
           onClose={handleClose}
