@@ -40,7 +40,7 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
             <Typography variant="body2">Documents: {row.dataset_document_count}</Typography>
             <Typography variant="body2">Type: {row.dataset_document_type}</Typography>
             <Typography variant="body2">Language: {row.dataset_language}</Typography>
-            <Typography variant="body2">Domain: {row.dataset_domain}</Typography>
+            <Typography variant="body2">Genre: {row.dataset_genre}</Typography>
           </Stack>
 
           <Divider sx={{ my: 3 }} />
