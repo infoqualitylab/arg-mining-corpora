@@ -4,8 +4,6 @@ import type { GridColDef } from "@mui/x-data-grid";
 import { useTheme } from "@mui/material/styles";
 import {
   Box,
-  Card,
-  CardContent,
   Chip,
   Divider,
   IconButton,
@@ -71,14 +69,17 @@ const columns: GridColDef[] = [
     width: 320,
     renderCell: (params) => (
       <Stack spacing={0.5} sx={{ py: 0.5 }}>
-        {params.value.map((label: string) => (
-          <Chip
-            key={label}
-            label={label}
-            size="small"
-            sx={{ bgcolor: getTaskColor(label), color: "white" }}
-          />
-        ))}
+      {params.value.map((label: string) => (
+        <Chip
+        key={label}
+        label={label}
+        size="small"
+        sx={{ 
+          fontFamily: '"IBM Plex Mono", monospace',
+          fontSize: "0.6rem",
+          bgcolor: getTaskColor(label), color: "white" }}
+        />
+      ))}
       </Stack>
     ),
   },
@@ -163,119 +164,123 @@ function App() {
 
   return (
     <Box
-      sx={{
-        minHeight: "100vh",
-        width: "100%",
-        bgcolor: "background.default",
-        color: "text.primary",
-        px: { xs: 1, md: 2 },
+    sx={{
+      minHeight: "100vh",
+      width: "100%",
+      bgcolor: "background.default",
+      color: "text.primary",
+      px: { xs: 1, md: 2 },
       py: 2,
-      fontFamily: `'Inter', 'Roboto', 'Helvetica', 'Arial', sans-serif`,
-      }}
+    }}
     >
-      <Box sx={{ width: "100%" }}>
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={2}
-              justifyContent="space-between"
-              alignItems={{ xs: "flex-start", sm: "center" }}
-              sx={{ mb: 2 }}
-            >
-              <Box>
-                <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: -0.2 }}>
-                  Argumentation Mining Datasets
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  Explore datasets and annotation details.
-                </Typography>
-              </Box>
+    <Box sx={{ width: "100%" }}>
+    <Stack
+    direction={{ xs: "column", sm: "row" }}
+    spacing={2}
+    justifyContent="space-between"
+    alignItems={{ xs: "flex-start", sm: "center" }}
+    sx={{ mb: 2 }}
+    >
+    <Box>
+    <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: -0.2 }}>
+    AMResources
+    </Typography>
+    <Typography variant="button" color="text.secondary">
+    Explore datasets and annotation details.
+      </Typography>
+    </Box>
 
-              <Stack direction="row" spacing={2} alignItems="center">
+    <Stack direction="row" spacing={2} alignItems="center">
 
-                <IconButton
-                  aria-label="GitHub Repository"
-                  href="https://github.com/infoqualitylab/arg-mining-corpora"
-                  target="_blank"
-                >
-                  <GitHubIcon />
-                </IconButton>
-              </Stack>
-            </Stack>
+    <IconButton
+    aria-label="GitHub Repository"
+    href="https://github.com/infoqualitylab/arg-mining-corpora"
+    target="_blank"
+    >
+    <GitHubIcon />
+    </IconButton>
+    </Stack>
+    </Stack>
 
-            <Divider sx={{ mb: 2 }} />
-            <Stack
-              direction={{ xs: "column", md: "row" }}
-              spacing={2}
-              justifyContent="space-between"
-              alignItems={{ xs: "flex-start", md: "center" }}
-              sx={{ mb: 2 }}
-            >
-              <Typography variant="body2" color="text.secondary">
-                Click a row to view details.
-              </Typography>
+    <Divider sx={{ mb: 2 }} />
+    <Stack
+    direction={{ xs: "column", md: "row" }}
+    spacing={2}
+    justifyContent="space-between"
+    alignItems={{ xs: "flex-start", md: "center" }}
+    sx={{ mb: 2 }}
+    >
+    <Typography variant="button" color="text.secondary">
+    Click a row to view details.
+      </Typography>
 
-            </Stack>
+    </Stack>
 
-              <DataGrid
-                autoHeight
-                rows={rows}
-                columns={columns}
-                showToolbar
-                getRowHeight={() => "auto"}
-                disableRowSelectionOnClick
-                onRowClick={(params) => handleClickOpen(params.row)}
-                sx={{
-                  border: 'none',
+    <DataGrid
+    autoHeight
+    rows={rows}
+    columns={columns}
+    showToolbar
+    getRowHeight={() => "auto"}
+    disableRowSelectionOnClick
+    onRowClick={(params) => handleClickOpen(params.row)}
+    sx={{
+      border: 'none',
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: "0.7rem",
+      "& .MuiDataGrid-columnHeaders": {
+        fontFamily: '"IBM Plex Mono", monospace',
+        fontSize: "0.6rem",
+        letterSpacing: "0.12em",
+        textTransform: "uppercase",
+        position: "sticky",
+        top: 0,
+        zIndex: 3,
+        bgcolor: "background.paper",
+        borderBottom: 1,
+        borderColor: "divider",
+      },
 
-                  "& .MuiDataGrid-columnHeaders": {
-                    position: "sticky",
-                    top: 0,
-                    zIndex: 3,
-                    bgcolor: "background.paper",
-                    borderBottom: 1,
-                    borderColor: "divider",
-                },
+      "& .MuiDataGrid-row": {
+        cursor: "pointer",
+        position: "relative",
+      },
 
-                "& .MuiDataGrid-row": {
-                  cursor: "pointer",
-                  position: "relative",
-                },
+      "& .MuiDataGrid-row:hover::before": {
+        content: '""',
+        position: "absolute",
+        left: 0,
+        top: 0,
+        bottom: 0,
+        width: "4px",
+        background: theme.palette.primary.main,
+      },
 
-                "& .MuiDataGrid-row:hover::before": {
-                  content: '""',
-                  position: "absolute",
-                  left: 0,
-                  top: 0,
-                  bottom: 0,
-                  width: "4px",
-                  background: theme.palette.primary.main,
-                },
+      "& .MuiDataGrid-row:nth-of-type(odd)": {
+        backgroundColor: isDark
+          ? "rgba(255,255,255,0.02)"
+          : "rgba(0,0,0,0.02)",
+      },
 
-                "& .MuiDataGrid-row:nth-of-type(odd)": {
-                  backgroundColor: isDark
-                    ? "rgba(255,255,255,0.02)"
-                    : "rgba(0,0,0,0.02)",
-                },
+      "& .MuiDataGrid-row:hover": {
+        backgroundColor: isDark
+          ? "rgba(255,255,255,0.06)"
+          : "rgba(0,0,0,0.04)",
+      },
 
-                "& .MuiDataGrid-row:hover": {
-                  backgroundColor: isDark
-                    ? "rgba(255,255,255,0.06)"
-                    : "rgba(0,0,0,0.04)",
-                },
-
-                "& .Mui-selected": {
-                  backgroundColor: `${theme.palette.primary.main}33 !important`,
-                },
-                }}
-              />
-        <CombinedDrawer
-          open={open}
-          onClose={handleClose}
-          row={selectedRow}
-          rows={rows}
-          setRow={setSelectedRow}
-        />
-      </Box>
+      "& .Mui-selected": {
+        backgroundColor: `${theme.palette.primary.main}33 !important`,
+      },
+    }}
+    />
+    <CombinedDrawer
+    open={open}
+    onClose={handleClose}
+    row={selectedRow}
+    rows={rows}
+    setRow={setSelectedRow}
+    />
+    </Box>
     </Box>
   );
 }
