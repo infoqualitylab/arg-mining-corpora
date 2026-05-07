@@ -8,10 +8,13 @@ import {
   Divider,
   IconButton,
   Stack,
+  Tab,
+  Tabs,
   Typography,
 } from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import CombinedDrawer from "./CombinedDrawer";
+import SubmissionForm from "./SubmissionForm";
 import { getTaskColor } from "./utils";
 
 import datas from "./data/entries/datasets.json";
@@ -99,6 +102,11 @@ function App() {
 
   const handleClose = () => setOpen(false);
 
+  const [tabValue, setTabValue] = useState(0);
+  const handleTabChange = (event: SyntheticEvent, newTabValue: number) => {
+    setTabValue(newTabValue);
+  };
+
   const rows = useMemo<ReleaseRow[]>(() => {
     const releaseMap = new Map<string, ReleaseRow>();
 
@@ -173,7 +181,6 @@ function App() {
       py: 2,
     }}
     >
-    <Box sx={{ width: "100%" }}>
     <Stack
     direction={{ xs: "column", sm: "row" }}
     spacing={2}
@@ -185,9 +192,10 @@ function App() {
     <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: -0.2 }}>
     AMResources
     </Typography>
-    <Typography variant="button" color="text.secondary">
-    Explore datasets and annotation details.
-      </Typography>
+    <Tabs value={tabValue} onChange={handleTabChange} >
+      <Tab label="Browse Datasets" />
+      <Tab label="Submit Dataset" />
+    </Tabs>
     </Box>
 
     <Stack direction="row" spacing={2} alignItems="center">
@@ -201,7 +209,10 @@ function App() {
     </IconButton>
     </Stack>
     </Stack>
-
+    {tabValue === 1 ? (
+      <SubmissionForm existingRows={rows}/>
+    ) : (
+    <Box sx={{ width: "100%", overflowX: "auto" }}>
     <Divider sx={{ mb: 2 }} />
     <Stack
     direction={{ xs: "column", md: "row" }}
@@ -280,7 +291,7 @@ function App() {
     rows={rows}
     setRow={setSelectedRow}
     />
-    </Box>
+    </Box>)}
     </Box>
   );
 }
