@@ -9,6 +9,56 @@ import "@fontsource/roboto/700.css";
 import App from "./App.tsx";
 
 const theme = createTheme({
+  typography: {
+    fontFamily: '"IBM Plex Sans", sans-serif',
+    h4: {
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 900,
+    },
+    h5: {
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 700,
+    },
+    h6: {
+      fontFamily: '"Playfair Display", serif',
+      fontWeight: 600,
+    },
+    subtitle1: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.9rem',
+      letterSpacing: '0.05em',
+      textTransform: 'uppercase',
+    },
+    subtitle2: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.8rem',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+    },
+    body1: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.85rem',
+    },
+    body2: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.75rem',
+    },
+    overline: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.75rem',
+      letterSpacing: '0.15em',
+      textTransform: 'uppercase',
+    },
+    button: {
+      fontFamily: '"IBM Plex Mono", monospace',
+      fontSize: '0.7rem',
+      letterSpacing: '0.1em',
+      textTransform: 'uppercase',
+    },
+    caption: {
+      fontFamily: '"IBM Plex Mono", monospace',
+    }
+  },
   colorSchemes: {
     dark: true,
   },
