@@ -7,23 +7,18 @@ import {
   TextField,
   MenuItem,
   Button,
-  Paper
+  Paper,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { TASK_COLOR_MAP } from "./utils";
 
-export default function AnnotationStep({
-  form,
-  setForm
-}: any) {
+export default function AnnotationStep({ form, setForm }: any) {
   return (
     <Stack spacing={3}>
       {form.annotations.map((annotation: any, annotationIndex: number) => (
         <Paper key={annotationIndex} variant="outlined" sx={{ p: 3 }}>
           <Stack spacing={3}>
-            <Typography variant="subtitle2">
-              Annotation Tasks
-            </Typography>
+            <Typography variant="subtitle2">Release Description</Typography>
 
             <Autocomplete
               multiple
@@ -31,28 +26,22 @@ export default function AnnotationStep({
               value={annotation.tasks}
               renderTags={(value, getTagProps) =>
                 value.map((option, index) => (
-                  <Chip
-                    label={option}
-                    {...getTagProps({ index })}
-                  />
+                  <Chip label={option} {...getTagProps({ index })} />
                 ))
               }
               renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Select Tasks"
-                />
+                <TextField {...params} label="Select Argument Mining Tasks" />
               )}
               onChange={(_, val) => {
                 const next = [...form.annotations];
                 next[annotationIndex] = {
                   ...annotation,
-                  tasks: val
+                  tasks: val,
                 };
 
                 setForm({
                   ...form,
-                  annotations: next
+                  annotations: next,
                 });
               }}
             />
@@ -70,21 +59,18 @@ export default function AnnotationStep({
                   value={paragraph}
                   onChange={(e) => {
                     const next = [...form.annotations];
-                    const descriptions = [
-                      ...annotation.description
-                    ];
+                    const descriptions = [...annotation.description];
 
-                    descriptions[paragraphIndex] =
-                      e.target.value;
+                    descriptions[paragraphIndex] = e.target.value;
 
                     next[annotationIndex] = {
                       ...annotation,
-                      description: descriptions
+                      description: descriptions,
                     };
 
                     setForm({
                       ...form,
-                      annotations: next
+                      annotations: next,
                     });
                   }}
                 />
@@ -98,15 +84,12 @@ export default function AnnotationStep({
 
                 next[annotationIndex] = {
                   ...annotation,
-                  description: [
-                    ...annotation.description,
-                    ""
-                  ]
+                  description: [...annotation.description, ""],
                 };
 
                 setForm({
                   ...form,
-                  annotations: next
+                  annotations: next,
                 });
               }}
             >
@@ -122,21 +105,16 @@ export default function AnnotationStep({
 
                 next[annotationIndex] = {
                   ...annotation,
-                  accessibility: e.target.value
+                  accessibility: e.target.value,
                 };
 
                 setForm({
                   ...form,
-                  annotations: next
+                  annotations: next,
                 });
               }}
             >
-              {[
-                "Free",
-                "Upon Request",
-                "Paid",
-                "Unavailable"
-              ].map((opt) => (
+              {["Free", "Upon Request", "Paid", "Unavailable"].map((opt) => (
                 <MenuItem key={opt} value={opt}>
                   {opt}
                 </MenuItem>
@@ -153,12 +131,12 @@ export default function AnnotationStep({
 
                 next[annotationIndex] = {
                   ...annotation,
-                  agreementScore: e.target.value
+                  agreementScore: e.target.value,
                 };
 
                 setForm({
                   ...form,
-                  annotations: next
+                  annotations: next,
                 });
               }}
             />
@@ -173,12 +151,12 @@ export default function AnnotationStep({
 
                   next[annotationIndex] = {
                     ...annotation,
-                    releaseName: e.target.value
+                    releaseName: e.target.value,
                   };
 
                   setForm({
                     ...form,
-                    annotations: next
+                    annotations: next,
                   });
                 }}
               />
@@ -193,12 +171,12 @@ export default function AnnotationStep({
 
                   next[annotationIndex] = {
                     ...annotation,
-                    releaseSize: parseInt(e.target.value)
+                    releaseSize: parseInt(e.target.value),
                   };
 
                   setForm({
                     ...form,
-                    annotations: next
+                    annotations: next,
                   });
                 }}
               />
@@ -223,9 +201,9 @@ export default function AnnotationStep({
                 accessibility: "Free",
                 releaseLink: "",
                 releaseName: "",
-                releaseSize: 0
-              }
-            ]
+                releaseSize: 0,
+              },
+            ],
           });
         }}
       >

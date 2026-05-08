@@ -1,21 +1,22 @@
 import { useTheme } from "@mui/material/styles";
-import {
-  Box,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import type { ReleaseRow } from "./App";
 
-function ReleaseLineageGraph({ rows, datasetId, selectedRelease, onSelectRelease }: any) {
+function ReleaseLineageGraph({
+  rows,
+  datasetId,
+  selectedRelease,
+  onSelectRelease,
+}: any) {
   const theme = useTheme();
 
   const lineageRows = rows
-  .filter((r: ReleaseRow) => r.dataset_id === datasetId)
-  .sort((a: ReleaseRow, b: ReleaseRow) => {
-    const ay = a.annotation_entries[0]?.year || 0;
-    const by = b.annotation_entries[0]?.year || 0;
-    return ay - by;
-  });
+    .filter((r: ReleaseRow) => r.dataset_id === datasetId)
+    .sort((a: ReleaseRow, b: ReleaseRow) => {
+      const ay = a.annotation_entries[0]?.year || 0;
+      const by = b.annotation_entries[0]?.year || 0;
+      return ay - by;
+    });
 
   return (
     <Stack spacing={2} alignItems="center">
@@ -35,21 +36,27 @@ function ReleaseLineageGraph({ rows, datasetId, selectedRelease, onSelectRelease
                 borderColor: selected
                   ? theme.palette.primary.main
                   : theme.palette.divider,
-                  bgcolor: selected
-                    ? theme.palette.primary.main + "22"
-                    : theme.palette.background.paper,
+                bgcolor: selected
+                  ? theme.palette.primary.main + "22"
+                  : theme.palette.background.paper,
               }}
             >
               <Typography fontSize={13} fontWeight={600} textAlign="center">
                 {r.release_name}
               </Typography>
-              <Typography fontSize={11} color="text.secondary" textAlign="center">
+              <Typography
+                fontSize={11}
+                color="text.secondary"
+                textAlign="center"
+              >
                 {r.annotation_entries[0]?.year}
               </Typography>
             </Box>
 
             {idx !== lineageRows.length - 1 && (
-              <Box sx={{ width: 2, height: 28, bgcolor: theme.palette.divider }} />
+              <Box
+                sx={{ width: 2, height: 28, bgcolor: theme.palette.divider }}
+              />
             )}
           </Stack>
         );

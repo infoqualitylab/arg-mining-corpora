@@ -3,8 +3,19 @@ import DatasetStep from "./DatasetStep";
 import PaperStep from "./PaperStep";
 import AnnotationStep from "./AnnotationStep";
 import {
-  Box, Stepper, Step, StepLabel, Button, TextField, Typography,
-  Autocomplete, Chip, Stack, Paper, MenuItem, Divider
+  Box,
+  Stepper,
+  Step,
+  StepLabel,
+  Button,
+  TextField,
+  Typography,
+  Autocomplete,
+  Chip,
+  Stack,
+  Paper,
+  MenuItem,
+  Divider,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 import { TASK_COLOR_MAP } from "./utils";
@@ -51,14 +62,38 @@ export default function SubmissionForm({ existingRows }: any) {
   const [form, setForm] = useState<SubmissionState>({
     isNewDataset: true,
     selectedDatasetId: "",
-    newDataset: { name: "", genre: "", description: [""], languages: [], docType: "", docCount: 0, extends: [] },
+    newDataset: {
+      name: "",
+      genre: "",
+      description: [""],
+      languages: [],
+      docType: "",
+      docCount: 0,
+      extends: [],
+    },
     isNewPaper: true,
     selectedPaperId: "",
-    newPaper: { title: "", authors: [""], year: new Date().getFullYear(), doi: "", openAlexId: "", link: "" },
-    annotations: [{
-      tasks: [], description: [""], annotatorType: "", agreementType: "",
-      agreementScore: "", accessibility: "Free", releaseLink: "", releaseName: "", releaseSize: 0
-    }]
+    newPaper: {
+      title: "",
+      authors: [""],
+      year: new Date().getFullYear(),
+      doi: "",
+      openAlexId: "",
+      link: "",
+    },
+    annotations: [
+      {
+        tasks: [],
+        description: [""],
+        annotatorType: "",
+        agreementType: "",
+        agreementScore: "",
+        accessibility: "Free",
+        releaseLink: "",
+        releaseName: "",
+        releaseSize: 0,
+      },
+    ],
   });
 
   const existingDatasets = useMemo(() => {
@@ -70,7 +105,7 @@ export default function SubmissionForm({ existingRows }: any) {
       if (key && !seen.has(key)) {
         seen.set(key, {
           dataset_id: row.dataset_id,
-          dataset_name: row.dataset_name
+          dataset_name: row.dataset_name,
         });
       }
     });
@@ -83,12 +118,16 @@ export default function SubmissionForm({ existingRows }: any) {
 
     existingRows.forEach((row: any) => {
       row.annotation_entries.forEach((entry: any) => {
-        const key = entry.paper_link || entry.doi || entry.open_alex_id || entry.paper_name;
+        const key =
+          entry.paper_link ||
+          entry.doi ||
+          entry.open_alex_id ||
+          entry.paper_name;
 
         if (key && !seen.has(key)) {
           seen.set(key, {
             id: key,
-            title: entry.paper_name
+            title: entry.paper_name,
           });
         }
       });
@@ -103,11 +142,17 @@ export default function SubmissionForm({ existingRows }: any) {
   const handleSubmit = () => {
     const finalPayload = {
       timestamp: new Date().toISOString(),
-      contribution: form
+      contribution: form,
     };
     const jsonString = JSON.stringify(finalPayload, null, 2);
-    const body = encodeURIComponent(`## New Data Contribution\n\n\`\`\`json\n${jsonString}\n\`\`\``);
-    window.open(`https://github.com/YOUR_REPO/issues/new?title=Contribution:+${form.newDataset.name || form.selectedDatasetId}&body=${body}`);
+    const body = encodeURIComponent(
+      `## New Data Contribution\n\n\`\`\`json\n${jsonString}\n\`\`\``
+    );
+    window.open(
+      `https://github.com/YOUR_REPO/issues/new?title=Contribution:+${
+        form.newDataset.name || form.selectedDatasetId
+      }&body=${body}`
+    );
   };
 
   console.log("Form State:", form);
@@ -121,25 +166,18 @@ export default function SubmissionForm({ existingRows }: any) {
   );
 
   const renderStep2 = () => (
-    <PaperStep
-      form={form}
-      setForm={setForm}
-      existingPapers={existingPapers}
-    />
+    <PaperStep form={form} setForm={setForm} existingPapers={existingPapers} />
   );
 
-  const renderStep3 = () => (
-    <AnnotationStep
-      form={form}
-      setForm={setForm}
-    />
-  );
+  const renderStep3 = () => <AnnotationStep form={form} setForm={setForm} />;
 
   return (
     <Box sx={{ width: "100%", py: 4 }}>
       <Stepper activeStep={activeStep} sx={{ mb: 4 }}>
         {steps.map((label) => (
-          <Step key={label}><StepLabel>{label}</StepLabel></Step>
+          <Step key={label}>
+            <StepLabel>{label}</StepLabel>
+          </Step>
         ))}
       </Stepper>
 
@@ -151,7 +189,9 @@ export default function SubmissionForm({ existingRows }: any) {
 
       <Divider sx={{ my: 2 }} />
       <Stack direction="row" justifyContent="space-between">
-        <Button disabled={activeStep === 0} onClick={handleBack}>Back</Button>
+        <Button disabled={activeStep === 0} onClick={handleBack}>
+          Back
+        </Button>
         <Button
           variant="contained"
           onClick={activeStep === steps.length - 1 ? handleSubmit : handleNext}

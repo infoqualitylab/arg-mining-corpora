@@ -1,24 +1,14 @@
 import React from "react";
-import {
-  Stack,
-  Autocomplete,
-  TextField,
-  Paper
-} from "@mui/material";
+import { Stack, Autocomplete, TextField, Paper } from "@mui/material";
 
-export default function PaperStep({
-  form,
-  setForm,
-  existingPapers
-}: any) {
+export default function PaperStep({ form, setForm, existingPapers }: any) {
   return (
     <Stack spacing={3}>
       <Autocomplete
         options={existingPapers}
         value={
           existingPapers.find(
-            (paper: any) =>
-              paper.id === form.selectedPaperId
+            (paper: any) => paper.id === form.selectedPaperId
           ) || null
         }
         getOptionLabel={(opt: any) => opt.title}
@@ -27,29 +17,23 @@ export default function PaperStep({
             setForm({
               ...form,
               selectedPaperId: val.id,
-              isNewPaper: false
+              isNewPaper: false,
             });
           } else {
             setForm({
               ...form,
               selectedPaperId: "",
-              isNewPaper: true
+              isNewPaper: true,
             });
           }
         }}
         renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Select Existing Paper"
-          />
+          <TextField {...params} label="Select Existing Paper" />
         )}
       />
 
       {form.isNewPaper && (
-        <Paper
-          variant="outlined"
-          sx={{ p: 3, bgcolor: "action.hover" }}
-        >
+        <Paper variant="outlined" sx={{ p: 3, bgcolor: "action.hover" }}>
           <Stack spacing={2}>
             <TextField
               label="Paper Title"
@@ -60,8 +44,8 @@ export default function PaperStep({
                   ...form,
                   newPaper: {
                     ...form.newPaper,
-                    title: e.target.value
-                  }
+                    title: e.target.value,
+                  },
                 })
               }
             />
@@ -75,8 +59,8 @@ export default function PaperStep({
                   ...form,
                   newPaper: {
                     ...form.newPaper,
-                    authors: e.target.value.split(",")
-                  }
+                    authors: e.target.value.split(","),
+                  },
                 })
               }
             />
@@ -92,8 +76,8 @@ export default function PaperStep({
                     ...form,
                     newPaper: {
                       ...form.newPaper,
-                      year: parseInt(e.target.value)
-                    }
+                      year: parseInt(e.target.value),
+                    },
                   })
                 }
               />
@@ -107,8 +91,8 @@ export default function PaperStep({
                     ...form,
                     newPaper: {
                       ...form.newPaper,
-                      doi: e.target.value
-                    }
+                      doi: e.target.value,
+                    },
                   })
                 }
               />

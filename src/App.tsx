@@ -72,17 +72,19 @@ const columns: GridColDef[] = [
     width: 320,
     renderCell: (params) => (
       <Stack spacing={0.5} sx={{ py: 0.5 }}>
-      {params.value.map((label: string) => (
-        <Chip
-        key={label}
-        label={label}
-        size="small"
-        sx={{ 
-          fontFamily: '"IBM Plex Mono", monospace',
-          fontSize: "0.6rem",
-          bgcolor: getTaskColor(label), color: "white" }}
-        />
-      ))}
+        {params.value.map((label: string) => (
+          <Chip
+            key={label}
+            label={label}
+            size="small"
+            sx={{
+              fontFamily: '"IBM Plex Mono", monospace',
+              fontSize: "0.6rem",
+              bgcolor: getTaskColor(label),
+              color: "white",
+            }}
+          />
+        ))}
       </Stack>
     ),
   },
@@ -112,7 +114,9 @@ function App() {
 
     for (const paper of pap.papers) {
       for (const annotation of paper.annotations) {
-        const dataset = dat.datasets.find((i) => i.dataset_id === annotation.dataset_id);
+        const dataset = dat.datasets.find(
+          (i) => i.dataset_id === annotation.dataset_id
+        );
         if (!dataset) continue;
 
         const releaseName =
@@ -120,47 +124,48 @@ function App() {
             ? dataset.dataset_name
             : annotation.release_name;
 
-            const key = `${dataset.dataset_id}__${releaseName}`;
+        const key = `${dataset.dataset_id}__${releaseName}`;
 
-            if (!releaseMap.has(key)) {
-              releaseMap.set(key, {
-                id: key,
-                dataset_id: dataset.dataset_id,
-                dataset_name: dataset.dataset_name,
-                dataset_description: dataset.description,
-                dataset_document_count: dataset.document_count,
-                dataset_document_type: dataset.document_type,
-                dataset_language: dataset.language.join(", "),
-                dataset_genre: dataset.genre,
-                release_link: annotation.release_link,
-                release_size: typeof annotation.subset === "number" ? annotation.subset : 0,
-                release_name: releaseName,
-                accessibility: annotation.accessibility,
-                annotation_entries: [],
-                all_tasks: [],
-              });
-            }
+        if (!releaseMap.has(key)) {
+          releaseMap.set(key, {
+            id: key,
+            dataset_id: dataset.dataset_id,
+            dataset_name: dataset.dataset_name,
+            dataset_description: dataset.description,
+            dataset_document_count: dataset.document_count,
+            dataset_document_type: dataset.document_type,
+            dataset_language: dataset.language.join(", "),
+            dataset_genre: dataset.genre,
+            release_link: annotation.release_link,
+            release_size:
+              typeof annotation.subset === "number" ? annotation.subset : 0,
+            release_name: releaseName,
+            accessibility: annotation.accessibility,
+            annotation_entries: [],
+            all_tasks: [],
+          });
+        }
 
-            const rel = releaseMap.get(key)!;
+        const rel = releaseMap.get(key)!;
 
-            const entry: AnnotationEntry = {
-              annotation_tasks: annotation.annotation_task,
-              annotation_description: annotation.description,
-              subset: typeof annotation.subset === "number" ? annotation.subset : 0,
-              agreement_type: annotation.agreement_type,
-              agreement: annotation.agreement_score,
-              annotator_type: annotation.annotator_type,
-              paper_name: paper.paper_title,
-              authors: paper.authors.join(", "),
-              year: paper.year,
-              paper_link: paper.paper_link,
-              doi: paper.doi,
-              open_alex_id: paper.open_alex_id,
-            };
+        const entry: AnnotationEntry = {
+          annotation_tasks: annotation.annotation_task,
+          annotation_description: annotation.description,
+          subset: typeof annotation.subset === "number" ? annotation.subset : 0,
+          agreement_type: annotation.agreement_type,
+          agreement: annotation.agreement_score,
+          annotator_type: annotation.annotator_type,
+          paper_name: paper.paper_title,
+          authors: paper.authors.join(", "),
+          year: paper.year,
+          paper_link: paper.paper_link,
+          doi: paper.doi,
+          open_alex_id: paper.open_alex_id,
+        };
 
-            rel.annotation_entries.push(entry);
-            rel.all_tasks.push(...annotation.annotation_task);
-            rel.release_size = Math.max(rel.release_size, entry.subset);
+        rel.annotation_entries.push(entry);
+        rel.all_tasks.push(...annotation.annotation_task);
+        rel.release_size = Math.max(rel.release_size, entry.subset);
       }
     }
 
@@ -172,126 +177,128 @@ function App() {
 
   return (
     <Box
-    sx={{
-      minHeight: "100vh",
-      width: "100%",
-      bgcolor: "background.default",
-      color: "text.primary",
-      px: { xs: 1, md: 2 },
-      py: 2,
-    }}
+      sx={{
+        minHeight: "100vh",
+        width: "100%",
+        bgcolor: "background.default",
+        color: "text.primary",
+        px: { xs: 1, md: 2 },
+        py: 2,
+      }}
     >
-    <Stack
-    direction={{ xs: "column", sm: "row" }}
-    spacing={2}
-    justifyContent="space-between"
-    alignItems={{ xs: "flex-start", sm: "center" }}
-    sx={{ mb: 2 }}
-    >
-    <Box>
-    <Typography variant="h4" sx={{ fontWeight: 600, letterSpacing: -0.2 }}>
-    AMResources
-    </Typography>
-    <Tabs value={tabValue} onChange={handleTabChange} >
-      <Tab label="Browse Datasets" />
-      <Tab label="Submit Dataset" />
-    </Tabs>
-    </Box>
+      <Stack
+        direction={{ xs: "column", sm: "row" }}
+        spacing={2}
+        justifyContent="space-between"
+        alignItems={{ xs: "flex-start", sm: "center" }}
+        sx={{ mb: 2 }}
+      >
+        <Box>
+          <Typography
+            variant="h4"
+            sx={{ fontWeight: 600, letterSpacing: -0.2 }}
+          >
+            AMResources
+          </Typography>
+          <Tabs value={tabValue} onChange={handleTabChange}>
+            <Tab label="Browse Datasets" />
+            <Tab label="Submit Dataset" />
+          </Tabs>
+        </Box>
 
-    <Stack direction="row" spacing={2} alignItems="center">
+        <Stack direction="row" spacing={2} alignItems="center">
+          <IconButton
+            aria-label="GitHub Repository"
+            href="https://github.com/infoqualitylab/arg-mining-corpora"
+            target="_blank"
+          >
+            <GitHubIcon />
+          </IconButton>
+        </Stack>
+      </Stack>
+      {tabValue === 1 ? (
+        <SubmissionForm existingRows={rows} />
+      ) : (
+        <Box sx={{ width: "100%", overflowX: "auto" }}>
+          <Divider sx={{ mb: 2 }} />
+          <Stack
+            direction={{ xs: "column", md: "row" }}
+            spacing={2}
+            justifyContent="space-between"
+            alignItems={{ xs: "flex-start", md: "center" }}
+            sx={{ mb: 2 }}
+          >
+            <Typography variant="button" color="text.secondary">
+              Click a row to view details.
+            </Typography>
+          </Stack>
 
-    <IconButton
-    aria-label="GitHub Repository"
-    href="https://github.com/infoqualitylab/arg-mining-corpora"
-    target="_blank"
-    >
-    <GitHubIcon />
-    </IconButton>
-    </Stack>
-    </Stack>
-    {tabValue === 1 ? (
-      <SubmissionForm existingRows={rows}/>
-    ) : (
-    <Box sx={{ width: "100%", overflowX: "auto" }}>
-    <Divider sx={{ mb: 2 }} />
-    <Stack
-    direction={{ xs: "column", md: "row" }}
-    spacing={2}
-    justifyContent="space-between"
-    alignItems={{ xs: "flex-start", md: "center" }}
-    sx={{ mb: 2 }}
-    >
-    <Typography variant="button" color="text.secondary">
-    Click a row to view details.
-      </Typography>
+          <DataGrid
+            autoHeight
+            rows={rows}
+            columns={columns}
+            showToolbar
+            getRowHeight={() => "auto"}
+            disableRowSelectionOnClick
+            onRowClick={(params) => handleClickOpen(params.row)}
+            sx={{
+              border: "none",
+              fontFamily: '"IBM Plex Mono", monospace',
+              fontSize: "0.7rem",
+              "& .MuiDataGrid-columnHeaders": {
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: "0.6rem",
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                position: "sticky",
+                top: 0,
+                zIndex: 3,
+                bgcolor: "background.paper",
+                borderBottom: 1,
+                borderColor: "divider",
+              },
 
-    </Stack>
+              "& .MuiDataGrid-row": {
+                cursor: "pointer",
+                position: "relative",
+              },
 
-    <DataGrid
-    autoHeight
-    rows={rows}
-    columns={columns}
-    showToolbar
-    getRowHeight={() => "auto"}
-    disableRowSelectionOnClick
-    onRowClick={(params) => handleClickOpen(params.row)}
-    sx={{
-      border: 'none',
-      fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: "0.7rem",
-      "& .MuiDataGrid-columnHeaders": {
-        fontFamily: '"IBM Plex Mono", monospace',
-        fontSize: "0.6rem",
-        letterSpacing: "0.12em",
-        textTransform: "uppercase",
-        position: "sticky",
-        top: 0,
-        zIndex: 3,
-        bgcolor: "background.paper",
-        borderBottom: 1,
-        borderColor: "divider",
-      },
+              "& .MuiDataGrid-row:hover::before": {
+                content: '""',
+                position: "absolute",
+                left: 0,
+                top: 0,
+                bottom: 0,
+                width: "4px",
+                background: theme.palette.primary.main,
+              },
 
-      "& .MuiDataGrid-row": {
-        cursor: "pointer",
-        position: "relative",
-      },
+              "& .MuiDataGrid-row:nth-of-type(odd)": {
+                backgroundColor: isDark
+                  ? "rgba(255,255,255,0.02)"
+                  : "rgba(0,0,0,0.02)",
+              },
 
-      "& .MuiDataGrid-row:hover::before": {
-        content: '""',
-        position: "absolute",
-        left: 0,
-        top: 0,
-        bottom: 0,
-        width: "4px",
-        background: theme.palette.primary.main,
-      },
+              "& .MuiDataGrid-row:hover": {
+                backgroundColor: isDark
+                  ? "rgba(255,255,255,0.06)"
+                  : "rgba(0,0,0,0.04)",
+              },
 
-      "& .MuiDataGrid-row:nth-of-type(odd)": {
-        backgroundColor: isDark
-          ? "rgba(255,255,255,0.02)"
-          : "rgba(0,0,0,0.02)",
-      },
-
-      "& .MuiDataGrid-row:hover": {
-        backgroundColor: isDark
-          ? "rgba(255,255,255,0.06)"
-          : "rgba(0,0,0,0.04)",
-      },
-
-      "& .Mui-selected": {
-        backgroundColor: `${theme.palette.primary.main}33 !important`,
-      },
-    }}
-    />
-    <CombinedDrawer
-    open={open}
-    onClose={handleClose}
-    row={selectedRow}
-    rows={rows}
-    setRow={setSelectedRow}
-    />
-    </Box>)}
+              "& .Mui-selected": {
+                backgroundColor: `${theme.palette.primary.main}33 !important`,
+              },
+            }}
+          />
+          <CombinedDrawer
+            open={open}
+            onClose={handleClose}
+            row={selectedRow}
+            rows={rows}
+            setRow={setSelectedRow}
+          />
+        </Box>
+      )}
     </Box>
   );
 }

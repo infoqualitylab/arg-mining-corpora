@@ -5,23 +5,18 @@ import {
   TextField,
   Paper,
   Typography,
-  Button
+  Button,
 } from "@mui/material";
 import AddIcon from "@mui/icons-material/Add";
 
-export default function DatasetStep({
-  form,
-  setForm,
-  existingDatasets
-}: any) {
+export default function DatasetStep({ form, setForm, existingDatasets }: any) {
   return (
     <Stack spacing={3}>
       <Autocomplete
         options={existingDatasets}
         value={
           existingDatasets.find(
-            (dataset: any) =>
-              dataset.dataset_id === form.selectedDatasetId
+            (dataset: any) => dataset.dataset_id === form.selectedDatasetId
           ) || null
         }
         getOptionLabel={(opt: any) => opt.dataset_name}
@@ -30,33 +25,24 @@ export default function DatasetStep({
             setForm({
               ...form,
               selectedDatasetId: val.dataset_id,
-              isNewDataset: false
+              isNewDataset: false,
             });
           } else {
             setForm({
               ...form,
               selectedDatasetId: "",
-              isNewDataset: true
+              isNewDataset: true,
             });
           }
         }}
         renderInput={(params) => (
-          <TextField
-            {...params}
-            label="Select Existing Dataset"
-          />
+          <TextField {...params} label="Select Existing Dataset" />
         )}
       />
 
       {form.isNewDataset && (
-        <Paper
-          variant="outlined"
-          sx={{ p: 3, bgcolor: "action.hover" }}
-        >
-          <Typography
-            variant="subtitle2"
-            gutterBottom
-          >
+        <Paper variant="outlined" sx={{ p: 3, bgcolor: "action.hover" }}>
+          <Typography variant="subtitle2" gutterBottom>
             New Dataset Details
           </Typography>
 
@@ -70,8 +56,8 @@ export default function DatasetStep({
                   ...form,
                   newDataset: {
                     ...form.newDataset,
-                    name: e.target.value
-                  }
+                    name: e.target.value,
+                  },
                 })
               }
             />
@@ -85,15 +71,13 @@ export default function DatasetStep({
                   ...form,
                   newDataset: {
                     ...form.newDataset,
-                    genre: e.target.value
-                  }
+                    genre: e.target.value,
+                  },
                 })
               }
             />
 
-            <Typography variant="caption">
-              Description Paragraphs
-            </Typography>
+            <Typography variant="caption">Description Paragraphs</Typography>
 
             {form.newDataset.description.map(
               (paragraph: string, index: number) => (
@@ -103,9 +87,7 @@ export default function DatasetStep({
                   rows={2}
                   value={paragraph}
                   onChange={(e) => {
-                    const next = [
-                      ...form.newDataset.description
-                    ];
+                    const next = [...form.newDataset.description];
 
                     next[index] = e.target.value;
 
@@ -113,8 +95,8 @@ export default function DatasetStep({
                       ...form,
                       newDataset: {
                         ...form.newDataset,
-                        description: next
-                      }
+                        description: next,
+                      },
                     });
                   }}
                 />
@@ -128,11 +110,8 @@ export default function DatasetStep({
                   ...form,
                   newDataset: {
                     ...form.newDataset,
-                    description: [
-                      ...form.newDataset.description,
-                      ""
-                    ]
-                  }
+                    description: [...form.newDataset.description, ""],
+                  },
                 })
               }
             >
