@@ -25,42 +25,54 @@ const theme = createTheme({
     },
     subtitle1: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.9rem',
-      letterSpacing: '0.05em',
-      textTransform: 'uppercase',
+      fontSize: "0.9rem",
+      letterSpacing: "0.05em",
+      textTransform: "uppercase",
     },
     subtitle2: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.8rem',
-      letterSpacing: '0.1em',
-      textTransform: 'uppercase',
+      fontSize: "0.8rem",
+      letterSpacing: "0.1em",
+      textTransform: "uppercase",
     },
     body1: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.85rem',
+      fontSize: "0.85rem",
     },
     body2: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.75rem',
+      fontSize: "0.75rem",
     },
     overline: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.75rem',
-      letterSpacing: '0.15em',
-      textTransform: 'uppercase',
+      fontSize: "0.75rem",
+      letterSpacing: "0.15em",
+      textTransform: "uppercase",
     },
     button: {
       fontFamily: '"IBM Plex Mono", monospace',
-      fontSize: '0.7rem',
-      letterSpacing: '0.1em',
-      textTransform: 'uppercase',
+      fontSize: "0.7rem",
+      letterSpacing: "0.1em",
+      textTransform: "uppercase",
     },
     caption: {
       fontFamily: '"IBM Plex Mono", monospace',
-    }
+    },
   },
   colorSchemes: {
     dark: true,
+  },
+  "@global": {
+    "*::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "*::-webkit-scrollbar-track": {
+      "-webkit-box-shadow": "inset 0 0 6px rgba(0,0,0,0.00)",
+    },
+    "*::-webkit-scrollbar-thumb": {
+      backgroundColor: "rgba(0,0,0,.1)",
+      outline: "1px solid slategrey",
+    },
   },
 });
 
@@ -70,5 +82,5 @@ createRoot(document.getElementById("root")!).render(
       <CssBaseline />
       <App />
     </ThemeProvider>
-  </StrictMode>,
+  </StrictMode>
 );

@@ -30,4 +30,4 @@ function getTaskColor(task: string) {
   return TASK_COLOR_MAP[task] || "#64748b";
 }
 
-export { formatAgreement, getTaskColor };
+export { formatAgreement, getTaskColor, TASK_COLOR_MAP };
