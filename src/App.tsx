@@ -1,4 +1,5 @@
 import { useState, useMemo } from "react";
+import type { SyntheticEvent } from "react";
 import { DataGrid } from "@mui/x-data-grid";
 import type { GridColDef } from "@mui/x-data-grid";
 import { useTheme } from "@mui/material/styles";
@@ -105,7 +106,7 @@ function App() {
   const handleClose = () => setOpen(false);
 
   const [tabValue, setTabValue] = useState(0);
-  const handleTabChange = (event: SyntheticEvent, newTabValue: number) => {
+  const handleTabChange = (_event: SyntheticEvent, newTabValue: number) => {
     setTabValue(newTabValue);
   };
 
@@ -217,7 +218,7 @@ function App() {
         </Stack>
       </Stack>
       {tabValue === 1 ? (
-        <SubmissionForm existingRows={rows} />
+        <SubmissionForm />
       ) : (
         <Box sx={{ width: "100%", overflowX: "auto" }}>
           <Divider sx={{ mb: 2 }} />
