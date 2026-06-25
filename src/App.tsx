@@ -30,7 +30,6 @@ const pap: Papers = paps;
 
 export interface AnnotationEntry {
   annotation_tasks: string[];
-  annotation_description: string[];
   subset: number;
   agreement_type?: string;
   agreement?: any;
@@ -151,7 +150,6 @@ function App() {
 
         const entry: AnnotationEntry = {
           annotation_tasks: annotation.annotation_task,
-          annotation_description: annotation.description,
           subset: typeof annotation.subset === "number" ? annotation.subset : 0,
           agreement_type: annotation.agreement_type,
           agreement: annotation.agreement_score,
