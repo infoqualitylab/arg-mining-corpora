@@ -32,7 +32,6 @@ export interface Papers {
         | "Other"
         | "None"
       )[];
-      description: string[];
       annotator_type: string;
       agreement_type: string;
       agreement_score:

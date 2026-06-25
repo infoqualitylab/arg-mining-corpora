@@ -20,9 +20,6 @@
           "annotation_task": [
             "None"
           ],
-          "description": [
-            "Unannotated"
-          ],
           "annotator_type": "Unannotated",
           "agreement_type": "None",
           "agreement_score": "None",
@@ -35,10 +32,6 @@
           "dataset_id": "arg_essay",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
-          ],
-          "description": [
-            "Argument quality assessment:",
-            "A dataset of prompt-essay pairs is used to evaluate the ability of several computational models in their performance of automatic essay generation. Part of the evaluation was performed human annotators, who gave scores from 1-5 (worst to best) for generated essays from 50 different prompts on quality dimensions of relevance, coherence, and content richness. No annotator agreement was reported, this human annotation is not publicly available, but the full ArgEssay dataset was made available."
           ],
           "annotator_type": "3 unspecified annotators",
           "agreement_type": "Not reported",
@@ -66,10 +59,6 @@
             "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Argument component segmentation and classification:",
-            "Essays are segmented into their argumentative components. Annotators first identified the major claim of the essay, and then the claims and premises in each paragraph. Because there are no predefined markables in the data, annotators had to determine the boundaries of argument components themselves, performing a segmentation of the argumentative text. A modification of Krippendorf’s α that allows for disagreement in span boundaries was used to capture annotation performance in both the segmentation of argumentative units and their classification."
-          ],
           "annotator_type": "3 non-expert annotators",
           "agreement_type": "Krippendorff's αU",
           "agreement_score": {
@@ -86,10 +75,6 @@
           "dataset_id": "aae_v1",
           "annotation_task": [
             "Argument Relation Type Classification"
-          ],
-          "description": [
-            "Argument component relation annotation:",
-            "Classified argument components (premises, claims, and major claims) are linked by either support or attack relations. Annotators first linked claims and premises within each paragraph, before linking claims to major claims with either a support or attack relation."
           ],
           "annotator_type": "3 non-expert annotators",
           "agreement_type": "Krippendorff's α",
@@ -122,10 +107,6 @@
           "annotation_task": [
             "Argument Type Identification"
           ],
-          "description": [
-            "Argumentum Model of Topics:",
-            "A subset of 30 essays from AAE1 were annotated using an annotation scheme based on the Argumentum Model of Topics for a pilot study. Several student annotators were given a set of identification questions for a group of argument schemes from the Argumentum Model of Topics, and asked to identify which question most closely matches argumentative components linked by a support relation (annotators could select no argument)."
-          ],
           "annotator_type": "9 graduate students with no specific background in linguistics or argumentation",
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.1,
@@ -153,10 +134,6 @@
             "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Coarse-grained argument component classification:",
-            "402 persuasive essays were segmented into their argumentative components by annotators, which were then classified as either major claim, claim, or premise. Annotation was performed by three non-native speakers, one of which was an expert, and annotation was performed using the brat rapid annotation tool. Annotator agreement was reported for a random subset of 80 essays that all three annotators labelled, a modification of Krippendorf’s α that allows for disagreement in span boundaries was used to capture annotation performance in both the segmentation of argumentative units and their classification."
-          ],
           "annotator_type": "3, 1 of which was an expert",
           "agreement_type": "Krippendorff's αU",
           "agreement_score": {
@@ -174,10 +151,6 @@
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
-          ],
-          "description": [
-            "Argument component relation classification:",
-            "A set of 4922 previously annotated argumentative units from 402 persuasive essays were annotated with their argumentative relations. Pairs were obtained by considering all pairs of argumentative components that occur within a paragraph as markable. All pairs were annotated by 3 annotators, who could either label relations as support or attack."
           ],
           "annotator_type": "3, 1 of which was an expert",
           "agreement_type": "Fleiss' κ",
@@ -209,10 +182,6 @@
           "annotation_task": [
             "Other"
           ],
-          "description": [
-            "Myside bias:",
-            "402 persuasive essays are annotated as either positive or negative, where positive indicates the say includes an opposing an argument, and negative if it only includes arguments supporting the author’s standpoint. The existing AAE2 corpus was used to derive initial document-level annotations, previously annotated argument structures include arguments annotated with support or attack relationships within essays and so could be re-used. To verify these automatically derived annotations, a subset of 80 essays were annotated by 3 independent annotators and agreement was reported which showed the derived annotations were reliable."
-          ],
           "annotator_type": "3 unspecified annotators",
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.787,
@@ -239,10 +208,6 @@
           "dataset_id": "aae_v2",
           "annotation_task": [
             "Minimal Argument Quality Assessment"
-          ],
-          "description": [
-            "Sufficiency:",
-            "Each paragraph from 402 persuasive essays was considered as an argument, resulting in 1029 arguments ready for annotation. Then, 3 non-native speakers with excellent English proficiency independently annotated all arguments as either sufficient (premises provide enough evidence to accept or reject the claim) or insufficient. An evaluation set of 433 arguments was annotated by all three annotators to compute agreement."
           ],
           "annotator_type": "3 non-native speakers with excellent English proficiency",
           "agreement_type": "Fleiss' κ",
@@ -272,10 +237,6 @@
           "annotation_task": [
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Fine-grained claim-type classification:",
-            "402 essays were annotated with a fine-grained classification of their claims types. Claims in the essay had previously been extracted. Annotation was performed by 3 experts (including 1 author), who were able to label claims as one of 3 types: policy, value, or fact. Annotation proceeded in stages, with agreement computed at each stage to improve guidelines, final annotator agreement was computed over a set of 40 essays that all annotators labelled."
-          ],
           "annotator_type": "3 experts",
           "agreement_type": "Krippendorff's α",
           "agreement_score": {
@@ -293,10 +254,6 @@
           "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Component Type Classification"
-          ],
-          "description": [
-            "Fine-grained premise-type classification:",
-            "402 essays were annotated with a fine-grained classification of their premise types. Premises in the essay had previously been extracted in. Annotation was performed by 3 experts (including 1 author), who were able to label premises as one of 6 types: testimony, statistics, hypothetical-instance, real-example, common-ground, or other. Annotation proceeded in stages, with agreement computed at each stage to improve guidelines, final annotator agreement was computed over a set of 40 essays that all annotators labelled. The number of occurrences of the \"testimony\" and \"other\" class was too small to compute inter-annotator agreement."
           ],
           "annotator_type": "3 experts",
           "agreement_type": "Krippendorff's α",
@@ -332,10 +289,6 @@
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
-          "description": [
-            "Cogency and reasonableness:",
-            "The arguments contained in 402 persuasive essays were annotated with scores for their cogency and reasonableness. An argument is cogent if it has individually acceptable premises that are relevant and sufficient to draw the arguments conclusions. An argument is reasonable if it contributes to the resolution of an issue in a way that is acceptable to the target audience. The previously annotated argument components and relations in the AEE2 corpus were used to aid in annotation. Cogency was scored on a 3-point scale (originally a 5-point scale which was reduced after experimentation) for the premises of a given argument. Reasonableness was computed on a 5-point scale for a whole argumentation graph, taking into consideration the reasonableness of counterarguments and rebuttals. Annotation was carried out by 3 English speakers who were experts in argument mining. Agreement was calculated over a subset of 33 essays."
-          ],
           "annotator_type": "3 English speakers who were experts in argument mining",
           "agreement_type": "Fleiss' κ",
           "agreement_score": {
@@ -352,10 +305,6 @@
           "dataset_id": "aae_v2",
           "annotation_task": [
             "Argument Type Identification"
-          ],
-          "description": [
-            "Rhetorical strategy:",
-            "402 essays were annotated at the argument level with their rhetorical strategy: either ethos, logos, or pathos. Annotation was carried out by 3 English speakers who were experts in argument mining. Agreement was calculated over a subset of 33 essays."
           ],
           "annotator_type": "3 English speakers who were experts in argument mining",
           "agreement_type": "Fleiss' κ",
@@ -384,10 +333,6 @@
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
-          "description": [
-            "Stance classification:",
-            "3365 comments on 304 topics are annotated with their stance, a subset of the ARC corpus. Annotators were first asked to list all topics related to the comment and then provided with an automatically generated topic for the comment. Topics were extracted heuristically partly based on the original stance-position annotations in the ARC corpus. If an annotator disagreed that a topic applied to a given comment they could correct it, otherwise each annotator proceeded to annotate the stance of the comment towards the topic. Stance was labelled on 5 point scale, which was then mapped to a 3-point pro/con/neutral label. Each topic-comment pair was annotated by 3 crowd workers (Mechanical Turk), and the gold label taken by majority vote. Poor quality annotations were filtered out manually and by using MACE. The resulting dataset contains three kinds of annotation: stance labels on extracted topics provided to annotators, labels on topics corrected by annotators, and lists of possible topics provided by the annotators for each comment."
-          ],
           "annotator_type": "3 crowd workers per topic-comment pair",
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.427,
@@ -415,10 +360,6 @@
             "Argument Component Type Classification",
             "Argument Relation Identification",
             "Argument Relation Type Classification"
-          ],
-          "description": [
-            "Argumentation structures:",
-            "112 short texts (written in German) were annotated by their argumentation structure based on Freeman’s theory of the macro-structure of argumentation. The annotation scheme argumentative roles, argumentative functions, and the identification of central claims, which together form a fully linked argumentative structure. Annotation was carried out on the original German version of the texts by 3 annotators, and agreement was computed over a subset of 8 texts."
           ],
           "annotator_type": "3 unspecified annotators",
           "agreement_type": "Fleiss' κ",
@@ -449,10 +390,6 @@
           "dataset_id": "microtexts_p1",
           "annotation_task": [
             "Argument Type Identification"
-          ],
-          "description": [
-            "Argumentum Model of Topics:",
-            "112 short texts were annotated with their argument schemes based on the Argumentum Model of Topics. Annotation involved two tasks, first annotators had to, given a support or rebut relation that already existed in the original Microtexts corpus, identify the argument scheme among 8 possible schemes (or none if no reasoning was present). Second, annotators had to identify the associated inference rule of any identified argument scheme, these inference rules have forms such as \"if the effects the case, the cause is probably the case\" or \"if the cause is the case, the effect is the case\". Annotation was performed by 6 annotators (all students with relevant backgrounds), and agreement was computed over two sets of 20 microtexts that had each been annotated by 3 annotators."
           ],
           "annotator_type": "6 annotators, including 4 students with a background in linguistics and argumentation, and 2 PhD students with a background in natural language processing",
           "agreement_type": "Fleiss' κ",
@@ -485,10 +422,6 @@
             "Argument Relation Identification",
             "Argument Relation Type Classification"
           ],
-          "description": [
-            "Argumentation structures:",
-            "171 short texts were annotated with full argumentative structure by 2 annotators. Annotator agreement was not computed, as annotators followed a similar annotation scheme to the first version of the argumentative microtexts corpus. Their annotation resulted in the identification of 932 argumentative units, connected by 467 convergent support relations, 23 example support relations, 137 rebutting attack relations, 77 undercutting attack relations, 57 linked support or attack relations, and 29 restatement relations. Notably, restatement relations did not occur in the first version of the microtexts corpus."
-          ],
           "annotator_type": "2 annotators, one who was a co-author of the work",
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
@@ -517,9 +450,6 @@
           "annotation_task": [
             "None"
           ],
-          "description": [
-            "Unannotated"
-          ],
           "annotator_type": "Unannotated",
           "agreement_type": "None",
           "agreement_score": "None",
@@ -533,10 +463,6 @@
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
-          "description": [
-            "Relative quality assessment:",
-            "A randomly sampled set of 315 claim revision pairs was annotated by the authors to test the hypothesis that later versions have an increase in quality to previous versions. Their hypothesis was supported with the results that 93% of later versions had an improved overall argument quality in comparison to previous versions."
-          ],
           "annotator_type": "2 authors of the paper (experts)",
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.75,
@@ -549,10 +475,6 @@
           "dataset_id": "claimrev_v1",
           "annotation_task": [
             "Other"
-          ],
-          "description": [
-            "Revision label agreement:",
-            "A random sampled set of 440 claim revision pairs were annotated by authors of the paper by their type (such as \"Claim Clarification\") to compare with original labels provided by kialo. Agreement was reported between the annotators, and between the annotators and the original labels."
           ],
           "annotator_type": "2 authors of the paper (experts)",
           "agreement_type": "Cohen's κ",
@@ -569,10 +491,6 @@
           "dataset_id": "claimrev_v1",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
-          ],
-          "description": [
-            "Taxonomical argument quality assessment:",
-            "A randomly sampled set of 315 claim revision pairs was annotated by the authors to explore whether the type of revision had an effect on one of 15 argument quality dimensions. The authors observed strong correlations between some revision types and quality dimensions (such as \"Corrected/Added Links\" and the logical dimensions of \"Cogency\" and \"Local Sufficiency\")."
           ],
           "annotator_type": "1 author of the paper (expert)",
           "agreement_type": "None",
@@ -602,9 +520,6 @@
           "annotation_task": [
             "None"
           ],
-          "description": [
-            "Unannotated"
-          ],
           "annotator_type": "Unannotated",
           "agreement_type": "None",
           "agreement_score": "None",
@@ -631,10 +546,6 @@
           "annotation_task": [
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Elementary unit classification:",
-            "A dataset of 731 comments were annotated at the sentence/clause level with their argument components, resulting in 4931 argument components in the final labelling. Argument components were one of 4 \"Elementary Units\": fact, testimony, value, policy, or reference. Annotation was performed by 2 annotators, while a 3rd annotator was used to resolve disagreements and produce the final gold label. Annotator agreement was reported between the 2 primary annotators."
-          ],
           "annotator_type": "2 unspecified annotators",
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.648,
@@ -648,10 +559,6 @@
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
-          ],
-          "description": [
-            "Support relation classification:",
-            "A dataset of 731 comments that were previously annotated with their argument components, were annotated again with the relation between their argument components, resulting in 1221 relations in the final labelling. Argument relations were one of 2 support relations: reason or evidence. Annotation was performed by 2 annotators, while a 3rd annotator was used to resolve disagreements and produce the final gold label. Annotator agreement was reported between the 2 primary annotators."
           ],
           "annotator_type": "2 unspecified annotators",
           "agreement_type": "Krippendorff's α",
@@ -681,10 +588,6 @@
           "annotation_task": [
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Toulmin-style component classification:",
-            "Scientific publications were annotated with their argumentative components by 4 annotators (1 expert and 3 non-expert). Component types were based on the Toulmin model and a preliminary study, resulting in three argumentative components: own claim, background claim, and data. Annotator agreement was computed using F1, and was reported in a bar chart that gives approximate values. Annotator agreement was computed for 5 iterations of the task, and for both a weak and strict interpretation of the spans of the argument components."
-          ],
           "annotator_type": "1 expert and 3 non-expert annotators",
           "agreement_type": "F1",
           "agreement_score": {
@@ -701,10 +604,6 @@
           "annotation_task": [
             "Argument Relation Identification",
             "Argument Relation Type Classification"
-          ],
-          "description": [
-            "Dung-style relation classification:",
-            "previously annotated argument components from 40 scientific publications were annotated with their relation to each other by 4 annotators (1 expert and 3 non-expert). Relations were based on those described in Dung (1995) and included the three relations of supports, contradicts, and semantically the same (argument coreference). Annotator agreement was computed using F1, and was reported in a bar chart that gives approximate values. Annotator agreement was computed for 5 iterations of the task, and for both a weak and strict interpretation of the spans of the argument components."
           ],
           "annotator_type": "1 expert and 3 non-expert annotators",
           "agreement_type": "F1",
@@ -737,10 +636,6 @@
           "annotation_task": [
             "Argument Type Identification"
           ],
-          "description": [
-            "Argument scheme identification:",
-            "Arguments are annotated arguments with their argument scheme according to Walton's taxonomy (e.g., argument from example, values, positive/negative consequences, cause-to-effect, expert opinion, alternatives, analogy), with Argument Scheme Key (ASK) guidelines to aid consistent labeling. Annotation was performed by the authors, and agreement measured with another PhD student who was not an expert in argumentation."
-          ],
           "annotator_type": "Authors and a PhD student in explainable AI, trained with workshops and examples",
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.523,
@@ -769,10 +664,6 @@
           "dataset_id": "gaq",
           "annotation_task": [
             "Maximal Argument Quality Assessment"
-          ],
-          "description": [
-            "Theory-driven argument quality assessment: ",
-            "Arguments are annotated along 3 argument quality dimensions (cogency, reasonableness, and effectiveness) as well as for overall quality along a 5 point scale (very low/low/medium/high/very high quality or cannot judge). Subdimensions of the 3 argument quality dimensions are not scored, but are used to guide annotation. Annotation was performed by two groups, a set of four expert annotators with a deep understanding of argumentation theory, and a set of crowd annotators who were fluent in English. Agreement was measured along each quality dimension by comparing annotations between the set of experts and set of crowd annotators in arguments that were annotated by both groups within each category of text (CQA or debate or review)."
           ],
           "annotator_type": "4 expert annotators, and an unspecified number of crowd annotators",
           "agreement_type": "Krippendorff's α",
@@ -819,10 +710,6 @@
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
-          "description": [
-            "Individual Binary Argument Quality:",
-            "Arguments from are annotated with a binary quality score (1 or 0) by crowd annotators. 10 annotators annotated each argument, with an answer of yes/no (1 or 0) if they would recommend the argument be used as is by a person in a hypothetical speech on the topic. Poorly performing annotators, and those who failed test questions, were filtered out. To obtain a continuous quality score, scores were aggregated using two methods, MACE-P and WA (details in paper). Annotator agreement by crowd annotators is not reported in the paper, however the continuous scoring functions (MACE-P and WA) were assessed using several methods that compare predicted scores to a gold-standard pairwise annotation."
-          ],
           "annotator_type": "10 crowd annotators per argument",
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
@@ -857,10 +744,6 @@
             "Argument Component Segmentation",
             "Argument Component Type Classification",
             "Argument Summarization"
-          ],
-          "description": [
-            "Claim and evidence identification:",
-            "586 Wikipedia articles were annotated to derive a set of 2683 argument elements made up of context-dependent claims and context-dependent evidence. The annotation process was meticulous, and involved 20 well-trained annotators who followed several steps. First, 5 annotators in a search team were given a topic and independently searched for related articles. Second, 5 annotators independently detected candidate context-dependent claims from the articles. Third, in a \"Claim confirmation\" stage, 5 annotators examined these candidates and rejected/accepted them (agreement was reported for this stage). In a fourth stage, 5 annotators detected candidate context-dependent evidence related to accepted context-dependent claims. In a fifth stage, \"Evidence confirmation\" was performed in the same manner as \"Claim confirmation\", with 5 annotators accepting/rejecting candidate context-dependent evidence."
           ],
           "annotator_type": "20 well-trained annotators",
           "agreement_type": "Cohen's κ",
@@ -898,10 +781,6 @@
             "Argument Component Type Classification",
             "Argument Summarization"
           ],
-          "description": [
-            "Evidence identification:",
-            "547 Wikipedia articles were annotated to derive a set of context-dependent evidence. In the first stage, 5 annotators read the article and marked all context-dependent evidence candidates, in a second stage, 5 annotators confirmed or rejected each candidate and performed a fine-grained classification of the type of evidence (study, expert or anecdotal). Context-dependent evidence candidates and their type were determined by majority vote."
-          ],
           "annotator_type": "15 annotators involved across all stages",
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
@@ -932,10 +811,6 @@
           "annotation_task": [
             "Argument Component Segmentation",
             "Claim Extraction with Stance Classification"
-          ],
-          "description": [
-            "Claim stance classification:",
-            "First each of the 55 topics in the dataset were annotated by one of the authors for its target and sentiment. Then for the main annotation task, each claim was independently labelled with stance by 5 annotators who were provided with the target of the topic. Annotators first identified the target (positive/negative assertion) and sentiment of the claim, before determining if the claim target was the same or contrasted with the topic target. To obtain a final gold label, overlapping claim targets were clustered together, if no cluster contained the majority of the annotations then the claim was labelled as incompatible, if a majority was found then the minority annotations were discarded and the majority labels selected. No annotator agreement was reported, but the majority luster was found for 98.5% of annotated claims, and for 92.5% of the claims most of the annotators agreed on the exact boundaries of the target."
           ],
           "annotator_type": "At least 5 annotators labelled each claim",
           "agreement_type": "Not reported",
@@ -971,10 +846,6 @@
             "Claim Extraction with Stance Classification",
             "Argument Relation Identification"
           ],
-          "description": [
-            "Claim and evidence identification:",
-            "69,666 sentences from 1010 Wikipedia articles were annotated with a scheme to support a variety of argument mining tasks. The annotation process was two-staged: first, annotators identified claims and their stances (+1 for supporting, -1 for contesting the topic), and second, annotators linked claims to evidence through claim-evidence pairs (CEPs). Evidence was searched within 10 to 15 sentences preceding and after the claim."
-          ],
           "annotator_type": "Each sentence was labelled by 2 paid professional data annotators. A third professional annotator was also used in a confirmation phase to resolve disagreement.",
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.44,
@@ -1005,10 +876,6 @@
           "dataset_id": "ibm_rank_30k",
           "annotation_task": [
             "Argument Summarization"
-          ],
-          "description": [
-            "Key point assignment:",
-            "A set of 7000 arguments was mapped to a set of 378 key points (curated by an expert on the 28 topics the arguments addressed). Each argument was labelled by 8 crowd annotators from Figure Eight, who were asked to check all relevant key points for the argument (or none). Various quality control measures were employed (such as test questions, and relying on annotators used in previous work). Inter-annotator agreement for the crowd annotators was reported, along with the agreement of 100 of the final key point labelings with an expert."
           ],
           "annotator_type": "8 crowd annotators per argument, 1 expert for final evaluation",
           "agreement_type": "Cohen's κ",
@@ -1045,10 +912,6 @@
             "Argument Component Type Classification",
             "Argument Relation Identification"
           ],
-          "description": [
-            "Callouts and Targets:",
-            "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform an annotation study that followed a three-step process: (1) segmenting the text into Argumentative Discourse Units (ADUs), (2) classifying each segment as a Callout or Target, and (3) linking each Callout to its most recent Target. Agreement is reported separately for each topic in the corpus. The agreement reported below is agreement across the whole annotation task (segmentation and type classification)."
-          ],
           "annotator_type": "5 graduate students with strong humanities backgrounds",
           "agreement_type": "Krippendorff's α",
           "agreement_score": {
@@ -1068,10 +931,6 @@
             "Argument Relation Type Classification",
             "Claim Extraction with Stance Classification"
           ],
-          "description": [
-            "Stance/Relation Classification:",
-            "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation. In this task, annotators had to perform a fine-grained classification of relations between callouts and targets, as either agree, disagree, or other. A range of agreement values across threads was reported."
-          ],
           "annotator_type": "5 graduate students with strong humanities backgrounds",
           "agreement_type": "Fleiss' κ",
           "agreement_score": [
@@ -1087,10 +946,6 @@
           "dataset_id": "language_of_opposition",
           "annotation_task": [
             "Claim Extraction with Stance Classification"
-          ],
-          "description": [
-            "Rationale Identification:",
-            "404 posts/comments are annotated according to a scheme based on Pragmatic Argumentation Theory (PAT), which frames arguments as interactions between Callouts and Targets. A Callout is a subsequent action that expresses an explicit stance or rationale toward a Target, defined as a prior action in the discussion. Five graduate students with strong humanities backgrounds were trained as annotators to perform the annotation.  In this task, annotators had to identify the stance and rationale of callouts towards their targets, including the exact boundaries of the text segments. No agreement reported, although for 50% of callouts the stance and rationale were easily identified by the annotators."
           ],
           "annotator_type": "5 graduate students with strong humanities background",
           "agreement_type": "Not reported",
@@ -1126,9 +981,6 @@
           "annotation_task": [
             "None"
           ],
-          "description": [
-            "Unannotated"
-          ],
           "annotator_type": "Unannotated",
           "agreement_type": "None",
           "agreement_score": "None",
@@ -1142,10 +994,6 @@
           "annotation_task": [
             "Argument Component Segmentation",
             "Minimal Argument Quality Assessment"
-          ],
-          "description": [
-            "Fallacy detection:",
-            "Climate change news articles are annotated with text spans that contain logical fallacies. Two annotators who were native English speakers, worked through every sentence in each article, and label all logical fallacies where applicable. When labelling a text span as a logical fallacy, annotators had to pick between 1 of 13 possible logical fallacies. For the final ground-truth label, annotations were merged (text-spans), and where there was a divergent opinion, annotators consulted expert reviews on the site. If disagreement continued annotators had a discussion to resolve the divergent label. Annotator agreement was not reported, but prior to the annotation task the annotators achieved an accuracy of 85% on a test set."
           ],
           "annotator_type": "2 expert trained annotators who are native English speakers",
           "agreement_type": "Not reported",
@@ -1175,10 +1023,6 @@
           "dataset_id": "nlas",
           "annotation_task": [
             "Argument Type Identification"
-          ],
-          "description": [
-            "Argument scheme validation:",
-            "5 annotators validated 3810 generated argument schemes against their reported type, topic, and stance. Validation proceeded in stages, at the final stage (based on feedback from previous stages) 1917/2000 arguments generated were valid. Annotator agreement was also computed for a 10% subset of the total number of samples for both the English and Spanish examples. 4 of the 5 annotators annotated the English generated samples, while 2 of the 5 annotators annotated Spanish generated samples."
           ],
           "annotator_type": "5 professional linguists trained in argumentation theory",
           "agreement_type": "Cohen's κ",
@@ -1213,10 +1057,6 @@
           "annotation_task": [
             "Claim Extraction with Stance Classification"
           ],
-          "description": [
-            "Stance detection:",
-            "A dataset of 4870 English tweets is annotated with stance towards six commonly known targets in the United States (‘Atheism’, ‘Climate Change is a Real Concern’, ‘Feminist Movement’, ‘Hillary Clinton’, and ‘Legalization of Abortion’). Targets were compiled by the authors, who also compiled a list of hashtags used when tweeting about the chosen targets. These hashtags were further distinguished by whether they expressed a pro/con/ambiguous stance towards the target. The selected hashtags were used to compile a list of tweets; the hashtags were then removed as the dataset was distributed for the purposes of a shared task and classification would be simplified by their inclusion. Crowd workers from CrowdFlower were presented with tweet-target pairs and asked to label the tweets stance (with the hashtag removed), each tweet was annotated by at least 8 respondents.  For the final dataset, only instances with an agreement greater than or equal to 60% were kept. The number of tweets labelled with a neutral stance was less than 1%."
-          ],
           "annotator_type": "8 crowd workers per tweet",
           "agreement_type": "Overall agreement",
           "agreement_score": 0.8185,
@@ -1247,10 +1087,6 @@
             "Argument Component Type Classification",
             "Argument Relation Identification"
           ],
-          "description": [
-            "Component segmentation and identification:",
-            "Arguments were segmented into argument components, and their types (premises/conclusion) identified. These argument components were linked into full structures, for a downstream argument scheme annotation task. Annotation was performed using Araucaria. No predefined markers were used in the dataset to distinguish arguments, so annotators determined the boundaries of arguments themselves, because of this fuzziness agreement is measured using an equation based on the Sørensen-Dice coefficient which accounts for overlap in argument segments. Various combinations of agreement are reported in the paper, here we report the overall agreement for conclusions, for arguments where at least one premise matched (regardless of conclusion), and arguments were all premises matched (regardless of conclusion)."
-          ],
           "annotator_type": "2 master’s students with solid training in linguistic analysis",
           "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
           "agreement_score": {
@@ -1266,10 +1102,6 @@
           "dataset_id": "swedish_news",
           "annotation_task": [
             "Argument Type Identification"
-          ],
-          "description": [
-            "Argument schemes:",
-            "Arguments were identified and then classified according to one of the 30 most common Walton-style argument schemes. Annotation was performed using Araucaria. Agreement over scheme is reported for arguments which match in both conclusion and premises for a previous annotation task."
           ],
           "annotator_type": "2 master’s students with solid training in linguistic analysis",
           "agreement_type": "Modified Sørensen-Dice coefficient, with a hyperparameter that is more permissive of span overlap",
@@ -1300,10 +1132,6 @@
           "annotation_task": [
             "Maximal Argument Quality Assessment"
           ],
-          "description": [
-            "Pairwise quality assessment:",
-            "Argument pairs are annotated with a label indicating which argument was more convincing. For a given argument pair A1 and A2, workers could either label A1>A2, A2>A1 or A1=A2. Each annotator also had to provide a reason for their labelling. Agreement was not reported, but several quality control measures were used for the selection of annotators. The annotated dataset was released as UKPConvArg1."
-          ],
           "annotator_type": "All pairs were annotated by 5 crowd workers, in total 3900 workers participated",
           "agreement_type": "Not reported",
           "agreement_score": "Not reported",
@@ -1330,10 +1158,6 @@
           "dataset_id": "ukp_conv_arg",
           "annotation_task": [
             "Other"
-          ],
-          "description": [
-            "Reason unit classification:",
-            "A bottom-up approach was used to annotate reasons given for why one argument in a pair of arguments was more convincing than another. Pairs of arguments and their reasons were obtained from a subset of 9,111 argument pairs from UKPConvArg1. From a pilot study, 19 distinct labels for reasons were obtained, for the final annotation study performed by crowd workers, these labels were decomposed into a hierarchy to be more suitable for non-experts. The annotated dataset was released as UKPConvArg2."
           ],
           "annotator_type": "All pairs were annotated by 5 crowd workers, in total 3900 workers participated",
           "agreement_type": "Not reported",
@@ -1367,10 +1191,6 @@
             "Argument Relation Type Classification",
             "Argument Type Identification"
           ],
-          "description": [
-            "Inference anchoring theory:",
-            "3 presidential debates and Reddit mega-threads that discussed them were annotated according to Inference Anchoring Theory (IAT) by 4 well-trained annotators. Annotation proceeded in stages, although sometimes later stages helped to inform a change in a previous stage, first annotators identified locutions segmenting the text into argumentative discourse units. Then annotators proceeded to identify functional transitions between locutions in the dialogue, as well as the illocutionary intention of locutions. Where relevant, annotators reconstructed the propositional content of a locution, as well as inferences between propositions. Propositions could also be related to each other by a conflict or rephrase relation. Agreement was calculated over a 10.5% subset of the debates sub-corpus annotated by 4 annotators, and a 12.6% subset of the Reddit sub-corpus was annotated by 2 annotators."
-          ],
           "annotator_type": "4 unspecified annotators",
           "agreement_type": "Cohen's κ",
           "agreement_score": 0.61,
@@ -1399,10 +1219,6 @@
           "annotation_task": [
             "Argument Component Type Classification",
             "Argument Type Identification"
-          ],
-          "description": [
-            "Argument schemes (periodic table of arguments):",
-            "3 debate transcripts (the debate sub-corpus of US2016) is annotated with a layer of argument schemes according to the Periodic Table of Arguments (PTA). Annotation according to the PTA involves 3 subtasks to identify 3 distinguishing characteristics of arguments, which re-use previous Inference Anchoring Theory annotations from the original US2016 corpus. The first annotation task involves distinguishing first-order and second-order arguments, which is a classification over the inference relation between two propositions. An inference relation is first-order if it connects two propositions which both contain a subject-predicate pair, otherwise the inference relation is second order if its premise is a locution. The second annotation task involves distinguishing predicate and subject arguments, where an inference relation is classified as a predicate argument if the propositions involved share the same subject term to which different predicates are applied and is a subject argument in the opposite case. Finally, propositions were also annotated as either fact, value or policy. Annotation was performed by 2 annotators, and agreement was calculated over a 10% sample of the corpus annotated by both annotators."
           ],
           "annotator_type": "2 unspecified annotators",
           "agreement_type": "Cohen's κ",
@@ -1436,10 +1252,6 @@
           "annotation_task": [
             "Argument Component Segmentation"
           ],
-          "description": [
-            "Argument component segmentation:",
-            "39 political debate transcripts are segmented in argumentative and non-argumentative text by 3 annotators. Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
-          ],
           "annotator_type": "3 annotators, 2 expert annotators were also used in a reconciliation phase",
           "agreement_type": "Fleiss' κ",
           "agreement_score": 0.57,
@@ -1452,10 +1264,6 @@
           "dataset_id": "us_elec_deb_60_to_16",
           "annotation_task": [
             "Argument Component Type Classification"
-          ],
-          "description": [
-            "Argument component type classification:",
-            "Argumentative and non-argumentative segments of text in 39 political debate transcripts are annotated by their type: either \"claim\" or \"premise\". Each transcript was independently annotated by at least 2 annotators, and 19 debates were annotated by all 3 annotators to compute agreement."
           ],
           "annotator_type": "3 annotators, 2 expert annotators were also used in a reconciliation phase",
           "agreement_type": "Fleiss' κ",
@@ -1486,10 +1294,6 @@
           "dataset_id": "us_elec_deb_60_to_16",
           "annotation_task": [
             "Minimal Argument Quality Assessment"
-          ],
-          "description": [
-            "Fallacy detection:",
-            "31 political debates are annotated at the span level with 6 types of fallacies (ad hominem, appeal to emotion, appeal to authority, slippery slope, false cause, and slogan) which were selected based on an exploratory study on the dataset by an expert. Annotators selected spans which they determined contained a fallacy, of the 6 possible fallacies 4 were present in the final dataset which consisted of 1628 annotated fallacious arguments. Agreement was calculated based on the 3 annotators annotation of 9 sections from 5 debates."
           ],
           "annotator_type": "3 annotators with a background in computational linguistics",
           "agreement_type": "Krippendorff's α",
@@ -1524,10 +1328,6 @@
             "Argument Component Segmentation",
             "Argument Component Type Classification"
           ],
-          "description": [
-            "Toulmin component classification:",
-            "5444 documents containing web-based discourse on controversial documents were annotated at the span level with their argumentative components. These argument components were derived from Toulmin’s model, and annotators could choose to label spans as either claim, premise, backing, rebuttal, and refutation. Annotation was performed in stages, with discussions around problematic cases occurring early leading to a refinement of annotation guidelines. Annotators determined spans themselves (argument segmentation) and the gold label was obtained by majority vote on overlapping spans, and problematic cases resolved through further discussion. Agreement was reported using Krippendorf’s α. Agreement varied significantly on both the topic discussed in the document and the type of the document. A joint agreement across all types of documents, all topics, and all kinds of argumentative components was reported, which we list here."
-          ],
           "annotator_type": "All documents were annotated by 3 independent annotators who participated in two training sessions",
           "agreement_type": "Krippendorff's α",
           "agreement_score": 0.48,
@@ -1556,10 +1356,6 @@
           "dataset_id": "webis",
           "annotation_task": [
             "Argument Component Type Classification"
-          ],
-          "description": [
-            "Argumentative discourse unit classification:",
-            "300 news editorials are annotated at the span level with their argumentative discourse unit. Each editorial was annotated by 3 annotators (out of 4 total annotators), and text was pre-segmented into text spans (annotators did not determine spans themselves). Annotators could label spans as one of 6 possible argumentative discourse unit types (common ground, assumption, anecdote, testimony, statistics, or other), they could also label spans as having no type, or as a continuation of the previous span."
           ],
           "annotator_type": "4 crowd annotators from upwork.com",
           "agreement_type": "Fleiss' κ",
@@ -1598,10 +1394,6 @@
           "dataset_id": "wiki_deletion",
           "annotation_task": [
             "Argument Type Identification"
-          ],
-          "description": [
-            "Argument scheme identification:",
-            "741 comments on Wikipedia debate/discussion pages were annotated with their argument schemes (as well as labels no reason was given or no argument present). Annotation proceeded in several rounds, in the second round the overall prevalence of various argument schemes was determined, this was used to guide annotation in a third and fourth round. In the fourth and final round two annotators annotated the corpus, agreement was reported for this fourth and final round of annotation."
           ],
           "annotator_type": "2 student annotators (one graduate and one undergraduate)",
           "agreement_type": "Cohen's κ",

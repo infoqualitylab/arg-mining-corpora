@@ -138,18 +138,16 @@ function CombinedDrawer({ open, onClose, row, rows, setRow }: any) {
                       ))}
                     </Stack>
 
-                    {entry.annotation_description.map((d, i) => (
-                      <Typography key={i} variant="body2" paragraph>
-                        {d}
-                      </Typography>
-                    ))}
-
                     <Typography variant="body2" mb={2}>
                       Agreement ({entry.agreement_type}):{" "}
                       {formatAgreement(entry.agreement)}
                     </Typography>
 
                     <Box sx={{ width: "100%", height: 200 }}>
+                    <Typography variant="body2" mb={1}>
+                      Annotated Subset: {entry.subset} /{" "}
+                      {row.dataset_document_count}
+                    </Typography>
                       <ResponsiveContainer>
                         <PieChart>
                           <Pie data={pieData} dataKey="value" outerRadius={70}>

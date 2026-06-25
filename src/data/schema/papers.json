@@ -80,14 +80,6 @@
                     ]
                   }
                 },
-                "description": {
-                  "$comment": "Short description of annotation task",
-                  "type": "array",
-                  "items": {
-                    "$comment": "Paragraph of description. If you start a string with NOTE it will be highlighted in the display.",
-                    "type": "string"
-                  }
-                },
                 "annotator_type": {
                   "$comment": "Type of annotators involved in the annotation task, Author (the authors of the paper), Expert (domain experts), Student (students, e.g. undergraduates), Crowd (crowdsourced workers, e.g. from MTurk or Prolific), Other (anything else)",
                   "type": "string"
@@ -166,7 +158,6 @@
               "required": [
                 "dataset_id",
                 "annotation_task",
-                "description",
                 "annotator_type",
                 "agreement_type",
                 "agreement_score",
